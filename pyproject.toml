@@ -1,11 +1,11 @@
 [project]
 name = "mdless"
-version = "0.1.0"
-description = "A terminal paginator for Markdown files, built on less"
+version = "0.2.0"
+description = "LESSOPEN filter for Markdown rendering and syntax highlighting with less"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "rich>=14.2.0",
+    "rich-cli>=1.8.0",
 ]
 
 [project.scripts]

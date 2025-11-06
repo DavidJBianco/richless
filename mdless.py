@@ -1,21 +1,15 @@
 #!/usr/bin/env python3
 """
-mdless - A terminal paginator for Markdown files, built on less.
+mdless - A LESSOPEN filter for Markdown rendering and syntax highlighting.
 
-This utility works like 'less' but automatically renders Markdown files
-in a terminal-friendly format.
+This utility works as a preprocessor for 'less', automatically rendering
+Markdown files and syntax highlighting code using rich-cli.
 """
 
 import argparse
-import os
 import subprocess
 import sys
-import tempfile
 from pathlib import Path
-from typing import Optional
-
-from rich.console import Console
-from rich.markdown import Markdown
 
 
 def is_markdown_file(filepath: str) -> bool:
@@ -24,142 +18,113 @@ def is_markdown_file(filepath: str) -> bool:
     return ext in ['.md', '.markdown']
 
 
-def render_markdown_to_ansi(markdown_content: str, width: Optional[int] = None) -> str:
-    """Render Markdown content to ANSI-formatted text suitable for terminal display."""
-    console = Console(width=width, force_terminal=True, color_system="auto")
-
-    # Create a Markdown object
-    md = Markdown(markdown_content)
-
-    # Capture the rendered output
-    with console.capture() as capture:
-        console.print(md)
-
-    return capture.get()
-
-
-def run_less(content: str, less_args: list[str]) -> int:
+def find_rich_executable() -> str:
     """
-    Write content to a temporary file and open it with less.
+    Find the rich executable in the same virtualenv as this script.
 
-    Args:
-        content: The content to display
-        less_args: Additional arguments to pass to less
-
-    Returns:
-        The exit code from less
+    When installed via 'uv tool install', both mdless and rich-cli are in
+    the same virtualenv, so we need to locate the rich executable relative
+    to the Python interpreter running this script.
     """
-    # Create a temporary file that persists until less is done reading it
-    with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False) as tmp:
-        tmp.write(content)
-        tmp_path = tmp.name
+    # Get the directory containing the Python executable
+    python_bin = Path(sys.executable).parent
 
-    try:
-        # Build the less command
-        # Add -R flag to interpret ANSI color codes
-        less_cmd = ['less', '-R'] + less_args + [tmp_path]
+    # The rich executable should be in the same bin directory
+    rich_path = python_bin / 'rich'
 
-        # Run less with the temporary file
-        result = subprocess.run(less_cmd)
-        return result.returncode
-    finally:
-        # Clean up the temporary file
-        try:
-            os.unlink(tmp_path)
-        except OSError:
-            pass
+    if rich_path.exists():
+        return str(rich_path)
+
+    # Fallback: try to find rich in PATH
+    import shutil
+    rich_in_path = shutil.which('rich')
+    if rich_in_path:
+        return rich_in_path
+
+    # Last resort: try python -m rich_cli
+    return None
 
 
 def main():
     """Main entry point for mdless."""
-    # Parse arguments
     parser = argparse.ArgumentParser(
-        description='A terminal paginator for Markdown files, built on less',
-        add_help=False,  # We'll handle help ourselves to be compatible with less
-        allow_abbrev=False
+        description='LESSOPEN filter for Markdown rendering and syntax highlighting',
+        add_help=True,
     )
 
-    # Add mdless-specific options
-    parser.add_argument('--md', '--markdown', dest='force_markdown', action='store_true',
+    parser.add_argument('file',
+                       help='File to process (use "-" for stdin)')
+    parser.add_argument('--md', '--markdown',
+                       dest='force_markdown',
+                       action='store_true',
                        help='Force Markdown rendering even for non-.md files')
-    parser.add_argument('--width', type=int, default=None,
-                       help='Set the width for Markdown rendering (default: terminal width)')
-    parser.add_argument('--help-mdless', action='store_true',
-                       help='Show mdless-specific help')
 
-    # File argument
-    parser.add_argument('file', nargs='?', default=None,
-                       help='File to display')
+    args = parser.parse_args()
 
-    # Parse known args to allow passing through less options
-    args, unknown_args = parser.parse_known_args()
+    # Handle stdin input
+    input_file = args.file
+    temp_file = None
 
-    # Show mdless help if requested
-    if args.help_mdless:
-        print("""mdless - A terminal paginator for Markdown files
-
-Usage: mdless [OPTIONS] [FILE]
-
-mdless-specific options:
-  --md, --markdown    Force Markdown rendering
-  --width WIDTH       Set rendering width (default: terminal width)
-  --help-mdless       Show this help
-
-All other options are passed through to 'less'.
-
-When displaying .md or .MD files (or with --md flag), mdless will render
-the Markdown content before passing it to less for pagination.
-
-For standard 'less' options, run: man less
-""")
-        return 0
-
-    # Determine if we should render as Markdown
-    should_render_markdown = False
-
-    if args.force_markdown:
-        should_render_markdown = True
-    elif args.file and is_markdown_file(args.file):
-        should_render_markdown = True
-
-    # If no file specified and not forcing markdown, just run less
-    if not args.file:
-        # Pass through to less with stdin
-        less_cmd = ['less'] + unknown_args
-        result = subprocess.run(less_cmd)
-        return result.returncode
-
-    # Check if file exists
-    if not os.path.exists(args.file):
-        print(f"mdless: {args.file}: No such file or directory", file=sys.stderr)
-        return 1
-
-    # Read the file content
-    try:
-        with open(args.file, 'r', encoding='utf-8') as f:
-            content = f.read()
-    except UnicodeDecodeError:
-        # If we can't decode as UTF-8, just pass to less directly
-        less_cmd = ['less'] + unknown_args + [args.file]
-        result = subprocess.run(less_cmd)
-        return result.returncode
-    except Exception as e:
-        print(f"mdless: Error reading {args.file}: {e}", file=sys.stderr)
-        return 1
-
-    # If we should render as Markdown, do so
-    if should_render_markdown:
+    if args.file == '-' or args.file == '/dev/stdin':
+        # Read from stdin and create a temp file
+        import tempfile
+        temp_fd, temp_file = tempfile.mkstemp(suffix='.md' if args.force_markdown else '.txt')
         try:
-            rendered_content = render_markdown_to_ansi(content, width=args.width)
-            return run_less(rendered_content, unknown_args)
+            with open(temp_fd, 'w', encoding='utf-8') as f:
+                f.write(sys.stdin.read())
+            input_file = temp_file
         except Exception as e:
-            print(f"mdless: Error rendering Markdown: {e}", file=sys.stderr)
+            print(f"mdless: Error reading from stdin: {e}", file=sys.stderr)
+            if temp_file:
+                import os
+                os.unlink(temp_file)
             return 1
+
+    # Find the rich executable
+    rich_executable = find_rich_executable()
+
+    if not rich_executable:
+        # Try using python -m rich_cli as fallback
+        rich_cmd = [sys.executable, '-m', 'rich_cli', input_file, '--force-terminal']
     else:
-        # Not a Markdown file, just pass to less
-        less_cmd = ['less'] + unknown_args + [args.file]
-        result = subprocess.run(less_cmd)
-        return result.returncode
+        # Build the rich-cli command
+        rich_cmd = [rich_executable, input_file, '--force-terminal']
+
+    # Force markdown mode if requested or if file is .md
+    if args.force_markdown or is_markdown_file(input_file):
+        rich_cmd.append('--markdown')
+
+    # Run rich-cli to process the file
+    exit_code = 0
+    try:
+        result = subprocess.run(
+            rich_cmd,
+            check=True,
+            capture_output=False,  # Let output go directly to stdout
+        )
+        exit_code = result.returncode
+    except subprocess.CalledProcessError as e:
+        # If rich fails, fall back to plain cat
+        try:
+            with open(input_file, 'r', encoding='utf-8') as f:
+                print(f.read(), end='')
+            exit_code = 0
+        except Exception:
+            print(f"mdless: Error reading {input_file}", file=sys.stderr)
+            exit_code = 1
+    except (FileNotFoundError, ModuleNotFoundError):
+        print("mdless: rich-cli not found. Please reinstall mdless.", file=sys.stderr)
+        exit_code = 1
+    finally:
+        # Clean up temp file if we created one
+        if temp_file:
+            import os
+            try:
+                os.unlink(temp_file)
+            except Exception:
+                pass
+
+    return exit_code
 
 
 if __name__ == "__main__":
