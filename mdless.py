@@ -3,13 +3,15 @@
 mdless - A LESSOPEN filter for Markdown rendering and syntax highlighting.
 
 This utility works as a preprocessor for 'less', automatically rendering
-Markdown files and syntax highlighting code using rich-cli.
+Markdown files and syntax highlighting code using the rich library.
 """
 
 import argparse
-import subprocess
 import sys
 from pathlib import Path
+from rich.console import Console
+from rich.markdown import Markdown
+from rich.syntax import Syntax
 
 
 def is_markdown_file(filepath: str) -> bool:
@@ -18,31 +20,21 @@ def is_markdown_file(filepath: str) -> bool:
     return ext in ['.md', '.markdown']
 
 
-def find_rich_executable() -> str:
-    """
-    Find the rich executable in the same virtualenv as this script.
+def render_markdown(content: str, console: Console) -> None:
+    """Render Markdown content using rich."""
+    md = Markdown(content)
+    console.print(md)
 
-    When installed via 'uv tool install', both mdless and rich-cli are in
-    the same virtualenv, so we need to locate the rich executable relative
-    to the Python interpreter running this script.
-    """
-    # Get the directory containing the Python executable
-    python_bin = Path(sys.executable).parent
 
-    # The rich executable should be in the same bin directory
-    rich_path = python_bin / 'rich'
+def render_syntax(filepath: str, content: str, console: Console) -> None:
+    """Render code with syntax highlighting using rich."""
+    # Determine lexer from file extension
+    path = Path(filepath)
+    ext = path.suffix.lstrip('.')
 
-    if rich_path.exists():
-        return str(rich_path)
-
-    # Fallback: try to find rich in PATH
-    import shutil
-    rich_in_path = shutil.which('rich')
-    if rich_in_path:
-        return rich_in_path
-
-    # Last resort: try python -m rich_cli
-    return None
+    # Create Syntax object with auto-detected lexer
+    syntax = Syntax(content, ext or "text", theme="monokai", line_numbers=False)
+    console.print(syntax)
 
 
 def main():
@@ -64,67 +56,48 @@ def main():
     # Handle stdin input
     input_file = args.file
     temp_file = None
+    content = None
 
-    if args.file == '-' or args.file == '/dev/stdin':
-        # Read from stdin and create a temp file
-        import tempfile
-        temp_fd, temp_file = tempfile.mkstemp(suffix='.md' if args.force_markdown else '.txt')
-        try:
-            with open(temp_fd, 'w', encoding='utf-8') as f:
-                f.write(sys.stdin.read())
-            input_file = temp_file
-        except Exception as e:
-            print(f"mdless: Error reading from stdin: {e}", file=sys.stderr)
-            if temp_file:
-                import os
-                os.unlink(temp_file)
-            return 1
-
-    # Find the rich executable
-    rich_executable = find_rich_executable()
-
-    if not rich_executable:
-        # Try using python -m rich_cli as fallback
-        rich_cmd = [sys.executable, '-m', 'rich_cli', input_file, '--force-terminal']
-    else:
-        # Build the rich-cli command
-        rich_cmd = [rich_executable, input_file, '--force-terminal']
-
-    # Force markdown mode if requested or if file is .md
-    if args.force_markdown or is_markdown_file(input_file):
-        rich_cmd.append('--markdown')
-
-    # Run rich-cli to process the file
-    exit_code = 0
     try:
-        result = subprocess.run(
-            rich_cmd,
-            check=True,
-            capture_output=False,  # Let output go directly to stdout
-        )
-        exit_code = result.returncode
-    except subprocess.CalledProcessError as e:
-        # If rich fails, fall back to plain cat
-        try:
-            with open(input_file, 'r', encoding='utf-8') as f:
-                print(f.read(), end='')
-            exit_code = 0
-        except Exception:
-            print(f"mdless: Error reading {input_file}", file=sys.stderr)
-            exit_code = 1
-    except (FileNotFoundError, ModuleNotFoundError):
-        print("mdless: rich-cli not found. Please reinstall mdless.", file=sys.stderr)
-        exit_code = 1
-    finally:
-        # Clean up temp file if we created one
-        if temp_file:
-            import os
-            try:
-                os.unlink(temp_file)
-            except Exception:
-                pass
+        if args.file == '-' or args.file == '/dev/stdin':
+            # Read from stdin
+            content = sys.stdin.read()
+            input_file = 'stdin.md' if args.force_markdown else 'stdin.txt'
+        else:
+            # Read from file
+            with open(args.file, 'r', encoding='utf-8') as f:
+                content = f.read()
+            input_file = args.file
 
-    return exit_code
+        # Create console with force_terminal to ensure colors work in pipes
+        console = Console(force_terminal=True)
+
+        # Determine if we should render as markdown
+        is_markdown = args.force_markdown or is_markdown_file(input_file)
+
+        if is_markdown:
+            render_markdown(content, console)
+        else:
+            # Syntax highlighting for code files
+            render_syntax(input_file, content, console)
+
+        return 0
+
+    except FileNotFoundError:
+        print(f"mdless: File not found: {args.file}", file=sys.stderr)
+        return 1
+    except Exception as e:
+        print(f"mdless: Error: {e}", file=sys.stderr)
+        # Fall back to plain output
+        try:
+            if content:
+                print(content, end='')
+            elif args.file not in ['-', '/dev/stdin']:
+                with open(args.file, 'r', encoding='utf-8') as f:
+                    print(f.read(), end='')
+            return 0
+        except Exception:
+            return 1
 
 
 if __name__ == "__main__":

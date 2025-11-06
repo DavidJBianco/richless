@@ -30,7 +30,7 @@ For advanced features (piped input, force markdown), see [Option 2: Transparent 
 - **Syntax Highlighting for Source Code**: Automatic syntax highlighting for Python, JavaScript, Java, C, Go, Rust, and many other programming languages
 - **Works with Wildcards**: `less *.md` or `less *.py` just works
 - **Correct Filenames**: Shows actual filenames in less, not temporary files
-- **Powered by rich-cli**: Leverages the excellent [rich-cli](https://github.com/Textualize/rich-cli) project
+- **Powered by rich**: Leverages the excellent [rich](https://github.com/Textualize/rich) library for beautiful terminal output
 
 ## Installation
 
@@ -214,10 +214,10 @@ All standard `less` commands work normally inside the pager:
 
 **Basic Mode (Option 1):**
 1. When you run `less file.md`, the `LESSOPEN` environment variable tells less to run `mdless file.md` first
-2. `mdless` detects the `.md` extension and calls `rich-cli` with markdown rendering enabled
-3. `rich-cli` renders the Markdown to beautifully formatted ANSI text
+2. `mdless` detects the `.md` extension and uses the `rich` library to render the Markdown
+3. `rich` renders the Markdown to beautifully formatted ANSI text with proper table support
 4. The formatted output is piped to `less` for viewing
-5. For programming language source files (`.py`, `.js`, `.java`, etc.), `rich-cli` automatically provides syntax highlighting
+5. For programming language source files (`.py`, `.js`, `.java`, etc.), `rich` automatically provides syntax highlighting using Pygments
 
 **Transparent Wrapper (Option 2):**
 - The shell function intercepts calls to `less` before they execute
@@ -318,7 +318,8 @@ bash test-comprehensive.sh  # If available
 
 ## Dependencies
 
-- [rich-cli](https://github.com/Textualize/rich-cli) - Command-line tool for rich terminal output, Markdown rendering, and syntax highlighting
+- [rich](https://github.com/Textualize/rich) - Python library for rich terminal output, Markdown rendering, and syntax highlighting
+- [Pygments](https://pygments.org/) - Syntax highlighting library
 - Python 3.12+
 - uv - Modern Python package manager
 
@@ -331,7 +332,7 @@ bash test-comprehensive.sh  # If available
 
 **vs. vimpager:**
 - Lighter weight, doesn't require Vim
-- Uses rich-cli's excellent Markdown rendering
+- Uses rich library's excellent Markdown rendering with full table support
 - Simple LESSOPEN integration
 
 ## License

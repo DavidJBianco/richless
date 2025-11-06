@@ -5,7 +5,8 @@ description = "LESSOPEN filter for Markdown rendering and syntax highlighting wi
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "rich-cli>=1.8.0",
+    "rich>=13.8.0",
+    "pygments>=2.0.0",
 ]
 
 [project.scripts]
