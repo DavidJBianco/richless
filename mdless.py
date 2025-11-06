@@ -38,14 +38,13 @@ def render_markdown_to_ansi(markdown_content: str, width: Optional[int] = None) 
     return capture.get()
 
 
-def run_less(content: str, less_args: list[str], original_filename: Optional[str] = None) -> int:
+def run_less(content: str, less_args: list[str]) -> int:
     """
     Write content to a temporary file and open it with less.
 
     Args:
         content: The content to display
         less_args: Additional arguments to pass to less
-        original_filename: The original filename to display in less prompts
 
     Returns:
         The exit code from less
@@ -58,16 +57,7 @@ def run_less(content: str, less_args: list[str], original_filename: Optional[str
     try:
         # Build the less command
         # Add -R flag to interpret ANSI color codes
-        less_cmd = ['less', '-R']
-
-        # If we have an original filename, set the prompt to show it
-        if original_filename:
-            # Set the normal prompt (bottom of screen) to show the original filename
-            # Escape the filename by replacing special characters
-            escaped_filename = original_filename.replace('.', '\\.')
-            less_cmd.append(f'-P{escaped_filename}')
-
-        less_cmd.extend(less_args + [tmp_path])
+        less_cmd = ['less', '-R'] + less_args + [tmp_path]
 
         # Run less with the temporary file
         result = subprocess.run(less_cmd)
@@ -161,7 +151,7 @@ For standard 'less' options, run: man less
     if should_render_markdown:
         try:
             rendered_content = render_markdown_to_ansi(content, width=args.width)
-            return run_less(rendered_content, unknown_args, original_filename=args.file)
+            return run_less(rendered_content, unknown_args)
         except Exception as e:
             print(f"mdless: Error rendering Markdown: {e}", file=sys.stderr)
             return 1
