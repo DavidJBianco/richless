@@ -23,17 +23,27 @@ def is_markdown_file(filepath: str) -> bool:
 def render_markdown(content: str, console: Console) -> None:
     """Render Markdown content using rich."""
     md = Markdown(content)
-    console.print(md)
+    console.print(md, soft_wrap=True)
 
 
-def render_syntax(filepath: str, content: str, console: Console) -> None:
+def render_syntax(filepath: str, content: str) -> None:
     """Render code with syntax highlighting using rich."""
     # Determine lexer from file extension
     path = Path(filepath)
     ext = path.suffix.lstrip('.')
 
-    # Create Syntax object with auto-detected lexer
-    syntax = Syntax(content, ext or "text", theme="monokai", line_numbers=False)
+    # Calculate width needed to avoid truncating long lines
+    # This allows 'less' to handle horizontal scrolling
+    lines = content.splitlines()
+    max_line_length = max((len(line) for line in lines), default=80)
+    width = max(max_line_length + 1, 80)
+
+    # Create console with width to accommodate longest line
+    console = Console(force_terminal=True, width=width)
+
+    # Create Syntax object - use default background to avoid padding
+    syntax = Syntax(content, ext or "text", theme="monokai", line_numbers=False,
+                    background_color="default")
     console.print(syntax)
 
 
@@ -79,7 +89,7 @@ def main():
             render_markdown(content, console)
         else:
             # Syntax highlighting for code files
-            render_syntax(input_file, content, console)
+            render_syntax(input_file, content)
 
         return 0
 
