@@ -7,6 +7,7 @@ Markdown files and syntax highlighting code using the rich library.
 """
 
 import argparse
+import re
 import sys
 from pathlib import Path
 from rich.console import Console
@@ -20,6 +21,55 @@ def is_markdown_file(filepath: str) -> bool:
     return ext in ['.md', '.markdown']
 
 
+def detect_syntax_from_content(content: str) -> str:
+    """Detect file type from content when extension is unknown."""
+    if not content:
+        return "text"
+
+    lines = content.split('\n', 20)  # Check first 20 lines
+    first_line = lines[0].strip() if lines else ''
+
+    # YAML detection: starts with --- or %YAML
+    if first_line == '---' or first_line.startswith('%YAML'):
+        return "yaml"
+
+    # JSON detection: starts with { or [
+    if first_line.startswith('{') or first_line.startswith('['):
+        return "json"
+
+    # Shebang detection
+    if first_line.startswith('#!'):
+        if 'python' in first_line:
+            return "python"
+        elif 'bash' in first_line or '/sh' in first_line:
+            return "bash"
+        elif 'node' in first_line:
+            return "javascript"
+        elif 'ruby' in first_line:
+            return "ruby"
+        elif 'perl' in first_line:
+            return "perl"
+
+    # XML/HTML detection
+    if first_line.startswith('<?xml') or first_line.startswith('<!DOCTYPE'):
+        return "xml"
+
+    # YAML detection: look for key: value patterns (possibly after # comments)
+    # Skip comment lines and look for YAML structure
+    for line in lines:
+        stripped = line.strip()
+        # Skip empty lines and comments
+        if not stripped or stripped.startswith('#'):
+            continue
+        # Check for YAML key: value pattern (word followed by colon)
+        if re.match(r'^[a-zA-Z_][a-zA-Z0-9_-]*:\s*', stripped):
+            return "yaml"
+        # If first non-comment line doesn't look like YAML, stop checking
+        break
+
+    return "text"
+
+
 def render_markdown(content: str, console: Console) -> None:
     """Render Markdown content using rich."""
     md = Markdown(content)
@@ -31,6 +81,10 @@ def render_syntax(filepath: str, content: str) -> None:
     # Determine lexer from file extension
     path = Path(filepath)
     ext = path.suffix.lstrip('.')
+
+    # If no recognizable extension, try to detect from content
+    if not ext or ext.startswith('mdless'):
+        ext = detect_syntax_from_content(content)
 
     # Calculate width needed to avoid truncating long lines
     # This allows 'less' to handle horizontal scrolling

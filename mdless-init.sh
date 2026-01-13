@@ -26,13 +26,13 @@ export LESS="${LESS:--R}"  # Add -R flag if LESS not already set, otherwise pres
 less() {
     # Check if stdin is a pipe (not a terminal)
     if [ ! -t 0 ]; then
-        # Reading from pipe - check for --md flag
+        # Reading from pipe - check for --md flag (must be exact match, not substring)
         local force_markdown=0
-        case "$*" in
-            *--md*|*-m*)
-                force_markdown=1
-                ;;
-        esac
+        for arg in "$@"; do
+            case "$arg" in
+                --md|-m) force_markdown=1; break ;;
+            esac
+        done
 
         # Save piped input to temp file
         local tmpfile
@@ -56,8 +56,17 @@ less() {
         if [ $force_markdown -eq 1 ]; then
             mdless --md "$tmpfile" | command less -R ${clean_args}
         else
+            # Check for YAML/JSON first - these should use syntax highlighting, not markdown
+            first_line=$(head -1 "$tmpfile" 2>/dev/null)
+            if printf '%s\n' "$first_line" | grep -qE '^---$|^%YAML|^\s*[{\[]'; then
+                # Looks like YAML or JSON - use syntax highlighting
+                mdless "$tmpfile" | command less -R ${clean_args}
+            # Check for YAML with comments: first non-comment line has key: pattern
+            elif grep -m1 -vE '^[[:space:]]*#|^[[:space:]]*$' "$tmpfile" 2>/dev/null | grep -qE '^[a-zA-Z_][a-zA-Z0-9_-]*:'; then
+                # Looks like YAML with comments - use syntax highlighting
+                mdless "$tmpfile" | command less -R ${clean_args}
             # Auto-detect: check if piped content looks like markdown
-            if grep -qE '^#{1,6} |^\* |^- |^[0-9]+\. |^\[.*\]\(.*\)|^```|\*\*.*\*\*|^>|^\||^-{3,}|^={3,}' "$tmpfile" 2>/dev/null; then
+            elif grep -qE '^#{1,6} |^\* |^- |^[0-9]+\. |^\[.*\]\(.*\)|^```|\*\*.*\*\*|^>|^\||^-{3,}|^={3,}' "$tmpfile" 2>/dev/null; then
                 mdless --md "$tmpfile" | command less -R ${clean_args}
             else
                 command less -R ${clean_args} "$tmpfile"
@@ -67,15 +76,15 @@ less() {
         # Clean up temp file
         rm -f "$tmpfile"
     else
-        # No pipe - check for --md flag among arguments
+        # No pipe - check for --md flag among arguments (must be exact match, not substring)
         local force_markdown=0
         local has_md_flag=0
 
-        case "$*" in
-            *--md*|*-m*)
-                has_md_flag=1
-                ;;
-        esac
+        for arg in "$@"; do
+            case "$arg" in
+                --md|-m) has_md_flag=1; break ;;
+            esac
+        done
 
         if [ $has_md_flag -eq 1 ]; then
             # Build arrays for files and options
