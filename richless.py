@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-mdless - A LESSOPEN filter for Markdown rendering and syntax highlighting.
+richless - A LESSOPEN filter for Markdown rendering and syntax highlighting.
 
 This utility works as a preprocessor for 'less', automatically rendering
 Markdown files and syntax highlighting code using the rich library.
@@ -90,8 +90,8 @@ def render_syntax(filepath: str, content: str) -> None:
         ext = ext_map[ext]
 
     # If no recognizable extension, try to detect from content
-    # Temp files from shell wrapper are named mdless.XXXXXX (random suffix)
-    if not ext or path.stem == 'mdless':
+    # Temp files from shell wrapper are named richless.XXXXXX (random suffix)
+    if not ext or path.stem == 'richless':
         ext = detect_syntax_from_content(content)
 
     # Calculate width needed to avoid truncating long lines
@@ -110,7 +110,7 @@ def render_syntax(filepath: str, content: str) -> None:
 
 
 def main():
-    """Main entry point for mdless."""
+    """Main entry point for richless."""
     parser = argparse.ArgumentParser(
         description='LESSOPEN filter for Markdown rendering and syntax highlighting',
         add_help=True,
@@ -159,10 +159,10 @@ def main():
         return 0
 
     except FileNotFoundError:
-        print(f"mdless: File not found: {args.file}", file=sys.stderr)
+        print(f"richless: File not found: {args.file}", file=sys.stderr)
         return 1
     except Exception as e:
-        print(f"mdless: Error: {e}", file=sys.stderr)
+        print(f"richless: Error: {e}", file=sys.stderr)
         # Fall back to plain output
         try:
             if content:

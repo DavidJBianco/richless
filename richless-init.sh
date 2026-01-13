@@ -1,24 +1,24 @@
 #!/bin/sh
-# mdless-init.sh
+# richless-init.sh
 #
-# Shell integration for mdless - transparent Markdown rendering in less
+# Shell integration for richless - transparent Markdown rendering in less
 #
 # Usage: Add this line to your ~/.bashrc, ~/.zshrc, or ~/.profile:
-#   source /path/to/mdless-init.sh
+#   source /path/to/richless-init.sh
 #
 # This will override the 'less' command to automatically render Markdown files
 # and support additional features like piped input and force-markdown mode.
 #
 # Compatible with: sh, bash, zsh
 
-# Only initialize if mdless is available
-if ! command -v mdless >/dev/null 2>&1; then
-    echo "Warning: mdless command not found. Please install mdless first." >&2
+# Only initialize if richless is available
+if ! command -v richless >/dev/null 2>&1; then
+    echo "Warning: richless command not found. Please install richless first." >&2
     return 1 2>/dev/null || exit 1
 fi
 
 # Configure LESSOPEN for automatic Markdown detection
-export LESSOPEN="|mdless %s"
+export LESSOPEN="|richless %s"
 export LESS="${LESS:--R}"  # Add -R flag if LESS not already set, otherwise preserve existing
 
 # Transparent wrapper function for less
@@ -36,7 +36,7 @@ less() {
 
         # Save piped input to temp file
         local tmpfile
-        tmpfile=$(mktemp "${TMPDIR:-/tmp}/mdless.XXXXXX") || return 1
+        tmpfile=$(mktemp "${TMPDIR:-/tmp}/richless.XXXXXX") || return 1
         cat > "$tmpfile"
 
         # Collect non --md/--m arguments for less
@@ -54,20 +54,20 @@ less() {
 
         # Check if we should render as markdown
         if [ $force_markdown -eq 1 ]; then
-            mdless --md "$tmpfile" | command less -R ${clean_args}
+            richless --md "$tmpfile" | command less -R ${clean_args}
         else
             # Check for YAML/JSON first - these should use syntax highlighting, not markdown
             first_line=$(head -1 "$tmpfile" 2>/dev/null)
             if printf '%s\n' "$first_line" | grep -qE '^---$|^%YAML|^[[:space:]]*[{[]'; then
                 # Looks like YAML or JSON - use syntax highlighting
-                mdless "$tmpfile" | command less -R ${clean_args}
+                richless "$tmpfile" | command less -R ${clean_args}
             # Check for YAML with comments: first non-comment line has key: pattern
             elif grep -m1 -vE '^[[:space:]]*#|^[[:space:]]*$' "$tmpfile" 2>/dev/null | grep -qE '^[a-zA-Z_][a-zA-Z0-9_-]*:'; then
                 # Looks like YAML with comments - use syntax highlighting
-                mdless "$tmpfile" | command less -R ${clean_args}
+                richless "$tmpfile" | command less -R ${clean_args}
             # Auto-detect: check if piped content looks like markdown
             elif grep -qE '^#{1,6} |^\* |^- |^[0-9]+\. |^\[.*\]\(.*\)|^```|\*\*.*\*\*|^>|^\||^-{3,}|^={3,}' "$tmpfile" 2>/dev/null; then
-                mdless --md "$tmpfile" | command less -R ${clean_args}
+                richless --md "$tmpfile" | command less -R ${clean_args}
             else
                 command less -R ${clean_args} "$tmpfile"
             fi
@@ -108,7 +108,7 @@ less() {
             # Render each file with markdown
             for file in ${files}; do
                 if [ -n "$file" ]; then
-                    mdless --md "$file" | command less -R ${opts}
+                    richless --md "$file" | command less -R ${opts}
                 fi
             done
         else

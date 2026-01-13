@@ -1,36 +1,37 @@
-# mdless
+# richless
 
 A LESSOPEN filter for automatically rendering Markdown files and syntax highlighting source code when using `less`. View your Markdown documents with beautiful formatting and programming language files with syntax highlighting directly in the terminal, without changing how you use `less`.
 
 ## Quick Start
 
 ```bash
-# 1. Install mdless
+# 1. Install richless
+git clone <repository-url>
+cd richless
 uv tool install .
 
-# 2. Add to your ~/.bashrc or ~/.zshrc
-export LESSOPEN="|mdless %s"
-export LESS="-R"
+# 2. Copy init script and add to your ~/.bashrc or ~/.zshrc
+cp richless-init.sh ~/.richless-init.sh
+echo 'source ~/.richless-init.sh' >> ~/.bashrc  # or ~/.zshrc
 
 # 3. Reload your shell
 source ~/.bashrc  # or ~/.zshrc
 
 # 4. Try it!
-less README.md     # View rendered Markdown
-less mdless.py     # View syntax-highlighted Python
+less README.md       # View rendered Markdown
+less richless.py     # View syntax-highlighted Python
 ```
-
-For advanced features (piped input, force markdown), see [Option 2: Transparent Wrapper](#option-2-transparent-wrapper-full-featured).
 
 ## Features
 
 - **Seamless Integration**: Works transparently with `less` via LESSOPEN
 - **Automatic Markdown Rendering**: Recognizes `.md` and `.markdown` files automatically and renders them beautifully
 - **Rich Terminal Formatting**: Beautiful rendering with headers, lists, code blocks, tables, and more
-- **Syntax Highlighting for Source Code**: Automatic syntax highlighting for Python, JavaScript, Java, C, Go, Rust, and many other programming languages
+- **Data Format Highlighting**: Syntax highlighting for JSON, JSONL, YAML, and XML files with automatic detection
+- **Code Highlighting**: Syntax highlighting for 500+ programming languages (Python, JavaScript, Go, Rust, and more)
 - **Works with Wildcards**: `less *.md` or `less *.py` just works
 - **Correct Filenames**: Shows actual filenames in less, not temporary files
-- **Powered by rich**: Leverages the excellent [rich](https://github.com/Textualize/rich) library for beautiful terminal output
+- **Powered by rich and Pygments**: Leverages [rich](https://github.com/Textualize/rich) for beautiful terminal output and [Pygments](https://pygments.org/) for syntax highlighting
 
 ## Installation
 
@@ -44,23 +45,23 @@ For advanced features (piped input, force markdown), see [Option 2: Transparent 
   ```
 - **less pager** (standard on macOS and most Linux distributions)
 
-### Step 1: Install mdless
+### Step 1: Install richless
 
-Install mdless in an isolated virtualenv using uv's tool install feature:
+Install richless in an isolated virtualenv using uv's tool install feature:
 
 ```bash
 # Clone or download this repository
 git clone <repository-url>
-cd mdless
+cd richless
 
-# Install mdless as a uv tool
+# Install richless as a uv tool
 uv tool install .
 
 # Or install directly from git (once published)
-# uv tool install git+https://github.com/yourusername/mdless
+# uv tool install git+https://github.com/yourusername/richless
 ```
 
-This installs `mdless` and all its dependencies (including rich-cli) in an isolated virtualenv, making the `mdless` command available system-wide without polluting your project environments.
+This installs `richless` and all its dependencies in an isolated virtualenv, making the `richless` command available system-wide without polluting your project environments.
 
 **Note:** If you see a warning about PATH, run:
 ```bash
@@ -72,16 +73,16 @@ export PATH="$HOME/.local/bin:$PATH"
 
 You have two configuration options depending on your needs:
 
-#### Option 1: Basic LESSOPEN (Simple - Recommended for most users)
+#### Option 1: Basic LESSOPEN (Minimal setup)
 
-This is the simplest setup. Just add two environment variables to your shell configuration.
+If you prefer not to use the shell wrapper, you can manually set two environment variables. This is a lighter-weight alternative but lacks some features.
 
 **Setup:**
 
 Add these lines to your `~/.bashrc`, `~/.zshrc`, or `~/.profile`:
 
 ```bash
-export LESSOPEN="|mdless %s"
+export LESSOPEN="|richless %s"
 export LESS="-R"
 ```
 
@@ -101,22 +102,22 @@ source ~/.bashrc  # or source ~/.zshrc
 - ❌ Doesn't work with piped input: `cat file.md | less` won't render
 - ❌ Can't force markdown on non-.md files through `less`
 
-#### Option 2: Transparent Wrapper (Full-featured)
+#### Option 2: Transparent Wrapper (Recommended - used by Quick Start)
 
-This option provides a smart wrapper around `less` that handles edge cases like piped input and forcing markdown on arbitrary files.
+This is the recommended setup and what Quick Start uses. It provides a smart wrapper around `less` that handles edge cases like piped input and forcing markdown on arbitrary files.
 
 **Setup:**
 
 1. Copy the shell integration script to your home directory:
    ```bash
-   # From the mdless project directory
-   cp mdless-init.sh ~/.mdless-init.sh
+   # From the richless project directory
+   cp richless-init.sh ~/.richless-init.sh
    ```
 
 2. Source it in your shell configuration:
    ```bash
    # Add this line to ~/.bashrc, ~/.zshrc, or ~/.profile
-   source ~/.mdless-init.sh
+   source ~/.richless-init.sh
    ```
 
 3. Reload your shell:
@@ -162,9 +163,9 @@ less -i script.py        # Case-insensitive search
 less +50 README.md       # Start at line 50
 ```
 
-### Advanced Usage (Option 2 Only)
+### Additional Features (Option 2 / Quick Start)
 
-If you're using the transparent wrapper (Option 2), you get these additional features:
+If you followed the Quick Start or are using Option 2, you also get these features:
 
 ```bash
 # Force Markdown rendering on non-.md files
@@ -183,20 +184,20 @@ grep -A 50 "## Section" doc.md | less
 cat file.md | less  # Detects markdown syntax and renders
 ```
 
-### Direct mdless Usage
+### Direct richless Usage
 
-You can also call `mdless` directly if needed:
+You can also call `richless` directly if needed:
 
 ```bash
 # Render and pipe to less
-mdless document.md | less -R
+richless document.md | less -R
 
 # Force markdown rendering
-mdless --md document.txt | less -R
+richless --md document.txt | less -R
 
 # Read from stdin
-cat file.md | mdless --md - | less -R
-echo "# Test" | mdless --md - | less -R
+cat file.md | richless --md - | less -R
+echo "# Test" | richless --md - | less -R
 ```
 
 ### Standard less Commands
@@ -213,8 +214,8 @@ All standard `less` commands work normally inside the pager:
 ## How It Works
 
 **Basic Mode (Option 1):**
-1. When you run `less file.md`, the `LESSOPEN` environment variable tells less to run `mdless file.md` first
-2. `mdless` detects the `.md` extension and uses the `rich` library to render the Markdown
+1. When you run `less file.md`, the `LESSOPEN` environment variable tells less to run `richless file.md` first
+2. `richless` detects the `.md` extension and uses the `rich` library to render the Markdown
 3. `rich` renders the Markdown to beautifully formatted ANSI text with proper table support
 4. The formatted output is piped to `less` for viewing
 5. For programming language source files (`.py`, `.js`, `.java`, etc.), `rich` automatically provides syntax highlighting using Pygments
@@ -227,7 +228,7 @@ All standard `less` commands work normally inside the pager:
 
 ## Troubleshooting
 
-### "mdless: command not found"
+### "richless: command not found"
 
 Make sure `~/.local/bin` is in your PATH:
 ```bash
@@ -237,60 +238,63 @@ export PATH="$HOME/.local/bin:$PATH"
 
 ### Piped input doesn't work
 
-You're using Option 1 (Basic LESSOPEN). Either:
-- Switch to Option 2 (Transparent Wrapper) for piped input support
-- Or use: `cat file.md | mdless --md - | less -R`
+If you're using Option 1 (Basic LESSOPEN), piped input won't work. Either:
+- Switch to Option 2 / Quick Start for piped input support
+- Or use: `cat file.md | richless --md - | less -R`
 
 ### Colors don't show up
 
-Make sure you have the `-R` flag set:
+If you're using Option 1 (manual setup), make sure you have the `-R` flag set:
 ```bash
 export LESS="-R"
 ```
+The init script (Option 2 / Quick Start) sets this automatically.
 
 ### Shell function not loading
 
 Make sure you're sourcing the init script, not executing it:
 ```bash
-source ~/.mdless-init.sh  # Correct
-./mdless-init.sh          # Wrong - this won't define the function in your shell
+source ~/.richless-init.sh  # Correct
+./richless-init.sh          # Wrong - this won't define the function in your shell
 ```
 
 ### After sourcing, "less file.md" shows an error
 
-Make sure you've reinstalled mdless after any updates:
+Make sure you've reinstalled richless after any updates:
 ```bash
-uv tool uninstall mdless
+uv tool uninstall richless
 uv tool install .
-source ~/.mdless-init.sh  # Re-source if using Option 2
+source ~/.richless-init.sh  # Re-source to pick up changes
 ```
 
 ## Updating
 
 ```bash
 # Update to the latest version
-cd /path/to/mdless
+cd /path/to/richless
 git pull  # Get latest changes
-uv tool upgrade mdless
+uv tool upgrade richless
 
-# If using Option 2, re-source the init script
-source ~/.mdless-init.sh
+# Re-source the init script to pick up any changes
+source ~/.richless-init.sh
 ```
 
 ## Uninstalling
 
 ```bash
 # Remove the tool
-uv tool uninstall mdless
+uv tool uninstall richless
 
-# Remove from your shell config
-# Delete or comment out these lines from ~/.bashrc or ~/.zshrc:
-# export LESSOPEN="|mdless %s"
+# Remove from your shell config (~/.bashrc or ~/.zshrc)
+# Delete or comment out the source line:
+# source ~/.richless-init.sh
+
+# Remove the init script
+rm ~/.richless-init.sh
+
+# If using Option 1 instead, remove these lines:
+# export LESSOPEN="|richless %s"
 # export LESS="-R"
-# source ~/.mdless-init.sh  # If using Option 2
-
-# Remove the init script (Option 2 only)
-rm ~/.mdless-init.sh
 ```
 
 ## Development
@@ -298,7 +302,7 @@ rm ~/.mdless-init.sh
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd mdless
+cd richless
 
 # Install dependencies
 uv sync
@@ -313,7 +317,7 @@ uv tool install --editable . --force
 less README.md
 
 # Run tests
-bash test-comprehensive.sh  # If available
+uv run pytest tests/test_richless.py -v
 ```
 
 ## Dependencies
@@ -326,7 +330,7 @@ bash test-comprehensive.sh  # If available
 ## Comparison to Alternatives
 
 **vs. glow / mdcat / bat:**
-- mdless integrates directly with `less`, so you use your familiar pager commands
+- richless integrates directly with `less`, so you use your familiar pager commands
 - Works transparently - no need to remember a different command
 - Supports all standard `less` features (search, navigation, etc.)
 

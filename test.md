@@ -1,4 +1,4 @@
-# mdless - Terminal Markdown Paginator
+# richless - Terminal Markdown Paginator
 
 A modern command-line utility that brings rich Markdown rendering to your terminal.
 
@@ -12,7 +12,7 @@ A modern command-line utility that brings rich Markdown rendering to your termin
 ## Installation
 
 ```bash
-pip install mdless
+pip install richless
 ```
 
 ## Usage
@@ -20,19 +20,19 @@ pip install mdless
 View a Markdown file:
 
 ```bash
-mdless README.md
+richless README.md
 ```
 
 Force Markdown rendering on any file:
 
 ```bash
-mdless --md document.txt
+richless --md document.txt
 ```
 
 Pass options to less:
 
 ```bash
-mdless -N README.md  # Show line numbers
+richless -N README.md  # Show line numbers
 ```
 
 ## Code Example
@@ -71,7 +71,7 @@ print(greet("World"))
 
 ## Links and Emphasis
 
-Visit the [project repository](https://github.com/example/mdless) for more information.
+Visit the [project repository](https://github.com/example/richless) for more information.
 
 You can use *italic text*, **bold text**, or even ***bold italic text*** for emphasis.
 

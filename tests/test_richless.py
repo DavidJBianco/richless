@@ -1,7 +1,7 @@
 """
-Unit tests for mdless.
+Unit tests for richless.
 
-Run with: uv run pytest tests/test_mdless.py -v
+Run with: uv run pytest tests/test_richless.py -v
 """
 
 import os
@@ -10,10 +10,10 @@ import subprocess
 import sys
 from pathlib import Path
 
-# Add parent directory to path so we can import mdless
+# Add parent directory to path so we can import richless
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from mdless import is_markdown_file, detect_syntax_from_content
+from richless import is_markdown_file, detect_syntax_from_content
 
 
 class TestIsMarkdownFile:
@@ -127,7 +127,7 @@ version: 1.0
 
 
 class TestIntegration:
-    """Integration tests that run mdless as a subprocess."""
+    """Integration tests that run richless as a subprocess."""
 
     FIXTURES_DIR = Path(__file__).parent / "fixtures"
 
@@ -142,10 +142,10 @@ class TestIntegration:
         indicators = ["┃", "┏", "┗", "━", "┓", "┛", "─", "•", " • "]
         return any(ind in output for ind in indicators)
 
-    def run_mdless(self, *args) -> str:
-        """Run mdless command and return output."""
+    def run_richless(self, *args) -> str:
+        """Run richless command and return output."""
         result = subprocess.run(
-            ["mdless", *args],
+            ["richless", *args],
             capture_output=True,
             text=True,
         )
@@ -153,46 +153,46 @@ class TestIntegration:
 
     # Markdown tests
     def test_markdown_file_renders_as_markdown(self):
-        output = self.run_mdless(str(self.FIXTURES_DIR / "test.md"))
+        output = self.run_richless(str(self.FIXTURES_DIR / "test.md"))
         assert self.has_markdown_formatting(output), "Markdown file should have Rich formatting"
 
     def test_force_markdown_flag(self):
-        output = self.run_mdless("--md", str(self.FIXTURES_DIR / "test.yaml"))
+        output = self.run_richless("--md", str(self.FIXTURES_DIR / "test.yaml"))
         assert self.has_markdown_formatting(output), "--md flag should force markdown rendering"
 
     # YAML tests
     def test_yaml_file_syntax_highlighting(self):
-        output = self.run_mdless(str(self.FIXTURES_DIR / "test.yaml"))
+        output = self.run_richless(str(self.FIXTURES_DIR / "test.yaml"))
         assert self.has_ansi_colors(output), "YAML file should have syntax highlighting"
         assert not self.has_markdown_formatting(output), "YAML file should NOT have markdown formatting"
 
     def test_yaml_with_comments_syntax_highlighting(self):
-        output = self.run_mdless(str(self.FIXTURES_DIR / "test-with-comments.yaml"))
+        output = self.run_richless(str(self.FIXTURES_DIR / "test-with-comments.yaml"))
         assert self.has_ansi_colors(output), "YAML with comments should have syntax highlighting"
         assert not self.has_markdown_formatting(output), "YAML with comments should NOT have markdown formatting"
 
     def test_yaml_filename_with_dash_m(self):
         """Filenames containing -m should not trigger --md flag."""
-        output = self.run_mdless(str(self.FIXTURES_DIR / "test-mcp-config.yaml"))
+        output = self.run_richless(str(self.FIXTURES_DIR / "test-mcp-config.yaml"))
         assert self.has_ansi_colors(output), "File with -m in name should have syntax highlighting"
         assert not self.has_markdown_formatting(output), "File with -m in name should NOT trigger markdown"
 
     # JSON tests
     def test_json_file_syntax_highlighting(self):
-        output = self.run_mdless(str(self.FIXTURES_DIR / "test.json"))
+        output = self.run_richless(str(self.FIXTURES_DIR / "test.json"))
         assert self.has_ansi_colors(output), "JSON file should have syntax highlighting"
 
     def test_jsonl_file_syntax_highlighting(self):
-        output = self.run_mdless(str(self.FIXTURES_DIR / "test.jsonl"))
+        output = self.run_richless(str(self.FIXTURES_DIR / "test.jsonl"))
         assert self.has_ansi_colors(output), "JSONL file should have syntax highlighting"
 
     # Code file tests
     def test_python_file_syntax_highlighting(self):
-        output = self.run_mdless(str(self.FIXTURES_DIR / "test.py"))
+        output = self.run_richless(str(self.FIXTURES_DIR / "test.py"))
         assert self.has_ansi_colors(output), "Python file should have syntax highlighting"
 
     def test_shell_file_syntax_highlighting(self):
-        output = self.run_mdless(str(self.FIXTURES_DIR / "test.sh"))
+        output = self.run_richless(str(self.FIXTURES_DIR / "test.sh"))
         assert self.has_ansi_colors(output), "Shell file should have syntax highlighting"
 
 
@@ -200,12 +200,12 @@ class TestTempFileDetection:
     """Tests for content detection on temp files (like from shell wrapper)."""
 
     def test_temp_file_with_json_content(self, tmp_path):
-        """Temp files named mdless.XXXXX should use content detection."""
-        temp_file = tmp_path / "mdless.abc123"
+        """Temp files named richless.XXXXX should use content detection."""
+        temp_file = tmp_path / "richless.abc123"
         temp_file.write_text('{"key": "value"}\n')
 
         result = subprocess.run(
-            ["mdless", str(temp_file)],
+            ["richless", str(temp_file)],
             capture_output=True,
             text=True,
         )
@@ -216,11 +216,11 @@ class TestTempFileDetection:
 
     def test_temp_file_with_yaml_content(self, tmp_path):
         """Temp files with YAML content should be detected."""
-        temp_file = tmp_path / "mdless.xyz789"
+        temp_file = tmp_path / "richless.xyz789"
         temp_file.write_text("---\nname: test\nvalue: 123\n")
 
         result = subprocess.run(
-            ["mdless", str(temp_file)],
+            ["richless", str(temp_file)],
             capture_output=True,
             text=True,
         )
@@ -245,12 +245,12 @@ class TestLessOpenIntegration:
         return any(ind in output for ind in indicators)
 
     def run_less_with_lessopen(self, filepath: str) -> str:
-        """Run less with LESSOPEN set to use mdless."""
+        """Run less with LESSOPEN set to use richless."""
         result = subprocess.run(
             ["less", "-R", filepath],
             capture_output=True,
             text=True,
-            env={**os.environ, "LESSOPEN": "|mdless %s"},
+            env={**os.environ, "LESSOPEN": "|richless %s"},
         )
         return result.stdout + result.stderr
 
@@ -301,45 +301,45 @@ class TestPipedInputDetection:
         """
         Simulate what the shell less() wrapper does for piped input.
 
-        This replicates the detection logic from mdless-init.sh:
-        1. Save content to temp file named mdless.XXXXXX
+        This replicates the detection logic from richless-init.sh:
+        1. Save content to temp file named richless.XXXXXX
         2. Check first line for YAML/JSON markers
         3. Check for YAML key: pattern after comments
         4. Check for markdown patterns
-        5. Call mdless appropriately
+        5. Call richless appropriately
         """
         # Read source file
         content = Path(filepath).read_text()
 
         # Create temp file like shell wrapper does
-        temp_file = tmp_path / "mdless.testXXX"
+        temp_file = tmp_path / "richless.testXXX"
         temp_file.write_text(content)
 
         lines = content.split('\n')
         first_line = lines[0] if lines else ""
 
-        # Detection logic matching mdless-init.sh
+        # Detection logic matching richless-init.sh
         import re
 
         # Check for YAML document start or JSON
         if re.match(r'^---$|^%YAML|^\s*[{\[]', first_line):
             # YAML or JSON - use syntax highlighting
             result = subprocess.run(
-                ["mdless", str(temp_file)],
+                ["richless", str(temp_file)],
                 capture_output=True,
                 text=True,
             )
         # Check for YAML with comments (first non-comment line has key: pattern)
         elif self._has_yaml_key_pattern(content):
             result = subprocess.run(
-                ["mdless", str(temp_file)],
+                ["richless", str(temp_file)],
                 capture_output=True,
                 text=True,
             )
         # Check for markdown patterns
         elif re.search(r'^#{1,6} |^\* |^- |^[0-9]+\. |^\[.*\]\(.*\)|^```|\*\*.*\*\*|^>|^\||^-{3,}|^={3,}', content, re.MULTILINE):
             result = subprocess.run(
-                ["mdless", "--md", str(temp_file)],
+                ["richless", "--md", str(temp_file)],
                 capture_output=True,
                 text=True,
             )

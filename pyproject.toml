@@ -1,5 +1,5 @@
 [project]
-name = "mdless"
+name = "richless"
 version = "0.2.0"
 description = "LESSOPEN filter for Markdown rendering and syntax highlighting with less"
 readme = "README.md"
@@ -15,4 +15,4 @@ dev = [
 ]
 
 [project.scripts]
-mdless = "mdless:main"
+richless = "richless:main"
