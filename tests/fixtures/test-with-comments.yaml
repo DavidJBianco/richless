@@ -1,0 +1,10 @@
+#
+# Configuration file with comments
+# This tests YAML detection when file starts with comments
+#
+
+name: commented-config
+version: 2.0.0
+
+settings:
+  debug: false

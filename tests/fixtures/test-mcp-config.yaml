@@ -1,0 +1,4 @@
+# Test file with -m in filename (edge case for flag detection)
+name: mcp-test
+transport: http
+url: http://example.com

@@ -1,0 +1,10 @@
+{
+  "name": "test-json",
+  "version": "1.0.0",
+  "enabled": true,
+  "count": 42,
+  "items": ["one", "two", "three"],
+  "nested": {
+    "key": "value"
+  }
+}

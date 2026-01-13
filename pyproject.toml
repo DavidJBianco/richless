@@ -9,5 +9,10 @@ dependencies = [
     "pygments>=2.0.0",
 ]
 
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+]
+
 [project.scripts]
 mdless = "mdless:main"

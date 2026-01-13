@@ -1,0 +1,13 @@
+---
+name: test-config
+version: 1.0.0
+
+settings:
+  enabled: true
+  timeout: 30
+
+items:
+  - name: first
+    value: 100
+  - name: second
+    value: 200
