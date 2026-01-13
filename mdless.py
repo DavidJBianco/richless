@@ -63,21 +63,24 @@ def main():
 
     args = parser.parse_args()
 
+    # Strip whitespace from filename (less adds leading space via LESSOPEN)
+    filepath = args.file.strip()
+
     # Handle stdin input
-    input_file = args.file
+    input_file = filepath
     temp_file = None
     content = None
 
     try:
-        if args.file == '-' or args.file == '/dev/stdin':
+        if filepath == '-' or filepath == '/dev/stdin':
             # Read from stdin
             content = sys.stdin.read()
             input_file = 'stdin.md' if args.force_markdown else 'stdin.txt'
         else:
             # Read from file
-            with open(args.file, 'r', encoding='utf-8') as f:
+            with open(filepath, 'r', encoding='utf-8') as f:
                 content = f.read()
-            input_file = args.file
+            input_file = filepath
 
         # Create console with force_terminal to ensure colors work in pipes
         console = Console(force_terminal=True)
@@ -102,8 +105,8 @@ def main():
         try:
             if content:
                 print(content, end='')
-            elif args.file not in ['-', '/dev/stdin']:
-                with open(args.file, 'r', encoding='utf-8') as f:
+            elif filepath not in ['-', '/dev/stdin']:
+                with open(filepath, 'r', encoding='utf-8') as f:
                     print(f.read(), end='')
             return 0
         except Exception:
