@@ -58,7 +58,7 @@ less() {
         else
             # Check for YAML/JSON first - these should use syntax highlighting, not markdown
             first_line=$(head -1 "$tmpfile" 2>/dev/null)
-            if printf '%s\n' "$first_line" | grep -qE '^---$|^%YAML|^\s*[{\[]'; then
+            if printf '%s\n' "$first_line" | grep -qE '^---$|^%YAML|^[[:space:]]*[{[]'; then
                 # Looks like YAML or JSON - use syntax highlighting
                 mdless "$tmpfile" | command less -R ${clean_args}
             # Check for YAML with comments: first non-comment line has key: pattern

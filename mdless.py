@@ -82,8 +82,16 @@ def render_syntax(filepath: str, content: str) -> None:
     path = Path(filepath)
     ext = path.suffix.lstrip('.')
 
+    # Map non-standard extensions to their lexer names
+    ext_map = {
+        'jsonl': 'json',  # JSON Lines uses JSON syntax
+    }
+    if ext in ext_map:
+        ext = ext_map[ext]
+
     # If no recognizable extension, try to detect from content
-    if not ext or ext.startswith('mdless'):
+    # Temp files from shell wrapper are named mdless.XXXXXX (random suffix)
+    if not ext or path.stem == 'mdless':
         ext = detect_syntax_from_content(content)
 
     # Calculate width needed to avoid truncating long lines
