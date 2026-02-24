@@ -7,7 +7,9 @@ Markdown files and syntax highlighting code using the rich library.
 """
 
 import argparse
+import os
 import re
+import shutil
 import sys
 from pathlib import Path
 from rich.console import Console
@@ -70,10 +72,23 @@ def detect_syntax_from_content(content: str) -> str:
     return "text"
 
 
-def render_markdown(content: str, console: Console) -> None:
+def get_terminal_width() -> int:
+    """Get terminal width, even when stdout is piped."""
+    # Try stderr since stdout is piped through LESSOPEN
+    try:
+        return os.get_terminal_size(sys.stderr.fileno()).columns
+    except (OSError, ValueError):
+        pass
+    # Fall back to shutil (checks COLUMNS env var, then defaults to 80)
+    return shutil.get_terminal_size().columns
+
+
+def render_markdown(content: str) -> None:
     """Render Markdown content using rich."""
+    width = get_terminal_width()
+    console = Console(force_terminal=True, width=width)
     md = Markdown(content)
-    console.print(md, soft_wrap=True)
+    console.print(md)
 
 
 def render_syntax(filepath: str, content: str) -> None:
@@ -144,14 +159,11 @@ def main():
                 content = f.read()
             input_file = filepath
 
-        # Create console with force_terminal to ensure colors work in pipes
-        console = Console(force_terminal=True)
-
         # Determine if we should render as markdown
         is_markdown = args.force_markdown or is_markdown_file(input_file)
 
         if is_markdown:
-            render_markdown(content, console)
+            render_markdown(content)
         else:
             # Syntax highlighting for code files
             render_syntax(input_file, content)
