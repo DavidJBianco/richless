@@ -16,3 +16,10 @@ dev = [
 
 [project.scripts]
 richless = "richless:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.sdist]
+include = ["richless.py", "richless-init.sh", "LICENSE", "README.md"]
