@@ -5,14 +5,12 @@ A LESSOPEN filter for automatically rendering Markdown files and syntax highligh
 ## Quick Start
 
 ```bash
-# 1. Install richless
-git clone <repository-url>
-cd richless
-uv tool install .
+# 1. Install richless via Homebrew (macOS or Linux)
+brew install DavidJBianco/tools/richless
 
-# 2. Copy init script and add to your ~/.bashrc or ~/.zshrc
-cp richless-init.sh ~/.richless-init.sh
-echo 'source ~/.richless-init.sh' >> ~/.bashrc  # or ~/.zshrc
+# 2. Add shell integration to your ~/.bashrc or ~/.zshrc
+# (brew will print the exact path after install)
+source $(brew --prefix)/share/richless/richless-init.sh
 
 # 3. Reload your shell
 source ~/.bashrc  # or ~/.zshrc
@@ -35,55 +33,16 @@ less richless.py     # View syntax-highlighted Python
 
 ## Installation
 
-### Prerequisites
-
-- **Python 3.12+**
-- **[uv](https://github.com/astral-sh/uv)** - Modern Python package manager
-  ```bash
-  # Install uv if you don't have it
-  curl -LsSf https://astral.sh/uv/install.sh | sh
-  ```
-- **less pager** (standard on macOS and most Linux distributions)
-
-### Step 1: Install richless
-
-Install richless in an isolated virtualenv using uv's tool install feature:
+### Homebrew (Preferred — macOS and Linux)
 
 ```bash
-# Clone or download this repository
-git clone <repository-url>
-cd richless
-
-# Install richless as a uv tool
-uv tool install .
-
-# Or install directly from git (once published)
-# uv tool install git+https://github.com/yourusername/richless
+brew install DavidJBianco/tools/richless
 ```
 
-This installs `richless` and all its dependencies in an isolated virtualenv, making the `richless` command available system-wide without polluting your project environments.
-
-**Note:** If you see a warning about PATH, run:
-```bash
-export PATH="$HOME/.local/bin:$PATH"
-# Add this line to your ~/.bashrc or ~/.zshrc to make it permanent
-```
-
-### Step 2: Configure Shell Integration
-
-You have two configuration options depending on your needs:
-
-#### Option 1: Basic LESSOPEN (Minimal setup)
-
-If you prefer not to use the shell wrapper, you can manually set two environment variables. This is a lighter-weight alternative but lacks some features.
-
-**Setup:**
-
-Add these lines to your `~/.bashrc`, `~/.zshrc`, or `~/.profile`:
+After installation, add the shell integration to your `~/.bashrc` or `~/.zshrc`:
 
 ```bash
-export LESSOPEN="|richless %s"
-export LESS="-R"
+source $(brew --prefix)/share/richless/richless-init.sh
 ```
 
 Then reload your shell:
@@ -92,47 +51,62 @@ Then reload your shell:
 source ~/.bashrc  # or source ~/.zshrc
 ```
 
+### pip / uv (Alternative)
+
+If you prefer not to use Homebrew, you can install from [PyPI](https://pypi.org/project/richless/):
+
+```bash
+# With uv
+uv tool install richless
+
+# Or with pip
+pip install richless
+```
+
+Then copy the shell integration script and source it:
+
+```bash
+# Download the init script
+curl -o ~/.richless-init.sh https://raw.githubusercontent.com/DavidJBianco/richless/main/richless-init.sh
+
+# Add to your ~/.bashrc or ~/.zshrc
+echo 'source ~/.richless-init.sh' >> ~/.bashrc  # or ~/.zshrc
+
+# Reload your shell
+source ~/.bashrc  # or source ~/.zshrc
+```
+
+**Note:** If you see a warning about PATH after `uv tool install`, run:
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+# Add this line to your ~/.bashrc or ~/.zshrc to make it permanent
+```
+
+### Shell Integration Options
+
+The shell integration script (sourced above) provides the full-featured **transparent wrapper** around `less`. This is the recommended setup and what Quick Start uses.
+
 **What you get:**
 - ✅ Automatic Markdown rendering when you run `less file.md`
 - ✅ Syntax highlighting for programming language source files (Python, JavaScript, etc.)
 - ✅ Works with wildcards: `less *.md` or `less *.py`
-- ✅ Fast and lightweight
-
-**Limitations:**
-- ❌ Doesn't work with piped input: `cat file.md | less` won't render
-- ❌ Can't force markdown on non-.md files through `less`
-
-#### Option 2: Transparent Wrapper (Recommended - used by Quick Start)
-
-This is the recommended setup and what Quick Start uses. It provides a smart wrapper around `less` that handles edge cases like piped input and forcing markdown on arbitrary files.
-
-**Setup:**
-
-1. Copy the shell integration script to your home directory:
-   ```bash
-   # From the richless project directory
-   cp richless-init.sh ~/.richless-init.sh
-   ```
-
-2. Source it in your shell configuration:
-   ```bash
-   # Add this line to ~/.bashrc, ~/.zshrc, or ~/.profile
-   source ~/.richless-init.sh
-   ```
-
-3. Reload your shell:
-   ```bash
-   source ~/.bashrc  # or source ~/.zshrc
-   ```
-
-**What you get:**
-- ✅ Everything from Option 1, plus:
 - ✅ Piped input works: `cat file.md | less` renders markdown
 - ✅ Force markdown flag: `less --md document.txt` forces rendering
 - ✅ Auto-detection: Intelligently detects markdown in piped content
 - ✅ Backward compatible: Acts like normal `less` when not needed
 
 **Note:** The shell integration file is compatible with sh, bash, and zsh.
+
+#### Minimal Setup (without shell wrapper)
+
+If you prefer not to use the shell wrapper, you can manually set two environment variables instead. Add these lines to your `~/.bashrc`, `~/.zshrc`, or `~/.profile`:
+
+```bash
+export LESSOPEN="|richless %s"
+export LESS="-R"
+```
+
+This gives you automatic Markdown rendering and syntax highlighting for files, but piped input (`cat file.md | less`) and the `--md` flag won't work.
 
 ## Usage
 
@@ -270,38 +244,31 @@ source ~/.richless-init.sh  # Re-source to pick up changes
 ## Updating
 
 ```bash
-# Update to the latest version
-cd /path/to/richless
-git pull  # Get latest changes
-uv tool upgrade richless
+# Homebrew
+brew upgrade richless
 
-# Re-source the init script to pick up any changes
-source ~/.richless-init.sh
+# uv
+uv tool upgrade richless
 ```
 
 ## Uninstalling
 
 ```bash
-# Remove the tool
+# Homebrew
+brew uninstall richless
+
+# uv
 uv tool uninstall richless
-
-# Remove from your shell config (~/.bashrc or ~/.zshrc)
-# Delete or comment out the source line:
-# source ~/.richless-init.sh
-
-# Remove the init script
 rm ~/.richless-init.sh
-
-# If using Option 1 instead, remove these lines:
-# export LESSOPEN="|richless %s"
-# export LESS="-R"
 ```
+
+After uninstalling, remove the `source ...richless-init.sh` line from your `~/.bashrc` or `~/.zshrc`.
 
 ## Development
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/DavidJBianco/richless.git
 cd richless
 
 # Install dependencies
@@ -325,7 +292,6 @@ uv run pytest tests/test_richless.py -v
 - [rich](https://github.com/Textualize/rich) - Python library for rich terminal output, Markdown rendering, and syntax highlighting
 - [Pygments](https://pygments.org/) - Syntax highlighting library
 - Python 3.12+
-- uv - Modern Python package manager
 
 ## Comparison to Alternatives
 
