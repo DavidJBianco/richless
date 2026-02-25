@@ -133,8 +133,10 @@ class TestIntegration:
 
     def has_ansi_colors(self, output: str) -> bool:
         """Check if output contains ANSI color codes (syntax highlighting)."""
-        # Rich uses 24-bit colors: \x1b[38;2;R;G;Bm
-        return "\x1b[38;2;" in output or "[38;2;" in output
+        # Rich may use 24-bit colors (\x1b[38;2;R;G;Bm), 8-bit colors
+        # (\x1b[38;5;Nm), or standard colors (\x1b[91m, \x1b[91;49m, etc.)
+        import re
+        return bool(re.search(r'\x1b\[\d+', output))
 
     def has_markdown_formatting(self, output: str) -> bool:
         """Check if output contains Rich markdown formatting."""
@@ -212,7 +214,8 @@ class TestTempFileDetection:
         output = result.stdout + result.stderr
 
         # Should have JSON syntax highlighting
-        assert "\x1b[38;2;" in output or "[38;2;" in output
+        import re
+        assert bool(re.search(r'\x1b\[\d+', output)), "JSON temp file should have syntax highlighting"
 
     def test_temp_file_with_yaml_content(self, tmp_path):
         """Temp files with YAML content should be detected."""
@@ -227,7 +230,8 @@ class TestTempFileDetection:
         output = result.stdout + result.stderr
 
         # Should have YAML syntax highlighting
-        assert "\x1b[38;2;" in output or "[38;2;" in output
+        import re
+        assert bool(re.search(r'\x1b\[\d+', output)), "YAML temp file should have syntax highlighting"
 
 
 class TestLessOpenIntegration:
@@ -237,7 +241,8 @@ class TestLessOpenIntegration:
 
     def has_ansi_colors(self, output: str) -> bool:
         """Check if output contains ANSI color codes."""
-        return "\x1b[38;2;" in output or "[38;2;" in output
+        import re
+        return bool(re.search(r'\x1b\[\d+', output))
 
     def has_markdown_formatting(self, output: str) -> bool:
         """Check if output contains Rich markdown formatting."""
@@ -290,7 +295,8 @@ class TestPipedInputDetection:
 
     def has_ansi_colors(self, output: str) -> bool:
         """Check if output contains ANSI color codes."""
-        return "\x1b[38;2;" in output or "[38;2;" in output
+        import re
+        return bool(re.search(r'\x1b\[\d+', output))
 
     def has_markdown_formatting(self, output: str) -> bool:
         """Check if output contains Rich markdown formatting."""

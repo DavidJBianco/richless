@@ -99,8 +99,8 @@ wheels = [
 
 [[package]]
 name = "richless"
-version = "0.2.0"
-source = { virtual = "." }
+version = "0.2.1"
+source = { editable = "." }
 dependencies = [
     { name = "pygments" },
     { name = "rich" },
