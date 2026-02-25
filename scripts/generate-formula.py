@@ -42,47 +42,50 @@ def generate_base_formula() -> str:
 def patch_formula(formula: str) -> str:
     """Patch the poet-generated formula with project customizations."""
 
-    # Replace the placeholder description
-    formula = formula.replace(
-        'desc "Shiny new formula"',
-        'desc "LESSOPEN filter for Markdown rendering and syntax highlighting with less"',
-    )
-
-    # Add homepage and license after the sha256 line for the main package
-    # (not the resource sha256 lines -- target the first one before any resource blocks)
+    # Replace the placeholder description (poet may use different placeholders)
     formula = re.sub(
-        r'(  sha256 "[0-9a-f]+")\n(\n  resource)',
-        r'\1\n  license "MIT"\n  head "https://github.com/DavidJBianco/richless.git", branch: "main"\n\2',
+        r'  desc ".*?"',
+        '  desc "LESSOPEN filter for Markdown rendering and syntax highlighting with less"',
         formula,
         count=1,
     )
 
-    # If that didn't match (e.g., no resources before the sha256),
-    # try adding after the first sha256 line
-    if "license" not in formula:
-        formula = re.sub(
-            r'(  sha256 "[0-9a-f]+")',
-            r'\1\n  license "MIT"\n  head "https://github.com/DavidJBianco/richless.git", branch: "main"',
-            formula,
-            count=1,
-        )
-
-    # Add homepage after the desc line
+    # Remove any homepage line poet generated (often "None") and add ours
+    formula = re.sub(r'  homepage ".*?"\n', '', formula)
     formula = re.sub(
         r'(  desc "[^"]+")',
         r'\1\n  homepage "https://github.com/DavidJBianco/richless"',
         formula,
     )
 
-    # Replace the install block to include shell script installation
-    formula = formula.replace(
-        "  def install\n    virtualenv_install_with_resources\n  end",
+    # Add license and head after the first sha256 line (before resource blocks)
+    if "license" not in formula:
+        formula = re.sub(
+            r'(  sha256 "[0-9a-f]+")\n',
+            r'\1\n  license "MIT"\n  head "https://github.com/DavidJBianco/richless.git", branch: "main"\n',
+            formula,
+            count=1,
+        )
+
+    # Replace depends_on "python3" with a pinned version
+    formula = re.sub(
+        r'depends_on "python3"',
+        'depends_on "python@3.13"',
+        formula,
+    )
+
+    # Replace the entire install block (poet may include virtualenv_create)
+    formula = re.sub(
+        r'  def install\n.*?  end',
         '  def install\n'
         '    virtualenv_install_with_resources\n'
         '\n'
         '    # Install the shell integration script\n'
         '    (share/"richless").install buildpath/"richless-init.sh"\n'
         '  end',
+        formula,
+        flags=re.DOTALL,
+        count=1,
     )
 
     # Replace the test block and add caveats before it
