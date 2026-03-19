@@ -209,6 +209,68 @@ class TestIntegration:
         assert not self.has_markdown_formatting(output), ".log file should NOT have markdown formatting"
 
 
+class TestProgressIndicator:
+    """Tests for the progress indicator on large files."""
+
+    def has_ansi_colors(self, output: str) -> bool:
+        """Check if output contains ANSI color codes."""
+        import re
+        return bool(re.search(r'\x1b\[\d+', output))
+
+    def test_large_file_shows_progress_on_stderr(self, tmp_path):
+        """Files above the threshold should show a progress message on stderr."""
+        # Create a file just above a low threshold
+        lines = ['{"key": "value"}\n'] * 100
+        large_file = tmp_path / "large.json"
+        large_file.write_text(''.join(lines))
+
+        result = subprocess.run(
+            ["richless", str(large_file)],
+            capture_output=True,
+            text=True,
+            env={**os.environ, "RICHLESS_PROGRESS_LINES": "50"},
+        )
+        assert "rendering" in result.stderr, "Large file should show progress on stderr"
+        assert self.has_ansi_colors(result.stdout), "Large file should still have syntax highlighting"
+
+    def test_small_file_no_progress_on_stderr(self, tmp_path):
+        """Files below the threshold should not show a progress message."""
+        small_file = tmp_path / "small.json"
+        small_file.write_text('{"key": "value"}\n')
+
+        result = subprocess.run(
+            ["richless", str(small_file)],
+            capture_output=True,
+            text=True,
+            env={**os.environ, "RICHLESS_PROGRESS_LINES": "50"},
+        )
+        assert "rendering" not in result.stderr, "Small file should not show progress"
+
+    def test_progress_threshold_env_var(self, tmp_path):
+        """RICHLESS_PROGRESS_LINES env var should override the default threshold."""
+        lines = ['{"key": "value"}\n'] * 10
+        test_file = tmp_path / "test.json"
+        test_file.write_text(''.join(lines))
+
+        # With threshold of 5, 10 lines should trigger progress
+        result = subprocess.run(
+            ["richless", str(test_file)],
+            capture_output=True,
+            text=True,
+            env={**os.environ, "RICHLESS_PROGRESS_LINES": "5"},
+        )
+        assert "rendering" in result.stderr, "Should show progress when above custom threshold"
+
+        # With threshold of 50, 10 lines should not trigger progress
+        result = subprocess.run(
+            ["richless", str(test_file)],
+            capture_output=True,
+            text=True,
+            env={**os.environ, "RICHLESS_PROGRESS_LINES": "50"},
+        )
+        assert "rendering" not in result.stderr, "Should not show progress when below custom threshold"
+
+
 class TestTempFileDetection:
     """Tests for content detection on temp files (like from shell wrapper)."""
 
