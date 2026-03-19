@@ -92,14 +92,6 @@ def render_markdown(content: str) -> None:
     console.print(md)
 
 
-def get_progress_threshold() -> int:
-    """Get the line count threshold for showing a progress indicator."""
-    try:
-        return int(os.environ.get('RICHLESS_PROGRESS_LINES', '25000'))
-    except ValueError:
-        return 25000
-
-
 def render_syntax(filepath: str, content: str) -> None:
     """Render code with syntax highlighting using rich."""
     # Determine lexer from file extension
@@ -130,13 +122,6 @@ def render_syntax(filepath: str, content: str) -> None:
     max_line_length = max((len(line) for line in lines), default=80)
     width = max(max_line_length + 1, 80)
 
-    # Show progress indicator on stderr for large files
-    num_lines = len(lines)
-    threshold = get_progress_threshold()
-    show_progress = num_lines >= threshold
-    if show_progress:
-        print(f"\rrichless: rendering {num_lines:,} lines...", end='', file=sys.stderr, flush=True)
-
     # Create console with width to accommodate longest line
     console = Console(force_terminal=True, width=width)
 
@@ -144,10 +129,6 @@ def render_syntax(filepath: str, content: str) -> None:
     syntax = Syntax(content, ext or "text", theme="monokai", line_numbers=False,
                     background_color="default")
     console.print(syntax)
-
-    # Clear the progress indicator
-    if show_progress:
-        print("\r" + " " * 60 + "\r", end='', file=sys.stderr, flush=True)
 
 
 def main():
