@@ -4,7 +4,8 @@
 
 - [ ] Remove `-m` short flag from shell wrapper -- conflicts with `less`'s built-in `-m` (verbose prompt)
 - [ ] Fix binary/non-UTF-8 file handling -- exit cleanly with no output so `less` handles natively (currently fallback also tries UTF-8 and fails)
-- [ ] Fix Zeek JSONL log handling -- no syntax highlighting, and `cat conn.log | jq | less` shows blank screen
+- [x] Fix Zeek JSONL log handling -- `.log` files now fall back to content detection for syntax highlighting
+- [ ] Large file rendering performance -- `cat conn.log | jq | less` (166K lines) takes ~6s with blank screen. Tried stderr progress indicator but less hides it by taking over the terminal. Chunked rendering is a possible alternative (see PRD future enhancements).
 - [ ] Add `trap` on EXIT/INT/TERM in shell wrapper to clean up temp files on Ctrl+C or kill
 
 ## Bugs & Fixes (Medium Priority)
