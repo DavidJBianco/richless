@@ -37,7 +37,10 @@ def detect_syntax_from_content(content: str) -> str:
         return "yaml"
 
     # JSON detection: starts with { or [
-    if first_line.startswith('{') or first_line.startswith('['):
+    # But exclude TOML section headers like [section] or [[array]]
+    if first_line.startswith('{'):
+        return "json"
+    if first_line.startswith('[') and not re.match(r'^\[{1,2}[a-zA-Z_][a-zA-Z0-9_.-]*\]{1,2}\s*$', first_line):
         return "json"
 
     # Shebang detection
@@ -56,6 +59,26 @@ def detect_syntax_from_content(content: str) -> str:
     # XML/HTML detection
     if first_line.startswith('<?xml') or first_line.startswith('<!DOCTYPE'):
         return "xml"
+
+    # TOML detection: look for key = value patterns or [section] headers
+    toml_score = 0
+    for line in lines:
+        stripped = line.strip()
+        if not stripped or stripped.startswith('#'):
+            continue
+        # TOML section header: [section] or [[array]]
+        if re.match(r'^\[{1,2}[a-zA-Z_][a-zA-Z0-9_.-]*\]{1,2}\s*$', stripped):
+            return "toml"
+        # TOML key = value (with equals sign, not colon)
+        if re.match(r'^[a-zA-Z_][a-zA-Z0-9_-]*\s*=\s*', stripped):
+            toml_score += 1
+            if toml_score >= 2:
+                return "toml"
+            continue
+        break
+
+    if toml_score > 0:
+        return "toml"
 
     # YAML detection: look for key: value patterns (possibly after # comments)
     # Skip comment lines and look for YAML structure
@@ -107,7 +130,7 @@ def render_syntax(filepath: str, content: str) -> None:
 
     # If no recognizable extension, try to detect from content
     # Temp files from shell wrapper are named richless.XXXXXX (random suffix)
-    if not ext or path.stem == 'richless':
+    if not ext or (path.stem == 'richless' and re.match(r'^\.[a-zA-Z0-9]{6}$', path.suffix)):
         ext = detect_syntax_from_content(content)
     elif ext:
         # Verify Pygments recognizes this extension; if not, try content detection

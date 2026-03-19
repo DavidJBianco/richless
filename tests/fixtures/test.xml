@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+  <book id="1">
+    <title>Example Book</title>
+    <author>Jane Doe</author>
+    <price>19.99</price>
+  </book>
+</catalog>

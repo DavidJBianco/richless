@@ -66,10 +66,13 @@ less() {
                 # Looks like YAML with comments - use syntax highlighting
                 richless "$tmpfile" | command less -R ${clean_args}
             # Auto-detect: check if piped content looks like markdown
-            elif grep -qE '^#{1,6} |^\* |^- |^[0-9]+\. |^\[.*\]\(.*\)|^```|\*\*.*\*\*|^>|^\||^-{3,}|^={3,}' "$tmpfile" 2>/dev/null; then
+            # Use stricter patterns to avoid false positives (e.g., TOML comments matching ^# )
+            elif grep -qE '^\* |^- |^[0-9]+\. |^\[.*\]\(.*\)|^```|\*\*.*\*\*|^>|^\||^-{3,}|^={3,}' "$tmpfile" 2>/dev/null && \
+                 grep -qE '^#{1,6} ' "$tmpfile" 2>/dev/null; then
                 richless --md "$tmpfile" | command less -R ${clean_args}
             else
-                command less -R ${clean_args} "$tmpfile"
+                # Fall through to richless for content-based syntax detection
+                richless "$tmpfile" | command less -R ${clean_args}
             fi
         fi
 

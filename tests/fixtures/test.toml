@@ -1,0 +1,13 @@
+# Configuration file
+[server]
+host = "localhost"
+port = 8080
+debug = true
+
+[database]
+name = "myapp"
+max_connections = 10
+
+[[users]]
+name = "alice"
+role = "admin"

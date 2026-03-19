@@ -14,6 +14,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from richless import is_markdown_file, detect_syntax_from_content
+from conftest import has_ansi_colors, has_multiple_colors, has_markdown_formatting
 
 
 class TestIsMarkdownFile:
@@ -115,6 +116,31 @@ version: 1.0
     def test_doctype(self):
         assert detect_syntax_from_content('<!DOCTYPE html>\n<html>') == "xml"
 
+    # TOML detection
+    def test_toml_section_header(self):
+        assert detect_syntax_from_content("[server]\nhost = \"localhost\"\n") == "toml"
+
+    def test_toml_array_header(self):
+        assert detect_syntax_from_content("[[users]]\nname = \"alice\"\n") == "toml"
+
+    def test_toml_key_value(self):
+        content = "name = \"myapp\"\nversion = \"1.0\"\n"
+        assert detect_syntax_from_content(content) == "toml"
+
+    def test_toml_with_comments(self):
+        content = """# Configuration file
+# for the application
+
+[server]
+host = "localhost"
+port = 8080
+"""
+        assert detect_syntax_from_content(content) == "toml"
+
+    def test_toml_single_key_value(self):
+        """Even a single key = value line should detect as TOML."""
+        assert detect_syntax_from_content("name = \"test\"\n") == "toml"
+
     # JSONL detection (single-line JSON objects)
     def test_jsonl_content(self):
         content = '{"ts":1427846411.876987,"uid":"C1ck9l41y7i2i3gGo2"}\n{"ts":1427846411.877008}\n'
@@ -136,19 +162,6 @@ class TestIntegration:
 
     FIXTURES_DIR = Path(__file__).parent / "fixtures"
 
-    def has_ansi_colors(self, output: str) -> bool:
-        """Check if output contains ANSI color codes (syntax highlighting)."""
-        # Rich may use 24-bit colors (\x1b[38;2;R;G;Bm), 8-bit colors
-        # (\x1b[38;5;Nm), or standard colors (\x1b[91m, \x1b[91;49m, etc.)
-        import re
-        return bool(re.search(r'\x1b\[\d+', output))
-
-    def has_markdown_formatting(self, output: str) -> bool:
-        """Check if output contains Rich markdown formatting."""
-        # Rich markdown uses box-drawing characters, bullets, or horizontal rules
-        indicators = ["┃", "┏", "┗", "━", "┓", "┛", "─", "•", " • "]
-        return any(ind in output for ind in indicators)
-
     def run_richless(self, *args) -> str:
         """Run richless command and return output."""
         result = subprocess.run(
@@ -161,52 +174,81 @@ class TestIntegration:
     # Markdown tests
     def test_markdown_file_renders_as_markdown(self):
         output = self.run_richless(str(self.FIXTURES_DIR / "test.md"))
-        assert self.has_markdown_formatting(output), "Markdown file should have Rich formatting"
+        assert has_markdown_formatting(output), "Markdown file should have Rich formatting"
 
     def test_force_markdown_flag(self):
         output = self.run_richless("--md", str(self.FIXTURES_DIR / "test.yaml"))
-        assert self.has_markdown_formatting(output), "--md flag should force markdown rendering"
+        assert has_markdown_formatting(output), "--md flag should force markdown rendering"
 
     # YAML tests
     def test_yaml_file_syntax_highlighting(self):
         output = self.run_richless(str(self.FIXTURES_DIR / "test.yaml"))
-        assert self.has_ansi_colors(output), "YAML file should have syntax highlighting"
-        assert not self.has_markdown_formatting(output), "YAML file should NOT have markdown formatting"
+        assert has_multiple_colors(output), "YAML file should have syntax highlighting"
+        assert not has_markdown_formatting(output), "YAML file should NOT have markdown formatting"
 
     def test_yaml_with_comments_syntax_highlighting(self):
         output = self.run_richless(str(self.FIXTURES_DIR / "test-with-comments.yaml"))
-        assert self.has_ansi_colors(output), "YAML with comments should have syntax highlighting"
-        assert not self.has_markdown_formatting(output), "YAML with comments should NOT have markdown formatting"
+        assert has_multiple_colors(output), "YAML with comments should have syntax highlighting"
+        assert not has_markdown_formatting(output), "YAML with comments should NOT have markdown formatting"
 
     def test_yaml_filename_with_dash_m(self):
         """Filenames containing -m should not trigger --md flag."""
         output = self.run_richless(str(self.FIXTURES_DIR / "test-mcp-config.yaml"))
-        assert self.has_ansi_colors(output), "File with -m in name should have syntax highlighting"
-        assert not self.has_markdown_formatting(output), "File with -m in name should NOT trigger markdown"
+        assert has_multiple_colors(output), "File with -m in name should have syntax highlighting"
+        assert not has_markdown_formatting(output), "File with -m in name should NOT trigger markdown"
 
     # JSON tests
     def test_json_file_syntax_highlighting(self):
         output = self.run_richless(str(self.FIXTURES_DIR / "test.json"))
-        assert self.has_ansi_colors(output), "JSON file should have syntax highlighting"
+        assert has_multiple_colors(output), "JSON file should have syntax highlighting"
 
     def test_jsonl_file_syntax_highlighting(self):
         output = self.run_richless(str(self.FIXTURES_DIR / "test.jsonl"))
-        assert self.has_ansi_colors(output), "JSONL file should have syntax highlighting"
+        assert has_multiple_colors(output), "JSONL file should have syntax highlighting"
 
     # Code file tests
     def test_python_file_syntax_highlighting(self):
         output = self.run_richless(str(self.FIXTURES_DIR / "test.py"))
-        assert self.has_ansi_colors(output), "Python file should have syntax highlighting"
+        assert has_multiple_colors(output), "Python file should have syntax highlighting"
 
     def test_shell_file_syntax_highlighting(self):
         output = self.run_richless(str(self.FIXTURES_DIR / "test.sh"))
-        assert self.has_ansi_colors(output), "Shell file should have syntax highlighting"
+        assert has_multiple_colors(output), "Shell file should have syntax highlighting"
+
+    def test_toml_file_syntax_highlighting(self):
+        output = self.run_richless(str(self.FIXTURES_DIR / "test.toml"))
+        assert has_multiple_colors(output), "TOML file should have syntax highlighting"
+        assert not has_markdown_formatting(output), "TOML file should NOT have markdown formatting"
+
+    def test_xml_file_syntax_highlighting(self):
+        output = self.run_richless(str(self.FIXTURES_DIR / "test.xml"))
+        assert has_multiple_colors(output), "XML file should have syntax highlighting"
+
+    def test_js_file_syntax_highlighting(self):
+        output = self.run_richless(str(self.FIXTURES_DIR / "test.js"))
+        assert has_multiple_colors(output), "JavaScript file should have syntax highlighting"
+
+    def test_ruby_file_syntax_highlighting(self):
+        output = self.run_richless(str(self.FIXTURES_DIR / "test.rb"))
+        assert has_multiple_colors(output), "Ruby file should have syntax highlighting"
+
+    def test_perl_file_syntax_highlighting(self):
+        output = self.run_richless(str(self.FIXTURES_DIR / "test.pl"))
+        assert has_multiple_colors(output), "Perl file should have syntax highlighting"
+
+    def test_html_file_syntax_highlighting(self):
+        output = self.run_richless(str(self.FIXTURES_DIR / "test.html"))
+        assert has_multiple_colors(output), "HTML file should have syntax highlighting"
+
+    def test_txt_file_no_crash(self):
+        output = self.run_richless(str(self.FIXTURES_DIR / "test.txt"))
+        assert "This is just plain text" in output, "Plain text file should pass through content"
 
     # Log file tests (unrecognized extension, falls back to content detection)
     def test_log_file_with_jsonl_content(self):
         output = self.run_richless(str(self.FIXTURES_DIR / "test.log"))
-        assert self.has_ansi_colors(output), ".log file with JSONL content should have syntax highlighting"
-        assert not self.has_markdown_formatting(output), ".log file should NOT have markdown formatting"
+        assert has_multiple_colors(output), ".log file with JSONL content should have syntax highlighting"
+        assert not has_markdown_formatting(output), ".log file should NOT have markdown formatting"
 
 
 class TestTempFileDetection:
@@ -223,10 +265,7 @@ class TestTempFileDetection:
             text=True,
         )
         output = result.stdout + result.stderr
-
-        # Should have JSON syntax highlighting
-        import re
-        assert bool(re.search(r'\x1b\[\d+', output)), "JSON temp file should have syntax highlighting"
+        assert has_multiple_colors(output), "JSON temp file should have syntax highlighting"
 
     def test_temp_file_with_yaml_content(self, tmp_path):
         """Temp files with YAML content should be detected."""
@@ -239,26 +278,26 @@ class TestTempFileDetection:
             text=True,
         )
         output = result.stdout + result.stderr
+        assert has_multiple_colors(output), "YAML temp file should have syntax highlighting"
 
-        # Should have YAML syntax highlighting
-        import re
-        assert bool(re.search(r'\x1b\[\d+', output)), "YAML temp file should have syntax highlighting"
+    def test_temp_file_with_toml_content(self, tmp_path):
+        """Temp files with TOML content should be detected."""
+        temp_file = tmp_path / "richless.toml42"
+        temp_file.write_text("[server]\nhost = \"localhost\"\nport = 8080\n")
+
+        result = subprocess.run(
+            ["richless", str(temp_file)],
+            capture_output=True,
+            text=True,
+        )
+        output = result.stdout + result.stderr
+        assert has_multiple_colors(output), "TOML temp file should have syntax highlighting"
 
 
 class TestLessOpenIntegration:
     """Tests for LESSOPEN integration (less <file>)."""
 
     FIXTURES_DIR = Path(__file__).parent / "fixtures"
-
-    def has_ansi_colors(self, output: str) -> bool:
-        """Check if output contains ANSI color codes."""
-        import re
-        return bool(re.search(r'\x1b\[\d+', output))
-
-    def has_markdown_formatting(self, output: str) -> bool:
-        """Check if output contains Rich markdown formatting."""
-        indicators = ["┃", "┏", "┗", "━", "┓", "┛", "─", "•", " • "]
-        return any(ind in output for ind in indicators)
 
     def run_less_with_lessopen(self, filepath: str) -> str:
         """Run less with LESSOPEN set to use richless."""
@@ -270,132 +309,194 @@ class TestLessOpenIntegration:
         )
         return result.stdout + result.stderr
 
+    def test_markdown_via_lessopen(self):
+        output = self.run_less_with_lessopen(str(self.FIXTURES_DIR / "test.md"))
+        assert has_markdown_formatting(output), "Markdown should have Rich formatting via LESSOPEN"
+
     def test_yaml_via_lessopen(self):
         output = self.run_less_with_lessopen(str(self.FIXTURES_DIR / "test.yaml"))
-        assert self.has_ansi_colors(output), "YAML should have syntax highlighting via LESSOPEN"
-        assert not self.has_markdown_formatting(output), "YAML should not have markdown formatting"
+        assert has_multiple_colors(output), "YAML should have syntax highlighting via LESSOPEN"
+        assert not has_markdown_formatting(output), "YAML should not have markdown formatting"
 
     def test_yaml_with_comments_via_lessopen(self):
         output = self.run_less_with_lessopen(str(self.FIXTURES_DIR / "test-with-comments.yaml"))
-        assert self.has_ansi_colors(output), "YAML with comments should have syntax highlighting"
+        assert has_multiple_colors(output), "YAML with comments should have syntax highlighting"
 
     def test_json_via_lessopen(self):
         output = self.run_less_with_lessopen(str(self.FIXTURES_DIR / "test.json"))
-        assert self.has_ansi_colors(output), "JSON should have syntax highlighting via LESSOPEN"
+        assert has_multiple_colors(output), "JSON should have syntax highlighting via LESSOPEN"
 
     def test_jsonl_via_lessopen(self):
         output = self.run_less_with_lessopen(str(self.FIXTURES_DIR / "test.jsonl"))
-        assert self.has_ansi_colors(output), "JSONL should have syntax highlighting via LESSOPEN"
-
-    def test_markdown_via_lessopen(self):
-        output = self.run_less_with_lessopen(str(self.FIXTURES_DIR / "test.md"))
-        assert self.has_markdown_formatting(output), "Markdown should have Rich formatting via LESSOPEN"
+        assert has_multiple_colors(output), "JSONL should have syntax highlighting via LESSOPEN"
 
     def test_filename_with_dash_m_via_lessopen(self):
         """Filenames containing -m should not trigger --md flag."""
         output = self.run_less_with_lessopen(str(self.FIXTURES_DIR / "test-mcp-config.yaml"))
-        assert self.has_ansi_colors(output), "File with -m in name should have syntax highlighting"
-        assert not self.has_markdown_formatting(output), "File with -m should NOT trigger markdown"
+        assert has_multiple_colors(output), "File with -m in name should have syntax highlighting"
+        assert not has_markdown_formatting(output), "File with -m should NOT trigger markdown"
+
+    def test_toml_via_lessopen(self):
+        output = self.run_less_with_lessopen(str(self.FIXTURES_DIR / "test.toml"))
+        assert has_multiple_colors(output), "TOML should have syntax highlighting via LESSOPEN"
+        assert not has_markdown_formatting(output), "TOML should not have markdown formatting"
+
+    def test_xml_via_lessopen(self):
+        output = self.run_less_with_lessopen(str(self.FIXTURES_DIR / "test.xml"))
+        assert has_multiple_colors(output), "XML should have syntax highlighting via LESSOPEN"
+
+    def test_python_via_lessopen(self):
+        output = self.run_less_with_lessopen(str(self.FIXTURES_DIR / "test.py"))
+        assert has_multiple_colors(output), "Python should have syntax highlighting via LESSOPEN"
+
+    def test_shell_via_lessopen(self):
+        output = self.run_less_with_lessopen(str(self.FIXTURES_DIR / "test.sh"))
+        assert has_multiple_colors(output), "Shell should have syntax highlighting via LESSOPEN"
+
+    def test_js_via_lessopen(self):
+        output = self.run_less_with_lessopen(str(self.FIXTURES_DIR / "test.js"))
+        assert has_multiple_colors(output), "JavaScript should have syntax highlighting via LESSOPEN"
 
 
 class TestPipedInputDetection:
-    """Tests for piped input content detection (simulates cat <file> | less)."""
+    """Tests for piped input content detection (simulates cat <file> | less).
+
+    These tests invoke the actual shell wrapper from richless-init.sh to ensure
+    the detection logic is tested end-to-end rather than reimplemented in Python.
+    """
 
     FIXTURES_DIR = Path(__file__).parent / "fixtures"
     PROJECT_DIR = Path(__file__).parent.parent
 
-    def has_ansi_colors(self, output: str) -> bool:
-        """Check if output contains ANSI color codes."""
-        import re
-        return bool(re.search(r'\x1b\[\d+', output))
-
-    def has_markdown_formatting(self, output: str) -> bool:
-        """Check if output contains Rich markdown formatting."""
-        indicators = ["┃", "┏", "┗", "━", "┓", "┛", "─", "•", " • "]
-        return any(ind in output for ind in indicators)
-
-    def simulate_piped_detection(self, filepath: str, tmp_path: Path) -> str:
-        """
-        Simulate what the shell less() wrapper does for piped input.
-
-        This replicates the detection logic from richless-init.sh:
-        1. Save content to temp file named richless.XXXXXX
-        2. Check first line for YAML/JSON markers
-        3. Check for YAML key: pattern after comments
-        4. Check for markdown patterns
-        5. Call richless appropriately
-        """
-        # Read source file
-        content = Path(filepath).read_text()
-
-        # Create temp file like shell wrapper does
-        temp_file = tmp_path / "richless.testXXX"
-        temp_file.write_text(content)
-
-        lines = content.split('\n')
-        first_line = lines[0] if lines else ""
-
-        # Detection logic matching richless-init.sh
-        import re
-
-        # Check for YAML document start or JSON
-        if re.match(r'^---$|^%YAML|^\s*[{\[]', first_line):
-            # YAML or JSON - use syntax highlighting
-            result = subprocess.run(
-                ["richless", str(temp_file)],
-                capture_output=True,
-                text=True,
-            )
-        # Check for YAML with comments (first non-comment line has key: pattern)
-        elif self._has_yaml_key_pattern(content):
-            result = subprocess.run(
-                ["richless", str(temp_file)],
-                capture_output=True,
-                text=True,
-            )
-        # Check for markdown patterns
-        elif re.search(r'^#{1,6} |^\* |^- |^[0-9]+\. |^\[.*\]\(.*\)|^```|\*\*.*\*\*|^>|^\||^-{3,}|^={3,}', content, re.MULTILINE):
-            result = subprocess.run(
-                ["richless", "--md", str(temp_file)],
-                capture_output=True,
-                text=True,
-            )
-        else:
-            # Plain text fallback
-            return content
-
+    def run_piped(self, filepath: str) -> str:
+        """Pipe file content through the actual shell wrapper."""
+        result = subprocess.run(
+            ["bash", "-c",
+             f'source "{self.PROJECT_DIR}/richless-init.sh" && cat "{filepath}" | less'],
+            capture_output=True,
+            text=True,
+        )
         return result.stdout + result.stderr
 
-    def _has_yaml_key_pattern(self, content: str) -> bool:
-        """Check if first non-comment line has YAML key: pattern."""
-        import re
-        for line in content.split('\n'):
-            stripped = line.strip()
-            if not stripped or stripped.startswith('#'):
-                continue
-            if re.match(r'^[a-zA-Z_][a-zA-Z0-9_-]*:', stripped):
-                return True
-            break
-        return False
+    def test_piped_yaml(self):
+        output = self.run_piped(str(self.FIXTURES_DIR / "test.yaml"))
+        assert has_multiple_colors(output), "Piped YAML should have syntax highlighting"
+        assert not has_markdown_formatting(output), "Piped YAML should not have markdown formatting"
 
-    def test_piped_yaml(self, tmp_path):
-        output = self.simulate_piped_detection(str(self.FIXTURES_DIR / "test.yaml"), tmp_path)
-        assert self.has_ansi_colors(output), "Piped YAML should have syntax highlighting"
-        assert not self.has_markdown_formatting(output), "Piped YAML should not have markdown formatting"
+    def test_piped_yaml_with_comments(self):
+        output = self.run_piped(str(self.FIXTURES_DIR / "test-with-comments.yaml"))
+        assert has_multiple_colors(output), "Piped YAML with comments should have syntax highlighting"
+        assert not has_markdown_formatting(output), "Piped YAML with comments should not be markdown"
 
-    def test_piped_yaml_with_comments(self, tmp_path):
-        output = self.simulate_piped_detection(str(self.FIXTURES_DIR / "test-with-comments.yaml"), tmp_path)
-        assert self.has_ansi_colors(output), "Piped YAML with comments should have syntax highlighting"
-        assert not self.has_markdown_formatting(output), "Piped YAML with comments should not be markdown"
+    def test_piped_json(self):
+        output = self.run_piped(str(self.FIXTURES_DIR / "test.json"))
+        assert has_multiple_colors(output), "Piped JSON should have syntax highlighting"
 
-    def test_piped_json(self, tmp_path):
-        output = self.simulate_piped_detection(str(self.FIXTURES_DIR / "test.json"), tmp_path)
-        assert self.has_ansi_colors(output), "Piped JSON should have syntax highlighting"
+    def test_piped_jsonl(self):
+        output = self.run_piped(str(self.FIXTURES_DIR / "test.jsonl"))
+        assert has_multiple_colors(output), "Piped JSONL should have syntax highlighting"
 
-    def test_piped_jsonl(self, tmp_path):
-        output = self.simulate_piped_detection(str(self.FIXTURES_DIR / "test.jsonl"), tmp_path)
-        assert self.has_ansi_colors(output), "Piped JSONL should have syntax highlighting"
+    def test_piped_markdown(self):
+        output = self.run_piped(str(self.FIXTURES_DIR / "test.md"))
+        assert has_markdown_formatting(output), "Piped Markdown should have Rich formatting"
 
-    def test_piped_markdown(self, tmp_path):
-        output = self.simulate_piped_detection(str(self.FIXTURES_DIR / "test.md"), tmp_path)
-        assert self.has_markdown_formatting(output), "Piped Markdown should have Rich formatting"
+    def test_piped_toml(self):
+        output = self.run_piped(str(self.FIXTURES_DIR / "test.toml"))
+        assert has_multiple_colors(output), "Piped TOML should have syntax highlighting"
+        assert not has_markdown_formatting(output), "Piped TOML should not have markdown formatting"
+
+    def test_piped_python(self):
+        output = self.run_piped(str(self.FIXTURES_DIR / "test.py"))
+        assert has_multiple_colors(output), "Piped Python should have syntax highlighting"
+
+    def test_piped_shell(self):
+        output = self.run_piped(str(self.FIXTURES_DIR / "test.sh"))
+        assert has_multiple_colors(output), "Piped Shell should have syntax highlighting"
+
+    def test_piped_xml(self):
+        output = self.run_piped(str(self.FIXTURES_DIR / "test.xml"))
+        assert has_multiple_colors(output), "Piped XML should have syntax highlighting"
+
+    def test_piped_plain_text(self):
+        output = self.run_piped(str(self.FIXTURES_DIR / "test.txt"))
+        assert "This is just plain text" in output, "Piped plain text should pass through"
+
+
+class TestErrorHandling:
+    """Tests for error handling and exit codes."""
+
+    FIXTURES_DIR = Path(__file__).parent / "fixtures"
+
+    def test_missing_file_returns_exit_code_1(self):
+        result = subprocess.run(
+            ["richless", "/nonexistent/file.py"],
+            capture_output=True,
+            text=True,
+        )
+        assert result.returncode == 1
+        assert "File not found" in result.stderr
+
+    def test_empty_file_does_not_crash(self, tmp_path):
+        empty = tmp_path / "empty.py"
+        empty.write_text("")
+        result = subprocess.run(
+            ["richless", str(empty)],
+            capture_output=True,
+            text=True,
+        )
+        assert result.returncode == 0
+
+    def test_binary_file_does_not_crash(self, tmp_path):
+        binfile = tmp_path / "data.bin"
+        binfile.write_bytes(b'\x00\x01\x02\xff\xfe\xfd')
+        result = subprocess.run(
+            ["richless", str(binfile)],
+            capture_output=True,
+            text=True,
+        )
+        # Should not crash -- either returns 0 (fallback) or 1 (error handled)
+        assert result.returncode in (0, 1)
+
+    def test_successful_render_returns_exit_code_0(self):
+        result = subprocess.run(
+            ["richless", str(self.FIXTURES_DIR / "test.py")],
+            capture_output=True,
+            text=True,
+        )
+        assert result.returncode == 0
+
+
+class TestStdinInput:
+    """Tests for reading from stdin via - or /dev/stdin."""
+
+    def test_stdin_dash_with_python_content(self):
+        result = subprocess.run(
+            ["richless", "-"],
+            input='def hello():\n    return "world"\n',
+            capture_output=True,
+            text=True,
+        )
+        assert result.returncode == 0
+        assert has_multiple_colors(result.stdout), "Python via stdin should have syntax highlighting"
+
+    def test_stdin_dash_with_force_markdown(self):
+        result = subprocess.run(
+            ["richless", "--md", "-"],
+            input="# Hello\n\nThis is **bold** text.\n\n- item 1\n- item 2\n",
+            capture_output=True,
+            text=True,
+        )
+        assert result.returncode == 0
+        # Rich renders bold as \x1b[1m and headings with underline
+        assert has_markdown_formatting(result.stdout) or "\x1b[1m" in result.stdout, \
+            "Markdown via --md stdin should have formatting"
+
+    def test_stdin_dev_stdin(self):
+        result = subprocess.run(
+            ["richless", "/dev/stdin"],
+            input='{"key": "value"}\n',
+            capture_output=True,
+            text=True,
+        )
+        assert result.returncode == 0
+        assert has_multiple_colors(result.stdout), "JSON via /dev/stdin should have syntax highlighting"
