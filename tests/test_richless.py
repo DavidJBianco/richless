@@ -115,6 +115,11 @@ version: 1.0
     def test_doctype(self):
         assert detect_syntax_from_content('<!DOCTYPE html>\n<html>') == "xml"
 
+    # JSONL detection (single-line JSON objects)
+    def test_jsonl_content(self):
+        content = '{"ts":1427846411.876987,"uid":"C1ck9l41y7i2i3gGo2"}\n{"ts":1427846411.877008}\n'
+        assert detect_syntax_from_content(content) == "json"
+
     # Plain text fallback
     def test_plain_text(self):
         assert detect_syntax_from_content("Just some plain text") == "text"
@@ -196,6 +201,12 @@ class TestIntegration:
     def test_shell_file_syntax_highlighting(self):
         output = self.run_richless(str(self.FIXTURES_DIR / "test.sh"))
         assert self.has_ansi_colors(output), "Shell file should have syntax highlighting"
+
+    # Log file tests (unrecognized extension, falls back to content detection)
+    def test_log_file_with_jsonl_content(self):
+        output = self.run_richless(str(self.FIXTURES_DIR / "test.log"))
+        assert self.has_ansi_colors(output), ".log file with JSONL content should have syntax highlighting"
+        assert not self.has_markdown_formatting(output), ".log file should NOT have markdown formatting"
 
 
 class TestTempFileDetection:

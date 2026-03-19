@@ -1,0 +1,3 @@
+{"ts":1427846411.876987,"uid":"C1ck9l41y7i2i3gGo2","id.orig_h":"192.168.0.54","id.orig_p":55069,"id.resp_h":"173.194.40.245","id.resp_p":443,"proto":"tcp","conn_state":"SHR"}
+{"ts":1427846411.877008,"uid":"C7dm8O1lCYIO4jrfM4","id.orig_h":"192.168.0.54","id.orig_p":55070,"id.resp_h":"173.194.66.99","id.resp_p":443,"proto":"tcp","conn_state":"SHR"}
+{"ts":1427846416.996706,"uid":"CElsA416YkSRzz5ZT1","id.orig_h":"192.168.0.54","id.orig_p":55068,"id.resp_h":"173.194.40.245","id.resp_p":443,"proto":"tcp","conn_state":"SF"}

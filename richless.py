@@ -12,6 +12,7 @@ import re
 import shutil
 import sys
 from pathlib import Path
+from pygments.lexers import get_lexer_by_name, ClassNotFound
 from rich.console import Console
 from rich.markdown import Markdown
 from rich.syntax import Syntax
@@ -108,6 +109,12 @@ def render_syntax(filepath: str, content: str) -> None:
     # Temp files from shell wrapper are named richless.XXXXXX (random suffix)
     if not ext or path.stem == 'richless':
         ext = detect_syntax_from_content(content)
+    elif ext:
+        # Verify Pygments recognizes this extension; if not, try content detection
+        try:
+            get_lexer_by_name(ext)
+        except ClassNotFound:
+            ext = detect_syntax_from_content(content)
 
     # Calculate width needed to avoid truncating long lines
     # This allows 'less' to handle horizontal scrolling
