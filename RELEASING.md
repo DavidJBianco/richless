@@ -49,13 +49,11 @@ tab to confirm it succeeded.
 Wait a minute for PyPI to propagate, then generate the updated formula:
 
 ```bash
-# In a temporary venv (not your dev environment)
-python3 -m venv /tmp/poet-env
-source /tmp/poet-env/bin/activate
-pip install richless homebrew-pypi-poet
 python3 scripts/generate-formula.py > /path/to/homebrew-tools/Formula/richless.rb
-deactivate
 ```
+
+The script fetches package metadata directly from the PyPI JSON API and
+requires no third-party dependencies.
 
 Review the generated formula, then commit and push to the tap repo:
 
