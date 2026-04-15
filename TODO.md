@@ -2,6 +2,7 @@
 
 ## Bugs & Fixes (High Priority)
 
+- [x] Pin GitHub Actions to immutable commit SHAs in CI/publish workflows to mitigate supply-chain risk
 - [ ] Remove `-m` short flag from shell wrapper -- conflicts with `less`'s built-in `-m` (verbose prompt)
 - [ ] Fix binary/non-UTF-8 file handling -- exit cleanly with no output so `less` handles natively (currently fallback also tries UTF-8 and fails)
 - [x] Fix Zeek JSONL log handling -- `.log` files now fall back to content detection for syntax highlighting
