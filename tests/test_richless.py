@@ -13,8 +13,24 @@ from pathlib import Path
 # Add parent directory to path so we can import richless
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from richless import is_markdown_file, detect_syntax_from_content
+from richless import (
+    MAX_SYNTAX_WIDTH,
+    MIN_SYNTAX_WIDTH,
+    detect_syntax_from_content,
+    get_syntax_width_and_overflow,
+    is_markdown_file,
+)
 from conftest import has_ansi_colors, has_multiple_colors, has_markdown_formatting
+
+
+def ansi_test_env(extra: dict[str, str] | None = None) -> dict[str, str]:
+    """Build test subprocess environment with ANSI colors enabled."""
+    env = dict(os.environ)
+    env.pop("NO_COLOR", None)
+    env.setdefault("TERM", "xterm-256color")
+    if extra:
+        env.update(extra)
+    return env
 
 
 class TestIsMarkdownFile:
@@ -157,6 +173,33 @@ port = 8080
         assert detect_syntax_from_content("   \n\n   ") == "text"
 
 
+class TestSyntaxWidthSafety:
+    """Tests for syntax width clamp and overflow behavior."""
+
+    def test_width_uses_minimum_for_empty_content(self):
+        width, exceeds_cap = get_syntax_width_and_overflow("")
+        assert width == MIN_SYNTAX_WIDTH + 1
+        assert exceeds_cap is False
+
+    def test_width_is_based_on_longest_line_when_under_cap(self):
+        content = "short\n" + ("x" * 200)
+        width, exceeds_cap = get_syntax_width_and_overflow(content)
+        assert width == 201
+        assert exceeds_cap is False
+
+    def test_width_clamps_at_upper_bound(self):
+        content = "x" * MAX_SYNTAX_WIDTH
+        width, exceeds_cap = get_syntax_width_and_overflow(content)
+        assert width == MAX_SYNTAX_WIDTH
+        assert exceeds_cap is True
+
+    def test_width_clamps_when_line_exceeds_upper_bound(self):
+        content = "x" * (MAX_SYNTAX_WIDTH + 1000)
+        width, exceeds_cap = get_syntax_width_and_overflow(content)
+        assert width == MAX_SYNTAX_WIDTH
+        assert exceeds_cap is True
+
+
 class TestIntegration:
     """Integration tests that run richless as a subprocess."""
 
@@ -168,6 +211,7 @@ class TestIntegration:
             ["richless", *args],
             capture_output=True,
             text=True,
+            env=ansi_test_env(),
         )
         return result.stdout + result.stderr
 
@@ -263,6 +307,7 @@ class TestTempFileDetection:
             ["richless", str(temp_file)],
             capture_output=True,
             text=True,
+            env=ansi_test_env(),
         )
         output = result.stdout + result.stderr
         assert has_multiple_colors(output), "JSON temp file should have syntax highlighting"
@@ -276,6 +321,7 @@ class TestTempFileDetection:
             ["richless", str(temp_file)],
             capture_output=True,
             text=True,
+            env=ansi_test_env(),
         )
         output = result.stdout + result.stderr
         assert has_multiple_colors(output), "YAML temp file should have syntax highlighting"
@@ -289,6 +335,7 @@ class TestTempFileDetection:
             ["richless", str(temp_file)],
             capture_output=True,
             text=True,
+            env=ansi_test_env(),
         )
         output = result.stdout + result.stderr
         assert has_multiple_colors(output), "TOML temp file should have syntax highlighting"
@@ -305,7 +352,7 @@ class TestLessOpenIntegration:
             ["less", "-R", filepath],
             capture_output=True,
             text=True,
-            env={**os.environ, "LESSOPEN": "|richless %s"},
+            env=ansi_test_env({"LESSOPEN": "|richless %s"}),
         )
         return result.stdout + result.stderr
 
@@ -375,6 +422,7 @@ class TestPipedInputDetection:
              f'source "{self.PROJECT_DIR}/richless-init.sh" && cat "{filepath}" | less'],
             capture_output=True,
             text=True,
+            env=ansi_test_env(),
         )
         return result.stdout + result.stderr
 
@@ -432,6 +480,7 @@ class TestErrorHandling:
             ["richless", "/nonexistent/file.py"],
             capture_output=True,
             text=True,
+            env=ansi_test_env(),
         )
         assert result.returncode == 1
         assert "File not found" in result.stderr
@@ -443,6 +492,7 @@ class TestErrorHandling:
             ["richless", str(empty)],
             capture_output=True,
             text=True,
+            env=ansi_test_env(),
         )
         assert result.returncode == 0
 
@@ -453,6 +503,7 @@ class TestErrorHandling:
             ["richless", str(binfile)],
             capture_output=True,
             text=True,
+            env=ansi_test_env(),
         )
         # Should not crash -- either returns 0 (fallback) or 1 (error handled)
         assert result.returncode in (0, 1)
@@ -462,8 +513,25 @@ class TestErrorHandling:
             ["richless", str(self.FIXTURES_DIR / "test.py")],
             capture_output=True,
             text=True,
+            env=ansi_test_env(),
         )
         assert result.returncode == 0
+
+    def test_extremely_long_line_falls_back_to_raw_output(self, tmp_path):
+        long_line_file = tmp_path / "longline.py"
+        long_line = "x" * (MAX_SYNTAX_WIDTH + 1000)
+        long_line_file.write_text(long_line + "\n")
+
+        result = subprocess.run(
+            ["richless", str(long_line_file)],
+            capture_output=True,
+            text=True,
+            env=ansi_test_env(),
+        )
+
+        assert result.returncode == 0
+        assert result.stdout == long_line + "\n"
+        assert not has_ansi_colors(result.stdout), "Fallback output should be raw text without ANSI codes"
 
 
 class TestStdinInput:
@@ -475,6 +543,7 @@ class TestStdinInput:
             input='def hello():\n    return "world"\n',
             capture_output=True,
             text=True,
+            env=ansi_test_env(),
         )
         assert result.returncode == 0
         assert has_multiple_colors(result.stdout), "Python via stdin should have syntax highlighting"
@@ -485,6 +554,7 @@ class TestStdinInput:
             input="# Hello\n\nThis is **bold** text.\n\n- item 1\n- item 2\n",
             capture_output=True,
             text=True,
+            env=ansi_test_env(),
         )
         assert result.returncode == 0
         # Rich renders bold as \x1b[1m and headings with underline
@@ -497,6 +567,7 @@ class TestStdinInput:
             input='{"key": "value"}\n',
             capture_output=True,
             text=True,
+            env=ansi_test_env(),
         )
         assert result.returncode == 0
         assert has_multiple_colors(result.stdout), "JSON via /dev/stdin should have syntax highlighting"

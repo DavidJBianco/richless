@@ -17,6 +17,9 @@ from rich.console import Console
 from rich.markdown import Markdown
 from rich.syntax import Syntax
 
+MIN_SYNTAX_WIDTH = 80
+MAX_SYNTAX_WIDTH = 16384
+
 
 def is_markdown_file(filepath: str) -> bool:
     """Check if the file has a Markdown extension."""
@@ -110,9 +113,17 @@ def get_terminal_width() -> int:
 def render_markdown(content: str) -> None:
     """Render Markdown content using rich."""
     width = get_terminal_width()
-    console = Console(force_terminal=True, width=width)
+    console = Console(force_terminal=True, color_system="truecolor", width=width)
     md = Markdown(content)
     console.print(md)
+
+
+def get_syntax_width_and_overflow(content: str) -> tuple[int, bool]:
+    """Calculate safe syntax render width and whether content exceeds safety cap."""
+    max_line_length = max((len(line) for line in content.splitlines()), default=MIN_SYNTAX_WIDTH)
+    desired_width = max(max_line_length + 1, MIN_SYNTAX_WIDTH)
+    width = min(desired_width, MAX_SYNTAX_WIDTH)
+    return width, desired_width > MAX_SYNTAX_WIDTH
 
 
 def render_syntax(filepath: str, content: str) -> None:
@@ -139,14 +150,18 @@ def render_syntax(filepath: str, content: str) -> None:
         except ClassNotFound:
             ext = detect_syntax_from_content(content)
 
-    # Calculate width needed to avoid truncating long lines
-    # This allows 'less' to handle horizontal scrolling
-    lines = content.splitlines()
-    max_line_length = max((len(line) for line in lines), default=80)
-    width = max(max_line_length + 1, 80)
+    # Calculate width needed to avoid truncating long lines.
+    # Clamp width to protect against pathological single-line inputs.
+    width, exceeds_width_cap = get_syntax_width_and_overflow(content)
+
+    # If any line exceeds the safe rendering width, fall back to raw output.
+    # This preserves file visibility without unbounded rendering cost.
+    if exceeds_width_cap:
+        print(content, end='')
+        return
 
     # Create console with width to accommodate longest line
-    console = Console(force_terminal=True, width=width)
+    console = Console(force_terminal=True, color_system="truecolor", width=width)
 
     # Create Syntax object - use default background to avoid padding
     syntax = Syntax(content, ext or "text", theme="monokai", line_numbers=False,

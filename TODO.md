@@ -2,6 +2,8 @@
 
 ## Bugs & Fixes (High Priority)
 
+- [x] Stabilize test environment by ensuring `less` is available and test subprocesses run with ANSI color enabled
+- [x] Add syntax width clamp and raw fallback for extremely long lines to prevent local DoS while preserving usability
 - [x] Re-run security validation with real `less` now that internet access is enabled
 - [x] Fix LESSOPEN command injection risk for unsafe filenames in shell wrapper
 - [ ] Remove `-m` short flag from shell wrapper -- conflicts with `less`'s built-in `-m` (verbose prompt)
