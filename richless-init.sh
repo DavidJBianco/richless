@@ -17,8 +17,9 @@ if ! command -v richless >/dev/null 2>&1; then
     return 1 2>/dev/null || exit 1
 fi
 
-# Configure LESSOPEN for automatic Markdown detection
-export LESSOPEN="|richless %s"
+# Configure LESSOPEN command template for automatic Markdown detection.
+# Apply it only for safe filename arguments in the wrapper.
+RICHLESS_LESSOPEN="|richless %s"
 export LESS="${LESS:--R}"  # Add -R flag if LESS not already set, otherwise preserve existing
 
 # Transparent wrapper function for less
@@ -116,7 +117,39 @@ less() {
             done
         else
             # Normal less operation - let LESSOPEN handle it
-            command less "$@"
+            local unsafe_filename=0
+            local saw_double_dash=0
+
+            for arg in "$@"; do
+                if [ "$saw_double_dash" -eq 0 ] && [ "$arg" = "--" ]; then
+                    saw_double_dash=1
+                    continue
+                fi
+
+                if [ "$saw_double_dash" -eq 0 ]; then
+                    case "$arg" in
+                        -*)
+                            continue
+                            ;;
+                    esac
+                fi
+
+                # LESSOPEN command strings run through a shell. Restrict to
+                # conservative filename characters before enabling LESSOPEN.
+                case "$arg" in
+                    *[!A-Za-z0-9_./-]*)
+                        unsafe_filename=1
+                        break
+                        ;;
+                esac
+            done
+
+            if [ "$unsafe_filename" -eq 1 ]; then
+                # Fall back to raw less for potentially unsafe filenames.
+                LESSOPEN= command less "$@"
+            else
+                LESSOPEN="$RICHLESS_LESSOPEN" command less "$@"
+            fi
         fi
     fi
 }
