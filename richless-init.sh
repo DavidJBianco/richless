@@ -116,40 +116,17 @@ less() {
                 fi
             done
         else
-            # Normal less operation - let LESSOPEN handle it
-            local unsafe_filename=0
-            local saw_double_dash=0
-
-            for arg in "$@"; do
-                if [ "$saw_double_dash" -eq 0 ] && [ "$arg" = "--" ]; then
-                    saw_double_dash=1
-                    continue
-                fi
-
-                if [ "$saw_double_dash" -eq 0 ]; then
-                    case "$arg" in
-                        -*)
-                            continue
-                            ;;
-                    esac
-                fi
-
-                # LESSOPEN command strings run through a shell. Restrict to
-                # conservative filename characters before enabling LESSOPEN.
-                case "$arg" in
-                    *[!A-Za-z0-9_./-]*)
-                        unsafe_filename=1
-                        break
-                        ;;
-                esac
-            done
-
-            if [ "$unsafe_filename" -eq 1 ]; then
-                # Fall back to raw less for potentially unsafe filenames.
-                LESSOPEN= command less "$@"
-            else
-                LESSOPEN="$RICHLESS_LESSOPEN" command less "$@"
-            fi
+            # Normal less operation - let LESSOPEN handle it.
+            #
+            # less substitutes the filename for %s in the LESSOPEN command and
+            # runs it through the shell, but it first escapes shell
+            # metacharacters in the filename using LESSMETACHARS/LESSMETAESCAPE
+            # (see less(1)). That makes the substitution injection-safe and
+            # transparently handles filenames containing spaces or other special
+            # characters, so we pass arguments straight through. Routing through
+            # LESSOPEN (rather than piping richless ourselves) also preserves the
+            # real filename in less's status line and multi-file :n navigation.
+            LESSOPEN="$RICHLESS_LESSOPEN" command less "$@"
         fi
     fi
 }

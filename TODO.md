@@ -6,7 +6,7 @@
 - [x] Stabilize test environment by ensuring `less` is available and test subprocesses run with ANSI color enabled
 - [x] Add syntax width clamp and raw fallback for extremely long lines to prevent local DoS while preserving usability
 - [x] Re-run security validation with real `less` now that internet access is enabled
-- [x] Fix LESSOPEN command injection risk for unsafe filenames in shell wrapper
+- [x] Fix LESSOPEN command injection risk for unsafe filenames in shell wrapper -- relies on `less`'s built-in `LESSMETACHARS`/`LESSMETAESCAPE` shell-escaping of `%s` (verified injection-safe); the earlier custom filename guard was redundant and broke rendering for names with spaces, so it was removed
 - [ ] Remove `-m` short flag from shell wrapper -- conflicts with `less`'s built-in `-m` (verbose prompt)
 - [ ] Fix binary/non-UTF-8 file handling -- exit cleanly with no output so `less` handles natively (currently fallback also tries UTF-8 and fails)
 - [x] Fix Zeek JSONL log handling -- `.log` files now fall back to content detection for syntax highlighting
