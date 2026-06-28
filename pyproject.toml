@@ -1,6 +1,6 @@
 [project]
 name = "richless"
-version = "0.3.0"
+version = "0.3.1"
 description = "LESSOPEN filter for Markdown rendering and syntax highlighting with less"
 readme = "README.md"
 requires-python = ">=3.12"
