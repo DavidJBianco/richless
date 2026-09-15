@@ -31,7 +31,7 @@ jobs:
       - name: Required correctness and compatibility tests
         env:
           RICHLESS_AUDIT_DIR: ${{ runner.temp }}/richless-evidence
-        run: uv run --frozen pytest tests/ -q --junitxml=results.xml
+        run: uv run --frozen --python '${{ matrix.python }}' --extra dev pytest tests/ -q --junitxml=results.xml
       - name: Retain test evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
