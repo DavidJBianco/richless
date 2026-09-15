@@ -1,0 +1,49 @@
+{
+  "id": "test_audit_formats[misleading.md-cli]",
+  "checks": [
+    {
+      "expectation": "Content marker survives rendering",
+      "pass": true
+    },
+    {
+      "expectation": "Successful invocation returns zero",
+      "pass": true
+    }
+  ],
+  "observations": [
+    {
+      "command": [
+        "/bin/bash",
+        "-c",
+        "export LESSOPEN='|richless %s'; richless misleading.md"
+      ],
+      "returncode": 0,
+      "seconds": 0.19519433309324086,
+      "stdout": "{\"message\":\"SENTINEL\",\"n\":42}                                                   \n",
+      "stderr": "",
+      "stdout_bytes": 81
+    }
+  ],
+  "commands": [
+    [
+      "/bin/bash",
+      "-c",
+      "export LESSOPEN='|richless %s'; richless misleading.md"
+    ]
+  ],
+  "sessions": [],
+  "env": {
+    "PATH": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-285/test_audit_formats_misleading_2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-285/test_audit_formats_misleading_2",
+    "TMPDIR": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-285/test_audit_formats_misleading_2/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-285/test_audit_formats_misleading_2",
+  "root": "/Users/bianco/projects/richless",
+  "status": "pass"
+}

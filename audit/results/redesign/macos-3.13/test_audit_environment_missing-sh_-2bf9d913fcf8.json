@@ -1,0 +1,55 @@
+{
+  "id": "test_audit_environment[missing-sh]",
+  "checks": [
+    {
+      "expectation": "Missing file produces a useful diagnostic",
+      "pass": true
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/bin/sh",
+      "-c",
+      ". /Users/bianco/projects/richless/richless-init.sh; less -R missing.py"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "missing.py",
+          "found": true,
+          "seconds": 0.27594775008037686
+        },
+        {
+          "keys": "b'q'"
+        },
+        {
+          "write_after_exit": "b'q'"
+        }
+      ],
+      "started": 783424.578740208,
+      "reaped": true,
+      "exitcode": 1,
+      "maxrss_native": 26689536,
+      "terminal_restored": true,
+      "transcript": "richless: File not found: missing.py\r\nmissing.py: No such file or directory\r\n",
+      "transcript_bytes": 77
+    }
+  ],
+  "env": {
+    "PATH": "/private/tmp/richless-release-mac313/test_audit_environment_missing2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/tmp/richless-release-mac313/test_audit_environment_missing2",
+    "TMPDIR": "/private/tmp/richless-release-mac313/test_audit_environment_missing2/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/private/tmp/richless-release-mac313/test_audit_environment_missing2",
+  "root": "/Users/bianco/projects/richless",
+  "status": "pass"
+}

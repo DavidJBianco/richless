@@ -1,0 +1,154 @@
+{
+  "id": "test_audit_mixed[forced-filter-sh]",
+  "checks": [
+    {
+      "expectation": "Visit a.c in requested navigation order",
+      "pass": true
+    },
+    {
+      "expectation": "Display identity a.c",
+      "pass": true
+    },
+    {
+      "expectation": "Visit b.py in requested navigation order",
+      "pass": true
+    },
+    {
+      "expectation": "Display identity b.py",
+      "pass": true
+    },
+    {
+      "expectation": "Visit c.md in requested navigation order",
+      "pass": true
+    },
+    {
+      "expectation": "Display identity c.md",
+      "pass": true
+    },
+    {
+      "expectation": "Markdown formatting on this visit",
+      "pass": true
+    },
+    {
+      "expectation": "Visit b.py in requested navigation order",
+      "pass": true
+    },
+    {
+      "expectation": "Display identity b.py",
+      "pass": true
+    },
+    {
+      "expectation": "Visit a.c in requested navigation order",
+      "pass": true
+    },
+    {
+      "expectation": "Display identity a.c",
+      "pass": true
+    },
+    {
+      "expectation": "One quit exits the multi-file session",
+      "pass": true
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/bin/sh",
+      "-c",
+      "less -R a.c b.py c.md"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "C_MARKER",
+          "found": true,
+          "seconds": 0.2161362919723615
+        },
+        {
+          "expect": "a.c",
+          "found": true,
+          "seconds": 0.2731480000074953
+        },
+        {
+          "keys": "b':n\\n'"
+        },
+        {
+          "expect": "PY_MARKER",
+          "found": true,
+          "seconds": 0.4074378749355674
+        },
+        {
+          "expect": "b.py",
+          "found": true,
+          "seconds": 0.40745266689918935
+        },
+        {
+          "keys": "b':n\\n'"
+        },
+        {
+          "expect": "MD_MARKER",
+          "found": true,
+          "seconds": 0.5989929999923334
+        },
+        {
+          "expect": "c.md",
+          "found": true,
+          "seconds": 0.5990315419621766
+        },
+        {
+          "keys": "b':p\\n'"
+        },
+        {
+          "expect": "PY_MARKER",
+          "found": true,
+          "seconds": 0.7283113748999313
+        },
+        {
+          "expect": "b.py",
+          "found": true,
+          "seconds": 0.7283260419499129
+        },
+        {
+          "keys": "b':p\\n'"
+        },
+        {
+          "expect": "C_MARKER",
+          "found": true,
+          "seconds": 0.8664810829795897
+        },
+        {
+          "expect": "a.c",
+          "found": true,
+          "seconds": 0.8664951249957085
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 783383.115282083,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 34635776,
+      "terminal_restored": true,
+      "transcript": "\u001b[?1049h\u001b[24;1H\u001b[?1h\u001b=\rint main(void) { return 7; } // C_MARKER                                                            \u001b[m\r\n\u001b[7ma.c (file 1 of 3) (END) - Next: b.py\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kn\bn...skipping...\r\ndef sample(): return \"PY_MARKER\"                                                                    \u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mb.py (file 2 of 3) (END) - Next: c.md\u001b[27m\u001b[K\r\u001b[K\u0007\r\u001b[K\u001b[7m(END) - Next: c.md\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kn\bn...skipping...\r\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\u001b[m\r\n\u2503                                            \u001b[1mMD_MARKER\u001b[0m                                             \u2503\u001b[m\r\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\u001b[m\r\n\u001b[m\r\n\u001b[1;33m \u2022 \u001b[0mitem                                                                                             \u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mc.md (file 3 of 3) (END)\u001b[27m\u001b[K\r\u001b[K\r\u001b[K\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kp\bp...skipping...\r\ndef sample(): return \"PY_MARKER\"                                                                    \u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mb.py (file 2 of 3) (END) - Next: c.md\u001b[27m\u001b[K\r\u001b[K\r\u001b[K\u001b[7m(END) - Next: c.md\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kp\bp...skipping...\r\nint main(void) { return 7; } // C_MARKER                                                            \u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7ma.c (file 1 of 3) (END) - Next: b.py\u001b[27m\u001b[K\r\u001b[K\u0007\r\u001b[K\u001b[7m(END) - Next: b.py\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l",
+      "transcript_bytes": 2739
+    }
+  ],
+  "env": {
+    "PATH": "/private/tmp/richless-release-mac313/test_audit_mixed_forced_filter2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/tmp/richless-release-mac313/test_audit_mixed_forced_filter2",
+    "TMPDIR": "/private/tmp/richless-release-mac313/test_audit_mixed_forced_filter2/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1",
+    "LESSOPEN": "|richless --md %s"
+  },
+  "cwd": "/private/tmp/richless-release-mac313/test_audit_mixed_forced_filter2",
+  "root": "/Users/bianco/projects/richless",
+  "status": "pass"
+}

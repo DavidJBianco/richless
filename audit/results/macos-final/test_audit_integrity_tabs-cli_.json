@@ -1,0 +1,49 @@
+{
+  "id": "test_audit_integrity[tabs-cli]",
+  "checks": [
+    {
+      "expectation": "Non-Markdown text content is exact after removing color codes",
+      "pass": false
+    }
+  ],
+  "observations": [
+    {
+      "command": [
+        "/bin/bash",
+        "-c",
+        "richless bytes.txt"
+      ],
+      "returncode": 0,
+      "seconds": 0.2058337499620393,
+      "stdout": "\u001b[38;2;248;248;242;49mA   B\u001b[0m\n\n",
+      "stderr": "",
+      "stdout_bytes": 33
+    },
+    {
+      "input_hex": "4109420a",
+      "output_hex": "1b5b33383b323b3234383b3234383b3234323b34396d41202020421b5b306d0a0a"
+    }
+  ],
+  "commands": [
+    [
+      "/bin/bash",
+      "-c",
+      "richless bytes.txt"
+    ]
+  ],
+  "sessions": [],
+  "env": {
+    "PATH": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-279/test_audit_integrity_tabs_cli_0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-279/test_audit_integrity_tabs_cli_0",
+    "TMPDIR": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-279/test_audit_integrity_tabs_cli_0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-279/test_audit_integrity_tabs_cli_0",
+  "root": "/Users/bianco/projects/richless",
+  "status": "fail"
+}

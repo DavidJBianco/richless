@@ -1,0 +1,49 @@
+{
+  "id": "test_audit_integrity[no-newline-wrapper]",
+  "checks": [
+    {
+      "expectation": "Non-Markdown text content is exact after removing color codes",
+      "pass": true
+    }
+  ],
+  "observations": [
+    {
+      "command": [
+        "/bin/bash",
+        "-c",
+        ". /Users/bianco/projects/richless/richless-init.sh; cat bytes.txt | less -R"
+      ],
+      "returncode": 0,
+      "seconds": 0.2716067919973284,
+      "stdout": "ENDMARK",
+      "stderr": "",
+      "stdout_bytes": 7
+    },
+    {
+      "input_hex": "454e444d41524b",
+      "output_hex": "454e444d41524b"
+    }
+  ],
+  "commands": [
+    [
+      "/bin/bash",
+      "-c",
+      ". /Users/bianco/projects/richless/richless-init.sh; cat bytes.txt | less -R"
+    ]
+  ],
+  "sessions": [],
+  "env": {
+    "PATH": "/private/tmp/richless-release-mac312/test_audit_integrity_no_newlin2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/tmp/richless-release-mac312/test_audit_integrity_no_newlin2",
+    "TMPDIR": "/private/tmp/richless-release-mac312/test_audit_integrity_no_newlin2/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/private/tmp/richless-release-mac312/test_audit_integrity_no_newlin2",
+  "root": "/Users/bianco/projects/richless",
+  "status": "pass"
+}

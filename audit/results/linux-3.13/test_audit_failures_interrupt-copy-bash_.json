@@ -1,0 +1,57 @@
+{
+  "id": "test_audit_failures[interrupt-copy-bash]",
+  "checks": [
+    {
+      "expectation": "Copy started before signal",
+      "pass": true
+    },
+    {
+      "expectation": "Interrupted wrapper cleans its temporary file",
+      "pass": false
+    }
+  ],
+  "observations": [
+    {
+      "leftovers_before_harness_cleanup": [
+        "richless.dadPxj"
+      ]
+    }
+  ],
+  "commands": [
+    [
+      "/usr/bin/bash",
+      "-c",
+      ". /tmp/project/richless-init.sh; less -R"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "keys": "b'\\x03'"
+        }
+      ],
+      "started": 432.032403779,
+      "reaped": true,
+      "exitcode": -2,
+      "maxrss_native": 40104,
+      "terminal_restored": true,
+      "transcript": "^C",
+      "transcript_bytes": 2
+    }
+  ],
+  "env": {
+    "PATH": "/tmp/pytest-of-nobody/pytest-0/test_audit_failures_interrupt_0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_audit_failures_interrupt_0",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_audit_failures_interrupt_0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_audit_failures_interrupt_0",
+  "root": "/tmp/project",
+  "status": "fail"
+}

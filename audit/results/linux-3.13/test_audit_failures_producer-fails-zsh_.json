@@ -1,0 +1,50 @@
+{
+  "id": "test_audit_failures[producer-fails-zsh]",
+  "checks": [
+    {
+      "expectation": "Raw content remains available despite failure",
+      "pass": false
+    },
+    {
+      "expectation": "No temporary files remain after completion",
+      "pass": true
+    }
+  ],
+  "observations": [
+    {
+      "command": [
+        "/usr/bin/zsh",
+        "-c",
+        ". /tmp/project/richless-init.sh; (cat input.txt; exit 7) | less -R"
+      ],
+      "returncode": 0,
+      "seconds": 0.22872512499998265,
+      "stdout": " -R: No such file or directory\n",
+      "stderr": "",
+      "stdout_bytes": 31
+    }
+  ],
+  "commands": [
+    [
+      "/usr/bin/zsh",
+      "-c",
+      ". /tmp/project/richless-init.sh; (cat input.txt; exit 7) | less -R"
+    ]
+  ],
+  "sessions": [],
+  "env": {
+    "PATH": "/tmp/pytest-of-nobody/pytest-0/test_audit_failures_producer_f1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_audit_failures_producer_f1",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_audit_failures_producer_f1/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_audit_failures_producer_f1",
+  "root": "/tmp/project",
+  "product_decision": "Default shell pipeline status reflects the pager, not the producer; do not attribute this to richless.",
+  "status": "fail"
+}

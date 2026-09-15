@@ -1,0 +1,56 @@
+{
+  "id": "test_audit_initial_position[phrase-pipe-wrapper-sh]",
+  "checks": [
+    {
+      "expectation": "Initial viewport reaches requested line or search match",
+      "pass": false
+    },
+    {
+      "expectation": "Initial-position invocation quits normally",
+      "pass": true
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/usr/bin/sh",
+      "-c",
+      ". /tmp/project/richless-init.sh; cat positions.txt | less -R -p 'two words'"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "POSITION_TARGET",
+          "found": false,
+          "seconds": 3.00004558400002
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 473.05461884,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 39716,
+      "terminal_restored": true,
+      "transcript": "words: No such file or directory\r\nq",
+      "transcript_bytes": 35
+    }
+  ],
+  "env": {
+    "PATH": "/tmp/pytest-of-nobody/pytest-0/test_audit_initial_position_ph8/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_audit_initial_position_ph8",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_audit_initial_position_ph8/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_audit_initial_position_ph8",
+  "root": "/tmp/project",
+  "status": "fail"
+}

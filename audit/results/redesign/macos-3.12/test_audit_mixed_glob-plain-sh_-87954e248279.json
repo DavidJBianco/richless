@@ -1,0 +1,149 @@
+{
+  "id": "test_audit_mixed[glob-plain-sh]",
+  "checks": [
+    {
+      "expectation": "Visit a.c in requested navigation order",
+      "pass": true
+    },
+    {
+      "expectation": "Display identity a.c",
+      "pass": true
+    },
+    {
+      "expectation": "Visit b.py in requested navigation order",
+      "pass": true
+    },
+    {
+      "expectation": "Display identity b.py",
+      "pass": true
+    },
+    {
+      "expectation": "Visit c.md in requested navigation order",
+      "pass": true
+    },
+    {
+      "expectation": "Display identity c.md",
+      "pass": true
+    },
+    {
+      "expectation": "Visit b.py in requested navigation order",
+      "pass": true
+    },
+    {
+      "expectation": "Display identity b.py",
+      "pass": true
+    },
+    {
+      "expectation": "Visit a.c in requested navigation order",
+      "pass": true
+    },
+    {
+      "expectation": "Display identity a.c",
+      "pass": true
+    },
+    {
+      "expectation": "One quit exits the multi-file session",
+      "pass": true
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/bin/sh",
+      "-c",
+      "less -R *.c *.py *.md"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "C_MARKER",
+          "found": true,
+          "seconds": 0.05478775000665337
+        },
+        {
+          "expect": "a.c",
+          "found": true,
+          "seconds": 0.05485604202840477
+        },
+        {
+          "keys": "b':n\\n'"
+        },
+        {
+          "expect": "PY_MARKER",
+          "found": true,
+          "seconds": 0.14497200003825128
+        },
+        {
+          "expect": "b.py",
+          "found": true,
+          "seconds": 0.14498837501741946
+        },
+        {
+          "keys": "b':n\\n'"
+        },
+        {
+          "expect": "MD_MARKER",
+          "found": true,
+          "seconds": 0.235082000028342
+        },
+        {
+          "expect": "c.md",
+          "found": true,
+          "seconds": 0.23509487498085946
+        },
+        {
+          "keys": "b':p\\n'"
+        },
+        {
+          "expect": "PY_MARKER",
+          "found": true,
+          "seconds": 0.3126013750443235
+        },
+        {
+          "expect": "b.py",
+          "found": true,
+          "seconds": 0.31261487503070384
+        },
+        {
+          "keys": "b':p\\n'"
+        },
+        {
+          "expect": "C_MARKER",
+          "found": true,
+          "seconds": 0.40082533308304846
+        },
+        {
+          "expect": "a.c",
+          "found": true,
+          "seconds": 0.4008402080507949
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 783357.302000333,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 1753088,
+      "terminal_restored": true,
+      "transcript": "\u001b[?1049h\u001b[24;1H\u001b[?1h\u001b=\rint main(void) { return 7; } // C_MARKER\u001b[m\r\n\u001b[7ma.c (file 1 of 3) (END) - Next: b.py\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kn\bn...skipping...\r\ndef sample():\u001b[m\r\n    return \"PY_MARKER\"\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mb.py (file 2 of 3) (END) - Next: c.md\u001b[27m\u001b[K\r\u001b[K\u0007\r\u001b[K\u001b[7m(END) - Next: c.md\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kn\bn...skipping...\r\n# MD_MARKER\u001b[m\r\n\u001b[m\r\n- item\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mc.md (file 3 of 3) (END)\u001b[27m\u001b[K\r\u001b[K\r\u001b[K\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kp\bp...skipping...\r\ndef sample():\u001b[m\r\n    return \"PY_MARKER\"\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mb.py (file 2 of 3) (END) - Next: c.md\u001b[27m\u001b[K\r\u001b[K\r\u001b[K\u001b[7m(END) - Next: c.md\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kp\bp...skipping...\r\nint main(void) { return 7; } // C_MARKER\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7ma.c (file 1 of 3) (END) - Next: b.py\u001b[27m\u001b[K\r\u001b[K\r\u001b[K\u001b[7m(END) - Next: b.py\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l",
+      "transcript_bytes": 1680
+    }
+  ],
+  "env": {
+    "PATH": "/private/tmp/richless-release-mac312/test_audit_mixed_glob_plain_sh0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/tmp/richless-release-mac312/test_audit_mixed_glob_plain_sh0",
+    "TMPDIR": "/private/tmp/richless-release-mac312/test_audit_mixed_glob_plain_sh0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/private/tmp/richless-release-mac312/test_audit_mixed_glob_plain_sh0",
+  "root": "/Users/bianco/projects/richless",
+  "status": "pass"
+}

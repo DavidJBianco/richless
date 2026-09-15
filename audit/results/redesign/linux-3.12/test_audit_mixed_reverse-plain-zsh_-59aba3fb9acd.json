@@ -1,0 +1,149 @@
+{
+  "id": "test_audit_mixed[reverse-plain-zsh]",
+  "checks": [
+    {
+      "expectation": "Visit c.md in requested navigation order",
+      "pass": true
+    },
+    {
+      "expectation": "Display identity c.md",
+      "pass": true
+    },
+    {
+      "expectation": "Visit b.py in requested navigation order",
+      "pass": true
+    },
+    {
+      "expectation": "Display identity b.py",
+      "pass": true
+    },
+    {
+      "expectation": "Visit a.c in requested navigation order",
+      "pass": true
+    },
+    {
+      "expectation": "Display identity a.c",
+      "pass": true
+    },
+    {
+      "expectation": "Visit b.py in requested navigation order",
+      "pass": true
+    },
+    {
+      "expectation": "Display identity b.py",
+      "pass": true
+    },
+    {
+      "expectation": "Visit c.md in requested navigation order",
+      "pass": true
+    },
+    {
+      "expectation": "Display identity c.md",
+      "pass": true
+    },
+    {
+      "expectation": "One quit exits the multi-file session",
+      "pass": true
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/usr/bin/zsh",
+      "-c",
+      "less -R c.md b.py a.c"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "MD_MARKER",
+          "found": true,
+          "seconds": 0.051641791000065496
+        },
+        {
+          "expect": "c.md",
+          "found": true,
+          "seconds": 0.05166416599990953
+        },
+        {
+          "keys": "b':n\\n'"
+        },
+        {
+          "expect": "PY_MARKER",
+          "found": true,
+          "seconds": 0.12428454099995179
+        },
+        {
+          "expect": "b.py",
+          "found": true,
+          "seconds": 0.12430195799993271
+        },
+        {
+          "keys": "b':n\\n'"
+        },
+        {
+          "expect": "C_MARKER",
+          "found": true,
+          "seconds": 0.19789387499986333
+        },
+        {
+          "expect": "a.c",
+          "found": true,
+          "seconds": 0.19790991600007146
+        },
+        {
+          "keys": "b':p\\n'"
+        },
+        {
+          "expect": "PY_MARKER",
+          "found": true,
+          "seconds": 0.27131387500003257
+        },
+        {
+          "expect": "b.py",
+          "found": true,
+          "seconds": 0.27132941600007143
+        },
+        {
+          "keys": "b':p\\n'"
+        },
+        {
+          "expect": "MD_MARKER",
+          "found": true,
+          "seconds": 0.34540612499995405
+        },
+        {
+          "expect": "c.md",
+          "found": true,
+          "seconds": 0.34542462500007787
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 1518.732798105,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 36968,
+      "terminal_restored": true,
+      "transcript": "\u001b[?1049h\u001b[22;0;0t\u001b[?1h\u001b=\r# MD_MARKER\u001b[m\r\n\u001b[m\r\n- item\u001b[m\r\n\u001b[7mc.md (file 1 of 3) (END) - Next: b.py\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kn\bn...skipping...\r\ndef sample():\u001b[m\r\n    return \"PY_MARKER\"\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mb.py (file 2 of 3) (END) - Next: a.c\u001b[27m\u001b[K\r\u001b[K\u0007\r\u001b[K\u001b[7m(END) - Next: a.c\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kn\bn...skipping...\r\nint main(void) { return 7; } // C_MARKER\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7ma.c (file 3 of 3) (END)\u001b[27m\u001b[K\r\u001b[K\r\u001b[K\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kp\bp...skipping...\r\ndef sample():\u001b[m\r\n    return \"PY_MARKER\"\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mb.py (file 2 of 3) (END) - Next: a.c\u001b[27m\u001b[K\r\u001b[K\r\u001b[K\u001b[7m(END) - Next: a.c\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kp\bp...skipping...\r\n# MD_MARKER\u001b[m\r\n\u001b[m\r\n- item\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mc.md (file 1 of 3) (END) - Next: b.py\u001b[27m\u001b[K\r\u001b[K\r\u001b[K\u001b[7m(END) - Next: b.py\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l\u001b[23;0;0t",
+      "transcript_bytes": 1675
+    }
+  ],
+  "env": {
+    "PATH": "/tmp/pytest-of-nobody/pytest-0/test_audit_mixed_reverse_plain1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_audit_mixed_reverse_plain1",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_audit_mixed_reverse_plain1/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_audit_mixed_reverse_plain1",
+  "root": "/tmp/project",
+  "status": "pass"
+}

@@ -1,0 +1,53 @@
+{
+  "id": "test_audit_failures[render-after-zsh]",
+  "checks": [
+    {
+      "expectation": "Raw content remains available despite failure",
+      "pass": false
+    },
+    {
+      "expectation": "No temporary files remain after completion",
+      "pass": true
+    },
+    {
+      "expectation": "Unrecovered rendering error is not reported as success",
+      "pass": false
+    }
+  ],
+  "observations": [
+    {
+      "command": [
+        "/bin/zsh",
+        "-c",
+        ". /Users/bianco/projects/richless/richless-init.sh; cat input.txt | less -R"
+      ],
+      "returncode": 0,
+      "seconds": 0.17803191696293652,
+      "stdout": " -R: No such file or directory\n",
+      "stderr": "",
+      "stdout_bytes": 31
+    }
+  ],
+  "commands": [
+    [
+      "/bin/zsh",
+      "-c",
+      ". /Users/bianco/projects/richless/richless-init.sh; cat input.txt | less -R"
+    ]
+  ],
+  "sessions": [],
+  "env": {
+    "PATH": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-279/test_audit_failures_render_aft1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-279/test_audit_failures_render_aft1",
+    "TMPDIR": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-279/test_audit_failures_render_aft1/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-279/test_audit_failures_render_aft1",
+  "root": "/Users/bianco/projects/richless",
+  "status": "fail"
+}

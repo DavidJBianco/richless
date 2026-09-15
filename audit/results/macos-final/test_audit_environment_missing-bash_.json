@@ -1,0 +1,55 @@
+{
+  "id": "test_audit_environment[missing-bash]",
+  "checks": [
+    {
+      "expectation": "Missing file produces a useful diagnostic",
+      "pass": true
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/bin/bash",
+      "-c",
+      ". /Users/bianco/projects/richless/richless-init.sh; less -R missing.py"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "missing.py",
+          "found": true,
+          "seconds": 0.23825383302755654
+        },
+        {
+          "keys": "b'q'"
+        },
+        {
+          "write_after_exit": "b'q'"
+        }
+      ],
+      "started": 768998.093713833,
+      "reaped": true,
+      "exitcode": 1,
+      "maxrss_native": 29360128,
+      "terminal_restored": true,
+      "transcript": "richless: File not found: missing.py\r\nmissing.py: No such file or directory\r\n",
+      "transcript_bytes": 77
+    }
+  ],
+  "env": {
+    "PATH": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-279/test_audit_environment_missing0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-279/test_audit_environment_missing0",
+    "TMPDIR": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-279/test_audit_environment_missing0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-279/test_audit_environment_missing0",
+  "root": "/Users/bianco/projects/richless",
+  "status": "pass"
+}

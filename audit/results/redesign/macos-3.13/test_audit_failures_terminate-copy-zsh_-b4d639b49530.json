@@ -1,0 +1,61 @@
+{
+  "id": "test_audit_failures[terminate-copy-zsh]",
+  "checks": [
+    {
+      "expectation": "Streaming has started before signal",
+      "pass": true
+    },
+    {
+      "expectation": "Ordinary streaming creates no temporary files",
+      "pass": true
+    },
+    {
+      "expectation": "Interrupted wrapper cleans its temporary file",
+      "pass": true
+    }
+  ],
+  "observations": [
+    {
+      "leftovers_before_harness_cleanup": []
+    }
+  ],
+  "commands": [
+    [
+      "/bin/zsh",
+      "-c",
+      ". /Users/bianco/projects/richless/richless-init.sh; less -R"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "FAILURE_MARKER",
+          "found": true,
+          "seconds": 0.3434971250826493
+        }
+      ],
+      "started": 783457.651425666,
+      "reaped": true,
+      "exitcode": -15,
+      "maxrss_native": 2457600,
+      "terminal_restored": false,
+      "transcript": "\u001b[?1049h\u001b[24;1H\u001b[?1h\u001b=\rFAILURE_MARKER\u001b[m\r\n\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l",
+      "transcript_bytes": 61
+    }
+  ],
+  "env": {
+    "PATH": "/private/tmp/richless-release-mac313/test_audit_failures_terminate_1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/tmp/richless-release-mac313/test_audit_failures_terminate_1",
+    "TMPDIR": "/private/tmp/richless-release-mac313/test_audit_failures_terminate_1/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/private/tmp/richless-release-mac313/test_audit_failures_terminate_1",
+  "root": "/Users/bianco/projects/richless",
+  "status": "pass"
+}

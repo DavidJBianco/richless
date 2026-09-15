@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="6" skipped="0" tests="9" time="18.863" timestamp="2026-09-15T11:16:36.581097-04:00" hostname="biancomac-c"><testcase classname="tests.test_richless" name="test_audit_arguments[whitespace-collision-plain-bash]" time="0.111" /><testcase classname="tests.test_richless" name="test_audit_arguments[whitespace-collision-plain-zsh]" time="0.097" /><testcase classname="tests.test_richless" name="test_audit_arguments[whitespace-collision-plain-sh]" time="0.099" /><testcase classname="tests.test_richless" name="test_audit_arguments[whitespace-collision-filter-bash]" time="3.050"><failure message="AssertionError: ['Filename resolves to the requested content', 'Never substitute a different similarly named file']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x108413d30&gt;)">tests/test_richless.py:976: in test_audit_arguments
+    audit_finish(a)
+tests/test_richless.py:670: in audit_finish
+    assert all(c['pass'] for c in item['checks']), [c['expectation'] for c in item['checks'] if not c['pass']]
+E   AssertionError: ['Filename resolves to the requested content', 'Never substitute a different similarly named file']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x108413d30&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_arguments[whitespace-collision-filter-zsh]" time="3.049"><failure message="AssertionError: ['Filename resolves to the requested content', 'Never substitute a different similarly named file']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x107ed4e10&gt;)">tests/test_richless.py:976: in test_audit_arguments
+    audit_finish(a)
+tests/test_richless.py:670: in audit_finish
+    assert all(c['pass'] for c in item['checks']), [c['expectation'] for c in item['checks'] if not c['pass']]
+E   AssertionError: ['Filename resolves to the requested content', 'Never substitute a different similarly named file']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x107ed4e10&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_arguments[whitespace-collision-filter-sh]" time="3.055"><failure message="AssertionError: ['Filename resolves to the requested content', 'Never substitute a different similarly named file']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x107ed75e0&gt;)">tests/test_richless.py:976: in test_audit_arguments
+    audit_finish(a)
+tests/test_richless.py:670: in audit_finish
+    assert all(c['pass'] for c in item['checks']), [c['expectation'] for c in item['checks'] if not c['pass']]
+E   AssertionError: ['Filename resolves to the requested content', 'Never substitute a different similarly named file']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x107ed75e0&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_arguments[whitespace-collision-wrapper-bash]" time="3.056"><failure message="AssertionError: ['Filename resolves to the requested content', 'Never substitute a different similarly named file']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x107ed7510&gt;)">tests/test_richless.py:976: in test_audit_arguments
+    audit_finish(a)
+tests/test_richless.py:670: in audit_finish
+    assert all(c['pass'] for c in item['checks']), [c['expectation'] for c in item['checks'] if not c['pass']]
+E   AssertionError: ['Filename resolves to the requested content', 'Never substitute a different similarly named file']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x107ed7510&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_arguments[whitespace-collision-wrapper-zsh]" time="3.052"><failure message="AssertionError: ['Filename resolves to the requested content', 'Never substitute a different similarly named file']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x107ed5a40&gt;)">tests/test_richless.py:976: in test_audit_arguments
+    audit_finish(a)
+tests/test_richless.py:670: in audit_finish
+    assert all(c['pass'] for c in item['checks']), [c['expectation'] for c in item['checks'] if not c['pass']]
+E   AssertionError: ['Filename resolves to the requested content', 'Never substitute a different similarly named file']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x107ed5a40&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_arguments[whitespace-collision-wrapper-sh]" time="3.057"><failure message="AssertionError: ['Filename resolves to the requested content', 'Never substitute a different similarly named file']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x107ed69b0&gt;)">tests/test_richless.py:976: in test_audit_arguments
+    audit_finish(a)
+tests/test_richless.py:670: in audit_finish
+    assert all(c['pass'] for c in item['checks']), [c['expectation'] for c in item['checks'] if not c['pass']]
+E   AssertionError: ['Filename resolves to the requested content', 'Never substitute a different similarly named file']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x107ed69b0&gt;)</failure></testcase></testsuite></testsuites>
