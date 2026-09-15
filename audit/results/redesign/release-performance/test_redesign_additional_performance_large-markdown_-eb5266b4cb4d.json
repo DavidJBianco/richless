@@ -1,0 +1,182 @@
+{
+  "id": "test_redesign_additional_performance[large-markdown]",
+  "checks": [
+    {
+      "expectation": "Useful display within safety deadline",
+      "pass": true
+    },
+    {
+      "expectation": "Complete output can be reached",
+      "pass": true
+    },
+    {
+      "expectation": "Cancellation finishes",
+      "pass": true
+    },
+    {
+      "expectation": "Useful display within safety deadline",
+      "pass": true
+    },
+    {
+      "expectation": "Complete output can be reached",
+      "pass": true
+    },
+    {
+      "expectation": "Cancellation finishes",
+      "pass": true
+    },
+    {
+      "expectation": "Useful display within safety deadline",
+      "pass": true
+    },
+    {
+      "expectation": "Complete output can be reached",
+      "pass": true
+    },
+    {
+      "expectation": "Cancellation finishes",
+      "pass": true
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/bin/bash",
+      "-c",
+      ". /Users/bianco/projects/richless/richless-init.sh; less measure.md"
+    ],
+    [
+      "/bin/bash",
+      "-c",
+      ". /Users/bianco/projects/richless/richless-init.sh; less measure.md"
+    ],
+    [
+      "/bin/bash",
+      "-c",
+      ". /Users/bianco/projects/richless/richless-init.sh; less measure.md"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "PERF_MARKDOWN",
+          "found": true,
+          "seconds": 0.6310279589379206
+        },
+        {
+          "keys": "b'G'"
+        },
+        {
+          "expect": "(END)",
+          "found": true,
+          "seconds": 1.3477229999843985
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 788009.926619166,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 74022912,
+      "terminal_restored": true,
+      "transcript": "\u001b[?1049h\u001b[24;1H\u001b[?1h\u001b=\r\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\u001b[m\r\n\u2503                                          \u001b[1mPERF_MARKDOWN\u001b[0m                                           \u2503\u001b[m\r\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[7mmeasure.md\u001b[27m\u001b[K\r\u001b[K...skipping...\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l",
+      "transcript_bytes": 3727
+    },
+    {
+      "events": [
+        {
+          "expect": "PERF_MARKDOWN",
+          "found": true,
+          "seconds": 0.35621162492316216
+        },
+        {
+          "keys": "b'G'"
+        },
+        {
+          "expect": "(END)",
+          "found": true,
+          "seconds": 1.0744784579146653
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 788011.317384083,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 74235904,
+      "terminal_restored": true,
+      "transcript": "\u001b[?1049h\u001b[24;1H\u001b[?1h\u001b=\r\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\u001b[m\r\n\u2503                                          \u001b[1mPERF_MARKDOWN\u001b[0m                                           \u2503\u001b[m\r\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[7mmeasure.md\u001b[27m\u001b[K\r\u001b[K...skipping...\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l",
+      "transcript_bytes": 3727
+    },
+    {
+      "events": [
+        {
+          "expect": "PERF_MARKDOWN",
+          "found": true,
+          "seconds": 0.40950791689101607
+        },
+        {
+          "keys": "b'G'"
+        },
+        {
+          "expect": "(END)",
+          "found": true,
+          "seconds": 1.1331823749933392
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 788012.434708666,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 73957376,
+      "terminal_restored": true,
+      "transcript": "\u001b[?1049h\u001b[24;1H\u001b[?1h\u001b=\r\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\u001b[m\r\n\u2503                                          \u001b[1mPERF_MARKDOWN\u001b[0m                                           \u2503\u001b[m\r\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[7mmeasure.md\u001b[27m\u001b[K\r\u001b[K...skipping...\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[m\r\nA \u001b[1mbold\u001b[0m paragraph with \u001b[1;36;40mcode\u001b[0m.                                                                         \u001b[m\r\n\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l",
+      "transcript_bytes": 3727
+    }
+  ],
+  "env": {
+    "PATH": "/private/tmp/richless-release-performance-cases/test_redesign_additional_perfo0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/tmp/richless-release-performance-cases/test_redesign_additional_perfo0",
+    "TMPDIR": "/private/tmp/richless-release-performance-cases/test_redesign_additional_perfo0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/private/tmp/richless-release-performance-cases/test_redesign_additional_perfo0",
+  "root": "/Users/bianco/projects/richless",
+  "measurements": [
+    {
+      "iteration": 0,
+      "first_display_seconds": 0.6310469169402495,
+      "end_seconds": 1.3477270419243723,
+      "quit_seconds": 0.040969000081531703,
+      "maxrss_native": 74022912,
+      "rss_units": "bytes"
+    },
+    {
+      "iteration": 1,
+      "first_display_seconds": 0.3562550419010222,
+      "end_seconds": 1.074484874960035,
+      "quit_seconds": 0.04082637501414865,
+      "maxrss_native": 74235904,
+      "rss_units": "bytes"
+    },
+    {
+      "iteration": 2,
+      "first_display_seconds": 0.4095292919082567,
+      "end_seconds": 1.1331849169218913,
+      "quit_seconds": 0.06764637504238635,
+      "maxrss_native": 73957376,
+      "rss_units": "bytes"
+    }
+  ],
+  "status": "pass"
+}

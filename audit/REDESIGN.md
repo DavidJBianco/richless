@@ -30,34 +30,35 @@ explicit assertions for the agreed 0.4 contracts in the required regression suit
 
 ## Performance: macOS, Python 3.12, native less 668
 
+Final release refresh: 11 scenarios passed, with [retained measurements](results/redesign/release-performance/ledger.md).
 Three trials per case, using the same deterministic log records as the baseline.
 First display is terminal-observable useful content; completion means reaching the
 end with `G`. These are measurements, not CI timing gates.
 
 | JSONL records | Route | First display | End reached |
 |---:|---|---:|---:|
-| 100 | file | 0.154–0.300 s | 0.242–0.383 s |
-| 100 | pipeline | 0.109–0.286 s | 0.198–0.375 s |
-| 10,000 | file | 0.171–0.286 s | 0.655–0.825 s |
-| 10,000 | pipeline | 0.151–0.282 s | 0.520–0.653 s |
-| 166,000 | file | 0.162–0.281 s | 7.560–7.687 s |
-| 166,000 | pipeline | 0.107–0.297 s | 5.618–5.726 s |
-| 500,000 | file | 0.234–0.345 s | 22.821–23.627 s |
-| 500,000 | pipeline | 0.113–0.345 s | 15.440–16.420 s |
+| 100 | file | 0.175–0.412 s | 0.266–0.495 s |
+| 100 | pipeline | 0.171–0.340 s | 0.262–0.431 s |
+| 10,000 | file | 0.167–0.284 s | 0.673–0.771 s |
+| 10,000 | pipeline | 0.107–0.278 s | 0.493–0.657 s |
+| 166,000 | file | 0.166–0.357 s | 7.266–7.635 s |
+| 166,000 | pipeline | 0.103–0.264 s | 5.647–5.826 s |
+| 500,000 | file | 0.236–0.407 s | 22.143–22.201 s |
+| 500,000 | pipeline | 0.101–0.342 s | 16.740–16.998 s |
 
-Large Markdown (10,000 paragraphs, roughly 330 KiB) first displayed in 0.423–0.655 s,
-reached the end in 1.107–1.352 s, and quit in 0.045–0.067 s. An unfinished live
-1 MiB fenced block switched to raw, displayed in 0.220–0.332 s, and quit in
-0.037–0.049 s. Follow appends completed in 0.518–0.638 s from session launch;
-quitting took 0.185–0.192 s.
+Large Markdown (10,000 paragraphs, roughly 330 KiB) first displayed in 0.356–0.631 s,
+reached the end in 1.074–1.348 s, and quit in 0.041–0.068 s. An unfinished live
+1 MiB fenced block switched to raw, displayed in 0.164–0.337 s, and quit in
+0.042–0.066 s. Follow appends completed in 0.531–0.674 s from session launch;
+quitting took 0.187–0.197 s.
 
-**The under-300-ms target is not universally met.** Cold log runs reached 345 ms;
+**The under-300-ms target is not universally met.** Cold log runs reached 412 ms;
 large finite Markdown must read and parse before publication. This is substantially
 better than the former tens-of-seconds blank screen. Progress feedback remains
 deferred as agreed.
 
 Completed-log throughput was about 21,000–22,000 records/s for named files and
-29,000–32,000 records/s for pipelines in these measurements.
+28,000–30,000 records/s for pipelines in these measurements.
 
 Memory remains material: `wait4` child resource accounting peaked at about 632 MiB
 for a completed 500,000-record view, versus about 71 MiB for large Markdown. This
@@ -106,7 +107,7 @@ The ledger’s blocked optional cases correspond to excluded measurements/probes
 not hidden correctness failures. Unit tests without PTY sessions are counted in
 the test logs, not duplicated as terminal scenario records.
 
-## Evidence and remaining release work
+## Evidence and release record
 
 Platform correctness runs exercise bash, zsh, and platform `/bin/sh` on macOS and
 actual Debian Linux containers, with Python 3.12 and 3.13. Containers run under
@@ -123,7 +124,21 @@ Feature revision `0cbc9aa` passed all four hosted correctness jobs and the quali
 installed-distribution job in [GitHub CI](https://github.com/DavidJBianco/richless/actions/runs/35012771548).
 The first packaging run exposed a missing zsh installation in that separate job;
 installing all three supported shells resolved it. PR #8 merged into dev only after
-the aggregate required check passed. Release promotion and Homebrew publication
-remain separately gated. `packaging/richless.rb.in` pins tested runtime
-resources and contains a deliberately unresolved release-sdist hash; it must never
-be installed as a finished formula until the validated release artifact exists.
+the aggregate required check passed. The final release validation passed all jobs in
+[the publication run](https://github.com/DavidJBianco/richless/actions/runs/35019015462).
+The immutable `v0.4.0` tag identifies `6a115092dc2c6b65e1cdbb2da386e500df9636dd`.
+A subsequent workflow-only repair added current metadata validation and an exact-tag
+publication retry; it did not move the tag or change application code.
+
+PyPI wheel SHA-256: `4dbeb00d4eeee3046b04ef60f4fd7bef79e1a5efe0885fb71510ca178b73d248`.
+PyPI source SHA-256: `f3402d1080bc6fcddf4ac2a013cbae9876b3ec7025644bc1339d9747de6d05b5`.
+The downloaded wheel matches the local build byte-for-byte. Source archive contents
+match except that the local build included unrelated untracked `.claude` worktree
+files; the published archive correctly excludes them. Published artifacts are the
+release downloads. Future release builds should continue using clean CI checkouts.
+
+[Homebrew PR #1](https://github.com/DavidJBianco/homebrew-tools/pull/1) updates the
+formula, tested dependency pins, generator tests, and upgrade caveats. Three generator
+tests, Ruby syntax, and published/locked source checksums pass. A global Homebrew
+installation was not performed; isolated distribution and upgrade tests passed.
+The finished formula is also retained in `packaging/richless.rb`.
