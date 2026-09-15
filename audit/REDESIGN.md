@@ -99,7 +99,11 @@ Follow resource exhaustion is injected at actual allocation/write boundaries;
 these tests do not fill the host disk. Sudden SIGKILL cannot guarantee filesystem
 cleanup and is outside the supported graceful-termination contract.
 
-Final exact-revision CI results, release promotion, and the Homebrew formula update
-must be recorded before publication. `packaging/richless.rb.in` pins tested runtime
+Feature revision `0cbc9aa` passed all four hosted correctness jobs and the quality /
+installed-distribution job in [GitHub CI](https://github.com/DavidJBianco/richless/actions/runs/35012771548).
+The first packaging run exposed a missing zsh installation in that separate job;
+installing all three supported shells resolved it. PR #8 merged into dev only after
+the aggregate required check passed. Release promotion and Homebrew publication
+remain separately gated. `packaging/richless.rb.in` pins tested runtime
 resources and contains a deliberately unresolved release-sdist hash; it must never
 be installed as a finished formula until the validated release artifact exists.
