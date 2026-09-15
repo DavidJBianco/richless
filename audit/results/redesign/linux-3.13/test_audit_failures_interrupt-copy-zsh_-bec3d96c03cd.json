@@ -1,0 +1,64 @@
+{
+  "id": "test_audit_failures[interrupt-copy-zsh]",
+  "checks": [
+    {
+      "expectation": "Streaming has started before signal",
+      "pass": true
+    },
+    {
+      "expectation": "Ordinary streaming creates no temporary files",
+      "pass": true
+    },
+    {
+      "expectation": "Interrupted wrapper cleans its temporary file",
+      "pass": true
+    }
+  ],
+  "observations": [
+    {
+      "leftovers_before_harness_cleanup": []
+    }
+  ],
+  "commands": [
+    [
+      "/usr/bin/zsh",
+      "-c",
+      ". /tmp/project/richless-init.sh; less -R"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "FAILURE_MARKER",
+          "found": true,
+          "seconds": 0.4582299999999577
+        },
+        {
+          "keys": "b'\\x03'"
+        }
+      ],
+      "started": 768.996286349,
+      "reaped": false,
+      "terminal_restored": false,
+      "exitcode": -9,
+      "maxrss_native": 37124,
+      "transcript": "\u001b[?1049h\u001b[22;0;0t\u001b[?1h\u001b=\rFAILURE_MARKER\u001b[m\r\n\u0007:\u001b[K\u001b[H\u001b[2J\u001b[H\u001b[H\u001b[2J\u001b[HFAILURE_MARKER\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7m(END)\u001b[27m\u001b[K",
+      "transcript_bytes": 347
+    }
+  ],
+  "env": {
+    "PATH": "/tmp/pytest-of-nobody/pytest-0/test_audit_failures_interrupt_1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_audit_failures_interrupt_1",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_audit_failures_interrupt_1/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_audit_failures_interrupt_1",
+  "root": "/tmp/project",
+  "status": "pass"
+}

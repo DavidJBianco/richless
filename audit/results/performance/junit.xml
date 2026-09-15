@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="24" time="459.185" timestamp="2026-09-15T11:17:05.166756-04:00" hostname="biancomac-c"><testcase classname="tests.test_richless" name="test_audit_performance[100-file-plain]" time="0.524" /><testcase classname="tests.test_richless" name="test_audit_performance[100-file-filter]" time="0.899" /><testcase classname="tests.test_richless" name="test_audit_performance[100-file-wrapper]" time="0.983" /><testcase classname="tests.test_richless" name="test_audit_performance[100-pipe-plain]" time="0.511" /><testcase classname="tests.test_richless" name="test_audit_performance[100-pipe-filter]" time="0.521" /><testcase classname="tests.test_richless" name="test_audit_performance[100-pipe-wrapper]" time="0.843" /><testcase classname="tests.test_richless" name="test_audit_performance[10000-file-plain]" time="0.509" /><testcase classname="tests.test_richless" name="test_audit_performance[10000-file-filter]" time="6.236" /><testcase classname="tests.test_richless" name="test_audit_performance[10000-file-wrapper]" time="6.200" /><testcase classname="tests.test_richless" name="test_audit_performance[10000-pipe-plain]" time="0.523" /><testcase classname="tests.test_richless" name="test_audit_performance[10000-pipe-filter]" time="0.537" /><testcase classname="tests.test_richless" name="test_audit_performance[10000-pipe-wrapper]" time="6.202" /><testcase classname="tests.test_richless" name="test_audit_performance[166000-file-plain]" time="0.893" /><testcase classname="tests.test_richless" name="test_audit_performance[166000-file-filter]" time="95.970" /><testcase classname="tests.test_richless" name="test_audit_performance[166000-file-wrapper]" time="95.783" /><testcase classname="tests.test_richless" name="test_audit_performance[166000-pipe-plain]" time="1.058" /><testcase classname="tests.test_richless" name="test_audit_performance[166000-pipe-filter]" time="1.053" /><testcase classname="tests.test_richless" name="test_audit_performance[166000-pipe-wrapper]" time="95.975" /><testcase classname="tests.test_richless" name="test_audit_performance[500000-file-plain]" time="1.666" /><testcase classname="tests.test_richless" name="test_audit_performance[500000-file-filter]" time="45.814"><failure message="AssertionError: ['No useful display before 45-second safety deadline; remaining repetitions cancelled']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x10b0ea5a0&gt;)">tests/test_richless.py:1307: in test_audit_performance
+    'rss_units': 'bytes' if sys.platform == 'darwin' else 'KiB',
+    ^^^^^^^^^^^^^^^
+tests/test_richless.py:670: in audit_finish
+    def audit_finish(item: dict) -&gt; None:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: ['No useful display before 45-second safety deadline; remaining repetitions cancelled']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x10b0ea5a0&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_performance[500000-file-wrapper]" time="45.837"><failure message="AssertionError: ['No useful display before 45-second safety deadline; remaining repetitions cancelled']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x10b0e8d40&gt;)">tests/test_richless.py:1307: in test_audit_performance
+    'rss_units': 'bytes' if sys.platform == 'darwin' else 'KiB',
+    ^^^^^^^^^^^^^^^
+tests/test_richless.py:670: in audit_finish
+    def audit_finish(item: dict) -&gt; None:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: ['No useful display before 45-second safety deadline; remaining repetitions cancelled']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x10b0e8d40&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_performance[500000-pipe-plain]" time="2.333" /><testcase classname="tests.test_richless" name="test_audit_performance[500000-pipe-filter]" time="2.348" /><testcase classname="tests.test_richless" name="test_audit_performance[500000-pipe-wrapper]" time="45.832"><failure message="AssertionError: ['No useful display before 45-second safety deadline; remaining repetitions cancelled']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x10b144fb0&gt;)">tests/test_richless.py:1307: in test_audit_performance
+    'rss_units': 'bytes' if sys.platform == 'darwin' else 'KiB',
+    ^^^^^^^^^^^^^^^
+tests/test_richless.py:670: in audit_finish
+    def audit_finish(item: dict) -&gt; None:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: ['No useful display before 45-second safety deadline; remaining repetitions cancelled']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x10b144fb0&gt;)</failure></testcase></testsuite></testsuites>

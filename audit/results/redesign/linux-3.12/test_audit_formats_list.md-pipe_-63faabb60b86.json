@@ -1,0 +1,53 @@
+{
+  "id": "test_audit_formats[list.md-pipe]",
+  "checks": [
+    {
+      "expectation": "Content marker survives rendering",
+      "pass": true
+    },
+    {
+      "expectation": "Ambiguous input without its extension remains source-exact",
+      "pass": true
+    },
+    {
+      "expectation": "Successful invocation returns zero",
+      "pass": true
+    }
+  ],
+  "observations": [
+    {
+      "command": [
+        "/usr/bin/bash",
+        "-c",
+        ". /tmp/project/richless-init.sh; cat list.md | less -R"
+      ],
+      "returncode": 0,
+      "seconds": 0.406898083000101,
+      "stdout": "- SENTINEL\n- two\n",
+      "stderr": "",
+      "stdout_bytes": 17
+    }
+  ],
+  "commands": [
+    [
+      "/usr/bin/bash",
+      "-c",
+      ". /tmp/project/richless-init.sh; cat list.md | less -R"
+    ]
+  ],
+  "sessions": [],
+  "env": {
+    "PATH": "/tmp/pytest-of-nobody/pytest-0/test_audit_formats_list_md_pip0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_audit_formats_list_md_pip0",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_audit_formats_list_md_pip0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_audit_formats_list_md_pip0",
+  "root": "/tmp/project",
+  "status": "pass"
+}

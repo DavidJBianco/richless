@@ -1,0 +1,2026 @@
+{
+  "cases": [
+    {
+      "name": "paragraphs",
+      "width": 40,
+      "source": "First paragraph.\n\nSecond **bold** paragraph.\n\nLast paragraph.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "First paragraph.                        \n\nSecond \u001b[1mbold\u001b[0m paragraph.                  \n\nLast paragraph.                         \n",
+      "incremental": "First paragraph.                        \n\nSecond \u001b[1mbold\u001b[0m paragraph.                  \n\nLast paragraph.                         \n",
+      "naive": "First paragraph.                        \nSecond \u001b[1mbold\u001b[0m paragraph.                  \nLast paragraph.                         \n",
+      "unsafe": "First paragraph.                        \n\nSecond \u001b[1mbold\u001b[0m paragraph.                  \n\nLast paragraph.                         \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "committed_lines": 2,
+          "pending_chars": 45,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "at_source_line": 5,
+          "committed_lines": 2,
+          "pending_chars": 44,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "paragraphs",
+      "width": 80,
+      "source": "First paragraph.\n\nSecond **bold** paragraph.\n\nLast paragraph.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "First paragraph.                                                                \n\nSecond \u001b[1mbold\u001b[0m paragraph.                                                          \n\nLast paragraph.                                                                 \n",
+      "incremental": "First paragraph.                                                                \n\nSecond \u001b[1mbold\u001b[0m paragraph.                                                          \n\nLast paragraph.                                                                 \n",
+      "naive": "First paragraph.                                                                \nSecond \u001b[1mbold\u001b[0m paragraph.                                                          \nLast paragraph.                                                                 \n",
+      "unsafe": "First paragraph.                                                                \n\nSecond \u001b[1mbold\u001b[0m paragraph.                                                          \n\nLast paragraph.                                                                 \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "committed_lines": 2,
+          "pending_chars": 45,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "at_source_line": 5,
+          "committed_lines": 2,
+          "pending_chars": 44,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "headings",
+      "width": 40,
+      "source": "# Opening\n\nParagraph.\n\n## Next\n\nTail.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503               \u001b[1mOpening\u001b[0m                \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\nParagraph.                              \n\n\n                  \u001b[1;4mNext\u001b[0m                  \n\nTail.                                   \n",
+      "incremental": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503               \u001b[1mOpening\u001b[0m                \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\nParagraph.                              \n\n\n                  \u001b[1;4mNext\u001b[0m                  \n\nTail.                                   \n",
+      "naive": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503               \u001b[1mOpening\u001b[0m                \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\nParagraph.                              \n\n                  \u001b[1;4mNext\u001b[0m                  \nTail.                                   \n",
+      "unsafe": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503               \u001b[1mOpening\u001b[0m                \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\nParagraph.                              \n\n\n                  \u001b[1;4mNext\u001b[0m                  \n\nTail.                                   \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "committed_lines": 2,
+          "pending_chars": 22,
+          "token_types": [
+            "heading_open",
+            "inline",
+            "heading_close"
+          ]
+        },
+        {
+          "at_source_line": 5,
+          "committed_lines": 2,
+          "pending_chars": 20,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "at_source_line": 7,
+          "committed_lines": 2,
+          "pending_chars": 15,
+          "token_types": [
+            "heading_open",
+            "inline",
+            "heading_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "headings",
+      "width": 80,
+      "source": "# Opening\n\nParagraph.\n\n## Next\n\nTail.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                   \u001b[1mOpening\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\nParagraph.                                                                      \n\n\n                                      \u001b[1;4mNext\u001b[0m                                      \n\nTail.                                                                           \n",
+      "incremental": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                   \u001b[1mOpening\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\nParagraph.                                                                      \n\n\n                                      \u001b[1;4mNext\u001b[0m                                      \n\nTail.                                                                           \n",
+      "naive": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                   \u001b[1mOpening\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\nParagraph.                                                                      \n\n                                      \u001b[1;4mNext\u001b[0m                                      \nTail.                                                                           \n",
+      "unsafe": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                   \u001b[1mOpening\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\nParagraph.                                                                      \n\n\n                                      \u001b[1;4mNext\u001b[0m                                      \n\nTail.                                                                           \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "committed_lines": 2,
+          "pending_chars": 22,
+          "token_types": [
+            "heading_open",
+            "inline",
+            "heading_close"
+          ]
+        },
+        {
+          "at_source_line": 5,
+          "committed_lines": 2,
+          "pending_chars": 20,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "at_source_line": 7,
+          "committed_lines": 2,
+          "pending_chars": 15,
+          "token_types": [
+            "heading_open",
+            "inline",
+            "heading_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "setext",
+      "width": 40,
+      "source": "Opening\n=======\n\nParagraph\n---------\n\nTail.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503               \u001b[1mOpening\u001b[0m                \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n\n               \u001b[1;4mParagraph\u001b[0m                \n\nTail.                                   \n",
+      "incremental": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503               \u001b[1mOpening\u001b[0m                \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n\n               \u001b[1;4mParagraph\u001b[0m                \n\nTail.                                   \n",
+      "naive": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503               \u001b[1mOpening\u001b[0m                \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n               \u001b[1;4mParagraph\u001b[0m                \nTail.                                   \n",
+      "unsafe": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503               \u001b[1mOpening\u001b[0m                \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n\n               \u001b[1;4mParagraph\u001b[0m                \n\nTail.                                   \n",
+      "trace": [
+        {
+          "at_source_line": 4,
+          "committed_lines": 3,
+          "pending_chars": 27,
+          "token_types": [
+            "heading_open",
+            "inline",
+            "heading_close"
+          ]
+        },
+        {
+          "at_source_line": 7,
+          "committed_lines": 3,
+          "pending_chars": 27,
+          "token_types": [
+            "heading_open",
+            "inline",
+            "heading_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "setext",
+      "width": 80,
+      "source": "Opening\n=======\n\nParagraph\n---------\n\nTail.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                   \u001b[1mOpening\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n\n                                   \u001b[1;4mParagraph\u001b[0m                                    \n\nTail.                                                                           \n",
+      "incremental": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                   \u001b[1mOpening\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n\n                                   \u001b[1;4mParagraph\u001b[0m                                    \n\nTail.                                                                           \n",
+      "naive": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                   \u001b[1mOpening\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n                                   \u001b[1;4mParagraph\u001b[0m                                    \nTail.                                                                           \n",
+      "unsafe": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                   \u001b[1mOpening\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n\n                                   \u001b[1;4mParagraph\u001b[0m                                    \n\nTail.                                                                           \n",
+      "trace": [
+        {
+          "at_source_line": 4,
+          "committed_lines": 3,
+          "pending_chars": 27,
+          "token_types": [
+            "heading_open",
+            "inline",
+            "heading_close"
+          ]
+        },
+        {
+          "at_source_line": 7,
+          "committed_lines": 3,
+          "pending_chars": 27,
+          "token_types": [
+            "heading_open",
+            "inline",
+            "heading_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "list-loosening",
+      "width": 40,
+      "source": "- First\n- Second\n\n- Third\n\nOutside paragraph.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\n\u001b[1m \u2022 \u001b[0mFirst                                \n\u001b[1m \u2022 \u001b[0mSecond                               \n\u001b[1m \u2022 \u001b[0mThird                                \n\nOutside paragraph.                      \n",
+      "incremental": "\n\u001b[1m \u2022 \u001b[0mFirst                                \n\u001b[1m \u2022 \u001b[0mSecond                               \n\u001b[1m \u2022 \u001b[0mThird                                \n\nOutside paragraph.                      \n",
+      "naive": "\n\u001b[1m \u2022 \u001b[0mFirst                                \n\u001b[1m \u2022 \u001b[0mSecond                               \n\n\u001b[1m \u2022 \u001b[0mThird                                \nOutside paragraph.                      \n",
+      "unsafe": "\n\u001b[1m \u2022 \u001b[0mFirst                                \n\u001b[1m \u2022 \u001b[0mSecond                               \n\u001b[1m \u2022 \u001b[0mThird                                \n\nOutside paragraph.                      \n",
+      "trace": [
+        {
+          "at_source_line": 6,
+          "committed_lines": 5,
+          "pending_chars": 46,
+          "token_types": [
+            "bullet_list_open",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "list_item_close",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "list_item_close",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "list_item_close",
+            "bullet_list_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "list-loosening",
+      "width": 80,
+      "source": "- First\n- Second\n\n- Third\n\nOutside paragraph.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\n\u001b[1m \u2022 \u001b[0mFirst                                                                        \n\u001b[1m \u2022 \u001b[0mSecond                                                                       \n\u001b[1m \u2022 \u001b[0mThird                                                                        \n\nOutside paragraph.                                                              \n",
+      "incremental": "\n\u001b[1m \u2022 \u001b[0mFirst                                                                        \n\u001b[1m \u2022 \u001b[0mSecond                                                                       \n\u001b[1m \u2022 \u001b[0mThird                                                                        \n\nOutside paragraph.                                                              \n",
+      "naive": "\n\u001b[1m \u2022 \u001b[0mFirst                                                                        \n\u001b[1m \u2022 \u001b[0mSecond                                                                       \n\n\u001b[1m \u2022 \u001b[0mThird                                                                        \nOutside paragraph.                                                              \n",
+      "unsafe": "\n\u001b[1m \u2022 \u001b[0mFirst                                                                        \n\u001b[1m \u2022 \u001b[0mSecond                                                                       \n\u001b[1m \u2022 \u001b[0mThird                                                                        \n\nOutside paragraph.                                                              \n",
+      "trace": [
+        {
+          "at_source_line": 6,
+          "committed_lines": 5,
+          "pending_chars": 46,
+          "token_types": [
+            "bullet_list_open",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "list_item_close",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "list_item_close",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "list_item_close",
+            "bullet_list_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "list-continuation",
+      "width": 40,
+      "source": "- First\n\n  Continuation **inside**.\n\n- Second\n\nOutside.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\n\u001b[1m \u2022 \u001b[0mFirst                                \n\u001b[1m   \u001b[0mContinuation \u001b[1minside\u001b[0m.                 \n\u001b[1m \u2022 \u001b[0mSecond                               \n\nOutside.                                \n",
+      "incremental": "\n\u001b[1m \u2022 \u001b[0mFirst                                \n\u001b[1m   \u001b[0mContinuation \u001b[1minside\u001b[0m.                 \n\u001b[1m \u2022 \u001b[0mSecond                               \n\nOutside.                                \n",
+      "naive": "\n\u001b[1m \u2022 \u001b[0mFirst                                \nContinuation \u001b[1minside\u001b[0m.                    \n\n\u001b[1m \u2022 \u001b[0mSecond                               \nOutside.                                \n",
+      "unsafe": "\n\u001b[1m \u2022 \u001b[0mFirst                                \n\u001b[1m   \u001b[0mContinuation \u001b[1minside\u001b[0m.                 \n\u001b[1m \u2022 \u001b[0mSecond                               \n\nOutside.                                \n",
+      "trace": [
+        {
+          "at_source_line": 7,
+          "committed_lines": 6,
+          "pending_chars": 56,
+          "token_types": [
+            "bullet_list_open",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "list_item_close",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "list_item_close",
+            "bullet_list_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "list-continuation",
+      "width": 80,
+      "source": "- First\n\n  Continuation **inside**.\n\n- Second\n\nOutside.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\n\u001b[1m \u2022 \u001b[0mFirst                                                                        \n\u001b[1m   \u001b[0mContinuation \u001b[1minside\u001b[0m.                                                         \n\u001b[1m \u2022 \u001b[0mSecond                                                                       \n\nOutside.                                                                        \n",
+      "incremental": "\n\u001b[1m \u2022 \u001b[0mFirst                                                                        \n\u001b[1m   \u001b[0mContinuation \u001b[1minside\u001b[0m.                                                         \n\u001b[1m \u2022 \u001b[0mSecond                                                                       \n\nOutside.                                                                        \n",
+      "naive": "\n\u001b[1m \u2022 \u001b[0mFirst                                                                        \nContinuation \u001b[1minside\u001b[0m.                                                            \n\n\u001b[1m \u2022 \u001b[0mSecond                                                                       \nOutside.                                                                        \n",
+      "unsafe": "\n\u001b[1m \u2022 \u001b[0mFirst                                                                        \n\u001b[1m   \u001b[0mContinuation \u001b[1minside\u001b[0m.                                                         \n\u001b[1m \u2022 \u001b[0mSecond                                                                       \n\nOutside.                                                                        \n",
+      "trace": [
+        {
+          "at_source_line": 7,
+          "committed_lines": 6,
+          "pending_chars": 56,
+          "token_types": [
+            "bullet_list_open",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "list_item_close",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "list_item_close",
+            "bullet_list_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "nested-list",
+      "width": 40,
+      "source": "- Outer\n  - Inner\n\n    Continued inner.\n- Next\n\nOutside.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\n\u001b[1m \u2022 \u001b[0mOuter                                \n\u001b[1m   \u001b[0m\u001b[1m \u2022 \u001b[0mInner                             \n\u001b[1m   \u001b[0m\u001b[1m   \u001b[0mContinued inner.                  \n\u001b[1m \u2022 \u001b[0mNext                                 \n\nOutside.                                \n",
+      "incremental": "\n\u001b[1m \u2022 \u001b[0mOuter                                \n\u001b[1m   \u001b[0m\u001b[1m \u2022 \u001b[0mInner                             \n\u001b[1m   \u001b[0m\u001b[1m   \u001b[0mContinued inner.                  \n\u001b[1m \u2022 \u001b[0mNext                                 \n\nOutside.                                \n",
+      "naive": "\n\u001b[1m \u2022 \u001b[0mOuter                                \n\u001b[1m   \u001b[0m\u001b[1m \u2022 \u001b[0mInner                             \n                                        \n Continued inner.                       \n                                        \n\n\u001b[1m \u2022 \u001b[0mNext                                 \nOutside.                                \n",
+      "unsafe": "\n\u001b[1m \u2022 \u001b[0mOuter                                \n\u001b[1m   \u001b[0m\u001b[1m \u2022 \u001b[0mInner                             \n\u001b[1m   \u001b[0m\u001b[1m   \u001b[0mContinued inner.                  \n\u001b[1m \u2022 \u001b[0mNext                                 \n\nOutside.                                \n",
+      "trace": [
+        {
+          "at_source_line": 7,
+          "committed_lines": 6,
+          "pending_chars": 57,
+          "token_types": [
+            "bullet_list_open",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "bullet_list_open",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "list_item_close",
+            "bullet_list_close",
+            "list_item_close",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "list_item_close",
+            "bullet_list_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "nested-list",
+      "width": 80,
+      "source": "- Outer\n  - Inner\n\n    Continued inner.\n- Next\n\nOutside.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\n\u001b[1m \u2022 \u001b[0mOuter                                                                        \n\u001b[1m   \u001b[0m\u001b[1m \u2022 \u001b[0mInner                                                                     \n\u001b[1m   \u001b[0m\u001b[1m   \u001b[0mContinued inner.                                                          \n\u001b[1m \u2022 \u001b[0mNext                                                                         \n\nOutside.                                                                        \n",
+      "incremental": "\n\u001b[1m \u2022 \u001b[0mOuter                                                                        \n\u001b[1m   \u001b[0m\u001b[1m \u2022 \u001b[0mInner                                                                     \n\u001b[1m   \u001b[0m\u001b[1m   \u001b[0mContinued inner.                                                          \n\u001b[1m \u2022 \u001b[0mNext                                                                         \n\nOutside.                                                                        \n",
+      "naive": "\n\u001b[1m \u2022 \u001b[0mOuter                                                                        \n\u001b[1m   \u001b[0m\u001b[1m \u2022 \u001b[0mInner                                                                     \n                                                                                \n Continued inner.                                                               \n                                                                                \n\n\u001b[1m \u2022 \u001b[0mNext                                                                         \nOutside.                                                                        \n",
+      "unsafe": "\n\u001b[1m \u2022 \u001b[0mOuter                                                                        \n\u001b[1m   \u001b[0m\u001b[1m \u2022 \u001b[0mInner                                                                     \n\u001b[1m   \u001b[0m\u001b[1m   \u001b[0mContinued inner.                                                          \n\u001b[1m \u2022 \u001b[0mNext                                                                         \n\nOutside.                                                                        \n",
+      "trace": [
+        {
+          "at_source_line": 7,
+          "committed_lines": 6,
+          "pending_chars": 57,
+          "token_types": [
+            "bullet_list_open",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "bullet_list_open",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "list_item_close",
+            "bullet_list_close",
+            "list_item_close",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "list_item_close",
+            "bullet_list_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "ordered-list",
+      "width": 40,
+      "source": "98. First\n99. Second\n100. Third\n\nOutside.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\n\u001b[1m  98 \u001b[0mFirst                              \n\u001b[1m  99 \u001b[0mSecond                             \n\u001b[1m 100 \u001b[0mThird                              \n\nOutside.                                \n",
+      "incremental": "\n\u001b[1m  98 \u001b[0mFirst                              \n\u001b[1m  99 \u001b[0mSecond                             \n\u001b[1m 100 \u001b[0mThird                              \n\nOutside.                                \n",
+      "naive": "\n\u001b[1m  98 \u001b[0mFirst                              \n\u001b[1m  99 \u001b[0mSecond                             \n\u001b[1m 100 \u001b[0mThird                              \nOutside.                                \n",
+      "unsafe": "\n\u001b[1m  98 \u001b[0mFirst                              \n\u001b[1m  99 \u001b[0mSecond                             \n\u001b[1m 100 \u001b[0mThird                              \n\nOutside.                                \n",
+      "trace": [
+        {
+          "at_source_line": 5,
+          "committed_lines": 4,
+          "pending_chars": 42,
+          "token_types": [
+            "ordered_list_open",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "list_item_close",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "list_item_close",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "list_item_close",
+            "ordered_list_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "ordered-list",
+      "width": 80,
+      "source": "98. First\n99. Second\n100. Third\n\nOutside.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\n\u001b[1m  98 \u001b[0mFirst                                                                      \n\u001b[1m  99 \u001b[0mSecond                                                                     \n\u001b[1m 100 \u001b[0mThird                                                                      \n\nOutside.                                                                        \n",
+      "incremental": "\n\u001b[1m  98 \u001b[0mFirst                                                                      \n\u001b[1m  99 \u001b[0mSecond                                                                     \n\u001b[1m 100 \u001b[0mThird                                                                      \n\nOutside.                                                                        \n",
+      "naive": "\n\u001b[1m  98 \u001b[0mFirst                                                                      \n\u001b[1m  99 \u001b[0mSecond                                                                     \n\u001b[1m 100 \u001b[0mThird                                                                      \nOutside.                                                                        \n",
+      "unsafe": "\n\u001b[1m  98 \u001b[0mFirst                                                                      \n\u001b[1m  99 \u001b[0mSecond                                                                     \n\u001b[1m 100 \u001b[0mThird                                                                      \n\nOutside.                                                                        \n",
+      "trace": [
+        {
+          "at_source_line": 5,
+          "committed_lines": 4,
+          "pending_chars": 42,
+          "token_types": [
+            "ordered_list_open",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "list_item_close",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "list_item_close",
+            "list_item_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "list_item_close",
+            "ordered_list_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "blockquote",
+      "width": 40,
+      "source": "> Quoted paragraph\n> continued\n\n> Another quoted paragraph\n\nOutside.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\n\u258c Quoted paragraph continued          \n\n\u258c Another quoted paragraph            \n\nOutside.                                \n",
+      "incremental": "\n\u258c Quoted paragraph continued          \n\n\u258c Another quoted paragraph            \n\nOutside.                                \n",
+      "naive": "\n\u258c Quoted paragraph continued          \n\n\u258c Another quoted paragraph            \nOutside.                                \n",
+      "unsafe": "\n\u258c Quoted paragraph continued          \n\n\u258c Another quoted paragraph            \n\nOutside.                                \n",
+      "trace": [
+        {
+          "at_source_line": 4,
+          "committed_lines": 3,
+          "pending_chars": 59,
+          "token_types": [
+            "blockquote_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "blockquote_close"
+          ]
+        },
+        {
+          "at_source_line": 6,
+          "committed_lines": 2,
+          "pending_chars": 37,
+          "token_types": [
+            "blockquote_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "blockquote_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "blockquote",
+      "width": 80,
+      "source": "> Quoted paragraph\n> continued\n\n> Another quoted paragraph\n\nOutside.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\n\u258c Quoted paragraph continued                                                  \n\n\u258c Another quoted paragraph                                                    \n\nOutside.                                                                        \n",
+      "incremental": "\n\u258c Quoted paragraph continued                                                  \n\n\u258c Another quoted paragraph                                                    \n\nOutside.                                                                        \n",
+      "naive": "\n\u258c Quoted paragraph continued                                                  \n\n\u258c Another quoted paragraph                                                    \nOutside.                                                                        \n",
+      "unsafe": "\n\u258c Quoted paragraph continued                                                  \n\n\u258c Another quoted paragraph                                                    \n\nOutside.                                                                        \n",
+      "trace": [
+        {
+          "at_source_line": 4,
+          "committed_lines": 3,
+          "pending_chars": 59,
+          "token_types": [
+            "blockquote_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "blockquote_close"
+          ]
+        },
+        {
+          "at_source_line": 6,
+          "committed_lines": 2,
+          "pending_chars": 37,
+          "token_types": [
+            "blockquote_open",
+            "paragraph_open",
+            "inline",
+            "paragraph_close",
+            "blockquote_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "fenced-code",
+      "width": 40,
+      "source": "Before.\n\n```python\nx = \"value\"\n\n# not a heading\n```\n\nAfter.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "Before.                                 \n\n                                        \n x = \"value\"                            \n                                        \n # not a heading                        \n                                        \n\nAfter.                                  \n",
+      "incremental": "Before.                                 \n\n                                        \n x = \"value\"                            \n                                        \n # not a heading                        \n                                        \n\nAfter.                                  \n",
+      "naive": "Before.                                 \n                                        \n x = \"value\"                            \n                                        \n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503            \u001b[1mnot a heading\u001b[0m             \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n                                        \n                                        \n                                        \nAfter.                                  \n",
+      "unsafe": "Before.                                 \n\n                                        \n x = \"value\"                            \n                                        \n # not a heading                        \n                                        \n\nAfter.                                  \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "committed_lines": 2,
+          "pending_chars": 19,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "at_source_line": 9,
+          "committed_lines": 6,
+          "pending_chars": 51,
+          "token_types": [
+            "fence"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "fenced-code",
+      "width": 80,
+      "source": "Before.\n\n```python\nx = \"value\"\n\n# not a heading\n```\n\nAfter.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "Before.                                                                         \n\n                                                                                \n x = \"value\"                                                                    \n                                                                                \n # not a heading                                                                \n                                                                                \n\nAfter.                                                                          \n",
+      "incremental": "Before.                                                                         \n\n                                                                                \n x = \"value\"                                                                    \n                                                                                \n # not a heading                                                                \n                                                                                \n\nAfter.                                                                          \n",
+      "naive": "Before.                                                                         \n                                                                                \n x = \"value\"                                                                    \n                                                                                \n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                \u001b[1mnot a heading\u001b[0m                                 \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n                                                                                \n                                                                                \n                                                                                \nAfter.                                                                          \n",
+      "unsafe": "Before.                                                                         \n\n                                                                                \n x = \"value\"                                                                    \n                                                                                \n # not a heading                                                                \n                                                                                \n\nAfter.                                                                          \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "committed_lines": 2,
+          "pending_chars": 19,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "at_source_line": 9,
+          "committed_lines": 6,
+          "pending_chars": 51,
+          "token_types": [
+            "fence"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "unclosed-fence",
+      "width": 40,
+      "source": "Before.\n\n```python\nx = \"value\"\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "Before.                                 \n\n                                        \n x = \"value\"                            \n                                        \n",
+      "incremental": "Before.                                 \n\n                                        \n x = \"value\"                            \n                                        \n",
+      "naive": "Before.                                 \n                                        \n x = \"value\"                            \n                                        \n",
+      "unsafe": "Before.                                 \n\n                                        \n x = \"value\"                            \n                                        \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "committed_lines": 2,
+          "pending_chars": 19,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 2
+        }
+      ]
+    },
+    {
+      "name": "unclosed-fence",
+      "width": 80,
+      "source": "Before.\n\n```python\nx = \"value\"\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "Before.                                                                         \n\n                                                                                \n x = \"value\"                                                                    \n                                                                                \n",
+      "incremental": "Before.                                                                         \n\n                                                                                \n x = \"value\"                                                                    \n                                                                                \n",
+      "naive": "Before.                                                                         \n                                                                                \n x = \"value\"                                                                    \n                                                                                \n",
+      "unsafe": "Before.                                                                         \n\n                                                                                \n x = \"value\"                                                                    \n                                                                                \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "committed_lines": 2,
+          "pending_chars": 19,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 2
+        }
+      ]
+    },
+    {
+      "name": "indented-code",
+      "width": 40,
+      "source": "Before.\n\n    first\n\n    second\n\nAfter.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "Before.                                 \n\n                                        \n first                                  \n                                        \n second                                 \n                                        \n\nAfter.                                  \n",
+      "incremental": "Before.                                 \n\n                                        \n first                                  \n                                        \n second                                 \n                                        \n\nAfter.                                  \n",
+      "naive": "Before.                                 \n                                        \n first                                  \n                                        \n                                        \n second                                 \n                                        \nAfter.                                  \n",
+      "unsafe": "Before.                                 \n\n                                        \n first                                  \n                                        \n second                                 \n                                        \n\nAfter.                                  \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "committed_lines": 2,
+          "pending_chars": 19,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "at_source_line": 7,
+          "committed_lines": 4,
+          "pending_chars": 30,
+          "token_types": [
+            "code_block"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "indented-code",
+      "width": 80,
+      "source": "Before.\n\n    first\n\n    second\n\nAfter.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "Before.                                                                         \n\n                                                                                \n first                                                                          \n                                                                                \n second                                                                         \n                                                                                \n\nAfter.                                                                          \n",
+      "incremental": "Before.                                                                         \n\n                                                                                \n first                                                                          \n                                                                                \n second                                                                         \n                                                                                \n\nAfter.                                                                          \n",
+      "naive": "Before.                                                                         \n                                                                                \n first                                                                          \n                                                                                \n                                                                                \n second                                                                         \n                                                                                \nAfter.                                                                          \n",
+      "unsafe": "Before.                                                                         \n\n                                                                                \n first                                                                          \n                                                                                \n second                                                                         \n                                                                                \n\nAfter.                                                                          \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "committed_lines": 2,
+          "pending_chars": 19,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "at_source_line": 7,
+          "committed_lines": 4,
+          "pending_chars": 30,
+          "token_types": [
+            "code_block"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "table-growing-width",
+      "width": 40,
+      "source": "| Key | Value |\n| --- | --- |\n| a | b |\n| wider-key | a much longer value |\n\nAfter.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\n                                   \n \u001b[1m \u001b[0m\u001b[1mKey\u001b[0m\u001b[1m      \u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mValue\u001b[0m\u001b[1m              \u001b[0m\u001b[1m \u001b[0m \n \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 \n  a           b                    \n  wider-key   a much longer value  \n                                   \n\nAfter.                                  \n",
+      "incremental": "\n                                   \n \u001b[1m \u001b[0m\u001b[1mKey\u001b[0m\u001b[1m      \u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mValue\u001b[0m\u001b[1m              \u001b[0m\u001b[1m \u001b[0m \n \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 \n  a           b                    \n  wider-key   a much longer value  \n                                   \n\nAfter.                                  \n",
+      "naive": "\n                                   \n \u001b[1m \u001b[0m\u001b[1mKey\u001b[0m\u001b[1m      \u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mValue\u001b[0m\u001b[1m              \u001b[0m\u001b[1m \u001b[0m \n \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 \n  a           b                    \n  wider-key   a much longer value  \n                                   \nAfter.                                  \n",
+      "unsafe": "\n                                   \n \u001b[1m \u001b[0m\u001b[1mKey\u001b[0m\u001b[1m      \u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mValue\u001b[0m\u001b[1m              \u001b[0m\u001b[1m \u001b[0m \n \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 \n  a           b                    \n  wider-key   a much longer value  \n                                   \n\nAfter.                                  \n",
+      "trace": [
+        {
+          "at_source_line": 6,
+          "committed_lines": 5,
+          "pending_chars": 84,
+          "token_types": [
+            "table_open",
+            "thead_open",
+            "tr_open",
+            "th_open",
+            "inline",
+            "th_close",
+            "th_open",
+            "inline",
+            "th_close",
+            "tr_close",
+            "thead_close",
+            "tbody_open",
+            "tr_open",
+            "td_open",
+            "inline",
+            "td_close",
+            "td_open",
+            "inline",
+            "td_close",
+            "tr_close",
+            "tr_open",
+            "td_open",
+            "inline",
+            "td_close",
+            "td_open",
+            "inline",
+            "td_close",
+            "tr_close",
+            "tbody_close",
+            "table_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "table-growing-width",
+      "width": 80,
+      "source": "| Key | Value |\n| --- | --- |\n| a | b |\n| wider-key | a much longer value |\n\nAfter.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\n                                   \n \u001b[1m \u001b[0m\u001b[1mKey\u001b[0m\u001b[1m      \u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mValue\u001b[0m\u001b[1m              \u001b[0m\u001b[1m \u001b[0m \n \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 \n  a           b                    \n  wider-key   a much longer value  \n                                   \n\nAfter.                                                                          \n",
+      "incremental": "\n                                   \n \u001b[1m \u001b[0m\u001b[1mKey\u001b[0m\u001b[1m      \u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mValue\u001b[0m\u001b[1m              \u001b[0m\u001b[1m \u001b[0m \n \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 \n  a           b                    \n  wider-key   a much longer value  \n                                   \n\nAfter.                                                                          \n",
+      "naive": "\n                                   \n \u001b[1m \u001b[0m\u001b[1mKey\u001b[0m\u001b[1m      \u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mValue\u001b[0m\u001b[1m              \u001b[0m\u001b[1m \u001b[0m \n \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 \n  a           b                    \n  wider-key   a much longer value  \n                                   \nAfter.                                                                          \n",
+      "unsafe": "\n                                   \n \u001b[1m \u001b[0m\u001b[1mKey\u001b[0m\u001b[1m      \u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mValue\u001b[0m\u001b[1m              \u001b[0m\u001b[1m \u001b[0m \n \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 \n  a           b                    \n  wider-key   a much longer value  \n                                   \n\nAfter.                                                                          \n",
+      "trace": [
+        {
+          "at_source_line": 6,
+          "committed_lines": 5,
+          "pending_chars": 84,
+          "token_types": [
+            "table_open",
+            "thead_open",
+            "tr_open",
+            "th_open",
+            "inline",
+            "th_close",
+            "th_open",
+            "inline",
+            "th_close",
+            "tr_close",
+            "thead_close",
+            "tbody_open",
+            "tr_open",
+            "td_open",
+            "inline",
+            "td_close",
+            "td_open",
+            "inline",
+            "td_close",
+            "tr_close",
+            "tr_open",
+            "td_open",
+            "inline",
+            "td_close",
+            "td_open",
+            "inline",
+            "td_close",
+            "tr_close",
+            "tbody_close",
+            "table_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "future-reference",
+      "width": 40,
+      "source": "See [manual][guide].\n\nAn unrelated paragraph.\n\n[guide]: https://example.com/manual\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": false,
+      "whole": "See manual (\u001b[4mhttps://example.com/manual\u001b[0m).\n\nAn unrelated paragraph.                 \n",
+      "incremental": "See manual (\u001b[4mhttps://example.com/manual\u001b[0m).\n\nAn unrelated paragraph.                 \n",
+      "naive": "See [manual][guide].                    \nAn unrelated paragraph.                 \n",
+      "unsafe": "See [manual][guide].                    \n\nAn unrelated paragraph.                 \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "held": "possible reference",
+          "pending_chars": 46
+        },
+        {
+          "at_source_line": 4,
+          "held": "possible reference",
+          "pending_chars": 47
+        },
+        {
+          "at_source_line": 5,
+          "committed_lines": 2,
+          "pending_chars": 83,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 3
+        }
+      ]
+    },
+    {
+      "name": "future-reference",
+      "width": 80,
+      "source": "See [manual][guide].\n\nAn unrelated paragraph.\n\n[guide]: https://example.com/manual\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": false,
+      "whole": "See manual (\u001b[4mhttps://example.com/manual\u001b[0m).                                        \n\nAn unrelated paragraph.                                                         \n",
+      "incremental": "See manual (\u001b[4mhttps://example.com/manual\u001b[0m).                                        \n\nAn unrelated paragraph.                                                         \n",
+      "naive": "See [manual][guide].                                                            \nAn unrelated paragraph.                                                         \n",
+      "unsafe": "See [manual][guide].                                                            \n\nAn unrelated paragraph.                                                         \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "held": "possible reference",
+          "pending_chars": 46
+        },
+        {
+          "at_source_line": 4,
+          "held": "possible reference",
+          "pending_chars": 47
+        },
+        {
+          "at_source_line": 5,
+          "committed_lines": 2,
+          "pending_chars": 83,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 3
+        }
+      ]
+    },
+    {
+      "name": "future-shortcut",
+      "width": 40,
+      "source": "See [guide].\n\nAnother paragraph.\n\n[guide]: https://example.com/manual\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": false,
+      "whole": "See guide (\u001b[4mhttps://example.com/manual\u001b[0m). \n\nAnother paragraph.                      \n",
+      "incremental": "See guide (\u001b[4mhttps://example.com/manual\u001b[0m). \n\nAnother paragraph.                      \n",
+      "naive": "See [guide].                            \nAnother paragraph.                      \n",
+      "unsafe": "See [guide].                            \n\nAnother paragraph.                      \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "held": "possible reference",
+          "pending_chars": 33
+        },
+        {
+          "at_source_line": 4,
+          "held": "possible reference",
+          "pending_chars": 34
+        },
+        {
+          "at_source_line": 5,
+          "committed_lines": 2,
+          "pending_chars": 70,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 3
+        }
+      ]
+    },
+    {
+      "name": "future-shortcut",
+      "width": 80,
+      "source": "See [guide].\n\nAnother paragraph.\n\n[guide]: https://example.com/manual\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": false,
+      "whole": "See guide (\u001b[4mhttps://example.com/manual\u001b[0m).                                         \n\nAnother paragraph.                                                              \n",
+      "incremental": "See guide (\u001b[4mhttps://example.com/manual\u001b[0m).                                         \n\nAnother paragraph.                                                              \n",
+      "naive": "See [guide].                                                                    \nAnother paragraph.                                                              \n",
+      "unsafe": "See [guide].                                                                    \n\nAnother paragraph.                                                              \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "held": "possible reference",
+          "pending_chars": 33
+        },
+        {
+          "at_source_line": 4,
+          "held": "possible reference",
+          "pending_chars": 34
+        },
+        {
+          "at_source_line": 5,
+          "committed_lines": 2,
+          "pending_chars": 70,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 3
+        }
+      ]
+    },
+    {
+      "name": "backward-reference",
+      "width": 40,
+      "source": "[guide]: https://example.com/manual\n\nSee [guide].\n\nTail.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "See guide (\u001b[4mhttps://example.com/manual\u001b[0m). \n\nTail.                                   \n",
+      "incremental": "See guide (\u001b[4mhttps://example.com/manual\u001b[0m). \n\nTail.                                   \n",
+      "naive": "See [guide].                            \nTail.                                   \n",
+      "unsafe": "See guide (\u001b[4mhttps://example.com/manual\u001b[0m). \n\nTail.                                   \n",
+      "trace": [
+        {
+          "at_source_line": 5,
+          "committed_lines": 4,
+          "pending_chars": 57,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "backward-reference",
+      "width": 80,
+      "source": "[guide]: https://example.com/manual\n\nSee [guide].\n\nTail.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "See guide (\u001b[4mhttps://example.com/manual\u001b[0m).                                         \n\nTail.                                                                           \n",
+      "incremental": "See guide (\u001b[4mhttps://example.com/manual\u001b[0m).                                         \n\nTail.                                                                           \n",
+      "naive": "See [guide].                                                                    \nTail.                                                                           \n",
+      "unsafe": "See guide (\u001b[4mhttps://example.com/manual\u001b[0m).                                         \n\nTail.                                                                           \n",
+      "trace": [
+        {
+          "at_source_line": 5,
+          "committed_lines": 4,
+          "pending_chars": 57,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "reference-in-container",
+      "width": 40,
+      "source": "See [guide].\n\n> [guide]: https://example.com/manual\n\nTail.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "See guide (\u001b[4mhttps://example.com/manual\u001b[0m). \n\n\nTail.                                   \n",
+      "incremental": "See guide (\u001b[4mhttps://example.com/manual\u001b[0m). \n\n\nTail.                                   \n",
+      "naive": "See [guide].                            \nTail.                                   \n",
+      "unsafe": "See guide (\u001b[4mhttps://example.com/manual\u001b[0m). \n\n\nTail.                                   \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "committed_lines": 2,
+          "pending_chars": 52,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "at_source_line": 5,
+          "committed_lines": 2,
+          "pending_chars": 45,
+          "token_types": [
+            "blockquote_open",
+            "blockquote_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "reference-in-container",
+      "width": 80,
+      "source": "See [guide].\n\n> [guide]: https://example.com/manual\n\nTail.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "See guide (\u001b[4mhttps://example.com/manual\u001b[0m).                                         \n\n\nTail.                                                                           \n",
+      "incremental": "See guide (\u001b[4mhttps://example.com/manual\u001b[0m).                                         \n\n\nTail.                                                                           \n",
+      "naive": "See [guide].                                                                    \nTail.                                                                           \n",
+      "unsafe": "See guide (\u001b[4mhttps://example.com/manual\u001b[0m).                                         \n\n\nTail.                                                                           \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "committed_lines": 2,
+          "pending_chars": 52,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "at_source_line": 5,
+          "committed_lines": 2,
+          "pending_chars": 45,
+          "token_types": [
+            "blockquote_open",
+            "blockquote_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "duplicate-reference",
+      "width": 40,
+      "source": "[guide]: https://example.com/first\n\nSee [guide].\n\n[guide]: https://example.com/second\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "See guide (\u001b[4mhttps://example.com/first\u001b[0m).  \n",
+      "incremental": "See guide (\u001b[4mhttps://example.com/first\u001b[0m).  \n",
+      "naive": "See [guide].                            \n",
+      "unsafe": "See guide (\u001b[4mhttps://example.com/first\u001b[0m).  \n",
+      "trace": [
+        {
+          "eof": true,
+          "remaining_lines": 5
+        }
+      ]
+    },
+    {
+      "name": "duplicate-reference",
+      "width": 80,
+      "source": "[guide]: https://example.com/first\n\nSee [guide].\n\n[guide]: https://example.com/second\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "See guide (\u001b[4mhttps://example.com/first\u001b[0m).                                          \n",
+      "incremental": "See guide (\u001b[4mhttps://example.com/first\u001b[0m).                                          \n",
+      "naive": "See [guide].                                                                    \n",
+      "unsafe": "See guide (\u001b[4mhttps://example.com/first\u001b[0m).                                          \n",
+      "trace": [
+        {
+          "eof": true,
+          "remaining_lines": 5
+        }
+      ]
+    },
+    {
+      "name": "inline-reference-brackets",
+      "width": 40,
+      "source": "An [inline link](https://example.com) and literal [brackets].\n\nTail.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "An inline link (\u001b[4mhttps://example.com\u001b[0m) and\nliteral [brackets].                     \n\nTail.                                   \n",
+      "incremental": "An inline link (\u001b[4mhttps://example.com\u001b[0m) and\nliteral [brackets].                     \n\nTail.                                   \n",
+      "naive": "An inline link (\u001b[4mhttps://example.com\u001b[0m) and\nliteral [brackets].                     \nTail.                                   \n",
+      "unsafe": "An inline link (\u001b[4mhttps://example.com\u001b[0m) and\nliteral [brackets].                     \n\nTail.                                   \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "held": "possible reference",
+          "pending_chars": 69
+        },
+        {
+          "eof": true,
+          "remaining_lines": 3
+        }
+      ]
+    },
+    {
+      "name": "inline-reference-brackets",
+      "width": 80,
+      "source": "An [inline link](https://example.com) and literal [brackets].\n\nTail.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "An inline link (\u001b[4mhttps://example.com\u001b[0m) and literal [brackets].                    \n\nTail.                                                                           \n",
+      "incremental": "An inline link (\u001b[4mhttps://example.com\u001b[0m) and literal [brackets].                    \n\nTail.                                                                           \n",
+      "naive": "An inline link (\u001b[4mhttps://example.com\u001b[0m) and literal [brackets].                    \nTail.                                                                           \n",
+      "unsafe": "An inline link (\u001b[4mhttps://example.com\u001b[0m) and literal [brackets].                    \n\nTail.                                                                           \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "held": "possible reference",
+          "pending_chars": 69
+        },
+        {
+          "eof": true,
+          "remaining_lines": 3
+        }
+      ]
+    },
+    {
+      "name": "multiline-inline",
+      "width": 40,
+      "source": "Opening **bold\ncontinued** and `code\nspan`.\n\nTail.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "Opening \u001b[1mbold\u001b[0m\u001b[1m \u001b[0m\u001b[1mcontinued\u001b[0m and \u001b[1mcode span\u001b[0m.   \n\nTail.                                   \n",
+      "incremental": "Opening \u001b[1mbold\u001b[0m\u001b[1m \u001b[0m\u001b[1mcontinued\u001b[0m and \u001b[1mcode span\u001b[0m.   \n\nTail.                                   \n",
+      "naive": "Opening \u001b[1mbold\u001b[0m\u001b[1m \u001b[0m\u001b[1mcontinued\u001b[0m and \u001b[1mcode span\u001b[0m.   \nTail.                                   \n",
+      "unsafe": "Opening \u001b[1mbold\u001b[0m\u001b[1m \u001b[0m\u001b[1mcontinued\u001b[0m and \u001b[1mcode span\u001b[0m.   \n\nTail.                                   \n",
+      "trace": [
+        {
+          "at_source_line": 5,
+          "committed_lines": 4,
+          "pending_chars": 51,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "multiline-inline",
+      "width": 80,
+      "source": "Opening **bold\ncontinued** and `code\nspan`.\n\nTail.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "Opening \u001b[1mbold\u001b[0m\u001b[1m \u001b[0m\u001b[1mcontinued\u001b[0m and \u001b[1mcode span\u001b[0m.                                           \n\nTail.                                                                           \n",
+      "incremental": "Opening \u001b[1mbold\u001b[0m\u001b[1m \u001b[0m\u001b[1mcontinued\u001b[0m and \u001b[1mcode span\u001b[0m.                                           \n\nTail.                                                                           \n",
+      "naive": "Opening \u001b[1mbold\u001b[0m\u001b[1m \u001b[0m\u001b[1mcontinued\u001b[0m and \u001b[1mcode span\u001b[0m.                                           \nTail.                                                                           \n",
+      "unsafe": "Opening \u001b[1mbold\u001b[0m\u001b[1m \u001b[0m\u001b[1mcontinued\u001b[0m and \u001b[1mcode span\u001b[0m.                                           \n\nTail.                                                                           \n",
+      "trace": [
+        {
+          "at_source_line": 5,
+          "committed_lines": 4,
+          "pending_chars": 51,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "html-block",
+      "width": 40,
+      "source": "<div>\n# inside HTML\n</div>\n\nAfter.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\nAfter.                                  \n",
+      "incremental": "\nAfter.                                  \n",
+      "naive": "After.                                  \n",
+      "unsafe": "\nAfter.                                  \n",
+      "trace": [
+        {
+          "at_source_line": 5,
+          "committed_lines": 4,
+          "pending_chars": 35,
+          "token_types": [
+            "html_block"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "html-block",
+      "width": 80,
+      "source": "<div>\n# inside HTML\n</div>\n\nAfter.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\nAfter.                                                                          \n",
+      "incremental": "\nAfter.                                                                          \n",
+      "naive": "After.                                                                          \n",
+      "unsafe": "\nAfter.                                                                          \n",
+      "trace": [
+        {
+          "at_source_line": 5,
+          "committed_lines": 4,
+          "pending_chars": 35,
+          "token_types": [
+            "html_block"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "thematic-break",
+      "width": 40,
+      "source": "Before.\n\n---\n\nAfter.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "Before.                                 \n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nAfter.                                  \n",
+      "incremental": "Before.                                 \n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nAfter.                                  \n",
+      "naive": "Before.                                 \n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nAfter.                                  \n",
+      "unsafe": "Before.                                 \n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nAfter.                                  \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "committed_lines": 2,
+          "pending_chars": 13,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "at_source_line": 5,
+          "committed_lines": 2,
+          "pending_chars": 12,
+          "token_types": [
+            "hr"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "thematic-break",
+      "width": 80,
+      "source": "Before.\n\n---\n\nAfter.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "Before.                                                                         \n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nAfter.                                                                          \n",
+      "incremental": "Before.                                                                         \n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nAfter.                                                                          \n",
+      "naive": "Before.                                                                         \n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nAfter.                                                                          \n",
+      "unsafe": "Before.                                                                         \n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nAfter.                                                                          \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "committed_lines": 2,
+          "pending_chars": 13,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "at_source_line": 5,
+          "committed_lines": 2,
+          "pending_chars": 12,
+          "token_types": [
+            "hr"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "image",
+      "width": 40,
+      "source": "Before.\n\n![alt text](image.png)\n\nAfter.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "Before.                                 \n\n\ud83c\udf06 alt text                             \n\nAfter.                                  \n",
+      "incremental": "Before.                                 \n\n\ud83c\udf06 alt text                             \n\nAfter.                                  \n",
+      "naive": "Before.                                 \n\ud83c\udf06 alt text                             \nAfter.                                  \n",
+      "unsafe": "Before.                                 \n\n\ud83c\udf06 alt text                             \n\nAfter.                                  \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "committed_lines": 2,
+          "pending_chars": 32,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "at_source_line": 5,
+          "committed_lines": 2,
+          "pending_chars": 31,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "image",
+      "width": 80,
+      "source": "Before.\n\n![alt text](image.png)\n\nAfter.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "Before.                                                                         \n\n\ud83c\udf06 alt text                                                                     \n\nAfter.                                                                          \n",
+      "incremental": "Before.                                                                         \n\n\ud83c\udf06 alt text                                                                     \n\nAfter.                                                                          \n",
+      "naive": "Before.                                                                         \n\ud83c\udf06 alt text                                                                     \nAfter.                                                                          \n",
+      "unsafe": "Before.                                                                         \n\n\ud83c\udf06 alt text                                                                     \n\nAfter.                                                                          \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "committed_lines": 2,
+          "pending_chars": 32,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "at_source_line": 5,
+          "committed_lines": 2,
+          "pending_chars": 31,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "unicode",
+      "width": 40,
+      "source": "# \u4e16\u754c\n\ncaf\u00e9 e\u0301 **text**.\n\nTail.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                 \u001b[1m\u4e16\u754c\u001b[0m                 \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\ncaf\u00e9 e\u0301 \u001b[1mtext\u001b[0m.                            \n\nTail.                                   \n",
+      "incremental": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                 \u001b[1m\u4e16\u754c\u001b[0m                 \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\ncaf\u00e9 e\u0301 \u001b[1mtext\u001b[0m.                            \n\nTail.                                   \n",
+      "naive": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                 \u001b[1m\u4e16\u754c\u001b[0m                 \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\ncaf\u00e9 e\u0301 \u001b[1mtext\u001b[0m.                            \nTail.                                   \n",
+      "unsafe": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                 \u001b[1m\u4e16\u754c\u001b[0m                 \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\ncaf\u00e9 e\u0301 \u001b[1mtext\u001b[0m.                            \n\nTail.                                   \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "committed_lines": 2,
+          "pending_chars": 24,
+          "token_types": [
+            "heading_open",
+            "inline",
+            "heading_close"
+          ]
+        },
+        {
+          "at_source_line": 5,
+          "committed_lines": 2,
+          "pending_chars": 25,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "unicode",
+      "width": 80,
+      "source": "# \u4e16\u754c\n\ncaf\u00e9 e\u0301 **text**.\n\nTail.\n",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                     \u001b[1m\u4e16\u754c\u001b[0m                                     \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\ncaf\u00e9 e\u0301 \u001b[1mtext\u001b[0m.                                                                    \n\nTail.                                                                           \n",
+      "incremental": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                     \u001b[1m\u4e16\u754c\u001b[0m                                     \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\ncaf\u00e9 e\u0301 \u001b[1mtext\u001b[0m.                                                                    \n\nTail.                                                                           \n",
+      "naive": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                     \u001b[1m\u4e16\u754c\u001b[0m                                     \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\ncaf\u00e9 e\u0301 \u001b[1mtext\u001b[0m.                                                                    \nTail.                                                                           \n",
+      "unsafe": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                     \u001b[1m\u4e16\u754c\u001b[0m                                     \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\ncaf\u00e9 e\u0301 \u001b[1mtext\u001b[0m.                                                                    \n\nTail.                                                                           \n",
+      "trace": [
+        {
+          "at_source_line": 3,
+          "committed_lines": 2,
+          "pending_chars": 24,
+          "token_types": [
+            "heading_open",
+            "inline",
+            "heading_close"
+          ]
+        },
+        {
+          "at_source_line": 5,
+          "committed_lines": 2,
+          "pending_chars": 25,
+          "token_types": [
+            "paragraph_open",
+            "inline",
+            "paragraph_close"
+          ]
+        },
+        {
+          "eof": true,
+          "remaining_lines": 1
+        }
+      ]
+    },
+    {
+      "name": "no-final-newline",
+      "width": 40,
+      "source": "# Header\n\nFinal paragraph",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                \u001b[1mHeader\u001b[0m                \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\nFinal paragraph                         \n",
+      "incremental": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                \u001b[1mHeader\u001b[0m                \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\nFinal paragraph                         \n",
+      "naive": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                \u001b[1mHeader\u001b[0m                \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\nFinal paragraph                         \n",
+      "unsafe": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                \u001b[1mHeader\u001b[0m                \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\nFinal paragraph                         \n",
+      "trace": [
+        {
+          "eof": true,
+          "remaining_lines": 3
+        }
+      ]
+    },
+    {
+      "name": "no-final-newline",
+      "width": 80,
+      "source": "# Header\n\nFinal paragraph",
+      "equivalent": true,
+      "naive_blank_split_equivalent": false,
+      "without_reference_hold_equivalent": true,
+      "whole": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                    \u001b[1mHeader\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\nFinal paragraph                                                                 \n",
+      "incremental": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                    \u001b[1mHeader\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\nFinal paragraph                                                                 \n",
+      "naive": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                    \u001b[1mHeader\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\nFinal paragraph                                                                 \n",
+      "unsafe": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                    \u001b[1mHeader\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\nFinal paragraph                                                                 \n",
+      "trace": [
+        {
+          "eof": true,
+          "remaining_lines": 3
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "width": 40,
+      "source": "",
+      "equivalent": true,
+      "naive_blank_split_equivalent": true,
+      "without_reference_hold_equivalent": true,
+      "whole": "",
+      "incremental": "",
+      "naive": "",
+      "unsafe": "",
+      "trace": [
+        {
+          "eof": true,
+          "remaining_lines": 0
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "width": 80,
+      "source": "",
+      "equivalent": true,
+      "naive_blank_split_equivalent": true,
+      "without_reference_hold_equivalent": true,
+      "whole": "",
+      "incremental": "",
+      "naive": "",
+      "unsafe": "",
+      "trace": [
+        {
+          "eof": true,
+          "remaining_lines": 0
+        }
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "setext",
+      "prefix": "Title\n",
+      "suffix": "=====\n",
+      "earlier_render_is_prefix_of_final": false,
+      "before": "Title                                                                           \n",
+      "after": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                    \u001b[1mTitle\u001b[0m                                     \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n"
+    },
+    {
+      "name": "reference",
+      "prefix": "Read [manual].\n\n",
+      "suffix": "[manual]: https://example.com\n",
+      "earlier_render_is_prefix_of_final": false,
+      "before": "Read [manual].                                                                  \n",
+      "after": "Read manual (\u001b[4mhttps://example.com\u001b[0m).                                              \n"
+    },
+    {
+      "name": "list-spacing",
+      "prefix": "- one\n- two\n",
+      "suffix": "\n- three\n",
+      "earlier_render_is_prefix_of_final": true,
+      "before": "\n\u001b[1m \u2022 \u001b[0mone                                                                          \n\u001b[1m \u2022 \u001b[0mtwo                                                                          \n",
+      "after": "\n\u001b[1m \u2022 \u001b[0mone                                                                          \n\u001b[1m \u2022 \u001b[0mtwo                                                                          \n\u001b[1m \u2022 \u001b[0mthree                                                                        \n"
+    },
+    {
+      "name": "ordered-alignment",
+      "prefix": "9. first\n",
+      "suffix": "10. second\n",
+      "earlier_render_is_prefix_of_final": true,
+      "before": "\n\u001b[1m  9 \u001b[0mfirst                                                                       \n",
+      "after": "\n\u001b[1m  9 \u001b[0mfirst                                                                       \n\u001b[1m 10 \u001b[0msecond                                                                      \n"
+    },
+    {
+      "name": "table-width",
+      "prefix": "| a | b |\n| - | - |\n| c | d |\n",
+      "suffix": "| a very long cell | another |\n",
+      "earlier_render_is_prefix_of_final": false,
+      "before": "\n         \n \u001b[1m \u001b[0m\u001b[1ma\u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mb\u001b[0m\u001b[1m \u001b[0m \n \u2501\u2501\u2501\u2501\u2501\u2501\u2501 \n  c   d  \n         \n",
+      "after": "\n                              \n \u001b[1m \u001b[0m\u001b[1ma\u001b[0m\u001b[1m               \u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mb\u001b[0m\u001b[1m      \u001b[0m\u001b[1m \u001b[0m \n \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 \n  c                  d        \n  a very long cell   another  \n                              \n"
+    }
+  ],
+  "pty": [
+    {
+      "scenario": "complete-block",
+      "visible_before_eof": true,
+      "checks": [
+        {
+          "expectation": "Only a committed block with direct segment output appears before EOF",
+          "pass": true
+        },
+        {
+          "expectation": "Buffered content appears at EOF",
+          "pass": true
+        },
+        {
+          "expectation": "Pager quits normally",
+          "pass": true
+        }
+      ],
+      "events": [
+        {
+          "expect": "EARLY",
+          "found": true,
+          "seconds": 0.11036295897793025
+        },
+        {
+          "expect": "EARLY",
+          "found": true,
+          "seconds": 0.11043133400380611
+        },
+        {
+          "keys": "b'q'"
+        }
+      ]
+    },
+    {
+      "scenario": "reference-hold",
+      "visible_before_eof": false,
+      "checks": [
+        {
+          "expectation": "Only a committed block with direct segment output appears before EOF",
+          "pass": true
+        },
+        {
+          "expectation": "Held reference renders once its definition arrives, before EOF",
+          "pass": true
+        },
+        {
+          "expectation": "Buffered content appears at EOF",
+          "pass": true
+        },
+        {
+          "expectation": "Pager quits normally",
+          "pass": true
+        }
+      ],
+      "events": [
+        {
+          "expect": "EARLY",
+          "found": false,
+          "seconds": 0.6050927080214024
+        },
+        {
+          "expect": "https://example.com",
+          "found": true,
+          "seconds": 0.6556966670323163
+        },
+        {
+          "expect": "EARLY",
+          "found": true,
+          "seconds": 0.6557065419619903
+        },
+        {
+          "keys": "b'q'"
+        }
+      ]
+    },
+    {
+      "scenario": "unfinished-paragraph",
+      "visible_before_eof": false,
+      "checks": [
+        {
+          "expectation": "Only a committed block with direct segment output appears before EOF",
+          "pass": true
+        },
+        {
+          "expectation": "Buffered content appears at EOF",
+          "pass": true
+        },
+        {
+          "expectation": "Pager quits normally",
+          "pass": true
+        }
+      ],
+      "events": [
+        {
+          "expect": "EARLY",
+          "found": false,
+          "seconds": 0.6017560829641297
+        },
+        {
+          "expect": "EARLY",
+          "found": true,
+          "seconds": 0.6552282080519944
+        },
+        {
+          "keys": "b'q'"
+        }
+      ]
+    },
+    {
+      "scenario": "console-buffered",
+      "visible_before_eof": false,
+      "checks": [
+        {
+          "expectation": "Only a committed block with direct segment output appears before EOF",
+          "pass": true
+        },
+        {
+          "expectation": "Buffered content appears at EOF",
+          "pass": true
+        },
+        {
+          "expectation": "Pager quits normally",
+          "pass": true
+        }
+      ],
+      "events": [
+        {
+          "expect": "EARLY",
+          "found": false,
+          "seconds": 0.6025269579840824
+        },
+        {
+          "expect": "EARLY",
+          "found": true,
+          "seconds": 0.6570291250245646
+        },
+        {
+          "keys": "b'q'"
+        }
+      ]
+    }
+  ],
+  "scaling": [
+    {
+      "shape": "paragraph",
+      "lines_or_blocks": 100,
+      "seconds": 0.03536283294670284
+    },
+    {
+      "shape": "many-blocks",
+      "lines_or_blocks": 100,
+      "seconds": 0.002906083012931049
+    },
+    {
+      "shape": "paragraph",
+      "lines_or_blocks": 200,
+      "seconds": 0.139448375091888
+    },
+    {
+      "shape": "many-blocks",
+      "lines_or_blocks": 200,
+      "seconds": 0.005617875023745
+    },
+    {
+      "shape": "paragraph",
+      "lines_or_blocks": 400,
+      "seconds": 0.5561481249751523
+    },
+    {
+      "shape": "many-blocks",
+      "lines_or_blocks": 400,
+      "seconds": 0.01142470899503678
+    },
+    {
+      "shape": "paragraph",
+      "lines_or_blocks": 800,
+      "seconds": 2.252252458012663
+    },
+    {
+      "shape": "many-blocks",
+      "lines_or_blocks": 800,
+      "seconds": 0.023206042009405792
+    }
+  ],
+  "environment": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.9 (main, Feb 24 2025, 14:31:03) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "packages": {
+      "rich": "14.2.0",
+      "markdown-it-py": "4.0.0"
+    }
+  },
+  "finite_document": [
+    {
+      "repetition": 0,
+      "bytes": 1368943,
+      "sections": 20000,
+      "whole_render_seconds": 2.2540437089046463,
+      "parse_seconds": 0.6705125839216635,
+      "first_line_seconds": 0.6707117499317974,
+      "stream_total_seconds": 2.379377458943054,
+      "identical_complete_output": true,
+      "forward_reference_resolved_on_first_line": true
+    },
+    {
+      "repetition": 1,
+      "bytes": 1368943,
+      "sections": 20000,
+      "whole_render_seconds": 2.367219707928598,
+      "parse_seconds": 0.6963966659968719,
+      "first_line_seconds": 0.6965918750502169,
+      "stream_total_seconds": 2.361881082993932,
+      "identical_complete_output": true,
+      "forward_reference_resolved_on_first_line": true
+    },
+    {
+      "repetition": 2,
+      "bytes": 1368943,
+      "sections": 20000,
+      "whole_render_seconds": 2.408475250005722,
+      "parse_seconds": 0.6281702079577371,
+      "first_line_seconds": 0.6283903749426827,
+      "stream_total_seconds": 2.344369624974206,
+      "identical_complete_output": true,
+      "forward_reference_resolved_on_first_line": true
+    }
+  ]
+}

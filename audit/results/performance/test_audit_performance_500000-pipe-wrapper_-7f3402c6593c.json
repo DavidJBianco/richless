@@ -1,0 +1,56 @@
+{
+  "id": "test_audit_performance[500000-pipe-wrapper]",
+  "checks": [
+    {
+      "expectation": "No useful display before 45-second safety deadline; remaining repetitions cancelled",
+      "pass": false
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/bin/bash",
+      "-c",
+      ". /Users/bianco/projects/richless/richless-init.sh; cat conn.log | less -R"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "PERF_MARKER",
+          "found": false,
+          "seconds": 45.00442558398936
+        }
+      ],
+      "started": 769814.115966541,
+      "reaped": false,
+      "terminal_restored": false,
+      "exitcode": -9,
+      "maxrss_native": 2113536,
+      "transcript": "\u001b[?1049h\u001b[24;1H\u001b[?1h\u001b=\r",
+      "transcript_bytes": 23
+    }
+  ],
+  "env": {
+    "PATH": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-290/test_audit_performance_500000_5/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-290/test_audit_performance_500000_5",
+    "TMPDIR": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-290/test_audit_performance_500000_5/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-290/test_audit_performance_500000_5",
+  "root": "/Users/bianco/projects/richless",
+  "measurements": [
+    {
+      "iteration": 0,
+      "first_display_seconds_lower_bound": 45.004482459044084,
+      "censored": true
+    }
+  ],
+  "status": "fail"
+}

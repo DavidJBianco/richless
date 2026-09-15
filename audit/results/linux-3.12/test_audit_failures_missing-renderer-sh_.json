@@ -1,0 +1,49 @@
+{
+  "id": "test_audit_failures[missing-renderer-sh]",
+  "checks": [
+    {
+      "expectation": "Raw content remains available despite failure",
+      "pass": true
+    },
+    {
+      "expectation": "No temporary files remain after completion",
+      "pass": true
+    }
+  ],
+  "observations": [
+    {
+      "command": [
+        "/usr/bin/sh",
+        "-c",
+        ". /tmp/project/richless-init.sh; cat input.txt | less -R"
+      ],
+      "returncode": 0,
+      "seconds": 0.0007090830000038295,
+      "stdout": "FAILURE_MARKER\n",
+      "stderr": "Warning: richless command not found. Please install richless first.\n",
+      "stdout_bytes": 15
+    }
+  ],
+  "commands": [
+    [
+      "/usr/bin/sh",
+      "-c",
+      ". /tmp/project/richless-init.sh; cat input.txt | less -R"
+    ]
+  ],
+  "sessions": [],
+  "env": {
+    "PATH": "/usr/bin:/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_audit_failures_missing_re2",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_audit_failures_missing_re2/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_audit_failures_missing_re2",
+  "root": "/tmp/project",
+  "status": "pass"
+}

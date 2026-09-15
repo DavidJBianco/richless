@@ -1,0 +1,60 @@
+{
+  "id": "test_audit_routes[dash-wrapper-zsh]",
+  "checks": [
+    {
+      "expectation": "Input is visible",
+      "pass": false
+    },
+    {
+      "expectation": "Quit returns control",
+      "pass": true
+    },
+    {
+      "expectation": "Terminal settings restored",
+      "pass": true
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/usr/bin/zsh",
+      "-c",
+      ". /tmp/project/richless-init.sh; cat route.py | less -R -"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "ROUTE_SENTINEL",
+          "found": false,
+          "seconds": 3.0000247929999944
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 255.215401657,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 38416,
+      "terminal_restored": true,
+      "transcript": " -R -: No such file or directory\r\nq",
+      "transcript_bytes": 35
+    }
+  ],
+  "env": {
+    "PATH": "/tmp/pytest-of-nobody/pytest-0/test_audit_routes_dash_wrapper1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_audit_routes_dash_wrapper1",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_audit_routes_dash_wrapper1/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_audit_routes_dash_wrapper1",
+  "root": "/tmp/project",
+  "status": "fail"
+}

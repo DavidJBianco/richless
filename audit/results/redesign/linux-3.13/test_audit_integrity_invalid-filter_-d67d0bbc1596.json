@@ -1,0 +1,53 @@
+{
+  "id": "test_audit_integrity[invalid-filter]",
+  "checks": [
+    {
+      "expectation": "Undecodable input delegates cleanly or remains byte-exact through pager",
+      "pass": true
+    },
+    {
+      "expectation": "Undecodable input is handled successfully",
+      "pass": true
+    }
+  ],
+  "observations": [
+    {
+      "command": [
+        "/usr/bin/bash",
+        "-c",
+        "export LESSOPEN='|-richless --filter -- %s'; less -R bytes.txt"
+      ],
+      "returncode": 0,
+      "seconds": 0.1764367079999829,
+      "stdout": "FIRST\ufffdLAST\n",
+      "stderr": "",
+      "stdout_bytes": 11
+    },
+    {
+      "input_hex": "4649525354ff4c4153540a",
+      "output_hex": "4649525354ff4c4153540a"
+    }
+  ],
+  "commands": [
+    [
+      "/usr/bin/bash",
+      "-c",
+      "export LESSOPEN='|-richless --filter -- %s'; less -R bytes.txt"
+    ]
+  ],
+  "sessions": [],
+  "env": {
+    "PATH": "/tmp/pytest-of-nobody/pytest-0/test_audit_integrity_invalid_f0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_audit_integrity_invalid_f0",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_audit_integrity_invalid_f0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_audit_integrity_invalid_f0",
+  "root": "/tmp/project",
+  "status": "pass"
+}

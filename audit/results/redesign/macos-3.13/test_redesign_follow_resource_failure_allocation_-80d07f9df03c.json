@@ -1,0 +1,72 @@
+{
+  "id": "test_redesign_follow_resource_failure[allocation]",
+  "checks": [
+    {
+      "expectation": "Original content remains viewable",
+      "pass": true
+    },
+    {
+      "expectation": "Failure session can quit",
+      "pass": true
+    },
+    {
+      "expectation": "Recovered original viewing succeeds; published failure is nonzero",
+      "pass": true
+    },
+    {
+      "expectation": "Replacement files are removed",
+      "pass": true
+    },
+    {
+      "expectation": "No traceback reaches terminal",
+      "pass": true
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/bin/bash",
+      "-c",
+      ". /Users/bianco/projects/richless/richless-init.sh; less +F events.jsonl"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "INITIAL_RESOURCE",
+          "found": true,
+          "seconds": 0.26768908405210823
+        },
+        {
+          "keys": "b'\\x03'"
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 785113.919574291,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 26771456,
+      "terminal_restored": true,
+      "transcript": "richless: cannot prepare follow view; using original file: [Errno 28] injected allocation exhaustion\r\n\u001b[?1049h\u001b[24;1H\u001b[?1h\u001b=\r\r\u001b[K{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n\r\u001b[K\u001b[7mWaiting for data... (^X or interrupt to abort)\u001b[27m\r\u001b[K\u0007\u001b[H\u001b[2J\u001b[H{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n\u001b[7mevents.jsonl (END)\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l",
+      "transcript_bytes": 2092
+    }
+  ],
+  "env": {
+    "PATH": "/private/tmp/richless-final2-mac313/test_redesign_follow_resource_0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/tmp/richless-final2-mac313/test_redesign_follow_resource_0",
+    "TMPDIR": "/private/tmp/richless-final2-mac313/test_redesign_follow_resource_0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1",
+    "FAULT": "allocation"
+  },
+  "cwd": "/private/tmp/richless-final2-mac313/test_redesign_follow_resource_0",
+  "root": "/Users/bianco/projects/richless",
+  "status": "pass"
+}

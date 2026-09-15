@@ -1,0 +1,185 @@
+{
+  "id": "test_audit_performance[500000-pipe-filter]",
+  "checks": [
+    {
+      "expectation": "First useful display within 45-second safety deadline",
+      "pass": true
+    },
+    {
+      "expectation": "Can reach end of generated file within safety deadline",
+      "pass": true
+    },
+    {
+      "expectation": "Quit after complete rendering",
+      "pass": true
+    },
+    {
+      "expectation": "First useful display within 45-second safety deadline",
+      "pass": true
+    },
+    {
+      "expectation": "Can reach end of generated file within safety deadline",
+      "pass": true
+    },
+    {
+      "expectation": "Quit after complete rendering",
+      "pass": true
+    },
+    {
+      "expectation": "First useful display within 45-second safety deadline",
+      "pass": true
+    },
+    {
+      "expectation": "Can reach end of generated file within safety deadline",
+      "pass": true
+    },
+    {
+      "expectation": "Quit after complete rendering",
+      "pass": true
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/bin/bash",
+      "-c",
+      "export LESSOPEN='|richless %s'; cat conn.log | less -R"
+    ],
+    [
+      "/bin/bash",
+      "-c",
+      "export LESSOPEN='|richless %s'; cat conn.log | less -R"
+    ],
+    [
+      "/bin/bash",
+      "-c",
+      "export LESSOPEN='|richless %s'; cat conn.log | less -R"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "PERF_MARKER",
+          "found": true,
+          "seconds": 0.055346124921925366
+        },
+        {
+          "keys": "b'G'"
+        },
+        {
+          "expect": "(END)",
+          "found": true,
+          "seconds": 0.514175874995999
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 769811.762681,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 88358912,
+      "terminal_restored": true,
+      "transcript": "\u001b[?1049h\u001b[24;1H\u001b[?1h\u001b=\r{\"ts\": 0, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 0}\u001b[m\r\n{\"ts\": 1, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 1}\u001b[m\r\n{\"ts\": 2, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 2}\u001b[m\r\n{\"ts\": 3, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 3}\u001b[m\r\n{\"ts\": 4, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 4}\u001b[m\r\n{\"ts\": 5, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 5}\u001b[m\r\n{\"ts\": 6, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 6}\u001b[m\r\n{\"ts\": 7, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 7}\u001b[m\r\n{\"ts\": 8, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 8}\u001b[m\r\n{\"ts\": 9, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 9}\u001b[m\r\n{\"ts\": 10, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tc\u001b[m \bp\", \"orig_bytes\": 10}\u001b[m\r\n{\"ts\": 11, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tc\u001b[m \b:\u001b[K\r\u001b[K...skipping...\r\n \"tcp\", \"orig_bytes\": 499988}\u001b[m\r\n{\"ts\": 499989, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499989}\u001b[m\r\n{\"ts\": 499990, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499990}\u001b[m\r\n{\"ts\": 499991, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499991}\u001b[m\r\n{\"ts\": 499992, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499992}\u001b[m\r\n{\"ts\": 499993, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499993}\u001b[m\r\n{\"ts\": 499994, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499994}\u001b[m\r\n{\"ts\": 499995, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499995}\u001b[m\r\n{\"ts\": 499996, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499996}\u001b[m\r\n{\"ts\": 499997, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499997}\u001b[m\r\n{\"ts\": 499998, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499998}\u001b[m\r\n{\"ts\": 499999, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499999}\u001b[m\r\n\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l",
+      "transcript_bytes": 3172
+    },
+    {
+      "events": [
+        {
+          "expect": "PERF_MARKER",
+          "found": true,
+          "seconds": 0.05477591697126627
+        },
+        {
+          "keys": "b'G'"
+        },
+        {
+          "expect": "(END)",
+          "found": true,
+          "seconds": 0.5176877089543268
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 769812.305604666,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 88358912,
+      "terminal_restored": true,
+      "transcript": "\u001b[?1049h\u001b[24;1H\u001b[?1h\u001b=\r{\"ts\": 0, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 0}\u001b[m\r\n{\"ts\": 1, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 1}\u001b[m\r\n{\"ts\": 2, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 2}\u001b[m\r\n{\"ts\": 3, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 3}\u001b[m\r\n{\"ts\": 4, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 4}\u001b[m\r\n{\"ts\": 5, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 5}\u001b[m\r\n{\"ts\": 6, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 6}\u001b[m\r\n{\"ts\": 7, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 7}\u001b[m\r\n{\"ts\": 8, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 8}\u001b[m\r\n{\"ts\": 9, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 9}\u001b[m\r\n{\"ts\": 10, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tc\u001b[m \bp\", \"orig_bytes\": 10}\u001b[m\r\n{\"ts\": 11, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tc\u001b[m \b:\u001b[K\r\u001b[K...skipping...\r\n \"tcp\", \"orig_bytes\": 499988}\u001b[m\r\n{\"ts\": 499989, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499989}\u001b[m\r\n{\"ts\": 499990, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499990}\u001b[m\r\n{\"ts\": 499991, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499991}\u001b[m\r\n{\"ts\": 499992, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499992}\u001b[m\r\n{\"ts\": 499993, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499993}\u001b[m\r\n{\"ts\": 499994, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499994}\u001b[m\r\n{\"ts\": 499995, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499995}\u001b[m\r\n{\"ts\": 499996, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499996}\u001b[m\r\n{\"ts\": 499997, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499997}\u001b[m\r\n{\"ts\": 499998, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499998}\u001b[m\r\n{\"ts\": 499999, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499999}\u001b[m\r\n\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l",
+      "transcript_bytes": 3172
+    },
+    {
+      "events": [
+        {
+          "expect": "PERF_MARKER",
+          "found": true,
+          "seconds": 0.055259249988012016
+        },
+        {
+          "keys": "b'G'"
+        },
+        {
+          "expect": "(END)",
+          "found": true,
+          "seconds": 0.5136189159238711
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 769812.851752,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 88358912,
+      "terminal_restored": true,
+      "transcript": "\u001b[?1049h\u001b[24;1H\u001b[?1h\u001b=\r{\"ts\": 0, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 0}\u001b[m\r\n{\"ts\": 1, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 1}\u001b[m\r\n{\"ts\": 2, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 2}\u001b[m\r\n{\"ts\": 3, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 3}\u001b[m\r\n{\"ts\": 4, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 4}\u001b[m\r\n{\"ts\": 5, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 5}\u001b[m\r\n{\"ts\": 6, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 6}\u001b[m\r\n{\"ts\": 7, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 7}\u001b[m\r\n{\"ts\": 8, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 8}\u001b[m\r\n{\"ts\": 9, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tcp\u001b[m \b\", \"orig_bytes\": 9}\u001b[m\r\n{\"ts\": 10, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tc\u001b[m \bp\", \"orig_bytes\": 10}\u001b[m\r\n{\"ts\": 11, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\": \"tc\u001b[m \b:\u001b[K\r\u001b[K...skipping...\r\n \"tcp\", \"orig_bytes\": 499988}\u001b[m\r\n{\"ts\": 499989, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499989}\u001b[m\r\n{\"ts\": 499990, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499990}\u001b[m\r\n{\"ts\": 499991, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499991}\u001b[m\r\n{\"ts\": 499992, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499992}\u001b[m\r\n{\"ts\": 499993, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499993}\u001b[m\r\n{\"ts\": 499994, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499994}\u001b[m\r\n{\"ts\": 499995, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499995}\u001b[m\r\n{\"ts\": 499996, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499996}\u001b[m\r\n{\"ts\": 499997, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499997}\u001b[m\r\n{\"ts\": 499998, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499998}\u001b[m\r\n{\"ts\": 499999, \"uid\": \"PERF_MARKER\", \"id.orig_h\": \"192.0.2.1\", \"id.resp_h\": \"198.51.100.2\", \"proto\":\u001b[m \b \"tcp\", \"orig_bytes\": 499999}\u001b[m\r\n\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l",
+      "transcript_bytes": 3172
+    }
+  ],
+  "env": {
+    "PATH": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-290/test_audit_performance_500000_4/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-290/test_audit_performance_500000_4",
+    "TMPDIR": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-290/test_audit_performance_500000_4/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-290/test_audit_performance_500000_4",
+  "root": "/Users/bianco/projects/richless",
+  "measurements": [
+    {
+      "iteration": 0,
+      "first_display_seconds": 0.05538787494879216,
+      "end_seconds": 0.5142077909549698,
+      "maxrss_native": 88358912,
+      "rss_units": "bytes",
+      "rss_scope": "wait4 shell child resource accounting; not aggregate concurrent RSS",
+      "under_300ms": true
+    },
+    {
+      "iteration": 1,
+      "first_display_seconds": 0.05482733401004225,
+      "end_seconds": 0.5176897089695558,
+      "maxrss_native": 88358912,
+      "rss_units": "bytes",
+      "rss_scope": "wait4 shell child resource accounting; not aggregate concurrent RSS",
+      "under_300ms": true
+    },
+    {
+      "iteration": 2,
+      "first_display_seconds": 0.05528591596521437,
+      "end_seconds": 0.5136208749609068,
+      "maxrss_native": 88358912,
+      "rss_units": "bytes",
+      "rss_scope": "wait4 shell child resource accounting; not aggregate concurrent RSS",
+      "under_300ms": true
+    }
+  ],
+  "status": "pass"
+}

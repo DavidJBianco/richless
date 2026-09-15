@@ -1,0 +1,164 @@
+{
+  "id": "test_audit_mixed[forced-wrapper-zsh]",
+  "checks": [
+    {
+      "expectation": "Visit a.c in requested navigation order",
+      "pass": false
+    },
+    {
+      "expectation": "Display identity a.c",
+      "pass": true
+    },
+    {
+      "expectation": "Visit b.py in requested navigation order",
+      "pass": false
+    },
+    {
+      "expectation": "Display identity b.py",
+      "pass": false
+    },
+    {
+      "expectation": "Visit c.md in requested navigation order",
+      "pass": false
+    },
+    {
+      "expectation": "Display identity c.md",
+      "pass": false
+    },
+    {
+      "expectation": "Visit b.py in requested navigation order",
+      "pass": false
+    },
+    {
+      "expectation": "Display identity b.py",
+      "pass": false
+    },
+    {
+      "expectation": "Visit a.c in requested navigation order",
+      "pass": false
+    },
+    {
+      "expectation": "Display identity a.c",
+      "pass": false
+    },
+    {
+      "expectation": "One quit exits the multi-file session",
+      "pass": true
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/bin/zsh",
+      "-c",
+      ". /Users/bianco/projects/richless/richless-init.sh; less -R --md a.c b.py c.md"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "C_MARKER",
+          "found": false,
+          "seconds": 1.5000340839615092
+        },
+        {
+          "expect": "a.c",
+          "found": true,
+          "seconds": 1.5001196248922497
+        },
+        {
+          "keys": "b':n\\n'"
+        },
+        {
+          "write_after_exit": "b':n\\n'"
+        },
+        {
+          "expect": "PY_MARKER",
+          "found": false,
+          "seconds": 3.000195874948986
+        },
+        {
+          "expect": "b.py",
+          "found": false,
+          "seconds": 3.5002073749201372
+        },
+        {
+          "keys": "b':n\\n'"
+        },
+        {
+          "write_after_exit": "b':n\\n'"
+        },
+        {
+          "expect": "MD_MARKER",
+          "found": false,
+          "seconds": 5.000239999964833
+        },
+        {
+          "expect": "c.md",
+          "found": false,
+          "seconds": 5.500268999952823
+        },
+        {
+          "keys": "b':p\\n'"
+        },
+        {
+          "write_after_exit": "b':p\\n'"
+        },
+        {
+          "expect": "PY_MARKER",
+          "found": false,
+          "seconds": 7.00030708394479
+        },
+        {
+          "expect": "b.py",
+          "found": false,
+          "seconds": 7.5003118749009445
+        },
+        {
+          "keys": "b':p\\n'"
+        },
+        {
+          "write_after_exit": "b':p\\n'"
+        },
+        {
+          "expect": "C_MARKER",
+          "found": false,
+          "seconds": 9.000340375001542
+        },
+        {
+          "expect": "a.c",
+          "found": false,
+          "seconds": 9.500373124959879
+        },
+        {
+          "keys": "b'q'"
+        },
+        {
+          "write_after_exit": "b'q'"
+        }
+      ],
+      "started": 769227.195922916,
+      "reaped": true,
+      "exitcode": 1,
+      "maxrss_native": 29343744,
+      "terminal_restored": true,
+      "transcript": " -R: No such file or directory\r\nrichless: File not found:  a.c b.py c.md\r\n",
+      "transcript_bytes": 74
+    }
+  ],
+  "env": {
+    "PATH": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-284/test_audit_mixed_forced_wrappe1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-284/test_audit_mixed_forced_wrappe1",
+    "TMPDIR": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-284/test_audit_mixed_forced_wrappe1/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-284/test_audit_mixed_forced_wrappe1",
+  "root": "/Users/bianco/projects/richless",
+  "status": "fail"
+}

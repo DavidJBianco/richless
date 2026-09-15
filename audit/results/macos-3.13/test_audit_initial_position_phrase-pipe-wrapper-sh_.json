@@ -1,0 +1,59 @@
+{
+  "id": "test_audit_initial_position[phrase-pipe-wrapper-sh]",
+  "checks": [
+    {
+      "expectation": "Initial viewport reaches requested line or search match",
+      "pass": false
+    },
+    {
+      "expectation": "Initial-position invocation quits normally",
+      "pass": true
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/bin/sh",
+      "-c",
+      ". /Users/bianco/projects/richless/richless-init.sh; cat positions.txt | less -R -p 'two words'"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "POSITION_TARGET",
+          "found": false,
+          "seconds": 3.000050084083341
+        },
+        {
+          "keys": "b'q'"
+        },
+        {
+          "write_after_exit": "b'q'"
+        }
+      ],
+      "started": 769190.486313541,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 31473664,
+      "terminal_restored": true,
+      "transcript": "words: No such file or directory\r\n",
+      "transcript_bytes": 34
+    }
+  ],
+  "env": {
+    "PATH": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-283/test_audit_initial_position_ph8/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-283/test_audit_initial_position_ph8",
+    "TMPDIR": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-283/test_audit_initial_position_ph8/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-283/test_audit_initial_position_ph8",
+  "root": "/Users/bianco/projects/richless",
+  "status": "fail"
+}

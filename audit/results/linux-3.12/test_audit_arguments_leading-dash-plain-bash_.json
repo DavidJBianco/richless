@@ -1,0 +1,60 @@
+{
+  "id": "test_audit_arguments[leading-dash-plain-bash]",
+  "checks": [
+    {
+      "expectation": "Filename resolves to the requested content",
+      "pass": true
+    },
+    {
+      "expectation": "Quit exits normally",
+      "pass": true
+    },
+    {
+      "expectation": "Filename metacharacters are never executed",
+      "pass": true
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/usr/bin/bash",
+      "-c",
+      "less -R -- -file.py"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "ARG_MARKER",
+          "found": true,
+          "seconds": 0.05028970799992294
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 637.910254082,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 38500,
+      "terminal_restored": true,
+      "transcript": "\u001b[?1049h\u001b[22;0;0t\u001b[?1h\u001b=\rdef sample():\u001b[m\r\n    return \"ARG_MARKER\"\u001b[m\r\n\u001b[7m-file.py (END)\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l\u001b[23;0;0t",
+      "transcript_bytes": 125
+    }
+  ],
+  "env": {
+    "PATH": "/tmp/pytest-of-nobody/pytest-0/test_audit_arguments_leading_d0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_audit_arguments_leading_d0",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_audit_arguments_leading_d0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_audit_arguments_leading_d0",
+  "root": "/tmp/project",
+  "status": "pass"
+}

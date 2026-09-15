@@ -1,310 +1,149 @@
 # richless
 
-A LESSOPEN filter for automatically rendering Markdown files and syntax highlighting source code when using `less`. View your Markdown documents with beautiful formatting and programming language files with syntax highlighting directly in the terminal, without changing how you use `less`.
+View Markdown and syntax-highlighted source files in native `less`. Keep its search,
+scrolling, filenames, and multi-file navigation while richless prepares the content.
 
-## Quick Start
+Requires Python 3.12 or newer and `less`. Shell integration supports bash, zsh,
+and the platform's `/bin/sh` (including dash on Linux).
 
-```bash
-# 1. Install richless via Homebrew (macOS or Linux)
-brew install DavidJBianco/tools/richless
+## Install and enable
 
-# 2. Add shell integration to your ~/.bashrc or ~/.zshrc
-# (brew will print the exact path after install)
-source $(brew --prefix)/share/richless/richless-init.sh
+### Homebrew
 
-# 3. Reload your shell
-source ~/.bashrc  # or ~/.zshrc
-
-# 4. Try it!
-less README.md       # View rendered Markdown
-less richless.py     # View syntax-highlighted Python
-```
-
-## Features
-
-- **Seamless Integration**: Works transparently with `less` via LESSOPEN
-- **Automatic Markdown Rendering**: Recognizes `.md` and `.markdown` files automatically and renders them beautifully
-- **Rich Terminal Formatting**: Beautiful rendering with headers, lists, code blocks, tables, and more
-- **Data Format Highlighting**: Syntax highlighting for JSON, JSONL, YAML, and XML files with automatic detection
-- **Code Highlighting**: Syntax highlighting for 500+ programming languages (Python, JavaScript, Go, Rust, and more)
-- **Works with Wildcards**: `less *.md` or `less *.py` just works
-- **Correct Filenames**: Shows actual filenames in less, not temporary files
-- **Powered by rich and Pygments**: Leverages [rich](https://github.com/Textualize/rich) for beautiful terminal output and [Pygments](https://pygments.org/) for syntax highlighting
-
-## Installation
-
-### Homebrew (Preferred — macOS and Linux)
-
-```bash
+```sh
 brew install DavidJBianco/tools/richless
 ```
 
-After installation, add the shell integration to your `~/.bashrc` or `~/.zshrc`:
+Add this line to your shell startup file (`~/.bashrc`, `~/.zshrc`, or `~/.profile`):
 
-```bash
-source $(brew --prefix)/share/richless/richless-init.sh
+```sh
+. "$(brew --prefix)/share/richless/richless-init.sh"
 ```
 
-Then reload your shell:
+Open a new shell or run that line in the current shell.
 
-```bash
-source ~/.bashrc  # or source ~/.zshrc
-```
+### Python distribution
 
-### pip / uv (Alternative)
-
-If you prefer not to use Homebrew, you can install from [PyPI](https://pypi.org/project/richless/):
-
-```bash
-# With uv
+```sh
 uv tool install richless
-
-# Or with pip
-pip install richless
 ```
 
-Then copy the shell integration script and source it:
+The package includes the integration script. Locate and source it with:
 
-```bash
-# Download the init script
-curl -o ~/.richless-init.sh https://raw.githubusercontent.com/DavidJBianco/richless/main/richless-init.sh
-
-# Add to your ~/.bashrc or ~/.zshrc
-echo 'source ~/.richless-init.sh' >> ~/.bashrc  # or ~/.zshrc
-
-# Reload your shell
-source ~/.bashrc  # or source ~/.zshrc
+```sh
+richless --init-path
+. "$(richless --init-path)"
 ```
 
-**Note:** If you see a warning about PATH after `uv tool install`, run:
-```bash
-export PATH="$HOME/.local/bin:$PATH"
-# Add this line to your ~/.bashrc or ~/.zshrc to make it permanent
-```
+Add the source command to your shell startup file. If your installation uses a
+virtual environment, its `richless` executable must be on PATH in that shell.
 
-### Shell Integration Options
+## Use
 
-The shell integration script (sourced above) provides the full-featured **transparent wrapper** around `less`. This is the recommended setup and what Quick Start uses.
-
-**What you get:**
-- ✅ Automatic Markdown rendering when you run `less file.md`
-- ✅ Syntax highlighting for programming language source files (Python, JavaScript, etc.)
-- ✅ Works with wildcards: `less *.md` or `less *.py`
-- ✅ Piped input works: `cat file.md | less` renders markdown
-- ✅ Force markdown flag: `less --md document.txt` forces rendering
-- ✅ Auto-detection: Intelligently detects markdown in piped content
-- ✅ Backward compatible: Acts like normal `less` when not needed
-
-**Note:** The shell integration file is compatible with sh, bash, and zsh.
-
-#### Minimal Setup (without shell wrapper)
-
-If you prefer not to use the shell wrapper, you can manually set two environment variables instead. Add these lines to your `~/.bashrc`, `~/.zshrc`, or `~/.profile`:
-
-```bash
-export LESSOPEN="|richless %s"
-export LESS="-R"
-```
-
-This gives you automatic Markdown rendering and syntax highlighting for files, but piped input (`cat file.md | less`) and the `--md` flag won't work.
-
-## Usage
-
-Once configured, just use `less` normally! Markdown files will be automatically rendered, and source code files will be syntax highlighted.
-
-### Basic Usage (Both Options)
-
-```bash
-# View a Markdown file (automatically rendered)
+```sh
 less README.md
-
-# View multiple Markdown files
-less *.md
-
-# View with wildcards
-less docs/**/*.md
-
-# Source code files get syntax highlighting automatically
-less script.py           # Python
-less app.js              # JavaScript
-less main.go             # Go
-less config.json         # JSON
-less styles.css          # CSS
-
-# All standard less options work
-less -N README.md        # Show line numbers
-less -i script.py        # Case-insensitive search
-less +50 README.md       # Start at line 50
+less *.c *.py *.md
+less --md notes.txt other.txt
+less --syntax python extensionless-file
+producer | less
+producer | less --syntax json
+less +F events.jsonl
+less --follow-name +F events.jsonl
 ```
 
-### Additional Features (Option 2 / Quick Start)
+- `--md` / `--markdown` forces Markdown for every file in the session.
+- `--syntax LANGUAGE` selects a Pygments language (`jsonl` is also supported).
+- `-m` belongs to native `less` and controls its prompt.
+- `--` ends option processing, including richless's options.
+- Original argument boundaries, file order, and `:n`/`:p` navigation are retained.
+- `command less ...` bypasses the wrapper and uses your original environment.
 
-If you followed the Quick Start or are using Option 2, you also get these features:
+Recognized extensions take precedence over content detection. Detection without an
+extension uses a bounded sample and conservative markers; ambiguous text stays
+plain. Use `--syntax` or `--md` when you know the intended format.
 
-```bash
-# Force Markdown rendering on non-.md files
-less --md document.txt
-less -m notes.txt
+## Progressive output and following
 
-# Piped input works!
-cat file.md | less
-echo "# Hello\n**World**" | less --md
+Ordinary rendered files are sent progressively through LESSOPEN without temporary
+replacement files. Code highlighting adds ANSI styling without changing source
+bytes, tabs, line endings, or the final newline. Existing ANSI/binary content is
+passed through safely. Markdown intentionally changes presentation.
 
-# Pipe from other commands
-curl https://example.com/README.md | less --md
-grep -A 50 "## Section" doc.md | less
+Finite Markdown files are parsed once to resolve references, then rendered blocks
+are published progressively. The initial read and parse still precede first output.
 
-# Auto-detection: if piped content looks like markdown, it renders automatically
-cat file.md | less  # Detects markdown syntax and renders
-```
+Live Markdown publishes completed stable blocks. Unfinished constructs and possible
+forward-reference links may wait for more input. After **five seconds or 1 MiB** of
+pending source, the unresolved remainder and subsequent input are shown raw. Earlier
+formatted blocks remain visible; source is not repeated. Literal brackets can cause
+conservative waiting. Diagnostics go to stderr, never into the document.
 
-### Direct richless Usage
+Start with **`+F` for formatted following of a named file**. These sessions use
+private temporary replacement files that grow as rendered content arrives and are
+cleaned up when no longer needed. Long-running following can consume disk space.
+Plain files are followed directly. By default following retains the opened file;
+`--follow-name` selects pathname-based following across replacement.
 
-You can also call `richless` directly if needed:
+If you open a rendered file normally and later press `F`, new changes to its source
+will **not** appear. Quit and reopen with `+F`. Interactive following still works
+for native plain files and continuing input pipelines.
 
-```bash
-# Render and pipe to less
-richless document.md | less -R
+The initial Markdown follow snapshot is rendered as a complete document. Appended
+Markdown starts a live rendering generation; later text does not retroactively
+change the published snapshot. Reload after truncation as required by your native
+`less`. Automatic Markdown reflow after terminal resizing is not provided.
 
-# Force markdown rendering
-richless --md document.txt | less -R
+For live syntax whose cross-chunk lexer state cannot safely be retained, richless
+continues with raw source. This preserves access and content integrity. JSON/JSONL
+can be highlighted progressively across complete lines.
 
-# Read from stdin
-cat file.md | richless --md - | less -R
-echo "# Test" | richless --md - | less -R
-```
+## Upgrade to 0.4.0
 
-### Standard less Commands
+This release changes integration internally while preserving the `richless`
+executable and `richless-init.sh` entry point.
 
-All standard `less` commands work normally inside the pager:
+- **Homebrew, stable source path:** new shells load the updated wrapper. Existing
+  shells need to source the installed script again using the command above.
+  If an older installation put a version-specific Cellar path in your startup
+  file, replace that line with the stable source command above.
+- **Copied integration script:** replace your copy with the file reported by
+  `richless --init-path`, then re-source the copy. Do not keep sourcing an old
+  version-specific installation directory.
+- **Already-loaded old wrapper:** it can still call the new renderer, but retains
+  its old buffering and argument-handling limitations until replaced/re-sourced.
+- **Direct LESSOPEN users:** existing `|richless %s` templates remain usable.
+  For current ordinary filtering, including stdin and leading-dash filenames, use
+  `LESSOPEN='|-richless --filter -- %s'` together with `less -R`. Use the sourced
+  wrapper for managed formatted following.
+- **Intentional changes:** `-m` is no longer forced Markdown; use `--md`.
+  Formatted file following requires startup `+F`. Ambiguous input may stay plain.
+  Unresolved live Markdown may switch to source after the stated limit.
 
-- `/pattern` - Search forward
-- `?pattern` - Search backward
-- `n` / `N` - Next/previous match
-- `g` / `G` - Go to start/end
-- `q` - Quit
-- `h` - Help
+richless does not edit startup files automatically. When rolling back, restore the
+matching older wrapper as well as the older executable, then start a new shell or
+re-source that wrapper; an old executable does not implement the new pager mode.
 
-## How It Works
-
-**Basic Mode (Option 1):**
-1. When you run `less file.md`, the `LESSOPEN` environment variable tells less to run `richless file.md` first
-2. `richless` detects the `.md` extension and uses the `rich` library to render the Markdown
-3. `rich` renders the Markdown to beautifully formatted ANSI text with proper table support
-4. The formatted output is piped to `less` for viewing
-5. For programming language source files (`.py`, `.js`, `.java`, etc.), `rich` automatically provides syntax highlighting using Pygments
-
-**Transparent Wrapper (Option 2):**
-- The shell function intercepts calls to `less` before they execute
-- For regular files, it passes through to the basic LESSOPEN mechanism
-- For piped input or when `--md` is specified, it saves the content to a temp file and renders it
-- Auto-detection checks piped content for markdown patterns (headers, lists, links, etc.)
-
-## Troubleshooting
-
-### "richless: command not found"
-
-Make sure `~/.local/bin` is in your PATH:
-```bash
-export PATH="$HOME/.local/bin:$PATH"
-# Add this to your ~/.bashrc or ~/.zshrc
-```
-
-### Piped input doesn't work
-
-If you're using Option 1 (Basic LESSOPEN), piped input won't work. Either:
-- Switch to Option 2 / Quick Start for piped input support
-- Or use: `cat file.md | richless --md - | less -R`
-
-### Colors don't show up
-
-If you're using Option 1 (manual setup), make sure you have the `-R` flag set:
-```bash
-export LESS="-R"
-```
-The init script (Option 2 / Quick Start) sets this automatically.
-
-### Shell function not loading
-
-Make sure you're sourcing the init script, not executing it:
-```bash
-source ~/.richless-init.sh  # Correct
-./richless-init.sh          # Wrong - this won't define the function in your shell
-```
-
-### After sourcing, "less file.md" shows an error
-
-Make sure you've reinstalled richless after any updates:
-```bash
-uv tool uninstall richless
-uv tool install .
-source ~/.richless-init.sh  # Re-source to pick up changes
-```
-
-## Updating
-
-```bash
-# Homebrew
-brew upgrade richless
-
-# uv
-uv tool upgrade richless
-```
-
-## Uninstalling
-
-```bash
-# Homebrew
-brew uninstall richless
-
-# uv
-uv tool uninstall richless
-rm ~/.richless-init.sh
-```
-
-After uninstalling, remove the `source ...richless-init.sh` line from your `~/.bashrc` or `~/.zshrc`.
+The wrapper overrides existing preprocessing only for its own pager invocation.
+It does not compose another LESSOPEN filter with richless or overwrite your shell's
+LESS/LESSOPEN settings. It enables ANSI support by default; explicit native color settings in LESS and command-line
+`less` options retain their usual precedence.
 
 ## Development
 
-```bash
-# Clone the repository
-git clone https://github.com/DavidJBianco/richless.git
-cd richless
-
-# Install dependencies
-uv sync
-
-# Install in development mode
-uv tool install --editable .
-
-# Make changes, then reinstall
-uv tool install --editable . --force
-
-# Test it
-less README.md
-
-# Run tests
-uv run pytest tests/test_richless.py -v
+```sh
+uv sync --extra dev
+uv run pytest tests/ -q
+uv run ruff check .
+uv run ruff format --check .
+uv run mypy richless.py
+uv build
+uv run python audit/verify-distributions.py
 ```
 
-## Dependencies
+Correctness and compatibility tests run by default, including real terminal tests.
+Set `RICHLESS_AUDIT_DIR` to retain evidence outside pytest's temporary directories.
+Historical baseline reports and optional performance/probe instructions are under
+`audit/`. Timing benchmarks are separate from ordinary CI gates.
 
-- [rich](https://github.com/Textualize/rich) - Python library for rich terminal output, Markdown rendering, and syntax highlighting
-- [Pygments](https://pygments.org/) - Syntax highlighting library
-- Python 3.12+
-
-## Comparison to Alternatives
-
-**vs. glow / mdcat / bat:**
-- richless integrates directly with `less`, so you use your familiar pager commands
-- Works transparently - no need to remember a different command
-- Supports all standard `less` features (search, navigation, etc.)
-
-**vs. vimpager:**
-- Lighter weight, doesn't require Vim
-- Uses rich library's excellent Markdown rendering with full table support
-- Simple LESSOPEN integration
-
-## License
-
-See LICENSE file for details.
+Never develop on `main`. Features and fixes branch from `dev`; `dev` to `main` is a
+versioned release requiring successful local and GitHub checks.

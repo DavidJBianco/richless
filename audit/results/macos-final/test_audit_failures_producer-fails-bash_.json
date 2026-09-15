@@ -1,0 +1,50 @@
+{
+  "id": "test_audit_failures[producer-fails-bash]",
+  "checks": [
+    {
+      "expectation": "Raw content remains available despite failure",
+      "pass": true
+    },
+    {
+      "expectation": "No temporary files remain after completion",
+      "pass": true
+    }
+  ],
+  "observations": [
+    {
+      "command": [
+        "/bin/bash",
+        "-c",
+        ". /Users/bianco/projects/richless/richless-init.sh; (cat input.txt; exit 7) | less -R"
+      ],
+      "returncode": 0,
+      "seconds": 0.22064200008753687,
+      "stdout": "\u001b[38;2;248;248;242;49mFAILURE_MARKER\u001b[0m\n\n",
+      "stderr": "",
+      "stdout_bytes": 42
+    }
+  ],
+  "commands": [
+    [
+      "/bin/bash",
+      "-c",
+      ". /Users/bianco/projects/richless/richless-init.sh; (cat input.txt; exit 7) | less -R"
+    ]
+  ],
+  "sessions": [],
+  "env": {
+    "PATH": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-279/test_audit_failures_producer_f0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-279/test_audit_failures_producer_f0",
+    "TMPDIR": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-279/test_audit_failures_producer_f0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-279/test_audit_failures_producer_f0",
+  "root": "/Users/bianco/projects/richless",
+  "product_decision": "Default shell pipeline status reflects the pager, not the producer; do not attribute this to richless.",
+  "status": "needs product decision"
+}

@@ -1,0 +1,64 @@
+{
+  "id": "test_audit_arguments[dash-m-wrapper-zsh]",
+  "checks": [
+    {
+      "expectation": "Filename resolves to the requested content",
+      "pass": false
+    },
+    {
+      "expectation": "Valid code filename retains syntax highlighting",
+      "pass": false
+    },
+    {
+      "expectation": "Quit exits normally",
+      "pass": true
+    },
+    {
+      "expectation": "Filename metacharacters are never executed",
+      "pass": true
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/usr/bin/zsh",
+      "-c",
+      ". /tmp/project/richless-init.sh; less -R -m -- file.py"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "ARG_MARKER",
+          "found": false,
+          "seconds": 3.0000256269999
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 656.680334674,
+      "reaped": true,
+      "exitcode": 1,
+      "maxrss_native": 40260,
+      "terminal_restored": true,
+      "transcript": " -R --: No such file or directory\r\nq",
+      "transcript_bytes": 36
+    }
+  ],
+  "env": {
+    "PATH": "/tmp/pytest-of-nobody/pytest-0/test_audit_arguments_dash_m_wr1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_audit_arguments_dash_m_wr1",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_audit_arguments_dash_m_wr1/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_audit_arguments_dash_m_wr1",
+  "root": "/tmp/project",
+  "status": "fail"
+}

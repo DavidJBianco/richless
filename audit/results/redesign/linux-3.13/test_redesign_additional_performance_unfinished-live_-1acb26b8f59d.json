@@ -1,0 +1,21 @@
+{
+  "id": "test_redesign_additional_performance[unfinished-live]",
+  "checks": [],
+  "observations": [],
+  "commands": [],
+  "sessions": [],
+  "env": {
+    "PATH": "/tmp/pytest-of-nobody/pytest-0/test_redesign_additional_perfo1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_redesign_additional_perfo1",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_redesign_additional_perfo1/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_redesign_additional_perfo1",
+  "root": "/tmp/project",
+  "status": "blocked"
+}

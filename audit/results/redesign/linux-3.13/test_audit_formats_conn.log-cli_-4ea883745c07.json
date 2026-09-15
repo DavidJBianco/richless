@@ -1,0 +1,53 @@
+{
+  "id": "test_audit_formats[conn.log-cli]",
+  "checks": [
+    {
+      "expectation": "Content marker survives rendering",
+      "pass": true
+    },
+    {
+      "expectation": "Recognized code/data has syntax colors",
+      "pass": true
+    },
+    {
+      "expectation": "Successful invocation returns zero",
+      "pass": true
+    }
+  ],
+  "observations": [
+    {
+      "command": [
+        "/usr/bin/bash",
+        "-c",
+        "export LESSOPEN='|-richless --filter -- %s'; richless conn.log"
+      ],
+      "returncode": 0,
+      "seconds": 0.19035116600002766,
+      "stdout": "\u001b[38;2;248;248;242m{\u001b[39m\u001b[38;2;255;70;137m\"message\"\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;230;219;116m\"SENTINEL\"\u001b[39m\u001b[38;2;248;248;242m,\u001b[39m\u001b[38;2;255;70;137m\"n\"\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;174;129;255m42\u001b[39m\u001b[38;2;248;248;242m}\u001b[39m\n",
+      "stderr": "",
+      "stdout_bytes": 244
+    }
+  ],
+  "commands": [
+    [
+      "/usr/bin/bash",
+      "-c",
+      "export LESSOPEN='|-richless --filter -- %s'; richless conn.log"
+    ]
+  ],
+  "sessions": [],
+  "env": {
+    "PATH": "/tmp/pytest-of-nobody/pytest-0/test_audit_formats_conn_log_cl0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_audit_formats_conn_log_cl0",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_audit_formats_conn_log_cl0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_audit_formats_conn_log_cl0",
+  "root": "/tmp/project",
+  "status": "pass"
+}
