@@ -3,16 +3,45 @@ name: Publish to PyPI
 on:
   push:
     tags: ['v*.*.*']
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Existing release tag to validate and publish without moving it
+        required: true
+        type: string
 
 permissions:
   contents: read
 
 jobs:
+  release:
+    name: Resolve immutable release revision
+    runs-on: ubuntu-latest
+    outputs:
+      revision: ${{ steps.release.outputs.revision }}
+      tag: ${{ steps.release.outputs.tag }}
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          fetch-depth: 0
+      - id: release
+        name: Resolve and verify the release tag
+        env:
+          RELEASE_TAG: ${{ inputs.release_tag || github.ref_name }}
+        run: |
+          [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          revision=$(git rev-parse "refs/tags/$RELEASE_TAG^{commit}")
+          git merge-base --is-ancestor "$revision" origin/main
+          echo "revision=$revision" >> "$GITHUB_OUTPUT"
+          echo "tag=$RELEASE_TAG" >> "$GITHUB_OUTPUT"
   validate:
+    needs: release
     uses: ./.github/workflows/tests.yml
+    with:
+      ref: ${{ needs.release.outputs.revision }}
   publish:
     name: Publish validated release
-    needs: validate
+    needs: [release, validate]
     runs-on: ubuntu-latest
     environment:
       name: pypi
@@ -23,12 +52,13 @@ jobs:
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
-          fetch-depth: 0
+          ref: ${{ needs.release.outputs.revision }}
       - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
-      - name: Verify release version and main revision
+      - name: Verify release version
+        env:
+          RELEASE_TAG: ${{ needs.release.outputs.tag }}
         run: |
-          test "$GITHUB_SHA" = "$(git rev-parse origin/main)"
           version=$(uv run --frozen python -c 'import tomllib; print(tomllib.load(open("pyproject.toml", "rb"))["project"]["version"])')
-          test "$GITHUB_REF_NAME" = "v$version"
+          test "$RELEASE_TAG" = "v$version"
       - run: uv build
-      - uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b # release/v1
+      - uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33 # release/v1
