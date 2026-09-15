@@ -60,12 +60,12 @@
         {
           "expect": "C_MARKER",
           "found": true,
-          "seconds": 0.05127987498417497
+          "seconds": 0.052493292023427784
         },
         {
           "expect": "a code.c",
           "found": true,
-          "seconds": 0.05132066598162055
+          "seconds": 0.05254833400249481
         },
         {
           "keys": "b':n\\n'"
@@ -73,12 +73,12 @@
         {
           "expect": "PY_MARKER",
           "found": true,
-          "seconds": 0.13487279100809246
+          "seconds": 0.12793325004167855
         },
         {
           "expect": "b code.py",
           "found": true,
-          "seconds": 0.13488620799034834
+          "seconds": 0.12795124994590878
         },
         {
           "keys": "b':n\\n'"
@@ -86,12 +86,12 @@
         {
           "expect": "MD_MARKER",
           "found": true,
-          "seconds": 0.22498525003902614
+          "seconds": 0.2024707089876756
         },
         {
           "expect": "c doc.md",
           "found": true,
-          "seconds": 0.2250055830227211
+          "seconds": 0.20249283395241946
         },
         {
           "keys": "b':p\\n'"
@@ -99,12 +99,12 @@
         {
           "expect": "PY_MARKER",
           "found": true,
-          "seconds": 0.3071988329757005
+          "seconds": 0.28015666699502617
         },
         {
           "expect": "b code.py",
           "found": true,
-          "seconds": 0.30721287499181926
+          "seconds": 0.2801707920152694
         },
         {
           "keys": "b':p\\n'"
@@ -112,30 +112,30 @@
         {
           "expect": "C_MARKER",
           "found": true,
-          "seconds": 0.38296891597565264
+          "seconds": 0.35472862503957003
         },
         {
           "expect": "a code.c",
           "found": true,
-          "seconds": 0.3829841249389574
+          "seconds": 0.3547438749810681
         },
         {
           "keys": "b'q'"
         }
       ],
-      "started": 783370.1615565,
+      "started": 785010.469390666,
       "reaped": true,
       "exitcode": 0,
-      "maxrss_native": 1753088,
+      "maxrss_native": 1687552,
       "terminal_restored": true,
       "transcript": "\u001b[?1049h\u001b[24;1H\u001b[?1h\u001b=\rint main(void) { return 7; } // C_MARKER\u001b[m\r\n\u001b[7ma code.c (file 1 of 3) (END) - Next: b code.py\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kn\bn...skipping...\r\ndef sample():\u001b[m\r\n    return \"PY_MARKER\"\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mb code.py (file 2 of 3) (END) - Next: c doc.md\u001b[27m\u001b[K\r\u001b[K\u0007\r\u001b[K\u001b[7m(END) - Next: c doc.md\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kn\bn...skipping...\r\n# MD_MARKER\u001b[m\r\n\u001b[m\r\n- item\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mc doc.md (file 3 of 3) (END)\u001b[27m\u001b[K\r\u001b[K\r\u001b[K\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kp\bp...skipping...\r\ndef sample():\u001b[m\r\n    return \"PY_MARKER\"\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mb code.py (file 2 of 3) (END) - Next: c doc.md\u001b[27m\u001b[K\r\u001b[K\r\u001b[K\u001b[7m(END) - Next: c doc.md\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kp\bp...skipping...\r\nint main(void) { return 7; } // C_MARKER\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7ma code.c (file 1 of 3) (END) - Next: b code.py\u001b[27m\u001b[K\r\u001b[K\r\u001b[K\u001b[7m(END) - Next: b code.py\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l",
       "transcript_bytes": 1735
     }
   ],
   "env": {
-    "PATH": "/private/tmp/richless-release-mac312/test_audit_mixed_spaces_plain_0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
-    "HOME": "/private/tmp/richless-release-mac312/test_audit_mixed_spaces_plain_0",
-    "TMPDIR": "/private/tmp/richless-release-mac312/test_audit_mixed_spaces_plain_0/scratch",
+    "PATH": "/private/tmp/richless-final2-mac312/test_audit_mixed_spaces_plain_0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/tmp/richless-final2-mac312/test_audit_mixed_spaces_plain_0",
+    "TMPDIR": "/private/tmp/richless-final2-mac312/test_audit_mixed_spaces_plain_0/scratch",
     "TERM": "xterm-256color",
     "LC_ALL": "C",
     "LESSCHARSET": "utf-8",
@@ -143,7 +143,7 @@
     "PYTHONIOENCODING": "utf-8",
     "PYTHONUTF8": "1"
   },
-  "cwd": "/private/tmp/richless-release-mac312/test_audit_mixed_spaces_plain_0",
+  "cwd": "/private/tmp/richless-final2-mac312/test_audit_mixed_spaces_plain_0",
   "root": "/Users/bianco/projects/richless",
   "status": "pass"
 }

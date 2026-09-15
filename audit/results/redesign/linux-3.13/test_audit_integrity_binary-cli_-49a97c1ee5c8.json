@@ -18,7 +18,7 @@
         "richless bytes.txt"
       ],
       "returncode": 0,
-      "seconds": 0.17660004199979085,
+      "seconds": 0.16864108300001135,
       "stdout": "FIRST\u0000\ufffdLAST\n",
       "stderr": "",
       "stdout_bytes": 12

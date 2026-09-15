@@ -22,7 +22,7 @@
         "export LESSOPEN='|-richless --filter -- %s'; richless code.c"
       ],
       "returncode": 0,
-      "seconds": 0.1883059999672696,
+      "seconds": 0.18748787499498576,
       "stdout": "\u001b[38;2;102;217;239mint\u001b[39m\u001b[38;2;248;248;242m \u001b[39m\u001b[38;2;166;226;46mmain\u001b[39m\u001b[38;2;248;248;242m(\u001b[39m\u001b[38;2;102;217;239mvoid\u001b[39m\u001b[38;2;248;248;242m)\u001b[39m\u001b[38;2;248;248;242m \u001b[39m\u001b[38;2;248;248;242m{\u001b[39m\u001b[38;2;248;248;242m \u001b[39m\u001b[38;2;102;217;239mreturn\u001b[39m\u001b[38;2;248;248;242m \u001b[39m\u001b[38;2;174;129;255m42\u001b[39m\u001b[38;2;248;248;242m;\u001b[39m\u001b[38;2;248;248;242m \u001b[39m\u001b[38;2;248;248;242m}\u001b[39m\u001b[38;2;248;248;242m \u001b[39m\u001b[38;2;149;144;119m// SENTINEL\u001b[39m\n",
       "stderr": "",
       "stdout_bytes": 449
@@ -37,9 +37,9 @@
   ],
   "sessions": [],
   "env": {
-    "PATH": "/private/tmp/richless-release-mac313/test_audit_formats_code_c_cli_0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
-    "HOME": "/private/tmp/richless-release-mac313/test_audit_formats_code_c_cli_0",
-    "TMPDIR": "/private/tmp/richless-release-mac313/test_audit_formats_code_c_cli_0/scratch",
+    "PATH": "/private/tmp/richless-final2-mac313/test_audit_formats_code_c_cli_0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/tmp/richless-final2-mac313/test_audit_formats_code_c_cli_0",
+    "TMPDIR": "/private/tmp/richless-final2-mac313/test_audit_formats_code_c_cli_0/scratch",
     "TERM": "xterm-256color",
     "LC_ALL": "C",
     "LESSCHARSET": "utf-8",
@@ -47,7 +47,7 @@
     "PYTHONIOENCODING": "utf-8",
     "PYTHONUTF8": "1"
   },
-  "cwd": "/private/tmp/richless-release-mac313/test_audit_formats_code_c_cli_0",
+  "cwd": "/private/tmp/richless-final2-mac313/test_audit_formats_code_c_cli_0",
   "root": "/Users/bianco/projects/richless",
   "status": "pass"
 }

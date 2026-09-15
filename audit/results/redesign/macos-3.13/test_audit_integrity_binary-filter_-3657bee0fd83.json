@@ -18,7 +18,7 @@
         "export LESSOPEN='|-richless --filter -- %s'; less -R bytes.txt"
       ],
       "returncode": 0,
-      "seconds": 0.24094816599972546,
+      "seconds": 0.2046972089447081,
       "stdout": "FIRST\u0000\ufffdLAST\n",
       "stderr": "",
       "stdout_bytes": 12
@@ -37,9 +37,9 @@
   ],
   "sessions": [],
   "env": {
-    "PATH": "/private/tmp/richless-release-mac313/test_audit_integrity_binary_fi0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
-    "HOME": "/private/tmp/richless-release-mac313/test_audit_integrity_binary_fi0",
-    "TMPDIR": "/private/tmp/richless-release-mac313/test_audit_integrity_binary_fi0/scratch",
+    "PATH": "/private/tmp/richless-final2-mac313/test_audit_integrity_binary_fi0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/tmp/richless-final2-mac313/test_audit_integrity_binary_fi0",
+    "TMPDIR": "/private/tmp/richless-final2-mac313/test_audit_integrity_binary_fi0/scratch",
     "TERM": "xterm-256color",
     "LC_ALL": "C",
     "LESSCHARSET": "utf-8",
@@ -47,7 +47,7 @@
     "PYTHONIOENCODING": "utf-8",
     "PYTHONUTF8": "1"
   },
-  "cwd": "/private/tmp/richless-release-mac313/test_audit_integrity_binary_fi0",
+  "cwd": "/private/tmp/richless-final2-mac313/test_audit_integrity_binary_fi0",
   "root": "/Users/bianco/projects/richless",
   "status": "pass"
 }

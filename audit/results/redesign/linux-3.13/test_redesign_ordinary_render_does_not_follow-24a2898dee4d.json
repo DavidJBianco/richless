@@ -32,7 +32,7 @@
         {
           "expect": "ORIGINAL_SNAPSHOT",
           "found": true,
-          "seconds": 0.36347958400006064
+          "seconds": 0.3734471249999842
         },
         {
           "keys": "b'F'"
@@ -40,7 +40,7 @@
         {
           "expect": "LATER_SOURCE_CHANGE",
           "found": false,
-          "seconds": 0.7947003340000265
+          "seconds": 0.7962946669999837
         },
         {
           "keys": "b'\\x03'"
@@ -49,10 +49,10 @@
           "keys": "b'q'"
         }
       ],
-      "started": 1644.181886912,
+      "started": 798.233239696,
       "reaped": true,
       "exitcode": 0,
-      "maxrss_native": 38704,
+      "maxrss_native": 39620,
       "terminal_restored": true,
       "transcript": "\u001b[?1049h\u001b[22;0;0t\u001b[?1h\u001b=\r\u001b[38;2;248;248;242m{\u001b[39m\u001b[38;2;255;70;137m\"marker\"\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;230;219;116m\"ORIGINAL_SNAPSHOT\"\u001b[39m\u001b[38;2;248;248;242m,\u001b[39m\u001b[38;2;255;70;137m\"n\"\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;174;129;255m1\u001b[39m\u001b[38;2;248;248;242m}\u001b[39m\u001b[m\r\n\u001b[7mordinary.jsonl (END)\u001b[27m\u001b[K\r\u001b[K...skipping...\r\n\u001b[38;2;248;248;242m{\u001b[39m\u001b[38;2;255;70;137m\"marker\"\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;230;219;116m\"ORIGINAL_SNAPSHOT\"\u001b[39m\u001b[38;2;248;248;242m,\u001b[39m\u001b[38;2;255;70;137m\"n\"\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;174;129;255m1\u001b[39m\u001b[38;2;248;248;242m}\u001b[39m\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[H\u001bM\u001b[1m~\u001b[0m\r\n\u001b[24;1H\u001b[H\u001b[2J\u001b[H\u001b[H\u001b[2J\u001b[H\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[38;2;248;248;242m{\u001b[39m\u001b[38;2;255;70;137m\"marker\"\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;230;219;116m\"ORIGINAL_SNAPSHOT\"\u001b[39m\u001b[38;2;248;248;242m,\u001b[39m\u001b[38;2;255;70;137m\"n\"\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;174;129;255m1\u001b[39m\u001b[38;2;248;248;242m}\u001b[39m\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7m(END)\u001b[27m\u001b[K\u0007\u001b[H\u001b[2J\u001b[H\u001b[H\u001b[2J\u001b[H\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[38;2;248;248;242m{\u001b[39m\u001b[38;2;255;70;137m\"marker\"\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;230;219;116m\"ORIGINAL_SNAPSHOT\"\u001b[39m\u001b[38;2;248;248;242m,\u001b[39m\u001b[38;2;255;70;137m\"n\"\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;174;129;255m1\u001b[39m\u001b[38;2;248;248;242m}\u001b[39m\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l\u001b[23;0;0t",
       "transcript_bytes": 2285

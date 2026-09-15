@@ -22,7 +22,7 @@
         ". /tmp/project/richless-init.sh; cat heading.md | less -R"
       ],
       "returncode": 0,
-      "seconds": 0.35261433300001954,
+      "seconds": 0.3789228749999438,
       "stdout": "# SENTINEL\n",
       "stderr": "",
       "stdout_bytes": 11

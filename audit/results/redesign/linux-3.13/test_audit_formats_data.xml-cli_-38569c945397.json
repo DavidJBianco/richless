@@ -22,7 +22,7 @@
         "export LESSOPEN='|-richless --filter -- %s'; richless data.xml"
       ],
       "returncode": 0,
-      "seconds": 0.1880983749999814,
+      "seconds": 0.19235920799997075,
       "stdout": "\u001b[38;2;149;144;119m<?xml version=\"1.0\"?>\u001b[39m\u001b[38;2;255;70;137m<root\u001b[39m\u001b[38;2;255;70;137m>\u001b[39m\u001b[38;2;248;248;242mSENTINEL\u001b[39m\u001b[38;2;255;70;137m</root>\u001b[39m\n",
       "stderr": "",
       "stdout_bytes": 160

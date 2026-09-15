@@ -1,0 +1,75 @@
+{
+  "id": "test_redesign_follow_resource_failure[allocation]",
+  "checks": [
+    {
+      "expectation": "Original content remains viewable",
+      "pass": true
+    },
+    {
+      "expectation": "Failure session can quit",
+      "pass": true
+    },
+    {
+      "expectation": "Recovered original viewing succeeds; published failure is nonzero",
+      "pass": false
+    },
+    {
+      "expectation": "Replacement files are removed",
+      "pass": true
+    },
+    {
+      "expectation": "No traceback reaches terminal",
+      "pass": false
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/bin/bash",
+      "-c",
+      ". /Users/runner/work/richless/richless/richless-init.sh; less +F events.jsonl"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "INITIAL_RESOURCE",
+          "found": true,
+          "seconds": 0.18501312500001177
+        },
+        {
+          "keys": "b'\\x03'"
+        },
+        {
+          "keys": "b'q'"
+        },
+        {
+          "write_after_exit": "b'q'"
+        }
+      ],
+      "started": 307.160288416,
+      "reaped": true,
+      "exitcode": -2,
+      "maxrss_native": 28180480,
+      "terminal_restored": true,
+      "transcript": "richless: cannot prepare follow view; using original file: [Errno 28] injected allocation exhaustion\r\n\u001b[?1049h\u001b[24;1H\u001b[?1h\u001b=\r\r\u001b[K{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n\r\u001b[K\u001b[7mWaiting for data... (^X or interrupt to abort)\u001b[27m\r\u001b[K\u0007\u001b[H\u001b[2J\u001b[H{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n\u001b[7mevents.jsonl (END)\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049lTraceback (most recent call last):\r\n  File \u001b[35m\"/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/pytest-of-runner/pytest-0/test_redesign_follow_resource_0/fault_renderer.py\"\u001b[0m, line \u001b[35m1195\u001b[0m, in \u001b[35m<module>\u001b[0m\r\n    sys.exit(\u001b[31mmain\u001b[0m\u001b[1;31m()\u001b[0m)\r\n             \u001b[31m~~~~\u001b[0m\u001b[1;31m^^\u001b[0m\r\n  File \u001b[35m\"/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/pytest-of-runner/pytest-0/test_redesign_follow_resource_0/fault_renderer.py\"\u001b[0m, line \u001b[35m1128\u001b[0m, in \u001b[35mmain\u001b[0m\r\n    return launch_pager(sys.argv[2:])\r\n  File \u001b[35m\"/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/pytest-of-runner/pytest-0/test_redesign_follow_resource_0/fault_renderer.py\"\u001b[0m, line \u001b[35m1045\u001b[0m, in \u001b[35mlaunch_pager\u001b[0m\r\n    while \u001b[1;31mTrue\u001b[0m:\r\n          \u001b[1;31m^^^^\u001b[0m\r\n\u001b[1;35mKeyboardInterrupt\u001b[0m\r\n",
+      "transcript_bytes": 2917
+    }
+  ],
+  "env": {
+    "PATH": "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/pytest-of-runner/pytest-0/test_redesign_follow_resource_0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/pytest-of-runner/pytest-0/test_redesign_follow_resource_0",
+    "TMPDIR": "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/pytest-of-runner/pytest-0/test_redesign_follow_resource_0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1",
+    "FAULT": "allocation"
+  },
+  "cwd": "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/pytest-of-runner/pytest-0/test_redesign_follow_resource_0",
+  "root": "/Users/runner/work/richless/richless",
+  "status": "fail"
+}

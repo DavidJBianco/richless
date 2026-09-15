@@ -18,7 +18,7 @@
         "export LESSOPEN='|-richless --filter -- %s'; less -R plain.txt"
       ],
       "returncode": 0,
-      "seconds": 0.18766499999992448,
+      "seconds": 0.18883075099995494,
       "stdout": "SENTINEL ordinary prose.\n",
       "stderr": "",
       "stdout_bytes": 25

@@ -14,7 +14,7 @@
         "export LESSOPEN='|-richless --filter -- %s'; less -R bytes.txt"
       ],
       "returncode": 0,
-      "seconds": 0.1864075830001184,
+      "seconds": 0.18855650000000423,
       "stdout": "ENDMARK",
       "stderr": "",
       "stdout_bytes": 7

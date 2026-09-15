@@ -36,7 +36,7 @@
         {
           "expect": "INITIAL_RESOURCE",
           "found": true,
-          "seconds": 0.5121565839999676
+          "seconds": 0.5070630010000059
         },
         {
           "keys": "b'\\x03'"
@@ -45,10 +45,10 @@
           "keys": "b'q'"
         }
       ],
-      "started": 1646.395870413,
+      "started": 800.538066488,
       "reaped": true,
       "exitcode": 0,
-      "maxrss_native": 38704,
+      "maxrss_native": 39620,
       "terminal_restored": true,
       "transcript": "richless: follow renderer failed: [Errno 28] injected disk exhaustion\r\nrichless: follow preparation failed; using original file\r\n\u001b[?1049h\u001b[22;0;0t\u001b[?1h\u001b=\r\r\u001b[K{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n\r\u001b[K\u001b[7mWaiting for data... (interrupt to abort)\u001b[27m\r\u001b[K\u0007\u001b[H\u001b[2J\u001b[H{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n{\"marker\":\"INITIAL_RESOURCE\",\"n\":1}\u001b[m\r\n\u001b[7mevents.jsonl (END)\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l\u001b[23;0;0t",
       "transcript_bytes": 2124

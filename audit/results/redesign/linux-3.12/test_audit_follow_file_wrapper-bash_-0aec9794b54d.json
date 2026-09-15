@@ -28,7 +28,7 @@
         {
           "expect": "FILE_FIRST",
           "found": true,
-          "seconds": 0.4070198330000494
+          "seconds": 0.41414691700003914
         },
         {
           "keys": "b'F'"
@@ -36,7 +36,7 @@
         {
           "expect": "FILE_APPENDED",
           "found": true,
-          "seconds": 0.4810167499999807
+          "seconds": 0.4902917500000967
         },
         {
           "keys": "b'\\x03'"
@@ -45,13 +45,13 @@
           "keys": "b'q'"
         }
       ],
-      "started": 1601.191425684,
+      "started": 755.175243759,
       "reaped": true,
       "exitcode": 0,
-      "maxrss_native": 37564,
+      "maxrss_native": 37724,
       "terminal_restored": true,
-      "transcript": "\u001b[?1049h\u001b[22;0;0t\u001b[?1h\u001b=\rFILE_FIRST\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\n\u001b[7mgrowing.log\u001b[27m\u001b[K\r\u001b[Kpadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\nFILE_APPENDED\u001b[m\r\n\r\u001b[K\u001b[7mWaiting for data... (interrupt to abort)\u001b[27m\r\u001b[K\u0007\u001b[H\u001b[2J\u001b[Hpadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\nFILE_APPENDED\u001b[m\r\n\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l\u001b[23;0;0t",
-      "transcript_bytes": 840
+      "transcript": "\u001b[?1049h\u001b[22;0;0t\u001b[?1h\u001b=\rFILE_FIRST\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\n\u001b[7mgrowing.log\u001b[27m\u001b[K\r\u001b[Kpadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\n\r\u001b[K\u001b[7mWaiting for data... (interrupt to abort)\u001b[27m\r\u001b[KFILE_APPENDED\u001b[m\r\n\r\u001b[K\u001b[7mWaiting for data... (interrupt to abort)\u001b[27m\r\u001b[K\u0007\u001b[H\u001b[2J\u001b[Hpadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\nFILE_APPENDED\u001b[m\r\n\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l\u001b[23;0;0t",
+      "transcript_bytes": 897
     }
   ],
   "env": {

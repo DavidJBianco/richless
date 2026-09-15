@@ -60,12 +60,12 @@
         {
           "expect": "C_MARKER",
           "found": true,
-          "seconds": 0.050553667000031055
+          "seconds": 0.05276654100009637
         },
         {
           "expect": "a.json",
           "found": true,
-          "seconds": 0.05057220799994866
+          "seconds": 0.052800541000010526
         },
         {
           "keys": "b':n\\n'"
@@ -73,12 +73,12 @@
         {
           "expect": "PY_MARKER",
           "found": true,
-          "seconds": 0.12883187500005988
+          "seconds": 0.1238052080000216
         },
         {
           "expect": "b.txt",
           "found": true,
-          "seconds": 0.12885075000008328
+          "seconds": 0.12382366600002115
         },
         {
           "keys": "b':n\\n'"
@@ -86,12 +86,12 @@
         {
           "expect": "MD_MARKER",
           "found": true,
-          "seconds": 0.20015224999997372
+          "seconds": 0.19826204100002087
         },
         {
           "expect": "c.md",
           "found": true,
-          "seconds": 0.2001676249999491
+          "seconds": 0.19827870800008895
         },
         {
           "keys": "b':p\\n'"
@@ -99,12 +99,12 @@
         {
           "expect": "PY_MARKER",
           "found": true,
-          "seconds": 0.2757331249999879
+          "seconds": 0.26970633300004465
         },
         {
           "expect": "b.txt",
           "found": true,
-          "seconds": 0.2757515000000694
+          "seconds": 0.26972358300008636
         },
         {
           "keys": "b':p\\n'"
@@ -112,21 +112,21 @@
         {
           "expect": "C_MARKER",
           "found": true,
-          "seconds": 0.3500685420001446
+          "seconds": 0.3469689580000477
         },
         {
           "expect": "a.json",
           "found": true,
-          "seconds": 0.3500843750000513
+          "seconds": 0.3469860420000259
         },
         {
           "keys": "b'q'"
         }
       ],
-      "started": 1544.154552366,
+      "started": 697.775358358,
       "reaped": true,
       "exitcode": 0,
-      "maxrss_native": 36964,
+      "maxrss_native": 37124,
       "terminal_restored": true,
       "transcript": "\u001b[?1049h\u001b[22;0;0t\u001b[?1h\u001b=\r{\"message\":\"C_MARKER\",\"n\":42}\u001b[m\r\n\u001b[7ma.json (file 1 of 3) (END) - Next: b.txt\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kn\bn...skipping...\r\nPY_MARKER ordinary text\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mb.txt (file 2 of 3) (END) - Next: c.md\u001b[27m\u001b[K\r\u001b[K\u0007\r\u001b[K\u001b[7m(END) - Next: c.md\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kn\bn...skipping...\r\n# MD_MARKER\u001b[m\r\n\u001b[m\r\n- item\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mc.md (file 3 of 3) (END)\u001b[27m\u001b[K\r\u001b[K\r\u001b[K\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kp\bp...skipping...\r\nPY_MARKER ordinary text\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mb.txt (file 2 of 3) (END) - Next: c.md\u001b[27m\u001b[K\r\u001b[K\r\u001b[K\u001b[7m(END) - Next: c.md\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kp\bp...skipping...\r\n{\"message\":\"C_MARKER\",\"n\":42}\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7ma.json (file 1 of 3) (END) - Next: b.txt\u001b[27m\u001b[K\r\u001b[K\r\u001b[K\u001b[7m(END) - Next: b.txt\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l\u001b[23;0;0t",
       "transcript_bytes": 1668

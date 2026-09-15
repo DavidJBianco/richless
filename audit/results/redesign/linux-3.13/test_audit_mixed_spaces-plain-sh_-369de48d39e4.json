@@ -60,12 +60,12 @@
         {
           "expect": "C_MARKER",
           "found": true,
-          "seconds": 0.0587081250000665
+          "seconds": 0.0516544579999163
         },
         {
           "expect": "a code.c",
           "found": true,
-          "seconds": 0.05872616600004221
+          "seconds": 0.051673040999958175
         },
         {
           "keys": "b':n\\n'"
@@ -73,12 +73,12 @@
         {
           "expect": "PY_MARKER",
           "found": true,
-          "seconds": 0.13147987499996816
+          "seconds": 0.12527012499992907
         },
         {
           "expect": "b code.py",
           "found": true,
-          "seconds": 0.13149620800004413
+          "seconds": 0.12529029099994204
         },
         {
           "keys": "b':n\\n'"
@@ -86,12 +86,12 @@
         {
           "expect": "MD_MARKER",
           "found": true,
-          "seconds": 0.20857404200000929
+          "seconds": 0.20427204099996743
         },
         {
           "expect": "c doc.md",
           "found": true,
-          "seconds": 0.20859579200009648
+          "seconds": 0.20428808299993761
         },
         {
           "keys": "b':p\\n'"
@@ -99,12 +99,12 @@
         {
           "expect": "PY_MARKER",
           "found": true,
-          "seconds": 0.28957116700007646
+          "seconds": 0.27795912499993847
         },
         {
           "expect": "b code.py",
           "found": true,
-          "seconds": 0.28958641700000953
+          "seconds": 0.2779769999999644
         },
         {
           "keys": "b':p\\n'"
@@ -112,21 +112,21 @@
         {
           "expect": "C_MARKER",
           "found": true,
-          "seconds": 0.3613061670000661
+          "seconds": 0.3524225410000099
         },
         {
           "expect": "a code.c",
           "found": true,
-          "seconds": 0.3613255830000526
+          "seconds": 0.35243929099999605
         },
         {
           "keys": "b'q'"
         }
       ],
-      "started": 1525.590149358,
+      "started": 678.65044535,
       "reaped": true,
       "exitcode": 0,
-      "maxrss_native": 36964,
+      "maxrss_native": 37124,
       "terminal_restored": true,
       "transcript": "\u001b[?1049h\u001b[22;0;0t\u001b[?1h\u001b=\rint main(void) { return 7; } // C_MARKER\u001b[m\r\n\u001b[7ma code.c (file 1 of 3) (END) - Next: b code.py\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kn\bn...skipping...\r\ndef sample():\u001b[m\r\n    return \"PY_MARKER\"\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mb code.py (file 2 of 3) (END) - Next: c doc.md\u001b[27m\u001b[K\r\u001b[K\u0007\r\u001b[K\u001b[7m(END) - Next: c doc.md\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kn\bn...skipping...\r\n# MD_MARKER\u001b[m\r\n\u001b[m\r\n- item\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mc doc.md (file 3 of 3) (END)\u001b[27m\u001b[K\r\u001b[K\r\u001b[K\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kp\bp...skipping...\r\ndef sample():\u001b[m\r\n    return \"PY_MARKER\"\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mb code.py (file 2 of 3) (END) - Next: c doc.md\u001b[27m\u001b[K\r\u001b[K\r\u001b[K\u001b[7m(END) - Next: c doc.md\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kp\bp...skipping...\r\nint main(void) { return 7; } // C_MARKER\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7ma code.c (file 1 of 3) (END) - Next: b code.py\u001b[27m\u001b[K\r\u001b[K\r\u001b[K\u001b[7m(END) - Next: b code.py\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l\u001b[23;0;0t",
       "transcript_bytes": 1746

@@ -28,16 +28,16 @@
         {
           "expect": "ROUTE_SENTINEL",
           "found": true,
-          "seconds": 0.053986375000022235
+          "seconds": 0.05504191699992589
         },
         {
           "keys": "b'q'"
         }
       ],
-      "started": 1487.706727424,
+      "started": 640.065096248,
       "reaped": true,
       "exitcode": 0,
-      "maxrss_native": 36964,
+      "maxrss_native": 37124,
       "terminal_restored": true,
       "transcript": "\u001b[?1049h\u001b[22;0;0t\u001b[?1h\u001b=\rprint(\"ROUTE_SENTINEL\")\u001b[m\r\n\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l\u001b[23;0;0t",
       "transcript_bytes": 98

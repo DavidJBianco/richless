@@ -22,7 +22,7 @@
         "export LESSOPEN='|-richless --filter -- %s'; richless config.yml"
       ],
       "returncode": 0,
-      "seconds": 0.18766649999997753,
+      "seconds": 0.18978449999997338,
       "stdout": "\u001b[38;2;255;70;137mname\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;248;248;242m \u001b[39m\u001b[38;2;174;129;255mSENTINEL\u001b[39m\n\u001b[38;2;255;70;137mcount\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;248;248;242m \u001b[39m\u001b[38;2;174;129;255m42\u001b[39m\n",
       "stderr": "",
       "stdout_bytes": 215

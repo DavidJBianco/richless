@@ -22,7 +22,7 @@
         "export LESSOPEN='|-richless --filter -- %s'; richless code.PY"
       ],
       "returncode": 0,
-      "seconds": 0.19577687501441687,
+      "seconds": 0.19748358300421387,
       "stdout": "\u001b[38;2;102;217;239mdef\u001b[39m\u001b[38;2;248;248;242m \u001b[39m\u001b[38;2;166;226;46msample\u001b[39m\u001b[38;2;248;248;242m(\u001b[39m\u001b[38;2;248;248;242m)\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\n\u001b[38;2;248;248;242m    \u001b[39m\u001b[38;2;102;217;239mreturn\u001b[39m\u001b[38;2;248;248;242m \u001b[39m\u001b[38;2;230;219;116m\"\u001b[39m\u001b[38;2;230;219;116mSENTINEL\u001b[39m\u001b[38;2;230;219;116m\"\u001b[39m\n",
       "stderr": "",
       "stdout_bytes": 323
@@ -37,9 +37,9 @@
   ],
   "sessions": [],
   "env": {
-    "PATH": "/private/tmp/richless-release-mac313/test_audit_formats_code_PY_cli1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
-    "HOME": "/private/tmp/richless-release-mac313/test_audit_formats_code_PY_cli1",
-    "TMPDIR": "/private/tmp/richless-release-mac313/test_audit_formats_code_PY_cli1/scratch",
+    "PATH": "/private/tmp/richless-final2-mac313/test_audit_formats_code_PY_cli1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/tmp/richless-final2-mac313/test_audit_formats_code_PY_cli1",
+    "TMPDIR": "/private/tmp/richless-final2-mac313/test_audit_formats_code_PY_cli1/scratch",
     "TERM": "xterm-256color",
     "LC_ALL": "C",
     "LESSCHARSET": "utf-8",
@@ -47,7 +47,7 @@
     "PYTHONIOENCODING": "utf-8",
     "PYTHONUTF8": "1"
   },
-  "cwd": "/private/tmp/richless-release-mac313/test_audit_formats_code_PY_cli1",
+  "cwd": "/private/tmp/richless-final2-mac313/test_audit_formats_code_PY_cli1",
   "root": "/Users/bianco/projects/richless",
   "status": "pass"
 }

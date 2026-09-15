@@ -22,7 +22,7 @@
         ". /tmp/project/richless-init.sh; cat code.py | less -R"
       ],
       "returncode": 0,
-      "seconds": 0.41412495800000215,
+      "seconds": 0.4045157919999838,
       "stdout": "def sample():\n    return \"SENTINEL\"\n",
       "stderr": "",
       "stdout_bytes": 36

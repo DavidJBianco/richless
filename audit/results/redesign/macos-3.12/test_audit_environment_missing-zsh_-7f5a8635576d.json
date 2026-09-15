@@ -20,7 +20,7 @@
         {
           "expect": "missing.py",
           "found": true,
-          "seconds": 0.3140427080215886
+          "seconds": 0.2630333330016583
         },
         {
           "keys": "b'q'"
@@ -29,19 +29,19 @@
           "write_after_exit": "b'q'"
         }
       ],
-      "started": 783420.725649333,
+      "started": 785058.233515083,
       "reaped": true,
       "exitcode": 1,
-      "maxrss_native": 26984448,
+      "maxrss_native": 27099136,
       "terminal_restored": true,
       "transcript": "richless: File not found: missing.py\r\nmissing.py: No such file or directory\r\n",
       "transcript_bytes": 77
     }
   ],
   "env": {
-    "PATH": "/private/tmp/richless-release-mac312/test_audit_environment_missing1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
-    "HOME": "/private/tmp/richless-release-mac312/test_audit_environment_missing1",
-    "TMPDIR": "/private/tmp/richless-release-mac312/test_audit_environment_missing1/scratch",
+    "PATH": "/private/tmp/richless-final2-mac312/test_audit_environment_missing1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/tmp/richless-final2-mac312/test_audit_environment_missing1",
+    "TMPDIR": "/private/tmp/richless-final2-mac312/test_audit_environment_missing1/scratch",
     "TERM": "xterm-256color",
     "LC_ALL": "C",
     "LESSCHARSET": "utf-8",
@@ -49,7 +49,7 @@
     "PYTHONIOENCODING": "utf-8",
     "PYTHONUTF8": "1"
   },
-  "cwd": "/private/tmp/richless-release-mac312/test_audit_environment_missing1",
+  "cwd": "/private/tmp/richless-final2-mac312/test_audit_environment_missing1",
   "root": "/Users/bianco/projects/richless",
   "status": "pass"
 }

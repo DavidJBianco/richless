@@ -18,7 +18,7 @@
         ". /tmp/project/richless-init.sh; cat input.txt | less -R"
       ],
       "returncode": 0,
-      "seconds": 0.34531695800001216,
+      "seconds": 0.3613595419999456,
       "stdout": "FAILURE_MARKER\n",
       "stderr": "",
       "stdout_bytes": 15

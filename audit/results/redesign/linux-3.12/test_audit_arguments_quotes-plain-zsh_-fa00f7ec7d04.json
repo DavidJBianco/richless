@@ -32,16 +32,16 @@
         {
           "expect": "ARG_MARKER",
           "found": true,
-          "seconds": 0.050318125000103464
+          "seconds": 0.05065008300005047
         },
         {
           "keys": "b'q'"
         }
       ],
-      "started": 1570.857194878,
+      "started": 724.434912995,
       "reaped": true,
       "exitcode": 0,
-      "maxrss_native": 37032,
+      "maxrss_native": 37192,
       "terminal_restored": true,
       "transcript": "\u001b[?1049h\u001b[22;0;0t\u001b[?1h\u001b=\rdef sample():\u001b[m\r\n    return \"ARG_MARKER\"\u001b[m\r\n\u001b[7mone'\"two.py (END)\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l\u001b[23;0;0t",
       "transcript_bytes": 128

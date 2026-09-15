@@ -32,17 +32,17 @@
         {
           "expect": "FAILURE_MARKER",
           "found": true,
-          "seconds": 0.46405075000006946
+          "seconds": 0.5227515420000373
         },
         {
           "keys": "b'\\x03'"
         }
       ],
-      "started": 1626.856029821,
+      "started": 781.071472604,
       "reaped": false,
       "terminal_restored": false,
       "exitcode": -9,
-      "maxrss_native": 37564,
+      "maxrss_native": 37852,
       "transcript": "\u001b[?1049h\u001b[22;0;0t\u001b[?1h\u001b=\rFAILURE_MARKER\u001b[m\r\n\u0007:\u001b[K\u001b[H\u001b[2J\u001b[H\u001b[H\u001b[2J\u001b[HFAILURE_MARKER\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7m(END)\u001b[27m\u001b[K",
       "transcript_bytes": 347
     }

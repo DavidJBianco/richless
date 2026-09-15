@@ -3,13 +3,13 @@
     "command": [
       "uv",
       "build",
-      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/legacy",
+      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/legacy",
       "--out-dir",
-      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/old-dist"
+      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/old-dist"
     ],
     "status": 0,
     "stdout": "",
-    "stderr": "Building source distribution...\nBuilding wheel from source distribution...\nSuccessfully built /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/old-dist/richless-0.3.2.tar.gz\nSuccessfully built /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/old-dist/richless-0.3.2-py3-none-any.whl\n"
+    "stderr": "Building source distribution...\nBuilding wheel from source distribution...\nSuccessfully built /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/old-dist/richless-0.3.2.tar.gz\nSuccessfully built /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/old-dist/richless-0.3.2-py3-none-any.whl\n"
   },
   {
     "command": [
@@ -17,11 +17,11 @@
       "venv",
       "--python",
       "/Users/bianco/projects/richless/.venv/bin/python3",
-      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envwhl"
+      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envwhl"
     ],
     "status": 0,
     "stdout": "",
-    "stderr": "Using CPython 3.12.9 interpreter at: /Users/bianco/projects/richless/.venv/bin/python3\nCreating virtual environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envwhl\nActivate with: source /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envwhl/bin/activate\n"
+    "stderr": "Using CPython 3.12.9 interpreter at: /Users/bianco/projects/richless/.venv/bin/python3\nCreating virtual environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envwhl\nActivate with: source /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envwhl/bin/activate\n"
   },
   {
     "command": [
@@ -29,57 +29,57 @@
       "pip",
       "install",
       "--python",
-      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envwhl/bin/python",
-      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/old-dist/richless-0.3.2-py3-none-any.whl"
+      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envwhl/bin/python",
+      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/old-dist/richless-0.3.2-py3-none-any.whl"
     ],
     "status": 0,
     "stdout": "",
-    "stderr": "Using Python 3.12.9 environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envwhl\nWARN pygments==2.21.0 needs to be downloaded from a registry\nWARN rich==15.0.0 needs to be downloaded from a registry\nWARN pygments needs to be downloaded from a registry\nWARN pygments==2.20.0 needs to be downloaded from a registry\nWARN pygments needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.3.4 needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.3.3 needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.3.2 needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.3.1 needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.3.0 needs to be downloaded from a registry\nWARN rich==14.1.0 needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.0.0 needs to be downloaded from a registry\nWARN rich==13.9.4 needs to be downloaded from a registry\nWARN markdown-it-py==4.2.0 needs to be downloaded from a registry\nWARN markdown-it-py needs to be downloaded from a registry\nWARN markdown-it-py==4.1.0 needs to be downloaded from a registry\nWARN markdown-it-py needs to be downloaded from a registry\nResolved 5 packages in 3ms\nPrepared 1 package in 1ms\nInstalled 5 packages in 7ms\n + markdown-it-py==4.0.0\n + mdurl==0.1.2\n + pygments==2.19.2\n + rich==14.2.0\n + richless==0.3.2 (from file:///var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/old-dist/richless-0.3.2-py3-none-any.whl)\n"
+    "stderr": "Using Python 3.12.9 environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envwhl\nWARN pygments==2.21.0 needs to be downloaded from a registry\nWARN rich==15.0.0 needs to be downloaded from a registry\nWARN pygments needs to be downloaded from a registry\nWARN pygments==2.20.0 needs to be downloaded from a registry\nWARN pygments needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.3.4 needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.3.3 needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.3.2 needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.3.1 needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.3.0 needs to be downloaded from a registry\nWARN rich==14.1.0 needs to be downloaded from a registry\nWARN rich==14.0.0 needs to be downloaded from a registry\nWARN rich==13.9.4 needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN markdown-it-py==4.2.0 needs to be downloaded from a registry\nWARN markdown-it-py needs to be downloaded from a registry\nWARN markdown-it-py==4.1.0 needs to be downloaded from a registry\nWARN markdown-it-py needs to be downloaded from a registry\nResolved 5 packages in 1ms\nPrepared 1 package in 1ms\nInstalled 5 packages in 5ms\n + markdown-it-py==4.0.0\n + mdurl==0.1.2\n + pygments==2.19.2\n + rich==14.2.0\n + richless==0.3.2 (from file:///var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/old-dist/richless-0.3.2-py3-none-any.whl)\n"
   },
   {
     "command": [
       "bash",
       "-c",
-      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/copied-init.sh; uv pip install --python /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envwhl/bin/python /Users/bianco/projects/richless/dist/richless-0.4.0-py3-none-any.whl; printf \"# UPGRADE\\n\\n**works**\\n\" | less --md"
+      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/copied-init.sh; uv pip install --python /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envwhl/bin/python /Users/bianco/projects/richless/dist/richless-0.4.0-py3-none-any.whl; printf \"# UPGRADE\\n\\n**works**\\n\" | less --md"
     ],
     "status": 0,
     "stdout": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                   \u001b[1mUPGRADE\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n\u001b[1mworks\u001b[0m                                                                           \n",
-    "stderr": "Using Python 3.12.9 environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envwhl\nResolved 5 packages in 2ms\nPrepared 1 package in 2ms\nUninstalled 1 package in 0.76ms\nInstalled 1 package in 2ms\n - richless==0.3.2 (from file:///var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/old-dist/richless-0.3.2-py3-none-any.whl)\n + richless==0.4.0 (from file:///Users/bianco/projects/richless/dist/richless-0.4.0-py3-none-any.whl)\n"
+    "stderr": "Using Python 3.12.9 environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envwhl\nResolved 5 packages in 1ms\nPrepared 1 package in 1ms\nUninstalled 1 package in 0.70ms\nInstalled 1 package in 2ms\n - richless==0.3.2 (from file:///var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/old-dist/richless-0.3.2-py3-none-any.whl)\n + richless==0.4.0 (from file:///Users/bianco/projects/richless/dist/richless-0.4.0-py3-none-any.whl)\n"
   },
   {
     "command": [
       "zsh",
       "-c",
-      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/copied-init.sh; uv pip install --python /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envwhl/bin/python /Users/bianco/projects/richless/dist/richless-0.4.0-py3-none-any.whl; printf \"# UPGRADE\\n\\n**works**\\n\" | less --md"
+      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/copied-init.sh; uv pip install --python /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envwhl/bin/python /Users/bianco/projects/richless/dist/richless-0.4.0-py3-none-any.whl; printf \"# UPGRADE\\n\\n**works**\\n\" | less --md"
     ],
     "status": 0,
     "stdout": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                   \u001b[1mUPGRADE\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n\u001b[1mworks\u001b[0m                                                                           \n",
-    "stderr": "Using Python 3.12.9 environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envwhl\nChecked 1 package in 1ms\n"
+    "stderr": "Using Python 3.12.9 environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envwhl\nChecked 1 package in 0.96ms\n"
   },
   {
     "command": [
       "/bin/sh",
       "-c",
-      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/copied-init.sh; uv pip install --python /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envwhl/bin/python /Users/bianco/projects/richless/dist/richless-0.4.0-py3-none-any.whl; printf \"# UPGRADE\\n\\n**works**\\n\" | less --md"
+      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/copied-init.sh; uv pip install --python /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envwhl/bin/python /Users/bianco/projects/richless/dist/richless-0.4.0-py3-none-any.whl; printf \"# UPGRADE\\n\\n**works**\\n\" | less --md"
     ],
     "status": 0,
     "stdout": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                   \u001b[1mUPGRADE\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n\u001b[1mworks\u001b[0m                                                                           \n",
-    "stderr": "Using Python 3.12.9 environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envwhl\nChecked 1 package in 0.91ms\n"
+    "stderr": "Using Python 3.12.9 environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envwhl\nChecked 1 package in 0.66ms\n"
   },
   {
     "command": [
-      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envwhl/bin/richless",
+      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envwhl/bin/richless",
       "--init-path"
     ],
     "status": 0,
-    "stdout": "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envwhl/lib/python3.12/site-packages/richless-init.sh\n",
+    "stdout": "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envwhl/lib/python3.12/site-packages/richless-init.sh\n",
     "stderr": ""
   },
   {
     "command": [
       "bash",
       "-c",
-      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/copied-init.sh; printf \"# COPIED\\n\\n**works**\\n\" | less --md"
+      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/copied-init.sh; printf \"# COPIED\\n\\n**works**\\n\" | less --md"
     ],
     "status": 0,
     "stdout": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                    \u001b[1mCOPIED\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n\u001b[1mworks\u001b[0m                                                                           \n",
@@ -89,7 +89,7 @@
     "command": [
       "zsh",
       "-c",
-      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/copied-init.sh; printf \"# COPIED\\n\\n**works**\\n\" | less --md"
+      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/copied-init.sh; printf \"# COPIED\\n\\n**works**\\n\" | less --md"
     ],
     "status": 0,
     "stdout": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                    \u001b[1mCOPIED\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n\u001b[1mworks\u001b[0m                                                                           \n",
@@ -99,7 +99,7 @@
     "command": [
       "/bin/sh",
       "-c",
-      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/copied-init.sh; printf \"# COPIED\\n\\n**works**\\n\" | less --md"
+      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/copied-init.sh; printf \"# COPIED\\n\\n**works**\\n\" | less --md"
     ],
     "status": 0,
     "stdout": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                    \u001b[1mCOPIED\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n\u001b[1mworks\u001b[0m                                                                           \n",
@@ -107,7 +107,7 @@
   },
   {
     "command": [
-      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envwhl/bin/richless",
+      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envwhl/bin/richless",
       "--md",
       "-"
     ],
@@ -117,7 +117,7 @@
   },
   {
     "command": [
-      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envwhl/bin/richless",
+      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envwhl/bin/richless",
       "--markdown",
       "-"
     ],
@@ -131,18 +131,18 @@
       "pip",
       "install",
       "--python",
-      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envwhl/bin/python",
-      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/old-dist/richless-0.3.2-py3-none-any.whl"
+      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envwhl/bin/python",
+      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/old-dist/richless-0.3.2-py3-none-any.whl"
     ],
     "status": 0,
     "stdout": "",
-    "stderr": "Using Python 3.12.9 environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envwhl\nResolved 5 packages in 1ms\nUninstalled 1 package in 0.66ms\nInstalled 1 package in 2ms\n - richless==0.4.0 (from file:///Users/bianco/projects/richless/dist/richless-0.4.0-py3-none-any.whl)\n + richless==0.3.2 (from file:///var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/old-dist/richless-0.3.2-py3-none-any.whl)\n"
+    "stderr": "Using Python 3.12.9 environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envwhl\nResolved 5 packages in 1ms\nUninstalled 1 package in 0.63ms\nInstalled 1 package in 1ms\n - richless==0.4.0 (from file:///Users/bianco/projects/richless/dist/richless-0.4.0-py3-none-any.whl)\n + richless==0.3.2 (from file:///var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/old-dist/richless-0.3.2-py3-none-any.whl)\n"
   },
   {
     "command": [
       "/bin/sh",
       "-c",
-      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/copied-init.sh; printf \"# ROLLBACK\\n\\n**works**\\n\" | less --md"
+      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/copied-init.sh; printf \"# ROLLBACK\\n\\n**works**\\n\" | less --md"
     ],
     "status": 0,
     "stdout": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                   \u001b[1mROLLBACK\u001b[0m                                   \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n\u001b[1mworks\u001b[0m                                                                           \n",
@@ -154,11 +154,11 @@
       "venv",
       "--python",
       "/Users/bianco/projects/richless/.venv/bin/python3",
-      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envgz"
+      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envgz"
     ],
     "status": 0,
     "stdout": "",
-    "stderr": "Using CPython 3.12.9 interpreter at: /Users/bianco/projects/richless/.venv/bin/python3\nCreating virtual environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envgz\nActivate with: source /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envgz/bin/activate\n"
+    "stderr": "Using CPython 3.12.9 interpreter at: /Users/bianco/projects/richless/.venv/bin/python3\nCreating virtual environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envgz\nActivate with: source /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envgz/bin/activate\n"
   },
   {
     "command": [
@@ -166,57 +166,57 @@
       "pip",
       "install",
       "--python",
-      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envgz/bin/python",
-      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/old-dist/richless-0.3.2-py3-none-any.whl"
+      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envgz/bin/python",
+      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/old-dist/richless-0.3.2-py3-none-any.whl"
     ],
     "status": 0,
     "stdout": "",
-    "stderr": "Using Python 3.12.9 environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envgz\nWARN pygments==2.21.0 needs to be downloaded from a registry\nWARN rich==15.0.0 needs to be downloaded from a registry\nWARN pygments needs to be downloaded from a registry\nWARN pygments==2.20.0 needs to be downloaded from a registry\nWARN pygments needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.3.4 needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.3.3 needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.3.2 needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.3.1 needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.3.0 needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.1.0 needs to be downloaded from a registry\nWARN rich==14.0.0 needs to be downloaded from a registry\nWARN rich==13.9.4 needs to be downloaded from a registry\nWARN markdown-it-py==4.2.0 needs to be downloaded from a registry\nWARN markdown-it-py needs to be downloaded from a registry\nWARN markdown-it-py==4.1.0 needs to be downloaded from a registry\nWARN markdown-it-py needs to be downloaded from a registry\nResolved 5 packages in 1ms\nInstalled 5 packages in 5ms\n + markdown-it-py==4.0.0\n + mdurl==0.1.2\n + pygments==2.19.2\n + rich==14.2.0\n + richless==0.3.2 (from file:///var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/old-dist/richless-0.3.2-py3-none-any.whl)\n"
+    "stderr": "Using Python 3.12.9 environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envgz\nWARN pygments==2.21.0 needs to be downloaded from a registry\nWARN pygments needs to be downloaded from a registry\nWARN rich==15.0.0 needs to be downloaded from a registry\nWARN pygments==2.20.0 needs to be downloaded from a registry\nWARN pygments needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.3.4 needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.3.3 needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.3.2 needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.3.1 needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.3.0 needs to be downloaded from a registry\nWARN rich needs to be downloaded from a registry\nWARN rich==14.1.0 needs to be downloaded from a registry\nWARN rich==13.9.4 needs to be downloaded from a registry\nWARN rich==14.0.0 needs to be downloaded from a registry\nWARN markdown-it-py==4.2.0 needs to be downloaded from a registry\nWARN markdown-it-py needs to be downloaded from a registry\nWARN markdown-it-py==4.1.0 needs to be downloaded from a registry\nWARN markdown-it-py needs to be downloaded from a registry\nResolved 5 packages in 1ms\nInstalled 5 packages in 5ms\n + markdown-it-py==4.0.0\n + mdurl==0.1.2\n + pygments==2.19.2\n + rich==14.2.0\n + richless==0.3.2 (from file:///var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/old-dist/richless-0.3.2-py3-none-any.whl)\n"
   },
   {
     "command": [
       "bash",
       "-c",
-      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/copied-init.sh; uv pip install --python /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envgz/bin/python /Users/bianco/projects/richless/dist/richless-0.4.0.tar.gz; printf \"# UPGRADE\\n\\n**works**\\n\" | less --md"
+      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/copied-init.sh; uv pip install --python /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envgz/bin/python /Users/bianco/projects/richless/dist/richless-0.4.0.tar.gz; printf \"# UPGRADE\\n\\n**works**\\n\" | less --md"
     ],
     "status": 0,
     "stdout": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                   \u001b[1mUPGRADE\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n\u001b[1mworks\u001b[0m                                                                           \n",
-    "stderr": "Using Python 3.12.9 environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envgz\nResolved 5 packages in 5ms\n   Building richless @ file:///Users/bianco/projects/richless/dist/richless-0.4.0.tar.gz\n      Built richless @ file:///Users/bianco/projects/richless/dist/richless-0.4.0.tar.gz\nPrepared 1 package in 196ms\nUninstalled 1 package in 0.69ms\nInstalled 1 package in 1ms\n - richless==0.3.2 (from file:///var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/old-dist/richless-0.3.2-py3-none-any.whl)\n + richless==0.4.0 (from file:///Users/bianco/projects/richless/dist/richless-0.4.0.tar.gz)\n"
+    "stderr": "Using Python 3.12.9 environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envgz\nResolved 5 packages in 5ms\n   Building richless @ file:///Users/bianco/projects/richless/dist/richless-0.4.0.tar.gz\n      Built richless @ file:///Users/bianco/projects/richless/dist/richless-0.4.0.tar.gz\nPrepared 1 package in 181ms\nUninstalled 1 package in 0.67ms\nInstalled 1 package in 1ms\n - richless==0.3.2 (from file:///var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/old-dist/richless-0.3.2-py3-none-any.whl)\n + richless==0.4.0 (from file:///Users/bianco/projects/richless/dist/richless-0.4.0.tar.gz)\n"
   },
   {
     "command": [
       "zsh",
       "-c",
-      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/copied-init.sh; uv pip install --python /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envgz/bin/python /Users/bianco/projects/richless/dist/richless-0.4.0.tar.gz; printf \"# UPGRADE\\n\\n**works**\\n\" | less --md"
+      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/copied-init.sh; uv pip install --python /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envgz/bin/python /Users/bianco/projects/richless/dist/richless-0.4.0.tar.gz; printf \"# UPGRADE\\n\\n**works**\\n\" | less --md"
     ],
     "status": 0,
     "stdout": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                   \u001b[1mUPGRADE\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n\u001b[1mworks\u001b[0m                                                                           \n",
-    "stderr": "Using Python 3.12.9 environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envgz\nChecked 1 package in 1ms\n"
+    "stderr": "Using Python 3.12.9 environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envgz\nChecked 1 package in 1ms\n"
   },
   {
     "command": [
       "/bin/sh",
       "-c",
-      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/copied-init.sh; uv pip install --python /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envgz/bin/python /Users/bianco/projects/richless/dist/richless-0.4.0.tar.gz; printf \"# UPGRADE\\n\\n**works**\\n\" | less --md"
+      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/copied-init.sh; uv pip install --python /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envgz/bin/python /Users/bianco/projects/richless/dist/richless-0.4.0.tar.gz; printf \"# UPGRADE\\n\\n**works**\\n\" | less --md"
     ],
     "status": 0,
     "stdout": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                   \u001b[1mUPGRADE\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n\u001b[1mworks\u001b[0m                                                                           \n",
-    "stderr": "Using Python 3.12.9 environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envgz\nChecked 1 package in 0.86ms\n"
+    "stderr": "Using Python 3.12.9 environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envgz\nChecked 1 package in 0.70ms\n"
   },
   {
     "command": [
-      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envgz/bin/richless",
+      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envgz/bin/richless",
       "--init-path"
     ],
     "status": 0,
-    "stdout": "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envgz/lib/python3.12/site-packages/richless-init.sh\n",
+    "stdout": "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envgz/lib/python3.12/site-packages/richless-init.sh\n",
     "stderr": ""
   },
   {
     "command": [
       "bash",
       "-c",
-      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/copied-init.sh; printf \"# COPIED\\n\\n**works**\\n\" | less --md"
+      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/copied-init.sh; printf \"# COPIED\\n\\n**works**\\n\" | less --md"
     ],
     "status": 0,
     "stdout": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                    \u001b[1mCOPIED\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n\u001b[1mworks\u001b[0m                                                                           \n",
@@ -226,7 +226,7 @@
     "command": [
       "zsh",
       "-c",
-      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/copied-init.sh; printf \"# COPIED\\n\\n**works**\\n\" | less --md"
+      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/copied-init.sh; printf \"# COPIED\\n\\n**works**\\n\" | less --md"
     ],
     "status": 0,
     "stdout": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                    \u001b[1mCOPIED\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n\u001b[1mworks\u001b[0m                                                                           \n",
@@ -236,7 +236,7 @@
     "command": [
       "/bin/sh",
       "-c",
-      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/copied-init.sh; printf \"# COPIED\\n\\n**works**\\n\" | less --md"
+      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/copied-init.sh; printf \"# COPIED\\n\\n**works**\\n\" | less --md"
     ],
     "status": 0,
     "stdout": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                    \u001b[1mCOPIED\u001b[0m                                    \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n\u001b[1mworks\u001b[0m                                                                           \n",
@@ -244,7 +244,7 @@
   },
   {
     "command": [
-      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envgz/bin/richless",
+      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envgz/bin/richless",
       "--md",
       "-"
     ],
@@ -254,7 +254,7 @@
   },
   {
     "command": [
-      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envgz/bin/richless",
+      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envgz/bin/richless",
       "--markdown",
       "-"
     ],
@@ -268,18 +268,18 @@
       "pip",
       "install",
       "--python",
-      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envgz/bin/python",
-      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/old-dist/richless-0.3.2-py3-none-any.whl"
+      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envgz/bin/python",
+      "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/old-dist/richless-0.3.2-py3-none-any.whl"
     ],
     "status": 0,
     "stdout": "",
-    "stderr": "Using Python 3.12.9 environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/envgz\nResolved 5 packages in 1ms\nUninstalled 1 package in 0.69ms\nInstalled 1 package in 2ms\n - richless==0.4.0 (from file:///Users/bianco/projects/richless/dist/richless-0.4.0.tar.gz)\n + richless==0.3.2 (from file:///var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/old-dist/richless-0.3.2-py3-none-any.whl)\n"
+    "stderr": "Using Python 3.12.9 environment at: /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/envgz\nResolved 5 packages in 1ms\nUninstalled 1 package in 0.61ms\nInstalled 1 package in 2ms\n - richless==0.4.0 (from file:///Users/bianco/projects/richless/dist/richless-0.4.0.tar.gz)\n + richless==0.3.2 (from file:///var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/old-dist/richless-0.3.2-py3-none-any.whl)\n"
   },
   {
     "command": [
       "/bin/sh",
       "-c",
-      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-ckzep6rg/copied-init.sh; printf \"# ROLLBACK\\n\\n**works**\\n\" | less --md"
+      ". /var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-install-8dzq096p/copied-init.sh; printf \"# ROLLBACK\\n\\n**works**\\n\" | less --md"
     ],
     "status": 0,
     "stdout": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                   \u001b[1mROLLBACK\u001b[0m                                   \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n\n\u001b[1mworks\u001b[0m                                                                           \n",

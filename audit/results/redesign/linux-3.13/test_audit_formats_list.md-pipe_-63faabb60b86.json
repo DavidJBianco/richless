@@ -22,7 +22,7 @@
         ". /tmp/project/richless-init.sh; cat list.md | less -R"
       ],
       "returncode": 0,
-      "seconds": 0.35291020899990144,
+      "seconds": 0.35137479200000143,
       "stdout": "- SENTINEL\n- two\n",
       "stderr": "",
       "stdout_bytes": 17

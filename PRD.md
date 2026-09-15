@@ -1,5 +1,49 @@
 # PRD: richless
 
+## Approved 0.4.0 contract
+
+This section supersedes conflicting behavior in the original planning reference
+below. See [README.md](README.md) for user-facing behavior and
+[audit/REDESIGN.md](audit/REDESIGN.md) for validation and measured limits.
+
+- Retain one native less instance for navigation, searching, terminal ownership,
+  and mixed-format file sessions. Keep the Python implementation in one module.
+- Use an argument-preserving sh/bash/zsh shim that delegates to Python. Preserve
+  existing CLI/script entry points, `--md`/`--markdown`, native `-m`, and option
+  operands. Add `--syntax LANGUAGE` and `--init-path`.
+- Ordinary transformed named files use progressive LESSOPEN pipes with no
+  replacement file. Plain files use native access. stdin and FIFOs stream directly.
+- Only transformed named files in an explicit startup `+F` session use private,
+  supervised, progressively updated replacements. Ordinary rendered-file `F`
+  does not follow later source changes. Native plain-file and active-stream
+  following remain available; `--follow-name` selects pathname following.
+- Detect in Python: explicit selection, case-insensitive recognized extension,
+  then conservative content markers. Stream sampling is at most 64 KiB and
+  100 ms after the first byte. Replay all sampled bytes.
+- Preserve source bytes except inserted styling. Do not apply Rich Syntax layout.
+  Use raw continuation when live lexer state cannot safely be retained.
+- Parse finite Markdown once to resolve references, then publish rendered blocks.
+  Retain live block context; at five seconds from the oldest pending byte or
+  1 MiB, emit uncommitted source and remain raw for that generation. Do not repeat
+  previously published content. Width remains fixed for that rendered view.
+- Prepare rendering units transactionally. Preserve uncommitted source on renderer
+  failure. Detect incomplete output writes, report unrecoverable I/O failures, and
+  clean up owned workers and replacements. Diagnostics stay on stderr.
+- The under-300-ms startup objective is assessed separately from comparative
+  performance. Correctness tests use generous bounded deadlines; timings are not
+  ordinary CI gates. Large finite Markdown may require longer initial parsing.
+- Test macOS/Linux and Python 3.12/3.13 with bash/zsh/sh, including real PTYs,
+  failures, mixed sessions, streaming/following, distribution upgrades, and rollback.
+- Release 0.4.0 together after staged validation. Preserve stable Homebrew sourcing,
+  supply re-source/copy instructions, and do not edit users' startup files.
+- Defer progress indicators, a standalone pager, and new shell families.
+
+## Original planning reference
+
+The remaining sections describe the earlier implementation and its initial
+backlog. Shell-side spooling/detection, whole-output buffering, and the listed
+integration defects are historical, not requirements to preserve.
+
 ## 1. Overview
 
 richless is a LESSOPEN filter that transparently renders Markdown files and syntax-highlights source code when using `less`. It integrates seamlessly with the user's existing terminal workflow — no new commands to learn, no behavior changes required. Users simply run `less` as they always have, and Markdown files are beautifully rendered while code files get syntax highlighting automatically.

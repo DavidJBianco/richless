@@ -104,6 +104,8 @@ executable and `richless-init.sh` entry point.
 
 - **Homebrew, stable source path:** new shells load the updated wrapper. Existing
   shells need to source the installed script again using the command above.
+  If an older installation put a version-specific Cellar path in your startup
+  file, replace that line with the stable source command above.
 - **Copied integration script:** replace your copy with the file reported by
   `richless --init-path`, then re-source the copy. Do not keep sourcing an old
   version-specific installation directory.

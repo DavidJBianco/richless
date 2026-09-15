@@ -1,0 +1,67 @@
+{
+  "id": "test_redesign_supervisor_sigint_between_waits",
+  "checks": [
+    {
+      "expectation": "Parent-only SIGINT does not destroy the pager",
+      "pass": false
+    },
+    {
+      "expectation": "Pager still quits normally",
+      "pass": true
+    },
+    {
+      "expectation": "Normal viewing status after SIGINT",
+      "pass": false
+    },
+    {
+      "expectation": "No supervisor traceback",
+      "pass": false
+    }
+  ],
+  "observations": [],
+  "commands": [],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "SIGNAL_BOUNDARY",
+          "found": false,
+          "seconds": 3.000030583003536
+        },
+        {
+          "keys": "b'\\x03'"
+        },
+        {
+          "write_after_exit": "b'\\x03'"
+        },
+        {
+          "keys": "b'q'"
+        },
+        {
+          "write_after_exit": "b'q'"
+        }
+      ],
+      "started": 784649.794296625,
+      "reaped": true,
+      "exitcode": -2,
+      "maxrss_native": 27131904,
+      "terminal_restored": true,
+      "transcript": "richless: follow preparation failed; using original file\r\nTraceback (most recent call last):\r\n  File \"/private/tmp/richless-sigint-before/test_redesign_supervisor_sigin0/signal_renderer.py\", line 1195, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"/private/tmp/richless-sigint-before/test_redesign_supervisor_sigin0/signal_renderer.py\", line 1128, in main\r\n    return launch_pager(sys.argv[2:])\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"/private/tmp/richless-sigint-before/test_redesign_supervisor_sigin0/signal_renderer.py\", line 1045, in launch_pager\r\n    while True:\r\n          ^^^^\r\n  File \"/private/tmp/richless-sigint-before/test_redesign_supervisor_sigin0/signal_renderer.py\", line 1190, in at_loop\r\n    os.kill(os.getpid(), signal.SIGINT)\r\nKeyboardInterrupt\r\n",
+      "transcript_bytes": 791
+    }
+  ],
+  "env": {
+    "PATH": "/private/tmp/richless-sigint-before/test_redesign_supervisor_sigin0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/tmp/richless-sigint-before/test_redesign_supervisor_sigin0",
+    "TMPDIR": "/private/tmp/richless-sigint-before/test_redesign_supervisor_sigin0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/private/tmp/richless-sigint-before/test_redesign_supervisor_sigin0",
+  "root": "/Users/bianco/projects/richless",
+  "status": "fail"
+}

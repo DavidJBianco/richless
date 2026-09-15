@@ -20,16 +20,16 @@
         {
           "expect": "missing.py",
           "found": true,
-          "seconds": 0.3509071670000594
+          "seconds": 0.35799279200000456
         },
         {
           "keys": "b'q'"
         }
       ],
-      "started": 1584.341873218,
+      "started": 738.244972543,
       "reaped": true,
       "exitcode": 1,
-      "maxrss_native": 36964,
+      "maxrss_native": 37124,
       "terminal_restored": true,
       "transcript": "richless: File not found: missing.py\r\nmissing.py: No such file or directory\r\nq",
       "transcript_bytes": 78

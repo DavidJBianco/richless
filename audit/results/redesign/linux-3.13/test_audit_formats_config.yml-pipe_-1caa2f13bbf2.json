@@ -22,7 +22,7 @@
         ". /tmp/project/richless-init.sh; cat config.yml | less -R"
       ],
       "returncode": 0,
-      "seconds": 0.3592430000001059,
+      "seconds": 0.3788142500000049,
       "stdout": "\u001b[38;2;255;70;137mname\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;248;248;242m \u001b[39m\u001b[38;2;174;129;255mSENTINEL\u001b[39m\n\u001b[38;2;255;70;137mcount\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;248;248;242m \u001b[39m\u001b[38;2;174;129;255m42\u001b[39m\n",
       "stderr": "",
       "stdout_bytes": 215

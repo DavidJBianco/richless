@@ -18,7 +18,7 @@
         "export LESSOPEN='|-richless --filter -- %s'; less -R misleading.md"
       ],
       "returncode": 0,
-      "seconds": 0.2478155420001258,
+      "seconds": 0.2545621670000173,
       "stdout": "{\"message\":\"SENTINEL\",\"n\":42}                                                   \n",
       "stderr": "",
       "stdout_bytes": 81

@@ -2315,3 +2315,67 @@ def test_redesign_additional_performance(workflow_audit, case):
             measurement["rss_units"] = "bytes" if sys.platform == "darwin" else "KiB"
             a["measurements"].append(measurement)
     audit_finish(a)
+
+
+def test_redesign_supervisor_sigint_between_waits(workflow_audit):
+    """Deliver SIGINT at the loop boundary, outside the old narrow exception handler."""
+    a = workflow_audit
+    root = Path(a["cwd"])
+    (root / "input.md").write_text("# SIGNAL_BOUNDARY\n\n- body\n")
+    injection = """
+if "--pager" in sys.argv:
+    import linecache
+    fired = False
+    def at_loop(frame, event, arg):
+        global fired
+        if (not fired and event == "line" and frame.f_code.co_name == "launch_pager"
+                and linecache.getline(__file__, frame.f_lineno).strip() == "while True:"):
+            fired = True
+            os.kill(os.getpid(), signal.SIGINT)
+        return at_loop
+    sys.settrace(at_loop)
+"""
+    module = root / "signal_renderer.py"
+    module.write_text(
+        (AUDIT_ROOT / "richless.py")
+        .read_text()
+        .replace('if __name__ == "__main__":', injection + '\nif __name__ == "__main__":')
+    )
+    with audit_terminal(a, [sys.executable, str(module), "--pager", "+F", "input.md"]) as session:
+        audit_check(
+            a,
+            audit_expect(session, "SIGNAL_BOUNDARY"),
+            "Parent-only SIGINT does not destroy the pager",
+        )
+        audit_send(session, b"\x03")
+        audit_send(session, b"q")
+        audit_check(a, audit_exited(session), "Pager still quits normally")
+        audit_check(a, session.get("exitcode") == 0, "Normal viewing status after SIGINT")
+    audit_check(a, b"Traceback" not in session["data"], "No supervisor traceback")
+    audit_finish(a)
+
+
+@pytest.mark.parametrize("stopped", [False, True])
+def test_redesign_short_output_writes(monkeypatch, stopped):
+    """Finish short writes or report failure instead of silently losing a unit."""
+    import io
+
+    from richless import write_bytes
+
+    output = io.BytesIO()
+    original = output.write
+
+    def limited(data):
+        if stopped and output.tell() >= 7:
+            return 0
+        return original(data[:7])
+
+    monkeypatch.setattr(output, "write", limited)
+    payload = b"A complete original source unit without a final newline"
+    if stopped:
+        with pytest.raises(OSError, match="stopped accepting"):
+            write_bytes(output, payload)
+        assert output.getvalue() == payload[:7]
+    else:
+        write_bytes(output, payload)
+        assert output.getvalue() == payload
