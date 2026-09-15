@@ -5,6 +5,12 @@ on:
     branches: [main, dev, 'codex/**']
   pull_request:
   workflow_call:
+    inputs:
+      ref:
+        description: Immutable source revision selected by the release workflow
+        required: false
+        default: ''
+        type: string
   workflow_dispatch:
 
 permissions:
@@ -22,6 +28,8 @@ jobs:
         python: ['3.12', '3.13']
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          ref: ${{ inputs.ref || github.sha }}
       - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
       - name: Install Linux pager and shells
         if: runner.os == 'Linux'
@@ -46,6 +54,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          ref: ${{ inputs.ref || github.sha }}
       - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
       - name: Install pager and shells for installed-package checks
         run: sudo apt-get update && sudo apt-get install -y less bash zsh
@@ -54,6 +64,8 @@ jobs:
       - run: uv run --frozen ruff format --check .
       - run: uv run --frozen mypy richless.py
       - run: uv build
+      - name: Validate metadata with the publisher-compatible Twine version
+        run: uv tool run --from twine==7.0.0 twine check dist/*
       - name: Installed distribution upgrade and rollback checks
         run: uv run --frozen python audit/verify-distributions.py
       - name: Retain installation evidence

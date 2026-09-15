@@ -11,7 +11,8 @@
 - [x] Configure required checks on main/dev with owner override. Preserve documentation/trivial work directly on dev and feature/fix branching from dev.
 - [x] Complete local/platform checks (479 passes × four environments), 27 repeated performance cases, and installation validation. Record results in audit/REDESIGN.md and audit/results/redesign.
 - [x] Fix the release-gate SIGINT race: CI transcripts show KeyboardInterrupt landing outside the supervisor wait try-block, terminating the pager and leaving a traceback. A deterministic loop-boundary test fails before and passes after the session-wide signal handler. Final local matrix passes 479 tests in all four environments; hosted revalidation remains part of promotion. Short-write completion/failure checks also pass.
-- [ ] **IN PROGRESS** Promote the documented 0.4.0 release through dev-to-main checks, publish the validated tag, and update the Homebrew formula/template with the published source hash and tested dependency versions. Tap generator previously ignored dependency constraints; its release update must preserve explicit pins.
+- [x] Promote the documented 0.4.0 release through dev-to-main checks and create the immutable release tag. Main/tag v0.4.0 resolve to 6a115092dc2c6b65e1cdbb2da386e500df9636dd. Release tests all passed, but the old publisher rejected metadata 2.5 before upload; publication is still pending below.
+- [ ] **IN PROGRESS** Fix release publication without moving v0.4.0: pin the current official publisher (Twine 7 / packaging 26.2), add metadata validation to quality CI, and support manual publication of an immutable tag after testing that exact revision. Local Twine 7 validation accepts both built artifacts. Finish PyPI/GitHub/Homebrew publication afterward.
 
 ## Incremental Markdown Investigation
 
