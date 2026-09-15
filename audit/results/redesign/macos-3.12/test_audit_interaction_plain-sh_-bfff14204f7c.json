@@ -60,7 +60,7 @@
         {
           "expect": "ROW_000",
           "found": true,
-          "seconds": 0.06020491698291153
+          "seconds": 0.054524334031157196
         },
         {
           "keys": "b'/NEEDLE\\n'"
@@ -68,7 +68,7 @@
         {
           "expect": "ROW_060",
           "found": true,
-          "seconds": 0.13779295899439603
+          "seconds": 0.1317724590189755
         },
         {
           "keys": "b'n'"
@@ -76,7 +76,7 @@
         {
           "expect": "ROW_120",
           "found": true,
-          "seconds": 0.21934470895212144
+          "seconds": 0.2081765839830041
         },
         {
           "keys": "b'N'"
@@ -84,7 +84,7 @@
         {
           "expect": "ROW_060",
           "found": true,
-          "seconds": 0.30230679200030863
+          "seconds": 0.285568792023696
         },
         {
           "keys": "b'G?NEEDLE\\n'"
@@ -92,7 +92,7 @@
         {
           "expect": "ROW_120",
           "found": true,
-          "seconds": 0.37739408400375396
+          "seconds": 0.361565834027715
         },
         {
           "keys": "b'g'"
@@ -100,7 +100,7 @@
         {
           "expect": "ROW_000",
           "found": true,
-          "seconds": 0.4554424589732662
+          "seconds": 0.43566449999343604
         },
         {
           "keys": "b' '"
@@ -108,7 +108,7 @@
         {
           "expect": "ROW_030",
           "found": true,
-          "seconds": 0.5400575420353562
+          "seconds": 0.5147386669414118
         },
         {
           "keys": "b'151g100\\x1b)'"
@@ -116,7 +116,7 @@
         {
           "expect": "RIGHT_EDGE",
           "found": true,
-          "seconds": 0.6231131670065224
+          "seconds": 0.5867982089985162
         },
         {
           "keys": "b'\\x1b{g'"
@@ -124,13 +124,13 @@
         {
           "expect": "ROW_000",
           "found": true,
-          "seconds": 0.7011491670273244
+          "seconds": 0.6642499170266092
         },
         {
           "keys": "b'q'"
         }
       ],
-      "started": 783430.139455916,
+      "started": 785067.565824041,
       "reaped": true,
       "exitcode": 0,
       "maxrss_native": 1851392,
@@ -140,9 +140,9 @@
     }
   ],
   "env": {
-    "PATH": "/private/tmp/richless-release-mac312/test_audit_interaction_plain_s0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
-    "HOME": "/private/tmp/richless-release-mac312/test_audit_interaction_plain_s0",
-    "TMPDIR": "/private/tmp/richless-release-mac312/test_audit_interaction_plain_s0/scratch",
+    "PATH": "/private/tmp/richless-final2-mac312/test_audit_interaction_plain_s0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/tmp/richless-final2-mac312/test_audit_interaction_plain_s0",
+    "TMPDIR": "/private/tmp/richless-final2-mac312/test_audit_interaction_plain_s0/scratch",
     "TERM": "xterm-256color",
     "LC_ALL": "C",
     "LESSCHARSET": "utf-8",
@@ -150,7 +150,7 @@
     "PYTHONIOENCODING": "utf-8",
     "PYTHONUTF8": "1"
   },
-  "cwd": "/private/tmp/richless-release-mac312/test_audit_interaction_plain_s0",
+  "cwd": "/private/tmp/richless-final2-mac312/test_audit_interaction_plain_s0",
   "root": "/Users/bianco/projects/richless",
   "status": "pass"
 }

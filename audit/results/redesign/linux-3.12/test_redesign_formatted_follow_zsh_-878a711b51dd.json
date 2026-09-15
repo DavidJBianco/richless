@@ -36,12 +36,12 @@
         {
           "expect": "FOLLOW_FIRST",
           "found": true,
-          "seconds": 0.5632044999999835
+          "seconds": 0.5622583749999421
         },
         {
           "expect": "FOLLOW_SECOND",
           "found": true,
-          "seconds": 0.671317917000124
+          "seconds": 0.6669019170000183
         },
         {
           "keys": "b'\\x03'"
@@ -50,10 +50,10 @@
           "keys": "b'q'"
         }
       ],
-      "started": 1648.580725998,
+      "started": 802.80423424,
       "reaped": true,
       "exitcode": -2,
-      "maxrss_native": 38796,
+      "maxrss_native": 38736,
       "terminal_restored": true,
       "transcript": "\u001b[?1049h\u001b[22;0;0t\u001b[?1h\u001b=\r\r\u001b[K\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[38;2;248;248;242m{\u001b[39m\u001b[38;2;255;70;137m\"marker\"\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;230;219;116m\"FOLLOW_FIRST\"\u001b[39m\u001b[38;2;248;248;242m,\u001b[39m\u001b[38;2;255;70;137m\"count\"\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;174;129;255m1\u001b[39m\u001b[38;2;248;248;242m}\u001b[39m\u001b[m\r\n\r\u001b[K\u001b[7mWaiting for data... (interrupt to abort)\u001b[27m\r\u001b[K\u001b[38;2;248;248;242m{\u001b[39m\u001b[38;2;255;70;137m\"marker\"\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;230;219;116m\"FOLLOW_SECOND\"\u001b[39m\u001b[38;2;248;248;242m,\u001b[39m\u001b[38;2;255;70;137m\"count\"\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;174;129;255m2\u001b[39m\u001b[38;2;248;248;242m}\u001b[39m\u001b[m\r\n\r\u001b[K\u001b[7mWaiting for data... (interrupt to abort)\u001b[27m\r\u001b[K\u0007\u001b[H\u001b[2J\u001b[H\u001b[H\u001b[2J\u001b[H\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[38;2;248;248;242m{\u001b[39m\u001b[38;2;255;70;137m\"marker\"\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;230;219;116m\"FOLLOW_FIRST\"\u001b[39m\u001b[38;2;248;248;242m,\u001b[39m\u001b[38;2;255;70;137m\"count\"\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;174;129;255m1\u001b[39m\u001b[38;2;248;248;242m}\u001b[39m\u001b[m\r\n\u001b[38;2;248;248;242m{\u001b[39m\u001b[38;2;255;70;137m\"marker\"\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;230;219;116m\"FOLLOW_SECOND\"\u001b[39m\u001b[38;2;248;248;242m,\u001b[39m\u001b[38;2;255;70;137m\"count\"\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;174;129;255m2\u001b[39m\u001b[38;2;248;248;242m}\u001b[39m\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mrecords.jsonl (END)\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l\u001b[23;0;0t",
       "transcript_bytes": 1714

@@ -18,7 +18,7 @@
         "import sys; sys.path.insert(0, '/tmp/project'); import richless\noriginal = richless.TerminalTrueColorFormatter.format\ncalls = 0\ndef broken(self, tokens, output):\n    global calls\n    calls += 1\n    if calls == 3:\n        output.write(\"PARTIAL\")\n        raise RuntimeError(\"INJECTED\")\n    return original(self, tokens, output)\nrichless.TerminalTrueColorFormatter.format = broken\nsys.argv = [\"richless\", \"file.py\"]; sys.exit(richless.main())\n"
       ],
       "returncode": 0,
-      "seconds": 0.18268050000006042,
+      "seconds": 0.18442062500002976,
       "stdout": "\u001b[0mfirst = 1\nRAW_MARKER\n",
       "stderr": "richless: syntax rendering failed; continuing with source: INJECTED\n",
       "stdout_bytes": 25

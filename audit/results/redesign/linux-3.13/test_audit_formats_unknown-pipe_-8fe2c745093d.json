@@ -22,7 +22,7 @@
         ". /tmp/project/richless-init.sh; cat unknown | less -R"
       ],
       "returncode": 0,
-      "seconds": 0.3578484170000138,
+      "seconds": 0.3837001250000185,
       "stdout": "\u001b[38;2;149;144;119m#!/bin/sh\u001b[39m\n\u001b[38;2;248;248;242mecho\u001b[39m\u001b[38;2;248;248;242m \u001b[39m\u001b[38;2;248;248;242mSENTINEL\u001b[39m\n",
       "stderr": "",
       "stdout_bytes": 120

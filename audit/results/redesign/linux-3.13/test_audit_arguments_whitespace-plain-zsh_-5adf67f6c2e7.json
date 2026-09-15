@@ -32,16 +32,16 @@
         {
           "expect": "ARG_MARKER",
           "found": true,
-          "seconds": 0.054485333000002356
+          "seconds": 0.05241254200007006
         },
         {
           "keys": "b'q'"
         }
       ],
-      "started": 1567.734457002,
+      "started": 721.256805368,
       "reaped": true,
       "exitcode": 0,
-      "maxrss_native": 36964,
+      "maxrss_native": 37124,
       "terminal_restored": true,
       "transcript": "\u001b[?1049h\u001b[22;0;0t\u001b[?1h\u001b=\rdef sample():\u001b[m\r\n    return \"ARG_MARKER\"\u001b[m\r\n\u001b[7m file.py  (END)\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l\u001b[23;0;0t",
       "transcript_bytes": 126

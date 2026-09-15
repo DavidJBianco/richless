@@ -277,7 +277,12 @@ def signal_ready() -> None:
 
 def write_bytes(output: BinaryIO, content: bytes) -> None:
     """Publish a prepared unit without adding layout or newline bytes."""
-    output.write(content)
+    remaining = memoryview(content)
+    while remaining:
+        count = output.write(remaining)
+        if count is None or count <= 0:
+            raise OSError("output stopped accepting rendered content")
+        remaining = remaining[count:]
     output.flush()
     if content:
         signal_ready()
@@ -893,6 +898,7 @@ def launch_pager(arguments: list[str]) -> int:
     process: subprocess.Popen[bytes] | None = None
     old_term = signal.getsignal(signal.SIGTERM)
     old_hup = signal.getsignal(signal.SIGHUP)
+    old_int = signal.getsignal(signal.SIGINT)
 
     def terminate(signum: int, frame: Any) -> None:
         if process is not None:
@@ -901,6 +907,9 @@ def launch_pager(arguments: list[str]) -> int:
 
     signal.signal(signal.SIGTERM, terminate)
     signal.signal(signal.SIGHUP, terminate)
+    # Native less owns terminal interrupts. A callable handler is reset by exec
+    # in the child, unlike SIG_IGN, and also covers gaps between wait() calls.
+    signal.signal(signal.SIGINT, lambda signum, frame: None)
     try:
         if follow:
             temporary = tempfile.TemporaryDirectory(prefix="richless-follow-")
@@ -1060,10 +1069,6 @@ def launch_pager(arguments: list[str]) -> int:
                         "a follow renderer stopped; reopen the original file with command less",
                         fatal=True,
                     )
-            except KeyboardInterrupt:
-                # Native less receives the foreground process group's SIGINT too.
-                # Let it leave follow/search without killing its owning session.
-                continue
         try:
             failed = bool(os.read(status_read, 4096))
         except BlockingIOError:
@@ -1102,6 +1107,7 @@ def launch_pager(arguments: list[str]) -> int:
         os.close(status_write)
         signal.signal(signal.SIGTERM, old_term)
         signal.signal(signal.SIGHUP, old_hup)
+        signal.signal(signal.SIGINT, old_int)
 
 
 def main() -> int:
@@ -1125,7 +1131,10 @@ def main() -> int:
             report(f"follow renderer failed: {exc}", fatal=True)
             return 1
     if len(sys.argv) > 1 and sys.argv[1] == "--pager":
-        return launch_pager(sys.argv[2:])
+        try:
+            return launch_pager(sys.argv[2:])
+        except KeyboardInterrupt:
+            return 130
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--filter", action="store_true", help=argparse.SUPPRESS)
     parser.add_argument("--md", "--markdown", action="store_true")

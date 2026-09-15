@@ -14,7 +14,7 @@
         ". /tmp/project/richless-init.sh; cat bytes.txt | less -R"
       ],
       "returncode": 0,
-      "seconds": 0.35508516699997017,
+      "seconds": 0.3537356260000024,
       "stdout": "caf\u00e9 \u4e16\u754c e\u0301 END\n",
       "stderr": "",
       "stdout_bytes": 21

@@ -22,7 +22,7 @@
         "export LESSOPEN='|-richless --filter -- %s'; richless config.toml"
       ],
       "returncode": 0,
-      "seconds": 0.21109920899993995,
+      "seconds": 0.21270416599998043,
       "stdout": "\u001b[38;2;149;144;119m# comment\u001b[39m\n\u001b[38;2;102;217;239m[\u001b[39m\u001b[38;2;102;217;239mserver\u001b[39m\u001b[38;2;102;217;239m]\u001b[39m\n\u001b[38;2;248;248;242mname\u001b[39m\u001b[38;2;248;248;242m \u001b[39m\u001b[38;2;255;70;137m=\u001b[39m\u001b[38;2;248;248;242m \u001b[39m\u001b[38;2;230;219;116m\"\u001b[39m\u001b[38;2;230;219;116mSENTINEL\u001b[39m\u001b[38;2;230;219;116m\"\u001b[39m\n",
       "stderr": "",
       "stdout_bytes": 300

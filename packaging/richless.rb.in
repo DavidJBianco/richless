@@ -42,6 +42,7 @@ class Richless < Formula
       Enable it, or reload it in an existing shell, using this stable path:
         . "#{HOMEBREW_PREFIX}/share/richless/richless-init.sh"
       New shells using that path pick up upgrades automatically.
+      Replace version-specific Cellar paths in startup files with that stable path.
       Replace copied scripts with the file reported by `richless --init-path`.
       Use --md for Markdown; -m now retains the native less prompt behavior.
       Formatted named-file following requires startup +F: less +F FILE

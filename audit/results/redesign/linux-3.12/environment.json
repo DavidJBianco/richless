@@ -26,8 +26,8 @@
   "shell_package_versions": "bash\t5.2.15-2+b13\ndash\t0.5.12-2\nless\t590-2.1~deb12u2\nzsh\t5.9-4+b15\n",
   "less": "less 590 (GNU regular expressions)\nCopyright (C) 1984-2021  Mark Nudelman\n\nless comes with NO WARRANTY, to the extent permitted by law.\nFor information about the terms of redistribution,\nsee the file named README in the less distribution.\nHome page: https://greenwoodsoftware.com/less\n",
   "source_sha256": {
-    "richless.py": "88d9cb3e8ff1431f239c0ba9c504a1328b1a6b06ffcbfbe6206e5e9b2d0d72c9",
+    "richless.py": "a9f1d5501274880a307ba30be0769abc000eb2788c54232cc9ed76f0922ca393",
     "richless-init.sh": "956303657775cbf86602b2502da8c49ab6e29e7a038edf3316f6ff38162a7e52",
-    "tests/test_richless.py": "916193342dc9c0554039b9fc4a1dffdc13043e1a22afe0e654c25253ecac93f7"
+    "tests/test_richless.py": "6b27156749948eed8107e0ec1af87d95bfa6c8b0b256b9cb2f8c23abcc60770e"
   }
 }

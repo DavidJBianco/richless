@@ -22,7 +22,7 @@
         "export LESSOPEN='|-richless --filter -- %s'; richless data.jsonl"
       ],
       "returncode": 0,
-      "seconds": 0.19334087499987618,
+      "seconds": 0.197625124999945,
       "stdout": "\u001b[38;2;248;248;242m{\u001b[39m\u001b[38;2;255;70;137m\"message\"\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;230;219;116m\"SENTINEL\"\u001b[39m\u001b[38;2;248;248;242m,\u001b[39m\u001b[38;2;255;70;137m\"n\"\u001b[39m\u001b[38;2;248;248;242m:\u001b[39m\u001b[38;2;174;129;255m42\u001b[39m\u001b[38;2;248;248;242m}\u001b[39m\n",
       "stderr": "",
       "stdout_bytes": 244

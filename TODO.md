@@ -2,14 +2,15 @@
 
 ## 0.4.0 Integration Redesign
 
-- [x] Validate explicit +F replacement-file transport against native less on all platforms. Native transport and actual integration gates pass on macOS and Linux. Final local matrix passes 476 required tests in each macOS/Linux × Python 3.12/3.13 environment, including all three shells.
+- [x] Validate explicit +F replacement-file transport against native less on all platforms. Native transport and actual integration gates pass on macOS and Linux. Final local matrix passes 479 required tests in each macOS/Linux × Python 3.12/3.13 environment, including all three shells.
 - [x] Implement centralized pager argument handling and an idempotent shell shim; preserve old CLI/template entry points. Explicit format options, native operands, exact paths, and mixed sessions have targeted passing checks.
 - [x] Implement byte-preserving progressive syntax and finite/live Markdown rendering with transactional fallback (5 seconds / 1 MiB pending limit). Finite/live Markdown match 25 reference examples at two widths; formatter-failure and byte-integrity checks pass. Bounded unfinished-input and repeated performance checks also pass.
 - [x] Implement supervised replacement files only for explicitly requested formatted named-file following, including ready-before-publication handshakes, file-close cleanup, and inherited streaming pipes for mixed stdin/FIFO sessions. Allocation/write failure, early quit, mixed FIFO input, and SIGTERM/SIGHUP cleanup checks pass.
-- [x] Promote audit contracts into required tests. Final local platform runs passed 476 correctness cases per environment. Installed wheel/sdist, old wrappers, copied scripts, and matched rollback checks pass; allocation/write failures, SIGTERM/SIGHUP cleanup, and mixed FIFO follow have passing tests.
+- [x] Promote audit contracts into required tests. Final local platform runs passed 479 correctness cases per environment. Installed wheel/sdist, old wrappers, copied scripts, and matched rollback checks pass; allocation/write failures, SIGTERM/SIGHUP cleanup, and mixed FIFO follow have passing tests.
 - [x] Configure Ruff, mypy, builds, installed upgrade/rollback tests, and GitHub CI. Feature revision 0cbc9aa passed every required job: https://github.com/DavidJBianco/richless/actions/runs/35012771548 . PR #8 merged into dev after green CI.
 - [x] Configure required checks on main/dev with owner override. Preserve documentation/trivial work directly on dev and feature/fix branching from dev.
-- [x] Complete local/platform checks (476 passes × four environments), 27 repeated performance cases, and installation validation. Record results in audit/REDESIGN.md and audit/results/redesign.
+- [x] Complete local/platform checks (479 passes × four environments), 27 repeated performance cases, and installation validation. Record results in audit/REDESIGN.md and audit/results/redesign.
+- [x] Fix the release-gate SIGINT race: CI transcripts show KeyboardInterrupt landing outside the supervisor wait try-block, terminating the pager and leaving a traceback. A deterministic loop-boundary test fails before and passes after the session-wide signal handler. Final local matrix passes 479 tests in all four environments; hosted revalidation remains part of promotion. Short-write completion/failure checks also pass.
 - [ ] **IN PROGRESS** Promote the documented 0.4.0 release through dev-to-main checks, publish the validated tag, and update the Homebrew formula/template with the published source hash and tested dependency versions. Tap generator previously ignored dependency constraints; its release update must preserve explicit pins.
 
 ## Incremental Markdown Investigation

@@ -28,7 +28,7 @@
         {
           "expect": "FILE_FIRST",
           "found": true,
-          "seconds": 0.26397591596469283
+          "seconds": 0.3228649169905111
         },
         {
           "keys": "b'F'"
@@ -36,7 +36,7 @@
         {
           "expect": "FILE_APPENDED",
           "found": true,
-          "seconds": 0.3435720410197973
+          "seconds": 0.4554360000183806
         },
         {
           "keys": "b'\\x03'"
@@ -45,19 +45,19 @@
           "keys": "b'q'"
         }
       ],
-      "started": 783425.91934425,
+      "started": 785063.237895333,
       "reaped": true,
       "exitcode": 0,
-      "maxrss_native": 27344896,
+      "maxrss_native": 27459584,
       "terminal_restored": true,
       "transcript": "\u001b[?1049h\u001b[24;1H\u001b[?1h\u001b=\rFILE_FIRST\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\n\u001b[7mgrowing.log\u001b[27m\u001b[K\r\u001b[Kpadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\n\r\u001b[K\u001b[7mWaiting for data... (^X or interrupt to abort)\u001b[27m\r\u001b[KFILE_APPENDED\u001b[m\r\n\r\u001b[K\u001b[7mWaiting for data... (^X or interrupt to abort)\u001b[27m\r\u001b[K\u0007\u001b[H\u001b[2J\u001b[Hpadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\nFILE_APPENDED\u001b[m\r\n\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l",
       "transcript_bytes": 898
     }
   ],
   "env": {
-    "PATH": "/private/tmp/richless-release-mac312/test_audit_follow_file_filter_0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
-    "HOME": "/private/tmp/richless-release-mac312/test_audit_follow_file_filter_0",
-    "TMPDIR": "/private/tmp/richless-release-mac312/test_audit_follow_file_filter_0/scratch",
+    "PATH": "/private/tmp/richless-final2-mac312/test_audit_follow_file_filter_0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/tmp/richless-final2-mac312/test_audit_follow_file_filter_0",
+    "TMPDIR": "/private/tmp/richless-final2-mac312/test_audit_follow_file_filter_0/scratch",
     "TERM": "xterm-256color",
     "LC_ALL": "C",
     "LESSCHARSET": "utf-8",
@@ -65,7 +65,7 @@
     "PYTHONIOENCODING": "utf-8",
     "PYTHONUTF8": "1"
   },
-  "cwd": "/private/tmp/richless-release-mac312/test_audit_follow_file_filter_0",
+  "cwd": "/private/tmp/richless-final2-mac312/test_audit_follow_file_filter_0",
   "root": "/Users/bianco/projects/richless",
   "status": "pass"
 }

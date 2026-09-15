@@ -32,7 +32,7 @@
         {
           "expect": "STREAM_FIRST",
           "found": true,
-          "seconds": 0.27515116706490517
+          "seconds": 0.42460920801386237
         },
         {
           "keys": "b'F'"
@@ -40,7 +40,7 @@
         {
           "expect": "STREAM_SECOND",
           "found": true,
-          "seconds": 0.35885249997954816
+          "seconds": 0.5007672080537304
         },
         {
           "keys": "b'\\x03'"
@@ -49,7 +49,7 @@
           "keys": "b'q'"
         }
       ],
-      "started": 783426.508069583,
+      "started": 785061.526595125,
       "reaped": true,
       "exitcode": 0,
       "maxrss_native": 26689536,
@@ -59,9 +59,9 @@
     }
   ],
   "env": {
-    "PATH": "/private/tmp/richless-release-mac313/test_audit_stream_filter_sh_0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
-    "HOME": "/private/tmp/richless-release-mac313/test_audit_stream_filter_sh_0",
-    "TMPDIR": "/private/tmp/richless-release-mac313/test_audit_stream_filter_sh_0/scratch",
+    "PATH": "/private/tmp/richless-final2-mac313/test_audit_stream_filter_sh_0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/tmp/richless-final2-mac313/test_audit_stream_filter_sh_0",
+    "TMPDIR": "/private/tmp/richless-final2-mac313/test_audit_stream_filter_sh_0/scratch",
     "TERM": "xterm-256color",
     "LC_ALL": "C",
     "LESSCHARSET": "utf-8",
@@ -69,7 +69,7 @@
     "PYTHONIOENCODING": "utf-8",
     "PYTHONUTF8": "1"
   },
-  "cwd": "/private/tmp/richless-release-mac313/test_audit_stream_filter_sh_0",
+  "cwd": "/private/tmp/richless-final2-mac313/test_audit_stream_filter_sh_0",
   "root": "/Users/bianco/projects/richless",
   "status": "pass"
 }

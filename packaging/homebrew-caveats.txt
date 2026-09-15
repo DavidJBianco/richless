@@ -1,6 +1,8 @@
 richless 0.4 changes shell integration. Existing shells must reload it:
   . "$(brew --prefix)/share/richless/richless-init.sh"
 New shells using that stable path pick up the update automatically.
+If your startup file names a version-specific Cellar path, replace that line
+with the stable source command above.
 If you copied richless-init.sh elsewhere, replace that copy and re-source it.
 Use `richless --init-path` to locate the packaged integration script.
 

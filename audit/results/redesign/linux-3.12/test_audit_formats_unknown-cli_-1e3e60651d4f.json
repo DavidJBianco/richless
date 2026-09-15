@@ -22,7 +22,7 @@
         "export LESSOPEN='|-richless --filter -- %s'; richless unknown"
       ],
       "returncode": 0,
-      "seconds": 0.19488670900000216,
+      "seconds": 0.2000458750000007,
       "stdout": "\u001b[38;2;149;144;119m#!/bin/sh\u001b[39m\n\u001b[38;2;248;248;242mecho\u001b[39m\u001b[38;2;248;248;242m \u001b[39m\u001b[38;2;248;248;242mSENTINEL\u001b[39m\n",
       "stderr": "",
       "stdout_bytes": 120

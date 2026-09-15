@@ -1,6 +1,6 @@
 # Scenario ledger
 
-Counts: {"blocked": 3, "pass": 359}
+Counts: {"blocked": 3, "pass": 360}
 
 | Scenario | Status | Unmet expectation / note |
 |---|---|---|
@@ -366,3 +366,4 @@ Counts: {"blocked": 3, "pass": 359}
 | [test_redesign_formatted_follow[zsh]](test_redesign_formatted_follow_zsh_-878a711b51dd.json) | pass | All recorded expectations met |
 | [test_redesign_ordinary_render_does_not_follow](test_redesign_ordinary_render_does_not_follow-24a2898dee4d.json) | pass | All recorded expectations met |
 | [test_redesign_quit_active_producer_without_interrupt](test_redesign_quit_active_producer_without_interrupt-3ed8097c8952.json) | pass | All recorded expectations met |
+| [test_redesign_supervisor_sigint_between_waits](test_redesign_supervisor_sigint_between_waits-95e1df876283.json) | pass | All recorded expectations met |

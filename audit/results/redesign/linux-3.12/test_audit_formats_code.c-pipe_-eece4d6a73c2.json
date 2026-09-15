@@ -22,7 +22,7 @@
         ". /tmp/project/richless-init.sh; cat code.c | less -R"
       ],
       "returncode": 0,
-      "seconds": 0.3967712500000289,
+      "seconds": 0.40244987500000207,
       "stdout": "int main(void) { return 42; } // SENTINEL\n",
       "stderr": "",
       "stdout_bytes": 42

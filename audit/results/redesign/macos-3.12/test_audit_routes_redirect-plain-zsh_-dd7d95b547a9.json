@@ -28,13 +28,13 @@
         {
           "expect": "ROUTE_SENTINEL",
           "found": true,
-          "seconds": 0.06014075002167374
+          "seconds": 0.051288792048580945
         },
         {
           "keys": "b'q'"
         }
       ],
-      "started": 783340.330196833,
+      "started": 784981.838742583,
       "reaped": true,
       "exitcode": 0,
       "maxrss_native": 1671168,
@@ -44,9 +44,9 @@
     }
   ],
   "env": {
-    "PATH": "/private/tmp/richless-release-mac312/test_audit_routes_redirect_pla1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
-    "HOME": "/private/tmp/richless-release-mac312/test_audit_routes_redirect_pla1",
-    "TMPDIR": "/private/tmp/richless-release-mac312/test_audit_routes_redirect_pla1/scratch",
+    "PATH": "/private/tmp/richless-final2-mac312/test_audit_routes_redirect_pla1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/tmp/richless-final2-mac312/test_audit_routes_redirect_pla1",
+    "TMPDIR": "/private/tmp/richless-final2-mac312/test_audit_routes_redirect_pla1/scratch",
     "TERM": "xterm-256color",
     "LC_ALL": "C",
     "LESSCHARSET": "utf-8",
@@ -54,7 +54,7 @@
     "PYTHONIOENCODING": "utf-8",
     "PYTHONUTF8": "1"
   },
-  "cwd": "/private/tmp/richless-release-mac312/test_audit_routes_redirect_pla1",
+  "cwd": "/private/tmp/richless-final2-mac312/test_audit_routes_redirect_pla1",
   "root": "/Users/bianco/projects/richless",
   "status": "pass"
 }

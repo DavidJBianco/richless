@@ -22,7 +22,7 @@
         ". /tmp/project/richless-init.sh; cat input.txt | less -R"
       ],
       "returncode": 7,
-      "seconds": 0.0013031660000706324,
+      "seconds": 0.0012219999999842912,
       "stdout": "PARTIAL",
       "stderr": "INJECTED_RENDER_FAILURE\n",
       "stdout_bytes": 7

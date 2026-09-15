@@ -60,12 +60,12 @@
         {
           "expect": "C_MARKER",
           "found": true,
-          "seconds": 0.06017629103735089
+          "seconds": 0.0552386250346899
         },
         {
           "expect": "a.c",
           "found": true,
-          "seconds": 0.06025495799258351
+          "seconds": 0.05531758302822709
         },
         {
           "keys": "b':n\\n'"
@@ -73,12 +73,12 @@
         {
           "expect": "PY_MARKER",
           "found": true,
-          "seconds": 0.1429355830186978
+          "seconds": 0.1323147079674527
         },
         {
           "expect": "b.py",
           "found": true,
-          "seconds": 0.14294950000476092
+          "seconds": 0.13233074999880046
         },
         {
           "keys": "b':n\\n'"
@@ -86,12 +86,12 @@
         {
           "expect": "MD_MARKER",
           "found": true,
-          "seconds": 0.22686591604724526
+          "seconds": 0.208767666015774
         },
         {
           "expect": "c.md",
           "found": true,
-          "seconds": 0.22687833302188665
+          "seconds": 0.2087830409873277
         },
         {
           "keys": "b':p\\n'"
@@ -99,12 +99,12 @@
         {
           "expect": "PY_MARKER",
           "found": true,
-          "seconds": 0.3141555830370635
+          "seconds": 0.2889276660280302
         },
         {
           "expect": "b.py",
           "found": true,
-          "seconds": 0.3141679579857737
+          "seconds": 0.2889449580106884
         },
         {
           "keys": "b':p\\n'"
@@ -112,18 +112,18 @@
         {
           "expect": "C_MARKER",
           "found": true,
-          "seconds": 0.3931077910820022
+          "seconds": 0.36593633296433836
         },
         {
           "expect": "a.c",
           "found": true,
-          "seconds": 0.39312479097861797
+          "seconds": 0.3659508749842644
         },
         {
           "keys": "b'q'"
         }
       ],
-      "started": 783380.937790375,
+      "started": 785018.572504375,
       "reaped": true,
       "exitcode": 0,
       "maxrss_native": 1687552,
@@ -133,9 +133,9 @@
     }
   ],
   "env": {
-    "PATH": "/private/tmp/richless-release-mac313/test_audit_mixed_forced_plain_2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
-    "HOME": "/private/tmp/richless-release-mac313/test_audit_mixed_forced_plain_2",
-    "TMPDIR": "/private/tmp/richless-release-mac313/test_audit_mixed_forced_plain_2/scratch",
+    "PATH": "/private/tmp/richless-final2-mac313/test_audit_mixed_forced_plain_2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/tmp/richless-final2-mac313/test_audit_mixed_forced_plain_2",
+    "TMPDIR": "/private/tmp/richless-final2-mac313/test_audit_mixed_forced_plain_2/scratch",
     "TERM": "xterm-256color",
     "LC_ALL": "C",
     "LESSCHARSET": "utf-8",
@@ -143,7 +143,7 @@
     "PYTHONIOENCODING": "utf-8",
     "PYTHONUTF8": "1"
   },
-  "cwd": "/private/tmp/richless-release-mac313/test_audit_mixed_forced_plain_2",
+  "cwd": "/private/tmp/richless-final2-mac313/test_audit_mixed_forced_plain_2",
   "root": "/Users/bianco/projects/richless",
   "status": "pass"
 }

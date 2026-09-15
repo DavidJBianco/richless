@@ -56,6 +56,9 @@ large finite Markdown must read and parse before publication. This is substantia
 better than the former tens-of-seconds blank screen. Progress feedback remains
 deferred as agreed.
 
+Completed-log throughput was about 21,000–22,000 records/s for named files and
+29,000–32,000 records/s for pipelines in these measurements.
+
 Memory remains material: `wait4` child resource accounting peaked at about 632 MiB
 for a completed 500,000-record view, versus about 71 MiB for large Markdown. This
 is not aggregate simultaneous process-tree RSS. Native less retains viewing
@@ -66,14 +69,31 @@ Follow storage grew from 9,800 to 2,409,948 bytes for a 261,269-byte source in t
 recorded case (ANSI expansion is substantial). Tests verify cleanup; storage is
 not bounded for an indefinitely growing rendered file.
 
+## Release-gate interruption repair
+
+A later promotion run exposed intermittent SIGINT failures on both hosted macOS
+Python versions. The supervisor caught KeyboardInterrupt only around `wait()`;
+interrupts at the loop boundary or inside timeout handling escaped and destroyed
+the session. [Saved failure transcripts and a deterministic before/after test](results/redesign/interruption-race/)
+confirm the cause. A session-wide callable SIGINT handler now leaves terminal
+interrupt ownership with native less while keeping its supervisor alive. No
+required behavior was dropped and no failure was hidden by a retry.
+
+The same failure-path review added complete handling of short output writes:
+finish the unit or report that output stopped accepting bytes. Tests cover both
+successful partial writes and an output that stops after a prefix. The current
+four-environment local matrix includes these regressions (479 passes each).
+[Release PR checks](https://github.com/DavidJBianco/richless/pull/9/checks) track the
+final hosted validation and promotion; initial feature CI alone is insufficient.
+
 ## Correctness results
 
 | Platform | Python | Required tests |
 |---|---|---:|
-| macOS 26.6.2 arm64 / less 668 | 3.12.9 | 476 passed |
-| macOS 26.6.2 arm64 / less 668 | 3.13.15 | 476 passed |
-| Debian Linux container / less 590 | 3.12 | 476 passed |
-| Debian Linux container / less 590 | 3.13 | 476 passed |
+| macOS 26.6.2 arm64 / less 668 | 3.12.9 | 479 passed |
+| macOS 26.6.2 arm64 / less 668 | 3.13.15 | 479 passed |
+| Debian Linux container / less 590 | 3.12 | 479 passed |
+| Debian Linux container / less 590 | 3.13 | 479 passed |
 
 Each run exercises bash, zsh, and `/bin/sh`. Ruff, formatting, mypy, wheel/sdist
 builds, and installed upgrade/rollback checks also pass. The 27 optional current

@@ -22,7 +22,7 @@
         ". /Users/bianco/projects/richless/richless-init.sh; cat data.xml | less -R"
       ],
       "returncode": 0,
-      "seconds": 0.2689776250626892,
+      "seconds": 0.3289472080068663,
       "stdout": "\u001b[38;2;149;144;119m<?xml version=\"1.0\"?>\u001b[39m\u001b[38;2;255;70;137m<root\u001b[39m\u001b[38;2;255;70;137m>\u001b[39m\u001b[38;2;248;248;242mSENTINEL\u001b[39m\u001b[38;2;255;70;137m</root>\u001b[39m\n",
       "stderr": "",
       "stdout_bytes": 160
@@ -37,9 +37,9 @@
   ],
   "sessions": [],
   "env": {
-    "PATH": "/private/tmp/richless-release-mac312/test_audit_formats_data_xml_pi0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
-    "HOME": "/private/tmp/richless-release-mac312/test_audit_formats_data_xml_pi0",
-    "TMPDIR": "/private/tmp/richless-release-mac312/test_audit_formats_data_xml_pi0/scratch",
+    "PATH": "/private/tmp/richless-final2-mac312/test_audit_formats_data_xml_pi0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/tmp/richless-final2-mac312/test_audit_formats_data_xml_pi0",
+    "TMPDIR": "/private/tmp/richless-final2-mac312/test_audit_formats_data_xml_pi0/scratch",
     "TERM": "xterm-256color",
     "LC_ALL": "C",
     "LESSCHARSET": "utf-8",
@@ -47,7 +47,7 @@
     "PYTHONIOENCODING": "utf-8",
     "PYTHONUTF8": "1"
   },
-  "cwd": "/private/tmp/richless-release-mac312/test_audit_formats_data_xml_pi0",
+  "cwd": "/private/tmp/richless-final2-mac312/test_audit_formats_data_xml_pi0",
   "root": "/Users/bianco/projects/richless",
   "status": "pass"
 }
