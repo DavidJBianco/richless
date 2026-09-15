@@ -1,5 +1,9 @@
 # TODO
 
+## Release record promotion
+
+- [x] Prepare promotion of the final 0.4.0 report, performance evidence, and formula record in PR #13: https://github.com/DavidJBianco/richless/pull/13 . Merge is gated on required GitHub CI; consult the PR for its authoritative check/merge status. Application code/version and the published tag remain unchanged.
+
 ## 0.4.0 Integration Redesign
 
 - [x] Validate explicit +F replacement-file transport against native less on all platforms. Native transport and actual integration gates pass on macOS and Linux. Final local matrix passes 479 required tests in each macOS/Linux × Python 3.12/3.13 environment, including all three shells.
