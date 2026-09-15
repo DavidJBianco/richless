@@ -1,5 +1,9 @@
 # TODO
 
+## Release record promotion
+
+- [x] Prepare promotion of the final 0.4.0 report, performance evidence, and formula record in PR #13: https://github.com/DavidJBianco/richless/pull/13 . Merge is gated on required GitHub CI; consult the PR for its authoritative check/merge status. Application code/version and the published tag remain unchanged.
+
 ## 0.4.0 Integration Redesign
 
 - [x] Validate explicit +F replacement-file transport against native less on all platforms. Native transport and actual integration gates pass on macOS and Linux. Final local matrix passes 479 required tests in each macOS/Linux × Python 3.12/3.13 environment, including all three shells.
@@ -10,9 +14,11 @@
 - [x] Configure Ruff, mypy, builds, installed upgrade/rollback tests, and GitHub CI. Feature revision 0cbc9aa passed every required job: https://github.com/DavidJBianco/richless/actions/runs/35012771548 . PR #8 merged into dev after green CI.
 - [x] Configure required checks on main/dev with owner override. Preserve documentation/trivial work directly on dev and feature/fix branching from dev.
 - [x] Complete local/platform checks (479 passes × four environments), 27 repeated performance cases, and installation validation. Record results in audit/REDESIGN.md and audit/results/redesign.
-- [x] Fix the release-gate SIGINT race: CI transcripts show KeyboardInterrupt landing outside the supervisor wait try-block, terminating the pager and leaving a traceback. A deterministic loop-boundary test fails before and passes after the session-wide signal handler. Final local matrix passes 479 tests in all four environments; hosted revalidation remains part of promotion. Short-write completion/failure checks also pass.
-- [x] Promote the documented 0.4.0 release through dev-to-main checks and create the immutable release tag. Main/tag v0.4.0 resolve to 6a115092dc2c6b65e1cdbb2da386e500df9636dd. Release tests all passed, but the old publisher rejected metadata 2.5 before upload; publication is still pending below.
-- [ ] **IN PROGRESS** Fix release publication without moving v0.4.0: pin the current official publisher (Twine 7 / packaging 26.2), add metadata validation to quality CI, and support manual publication of an immutable tag after testing that exact revision. Local Twine 7 validation accepts both built artifacts. Finish PyPI/GitHub/Homebrew publication afterward.
+- [x] Fix the release-gate SIGINT race: CI transcripts show KeyboardInterrupt landing outside the supervisor wait try-block, terminating the pager and leaving a traceback. A deterministic loop-boundary test fails before and passes after the session-wide signal handler. Final local matrix passes 479 tests in all four environments; hosted revalidation and publication passed. Short-write completion/failure checks also pass.
+- [x] Promote the documented 0.4.0 release through dev-to-main checks and create the immutable release tag. The immutable tag v0.4.0 resolves to 6a115092dc2c6b65e1cdbb2da386e500df9636dd. Release tests all passed, but the old publisher rejected metadata 2.5 before upload; publication subsequently succeeded as recorded below.
+- [x] Fix release publication without moving v0.4.0: pin the current official publisher (Twine 7 / packaging 26.2), add metadata validation to quality CI, and support manual publication of an immutable tag after testing that exact revision. Local Twine 7 validation accepts both built artifacts. Exact-tag publication succeeded in run 35019015462; PyPI artifacts verified and Homebrew PR #1 merged. GitHub release uses those published artifacts.
+
+- [x] Retain final performance refresh: 11 scenarios × three trials; report latency ranges, memory/storage costs, and the remaining 300-ms target gap. Preserve earlier comparisons separately.
 
 ## Incremental Markdown Investigation
 
@@ -42,7 +48,7 @@
 - [x] Remove `-m` short flag from shell wrapper -- conflicts with `less`'s built-in `-m` (verbose prompt)
 - [x] Preserve binary/non-UTF-8 bytes in direct rendering and return native-file fallback from LESSOPEN when no transformation is appropriate.
 - [x] Fix Zeek JSONL log handling -- `.log` files now fall back to content detection for syntax highlighting
-- [x] Replace large-file blank-screen buffering. Repeated 166K log first display is 0.107–0.297 s; 500K first display is 0.113–0.345 s. Large finite Markdown still exceeds 300 ms; record this separately from correctness.
+- [x] Replace large-file blank-screen buffering. Repeated 166K log first display is 0.103–0.357 s; 500K first display is 0.101–0.407 s in the final refresh. Large finite Markdown still exceeds 300 ms; record this separately from correctness.
 - [x] Replace shell temp-file ownership with Python session supervision and tested SIGTERM/SIGHUP cleanup.
 
 ## Bugs & Fixes (Medium Priority)
