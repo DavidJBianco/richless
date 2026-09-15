@@ -1,0 +1,156 @@
+{
+  "id": "test_audit_interaction[wrapper-sh]",
+  "checks": [
+    {
+      "expectation": "Initial viewport",
+      "pass": true
+    },
+    {
+      "expectation": "Forward search",
+      "pass": true
+    },
+    {
+      "expectation": "Repeat search",
+      "pass": true
+    },
+    {
+      "expectation": "Reverse repeat search",
+      "pass": true
+    },
+    {
+      "expectation": "Backward search",
+      "pass": true
+    },
+    {
+      "expectation": "Go to start",
+      "pass": true
+    },
+    {
+      "expectation": "Page forward",
+      "pass": true
+    },
+    {
+      "expectation": "Horizontal navigation reaches long-line suffix",
+      "pass": true
+    },
+    {
+      "expectation": "Content survives terminal resize",
+      "pass": true
+    },
+    {
+      "expectation": "Quit after resizing",
+      "pass": true
+    },
+    {
+      "expectation": "Restore terminal after interactive commands",
+      "pass": true
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/usr/bin/sh",
+      "-c",
+      ". /tmp/project/richless-init.sh; less -R -N -S navigation.txt"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "ROW_000",
+          "found": true,
+          "seconds": 0.25461779099998694
+        },
+        {
+          "keys": "b'/NEEDLE\\n'"
+        },
+        {
+          "expect": "ROW_060",
+          "found": true,
+          "seconds": 0.3252132910000114
+        },
+        {
+          "keys": "b'n'"
+        },
+        {
+          "expect": "ROW_120",
+          "found": true,
+          "seconds": 0.3954660829999739
+        },
+        {
+          "keys": "b'N'"
+        },
+        {
+          "expect": "ROW_060",
+          "found": true,
+          "seconds": 0.46612233299998707
+        },
+        {
+          "keys": "b'G?NEEDLE\\n'"
+        },
+        {
+          "expect": "ROW_120",
+          "found": true,
+          "seconds": 0.536441625000009
+        },
+        {
+          "keys": "b'g'"
+        },
+        {
+          "expect": "ROW_000",
+          "found": true,
+          "seconds": 0.6067119169999842
+        },
+        {
+          "keys": "b' '"
+        },
+        {
+          "expect": "ROW_030",
+          "found": true,
+          "seconds": 0.6813870830000042
+        },
+        {
+          "keys": "b'151g100\\x1b)'"
+        },
+        {
+          "expect": "RIGHT_EDGE",
+          "found": true,
+          "seconds": 0.7548800419999679
+        },
+        {
+          "keys": "b'\\x1b{g'"
+        },
+        {
+          "expect": "ROW_000",
+          "found": true,
+          "seconds": 0.8302767499999959
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 438.691077241,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 39304,
+      "terminal_restored": true,
+      "transcript": "\u001b[?1049h\u001b[22;0;0t\u001b[?1h\u001b=\r      1 \u001b[38;2;248;248;242;49mROW_000 value\u001b[0m\u001b[m\r\n      2 \u001b[38;2;248;248;242;49mROW_001 value\u001b[0m\u001b[m\r\n      3 \u001b[38;2;248;248;242;49mROW_002 value\u001b[0m\u001b[m\r\n      4 \u001b[38;2;248;248;242;49mROW_003 value\u001b[0m\u001b[m\r\n      5 \u001b[38;2;248;248;242;49mROW_004 value\u001b[0m\u001b[m\r\n      6 \u001b[38;2;248;248;242;49mROW_005 value\u001b[0m\u001b[m\r\n      7 \u001b[38;2;248;248;242;49mROW_006 value\u001b[0m\u001b[m\r\n      8 \u001b[38;2;248;248;242;49mROW_007 value\u001b[0m\u001b[m\r\n      9 \u001b[38;2;248;248;242;49mROW_008 value\u001b[0m\u001b[m\r\n     10 \u001b[38;2;248;248;242;49mROW_009 value\u001b[0m\u001b[m\r\n     11 \u001b[38;2;248;248;242;49mROW_010 value\u001b[0m\u001b[m\r\n     12 \u001b[38;2;248;248;242;49mROW_011 value\u001b[0m\u001b[m\r\n     13 \u001b[38;2;248;248;242;49mROW_012 value\u001b[0m\u001b[m\r\n     14 \u001b[38;2;248;248;242;49mROW_013 value\u001b[0m\u001b[m\r\n     15 \u001b[38;2;248;248;242;49mROW_014 value\u001b[0m\u001b[m\r\n     16 \u001b[38;2;248;248;242;49mROW_015 value\u001b[0m\u001b[m\r\n     17 \u001b[38;2;248;248;242;49mROW_016 value\u001b[0m\u001b[m\r\n     18 \u001b[38;2;248;248;242;49mROW_017 value\u001b[0m\u001b[m\r\n     19 \u001b[38;2;248;248;242;49mROW_018 value\u001b[0m\u001b[m\r\n     20 \u001b[38;2;248;248;242;49mROW_019 value\u001b[0m\u001b[m\r\n     21 \u001b[38;2;248;248;242;49mROW_020 value\u001b[0m\u001b[m\r\n     22 \u001b[38;2;248;248;242;49mROW_021 value\u001b[0m\u001b[m\r\n     23 \u001b[38;2;248;248;242;49mROW_022 value\u001b[0m\u001b[m\r\n\u001b[7mnavigation.txt\u001b[27m\u001b[K\r\u001b[K/\u001b[KN\bN\u001b[KE\bE\u001b[KE\bE\u001b[KD\bD\u001b[KL\bL\u001b[KE\bE\r\u001b[K\u001b[1;1H      1 \u001b[38;2;248;248;242;49mROW_000 value\u001b[0m\u001b[m\r\n\u001b[2;1H      2 \u001b[38;2;248;248;242;49mROW_001 value\u001b[0m\u001b[m\r\n\u001b[3;1H      3 \u001b[38;2;248;248;242;49mROW_002 value\u001b[0m\u001b[m\r\n\u001b[4;1H      4 \u001b[38;2;248;248;242;49mROW_003 value\u001b[0m\u001b[m\r\n\u001b[5;1H      5 \u001b[38;2;248;248;242;49mROW_004 value\u001b[0m\u001b[m\r\n\u001b[6;1H      6 \u001b[38;2;248;248;242;49mROW_005 value\u001b[0m\u001b[m\r\n\u001b[7;1H      7 \u001b[38;2;248;248;242;49mROW_006 value\u001b[0m\u001b[m\r\n\u001b[8;1H      8 \u001b[38;2;248;248;242;49mROW_007 value\u001b[0m\u001b[m\r\n\u001b[9;1H      9 \u001b[38;2;248;248;242;49mROW_008 value\u001b[0m\u001b[m\r\n\u001b[10;1H     10 \u001b[38;2;248;248;242;49mROW_009 value\u001b[0m\u001b[m\r\n\u001b[11;1H     11 \u001b[38;2;248;248;242;49mROW_010 value\u001b[0m\u001b[m\r\n\u001b[12;1H     12 \u001b[38;2;248;248;242;49mROW_011 value\u001b[0m\u001b[m\r\n\u001b[13;1H     13 \u001b[38;2;248;248;242;49mROW_012 value\u001b[0m\u001b[m\r\n\u001b[14;1H     14 \u001b[38;2;248;248;242;49mROW_013 value\u001b[0m\u001b[m\r\n\u001b[15;1H     15 \u001b[38;2;248;248;242;49mROW_014 value\u001b[0m\u001b[m\r\n\u001b[16;1H     16 \u001b[38;2;248;248;242;49mROW_015 value\u001b[0m\u001b[m\r\n\u001b[17;1H     17 \u001b[38;2;248;248;242;49mROW_016 value\u001b[0m\u001b[m\r\n\u001b[18;1H     18 \u001b[38;2;248;248;242;49mROW_017 value\u001b[0m\u001b[m\r\n\u001b[19;1H     19 \u001b[38;2;248;248;242;49mROW_018 value\u001b[0m\u001b[m\r\n\u001b[20;1H     20 \u001b[38;2;248;248;242;49mROW_019 value\u001b[0m\u001b[m\r\n\u001b[21;1H     21 \u001b[38;2;248;248;242;49mROW_020 value\u001b[0m\u001b[m\r\n\u001b[22;1H     22 \u001b[38;2;248;248;242;49mROW_021 value\u001b[0m\u001b[m\r\n\u001b[23;1H     23 \u001b[38;2;248;248;242;49mROW_022 value\u001b[0m\u001b[m\r\n\u001b[24;1H\u001b[1;1H      1 \u001b[38;2;248;248;242;49mROW_000 value\u001b[0m\u001b[m\r\n\u001b[2;1H      2 \u001b[38;2;248;248;242;49mROW_001 value\u001b[0m\u001b[m\r\n\u001b[3;1H      3 \u001b[38;2;248;248;242;49mROW_002 value\u001b[0m\u001b[m\r\n\u001b[4;1H      4 \u001b[38;2;248;248;242;49mROW_003 value\u001b[0m\u001b[m\r\n\u001b[5;1H      5 \u001b[38;2;248;248;242;49mROW_004 value\u001b[0m\u001b[m\r\n\u001b[6;1H      6 \u001b[38;2;248;248;242;49mROW_005 value\u001b[0m\u001b[m\r\n\u001b[7;1H      7 \u001b[38;2;248;248;242;49mROW_006 value\u001b[0m\u001b[m\r\n\u001b[8;1H      8 \u001b[38;2;248;248;242;49mROW_007 value\u001b[0m\u001b[m\r\n\u001b[9;1H      9 \u001b[38;2;248;248;242;49mROW_008 value\u001b[0m\u001b[m\r\n\u001b[10;1H     10 \u001b[38;2;248;248;242;49mROW_009 value\u001b[0m\u001b[m\r\n\u001b[11;1H     11 \u001b[38;2;248;248;242;49mROW_010 value\u001b[0m\u001b[m\r\n\u001b[12;1H     12 \u001b[38;2;248;248;242;49mROW_011 value\u001b[0m\u001b[m\r\n\u001b[13;1H     13 \u001b[38;2;248;248;242;49mROW_012 value\u001b[0m\u001b[m\r\n\u001b[14;1H     14 \u001b[38;2;248;248;242;49mROW_013 value\u001b[0m\u001b[m\r\n\u001b[15;1H     15 \u001b[38;2;248;248;242;49mROW_014 value\u001b[0m\u001b[m\r\n\u001b[16;1H     16 \u001b[38;2;248;248;242;49mROW_015 value\u001b[0m\u001b[m\r\n\u001b[17;1H     17 \u001b[38;2;248;248;242;49mROW_016 value\u001b[0m\u001b[m\r\n\u001b[18;1H     18 \u001b[38;2;248;248;242;49mROW_017 value\u001b[0m\u001b[m\r\n\u001b[19;1H     19 \u001b[38;2;248;248;242;49mROW_018 value\u001b[0m\u001b[m\r\n\u001b[20;1H     20 \u001b[38;2;248;248;242;49mROW_019 value\u001b[0m\u001b[m\r\n\u001b[21;1H     21 \u001b[38;2;248;248;242;49mROW_020 value\u001b[0m\u001b[m\r\n\u001b[22;1H     22 \u001b[38;2;248;248;242;49mROW_021 value\u001b[0m\u001b[m\r\n\u001b[23;1H     23 \u001b[38;2;248;248;242;49mROW_022 value\u001b[0m\u001b[m\r\n\u001b[24;1H...skipping...\r\n     61 \u001b[38;2;248;248;242;49mROW_060 \u001b[7mNEEDLE\u001b[27m\u001b[m\r\n     62 \u001b[38;2;248;248;242;49mROW_061 value\u001b[0m\u001b[m\r\n     63 \u001b[38;2;248;248;242;49mROW_062 value\u001b[0m\u001b[m\r\n     64 \u001b[38;2;248;248;242;49mROW_063 value\u001b[0m\u001b[m\r\n     65 \u001b[38;2;248;248;242;49mROW_064 value\u001b[0m\u001b[m\r\n     66 \u001b[38;2;248;248;242;49mROW_065 value\u001b[0m\u001b[m\r\n     67 \u001b[38;2;248;248;242;49mROW_066 value\u001b[0m\u001b[m\r\n     68 \u001b[38;2;248;248;242;49mROW_067 value\u001b[0m\u001b[m\r\n     69 \u001b[38;2;248;248;242;49mROW_068 value\u001b[0m\u001b[m\r\n     70 \u001b[38;2;248;248;242;49mROW_069 value\u001b[0m\u001b[m\r\n     71 \u001b[38;2;248;248;242;49mROW_070 value\u001b[0m\u001b[m\r\n     72 \u001b[38;2;248;248;242;49mROW_071 value\u001b[0m\u001b[m\r\n     73 \u001b[38;2;248;248;242;49mROW_072 value\u001b[0m\u001b[m\r\n     74 \u001b[38;2;248;248;242;49mROW_073 value\u001b[0m\u001b[m\r\n     75 \u001b[38;2;248;248;242;49mROW_074 value\u001b[0m\u001b[m\r\n     76 \u001b[38;2;248;248;242;49mROW_075 value\u001b[0m\u001b[m\r\n     77 \u001b[38;2;248;248;242;49mROW_076 value\u001b[0m\u001b[m\r\n     78 \u001b[38;2;248;248;242;49mROW_077 value\u001b[0m\u001b[m\r\n     79 \u001b[38;2;248;248;242;49mROW_078 value\u001b[0m\u001b[m\r\n     80 \u001b[38;2;248;248;242;49mROW_079 value\u001b[0m\u001b[m\r\n     81 \u001b[38;2;248;248;242;49mROW_080 value\u001b[0m\u001b[m\r\n     82 \u001b[38;2;248;248;242;49mROW_081 value\u001b[0m\u001b[m\r\n     83 \u001b[38;2;248;248;242;49mROW_082 value\u001b[0m\u001b[m\r\n:\u001b[K\r\u001b[K/\r\u001b[K...skipping...\r\n    121 \u001b[38;2;248;248;242;49mROW_120 \u001b[7mNEEDLE\u001b[27m\u001b[m\r\n    122 \u001b[38;2;248;248;242;49mROW_121 value\u001b[0m\u001b[m\r\n    123 \u001b[38;2;248;248;242;49mROW_122 value\u001b[0m\u001b[m\r\n    124 \u001b[38;2;248;248;242;49mROW_123 value\u001b[0m\u001b[m\r\n    125 \u001b[38;2;248;248;242;49mROW_124 value\u001b[0m\u001b[m\r\n    126 \u001b[38;2;248;248;242;49mROW_125 value\u001b[0m\u001b[m\r\n    127 \u001b[38;2;248;248;242;49mROW_126 value\u001b[0m\u001b[m\r\n    128 \u001b[38;2;248;248;242;49mROW_127 value\u001b[0m\u001b[m\r\n    129 \u001b[38;2;248;248;242;49mROW_128 value\u001b[0m\u001b[m\r\n    130 \u001b[38;2;248;248;242;49mROW_129 value\u001b[0m\u001b[m\r\n    131 \u001b[38;2;248;248;242;49mROW_130 value\u001b[0m\u001b[m\r\n    132 \u001b[38;2;248;248;242;49mROW_131 value\u001b[0m\u001b[m\r\n    133 \u001b[38;2;248;248;242;49mROW_132 value\u001b[0m\u001b[m\r\n    134 \u001b[38;2;248;248;242;49mROW_133 value\u001b[0m\u001b[m\r\n    135 \u001b[38;2;248;248;242;49mROW_134 value\u001b[0m\u001b[m\r\n    136 \u001b[38;2;248;248;242;49mROW_135 value\u001b[0m\u001b[m\r\n    137 \u001b[38;2;248;248;242;49mROW_136 value\u001b[0m\u001b[m\r\n    138 \u001b[38;2;248;248;242;49mROW_137 value\u001b[0m\u001b[m\r\n    139 \u001b[38;2;248;248;242;49mROW_138 value\u001b[0m\u001b[m\r\n    140 \u001b[38;2;248;248;242;49mROW_139 value\u001b[0m\u001b[m\r\n    141 \u001b[38;2;248;248;242;49mROW_140 value\u001b[0m\u001b[m\r\n    142 \u001b[38;2;248;248;242;49mROW_141 value\u001b[0m\u001b[m\r\n    143 \u001b[38;2;248;248;242;49mROW_142 value\u001b[0m\u001b[m\r\n:\u001b[K\r\u001b[K?\r\u001b[K\u001b[H\u001b[2J\u001b[H\u001bM     83 \u001b[38;2;248;248;242;49mROW_082 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     82 \u001b[38;2;248;248;242;49mROW_081 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     81 \u001b[38;2;248;248;242;49mROW_080 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     80 \u001b[38;2;248;248;242;49mROW_079 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     79 \u001b[38;2;248;248;242;49mROW_078 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     78 \u001b[38;2;248;248;242;49mROW_077 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     77 \u001b[38;2;248;248;242;49mROW_076 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     76 \u001b[38;2;248;248;242;49mROW_075 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     75 \u001b[38;2;248;248;242;49mROW_074 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     74 \u001b[38;2;248;248;242;49mROW_073 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     73 \u001b[38;2;248;248;242;49mROW_072 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     72 \u001b[38;2;248;248;242;49mROW_071 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     71 \u001b[38;2;248;248;242;49mROW_070 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     70 \u001b[38;2;248;248;242;49mROW_069 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     69 \u001b[38;2;248;248;242;49mROW_068 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     68 \u001b[38;2;248;248;242;49mROW_067 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     67 \u001b[38;2;248;248;242;49mROW_066 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     66 \u001b[38;2;248;248;242;49mROW_065 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     65 \u001b[38;2;248;248;242;49mROW_064 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     64 \u001b[38;2;248;248;242;49mROW_063 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     63 \u001b[38;2;248;248;242;49mROW_062 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     62 \u001b[38;2;248;248;242;49mROW_061 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     61 \u001b[38;2;248;248;242;49mROW_060 \u001b[7mNEEDLE\u001b[27m\u001b[m\r\n\u001b[24;1H\r\u001b[K:\u001b[K\r\u001b[K...skipping...\r\n    159 \u001b[38;2;248;248;242;49mROW_158 value\u001b[0m\u001b[m\r\n    160 \u001b[38;2;248;248;242;49mROW_159 value\u001b[0m\u001b[m\r\n    161 \u001b[38;2;248;248;242;49mROW_160 value\u001b[0m\u001b[m\r\n    162 \u001b[38;2;248;248;242;49mROW_161 value\u001b[0m\u001b[m\r\n    163 \u001b[38;2;248;248;242;49mROW_162 value\u001b[0m\u001b[m\r\n    164 \u001b[38;2;248;248;242;49mROW_163 value\u001b[0m\u001b[m\r\n    165 \u001b[38;2;248;248;242;49mROW_164 value\u001b[0m\u001b[m\r\n    166 \u001b[38;2;248;248;242;49mROW_165 value\u001b[0m\u001b[m\r\n    167 \u001b[38;2;248;248;242;49mROW_166 value\u001b[0m\u001b[m\r\n    168 \u001b[38;2;248;248;242;49mROW_167 value\u001b[0m\u001b[m\r\n    169 \u001b[38;2;248;248;242;49mROW_168 value\u001b[0m\u001b[m\r\n    170 \u001b[38;2;248;248;242;49mROW_169 value\u001b[0m\u001b[m\r\n    171 \u001b[38;2;248;248;242;49mROW_170 value\u001b[0m\u001b[m\r\n    172 \u001b[38;2;248;248;242;49mROW_171 value\u001b[0m\u001b[m\r\n    173 \u001b[38;2;248;248;242;49mROW_172 value\u001b[0m\u001b[m\r\n    174 \u001b[38;2;248;248;242;49mROW_173 value\u001b[0m\u001b[m\r\n    175 \u001b[38;2;248;248;242;49mROW_174 value\u001b[0m\u001b[m\r\n    176 \u001b[38;2;248;248;242;49mROW_175 value\u001b[0m\u001b[m\r\n    177 \u001b[38;2;248;248;242;49mROW_176 value\u001b[0m\u001b[m\r\n    178 \u001b[38;2;248;248;242;49mROW_177 value\u001b[0m\u001b[m\r\n    179 \u001b[38;2;248;248;242;49mROW_178 value\u001b[0m\u001b[m\r\n    180 \u001b[38;2;248;248;242;49mROW_179 value\u001b[0m\u001b[m\r\n    181 \u001b[m\r\n\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K?\u001b[KN\bN\u001b[KE\bE\u001b[KE\bE\u001b[KD\bD\u001b[KL\bL\u001b[KE\bE\r\u001b[K\u001b[1;1H    159 \u001b[38;2;248;248;242;49mROW_158 value\u001b[0m\u001b[m\r\n\u001b[2;1H    160 \u001b[38;2;248;248;242;49mROW_159 value\u001b[0m\u001b[m\r\n\u001b[3;1H    161 \u001b[38;2;248;248;242;49mROW_160 value\u001b[0m\u001b[m\r\n\u001b[4;1H    162 \u001b[38;2;248;248;242;49mROW_161 value\u001b[0m\u001b[m\r\n\u001b[5;1H    163 \u001b[38;2;248;248;242;49mROW_162 value\u001b[0m\u001b[m\r\n\u001b[6;1H    164 \u001b[38;2;248;248;242;49mROW_163 value\u001b[0m\u001b[m\r\n\u001b[7;1H    165 \u001b[38;2;248;248;242;49mROW_164 value\u001b[0m\u001b[m\r\n\u001b[8;1H    166 \u001b[38;2;248;248;242;49mROW_165 value\u001b[0m\u001b[m\r\n\u001b[9;1H    167 \u001b[38;2;248;248;242;49mROW_166 value\u001b[0m\u001b[m\r\n\u001b[10;1H    168 \u001b[38;2;248;248;242;49mROW_167 value\u001b[0m\u001b[m\r\n\u001b[11;1H    169 \u001b[38;2;248;248;242;49mROW_168 value\u001b[0m\u001b[m\r\n\u001b[12;1H    170 \u001b[38;2;248;248;242;49mROW_169 value\u001b[0m\u001b[m\r\n\u001b[13;1H    171 \u001b[38;2;248;248;242;49mROW_170 value\u001b[0m\u001b[m\r\n\u001b[14;1H    172 \u001b[38;2;248;248;242;49mROW_171 value\u001b[0m\u001b[m\r\n\u001b[15;1H    173 \u001b[38;2;248;248;242;49mROW_172 value\u001b[0m\u001b[m\r\n\u001b[16;1H    174 \u001b[38;2;248;248;242;49mROW_173 value\u001b[0m\u001b[m\r\n\u001b[17;1H    175 \u001b[38;2;248;248;242;49mROW_174 value\u001b[0m\u001b[m\r\n\u001b[18;1H    176 \u001b[38;2;248;248;242;49mROW_175 value\u001b[0m\u001b[m\r\n\u001b[19;1H    177 \u001b[38;2;248;248;242;49mROW_176 value\u001b[0m\u001b[m\r\n\u001b[20;1H    178 \u001b[38;2;248;248;242;49mROW_177 value\u001b[0m\u001b[m\r\n\u001b[21;1H    179 \u001b[38;2;248;248;242;49mROW_178 value\u001b[0m\u001b[m\r\n\u001b[22;1H    180 \u001b[38;2;248;248;242;49mROW_179 value\u001b[0m\u001b[m\r\n\u001b[23;1H    181 \u001b[m\r\n\u001b[24;1H\u001b[1;1H    159 \u001b[38;2;248;248;242;49mROW_158 value\u001b[0m\u001b[m\r\n\u001b[2;1H    160 \u001b[38;2;248;248;242;49mROW_159 value\u001b[0m\u001b[m\r\n\u001b[3;1H    161 \u001b[38;2;248;248;242;49mROW_160 value\u001b[0m\u001b[m\r\n\u001b[4;1H    162 \u001b[38;2;248;248;242;49mROW_161 value\u001b[0m\u001b[m\r\n\u001b[5;1H    163 \u001b[38;2;248;248;242;49mROW_162 value\u001b[0m\u001b[m\r\n\u001b[6;1H    164 \u001b[38;2;248;248;242;49mROW_163 value\u001b[0m\u001b[m\r\n\u001b[7;1H    165 \u001b[38;2;248;248;242;49mROW_164 value\u001b[0m\u001b[m\r\n\u001b[8;1H    166 \u001b[38;2;248;248;242;49mROW_165 value\u001b[0m\u001b[m\r\n\u001b[9;1H    167 \u001b[38;2;248;248;242;49mROW_166 value\u001b[0m\u001b[m\r\n\u001b[10;1H    168 \u001b[38;2;248;248;242;49mROW_167 value\u001b[0m\u001b[m\r\n\u001b[11;1H    169 \u001b[38;2;248;248;242;49mROW_168 value\u001b[0m\u001b[m\r\n\u001b[12;1H    170 \u001b[38;2;248;248;242;49mROW_169 value\u001b[0m\u001b[m\r\n\u001b[13;1H    171 \u001b[38;2;248;248;242;49mROW_170 value\u001b[0m\u001b[m\r\n\u001b[14;1H    172 \u001b[38;2;248;248;242;49mROW_171 value\u001b[0m\u001b[m\r\n\u001b[15;1H    173 \u001b[38;2;248;248;242;49mROW_172 value\u001b[0m\u001b[m\r\n\u001b[16;1H    174 \u001b[38;2;248;248;242;49mROW_173 value\u001b[0m\u001b[m\r\n\u001b[17;1H    175 \u001b[38;2;248;248;242;49mROW_174 value\u001b[0m\u001b[m\r\n\u001b[18;1H    176 \u001b[38;2;248;248;242;49mROW_175 value\u001b[0m\u001b[m\r\n\u001b[19;1H    177 \u001b[38;2;248;248;242;49mROW_176 value\u001b[0m\u001b[m\r\n\u001b[20;1H    178 \u001b[38;2;248;248;242;49mROW_177 value\u001b[0m\u001b[m\r\n\u001b[21;1H    179 \u001b[38;2;248;248;242;49mROW_178 value\u001b[0m\u001b[m\r\n\u001b[22;1H    180 \u001b[38;2;248;248;242;49mROW_179 value\u001b[0m\u001b[m\r\n\u001b[23;1H    181 \u001b[m\r\n\u001b[24;1H\u001b[H\u001b[2J\u001b[H\u001bM    143 \u001b[38;2;248;248;242;49mROW_142 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    142 \u001b[38;2;248;248;242;49mROW_141 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    141 \u001b[38;2;248;248;242;49mROW_140 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    140 \u001b[38;2;248;248;242;49mROW_139 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    139 \u001b[38;2;248;248;242;49mROW_138 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    138 \u001b[38;2;248;248;242;49mROW_137 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    137 \u001b[38;2;248;248;242;49mROW_136 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    136 \u001b[38;2;248;248;242;49mROW_135 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    135 \u001b[38;2;248;248;242;49mROW_134 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    134 \u001b[38;2;248;248;242;49mROW_133 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    133 \u001b[38;2;248;248;242;49mROW_132 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    132 \u001b[38;2;248;248;242;49mROW_131 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    131 \u001b[38;2;248;248;242;49mROW_130 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    130 \u001b[38;2;248;248;242;49mROW_129 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    129 \u001b[38;2;248;248;242;49mROW_128 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    128 \u001b[38;2;248;248;242;49mROW_127 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    127 \u001b[38;2;248;248;242;49mROW_126 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    126 \u001b[38;2;248;248;242;49mROW_125 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    125 \u001b[38;2;248;248;242;49mROW_124 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    124 \u001b[38;2;248;248;242;49mROW_123 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    123 \u001b[38;2;248;248;242;49mROW_122 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    122 \u001b[38;2;248;248;242;49mROW_121 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM    121 \u001b[38;2;248;248;242;49mROW_120 \u001b[7mNEEDLE\u001b[27m\u001b[m\r\n\u001b[24;1H\r\u001b[K:\u001b[K\r\u001b[K\u001b[H\u001b[2J\u001b[H\u001bM     23 \u001b[38;2;248;248;242;49mROW_022 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     22 \u001b[38;2;248;248;242;49mROW_021 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     21 \u001b[38;2;248;248;242;49mROW_020 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     20 \u001b[38;2;248;248;242;49mROW_019 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     19 \u001b[38;2;248;248;242;49mROW_018 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     18 \u001b[38;2;248;248;242;49mROW_017 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     17 \u001b[38;2;248;248;242;49mROW_016 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     16 \u001b[38;2;248;248;242;49mROW_015 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     15 \u001b[38;2;248;248;242;49mROW_014 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     14 \u001b[38;2;248;248;242;49mROW_013 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     13 \u001b[38;2;248;248;242;49mROW_012 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     12 \u001b[38;2;248;248;242;49mROW_011 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     11 \u001b[38;2;248;248;242;49mROW_010 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     10 \u001b[38;2;248;248;242;49mROW_009 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM      9 \u001b[38;2;248;248;242;49mROW_008 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM      8 \u001b[38;2;248;248;242;49mROW_007 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM      7 \u001b[38;2;248;248;242;49mROW_006 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM      6 \u001b[38;2;248;248;242;49mROW_005 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM      5 \u001b[38;2;248;248;242;49mROW_004 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM      4 \u001b[38;2;248;248;242;49mROW_003 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM      3 \u001b[38;2;248;248;242;49mROW_002 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM      2 \u001b[38;2;248;248;242;49mROW_001 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM      1 \u001b[38;2;248;248;242;49mROW_000 value\u001b[0m\u001b[m\r\n\u001b[24;1H\r\u001b[K:\u001b[K\r\u001b[K     24 \u001b[38;2;248;248;242;49mROW_023 value\u001b[0m\u001b[m\r\n     25 \u001b[38;2;248;248;242;49mROW_024 value\u001b[0m\u001b[m\r\n     26 \u001b[38;2;248;248;242;49mROW_025 value\u001b[0m\u001b[m\r\n     27 \u001b[38;2;248;248;242;49mROW_026 value\u001b[0m\u001b[m\r\n     28 \u001b[38;2;248;248;242;49mROW_027 value\u001b[0m\u001b[m\r\n     29 \u001b[38;2;248;248;242;49mROW_028 value\u001b[0m\u001b[m\r\n     30 \u001b[38;2;248;248;242;49mROW_029 value\u001b[0m\u001b[m\r\n     31 \u001b[38;2;248;248;242;49mROW_030 value\u001b[0m\u001b[m\r\n     32 \u001b[38;2;248;248;242;49mROW_031 value\u001b[0m\u001b[m\r\n     33 \u001b[38;2;248;248;242;49mROW_032 value\u001b[0m\u001b[m\r\n     34 \u001b[38;2;248;248;242;49mROW_033 value\u001b[0m\u001b[m\r\n     35 \u001b[38;2;248;248;242;49mROW_034 value\u001b[0m\u001b[m\r\n     36 \u001b[38;2;248;248;242;49mROW_035 value\u001b[0m\u001b[m\r\n     37 \u001b[38;2;248;248;242;49mROW_036 value\u001b[0m\u001b[m\r\n     38 \u001b[38;2;248;248;242;49mROW_037 value\u001b[0m\u001b[m\r\n     39 \u001b[38;2;248;248;242;49mROW_038 value\u001b[0m\u001b[m\r\n     40 \u001b[38;2;248;248;242;49mROW_039 value\u001b[0m\u001b[m\r\n     41 \u001b[38;2;248;248;242;49mROW_040 value\u001b[0m\u001b[m\r\n     42 \u001b[38;2;248;248;242;49mROW_041 value\u001b[0m\u001b[m\r\n     43 \u001b[38;2;248;248;242;49mROW_042 value\u001b[0m\u001b[m\r\n     44 \u001b[38;2;248;248;242;49mROW_043 value\u001b[0m\u001b[m\r\n     45 \u001b[38;2;248;248;242;49mROW_044 value\u001b[0m\u001b[m\r\n     46 \u001b[38;2;248;248;242;49mROW_045 value\u001b[0m\u001b[m\r\n:\u001b[K\r\u001b[K:\u001b[K1\b1\u001b[K5\b5\u001b[K1\b1\r\u001b[K...skipping...\r\n    151 \u001b[38;2;248;248;242;49mROW_150 valuexxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u001b[m\u001b[7m>\u001b[27m\r\n    152 \u001b[38;2;248;248;242;49mROW_151 value\u001b[0m\u001b[m\r\n    153 \u001b[38;2;248;248;242;49mROW_152 value\u001b[0m\u001b[m\r\n    154 \u001b[38;2;248;248;242;49mROW_153 value\u001b[0m\u001b[m\r\n    155 \u001b[38;2;248;248;242;49mROW_154 value\u001b[0m\u001b[m\r\n    156 \u001b[38;2;248;248;242;49mROW_155 value\u001b[0m\u001b[m\r\n    157 \u001b[38;2;248;248;242;49mROW_156 value\u001b[0m\u001b[m\r\n    158 \u001b[38;2;248;248;242;49mROW_157 value\u001b[0m\u001b[m\r\n    159 \u001b[38;2;248;248;242;49mROW_158 value\u001b[0m\u001b[m\r\n    160 \u001b[38;2;248;248;242;49mROW_159 value\u001b[0m\u001b[m\r\n    161 \u001b[38;2;248;248;242;49mROW_160 value\u001b[0m\u001b[m\r\n    162 \u001b[38;2;248;248;242;49mROW_161 value\u001b[0m\u001b[m\r\n    163 \u001b[38;2;248;248;242;49mROW_162 value\u001b[0m\u001b[m\r\n    164 \u001b[38;2;248;248;242;49mROW_163 value\u001b[0m\u001b[m\r\n    165 \u001b[38;2;248;248;242;49mROW_164 value\u001b[0m\u001b[m\r\n    166 \u001b[38;2;248;248;242;49mROW_165 value\u001b[0m\u001b[m\r\n    167 \u001b[38;2;248;248;242;49mROW_166 value\u001b[0m\u001b[m\r\n    168 \u001b[38;2;248;248;242;49mROW_167 value\u001b[0m\u001b[m\r\n    169 \u001b[38;2;248;248;242;49mROW_168 value\u001b[0m\u001b[m\r\n    170 \u001b[38;2;248;248;242;49mROW_169 value\u001b[0m\u001b[m\r\n    171 \u001b[38;2;248;248;242;49mROW_170 value\u001b[0m\u001b[m\r\n    172 \u001b[38;2;248;248;242;49mROW_171 value\u001b[0m\u001b[m\r\n    173 \u001b[38;2;248;248;242;49mROW_172 value\u001b[0m\u001b[m\r\n:\u001b[K\r\u001b[K:\u001b[K1\b1\u001b[K0\b0\u001b[K0\b0\r\u001b[K \u001b[KESC\b\b\bESC\u001b[K)\b)\u001b[H\u001b[2J\u001b[H    151 \u001b[38;2;248;248;242;49mxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxRIGHT_EDGE\u001b[0m\u001b[m\r\n    152 \u001b[m\r\n    153 \u001b[m\r\n    154 \u001b[m\r\n    155 \u001b[m\r\n    156 \u001b[m\r\n    157 \u001b[m\r\n    158 \u001b[m\r\n    159 \u001b[m\r\n    160 \u001b[m\r\n    161 \u001b[m\r\n    162 \u001b[m\r\n    163 \u001b[m\r\n    164 \u001b[m\r\n    165 \u001b[m\r\n    166 \u001b[m\r\n    167 \u001b[m\r\n    168 \u001b[m\r\n    169 \u001b[m\r\n    170 \u001b[m\r\n    171 \u001b[m\r\n    172 \u001b[m\r\n    173 \u001b[m\r\n:\u001b[K\u001b[H\u001b[2J\u001b[H    151 \u001b[38;2;248;248;242;49mxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u001b[m\u001b[7m>\u001b[27m\r\n    152 \u001b[m\r\n    153 \u001b[m\r\n    154 \u001b[m\r\n    155 \u001b[m\r\n    156 \u001b[m\r\n    157 \u001b[m\r\n    158 \u001b[m\r\n    159 \u001b[m\r\n    160 \u001b[m\r\n    161 \u001b[m\r\n    162 \u001b[m\r\n    163 \u001b[m\r\n    164 \u001b[m\r\n    165 \u001b[m\r\n    166 \u001b[m\r\n    167 \u001b[m\r\n:\u001b[K\r\u001b[K \u001b[KESC\b\b\bESC\u001b[K{\b{\u001b[H\u001b[2J\u001b[H    151 \u001b[38;2;248;248;242;49mROW_150 valuexxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u001b[m\u001b[7m>\u001b[27m\r\n    152 \u001b[38;2;248;248;242;49mROW_151 value\u001b[0m\u001b[m\r\n    153 \u001b[38;2;248;248;242;49mROW_152 value\u001b[0m\u001b[m\r\n    154 \u001b[38;2;248;248;242;49mROW_153 value\u001b[0m\u001b[m\r\n    155 \u001b[38;2;248;248;242;49mROW_154 value\u001b[0m\u001b[m\r\n    156 \u001b[38;2;248;248;242;49mROW_155 value\u001b[0m\u001b[m\r\n    157 \u001b[38;2;248;248;242;49mROW_156 value\u001b[0m\u001b[m\r\n    158 \u001b[38;2;248;248;242;49mROW_157 value\u001b[0m\u001b[m\r\n    159 \u001b[38;2;248;248;242;49mROW_158 value\u001b[0m\u001b[m\r\n    160 \u001b[38;2;248;248;242;49mROW_159 value\u001b[0m\u001b[m\r\n    161 \u001b[38;2;248;248;242;49mROW_160 value\u001b[0m\u001b[m\r\n    162 \u001b[38;2;248;248;242;49mROW_161 value\u001b[0m\u001b[m\r\n    163 \u001b[38;2;248;248;242;49mROW_162 value\u001b[0m\u001b[m\r\n    164 \u001b[38;2;248;248;242;49mROW_163 value\u001b[0m\u001b[m\r\n    165 \u001b[38;2;248;248;242;49mROW_164 value\u001b[0m\u001b[m\r\n    166 \u001b[38;2;248;248;242;49mROW_165 value\u001b[0m\u001b[m\r\n    167 \u001b[38;2;248;248;242;49mROW_166 value\u001b[0m\u001b[m\r\n:\u001b[K\r\u001b[K\u001b[H\u001b[2J\u001b[H\u001bM     17 \u001b[38;2;248;248;242;49mROW_016 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     16 \u001b[38;2;248;248;242;49mROW_015 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     15 \u001b[38;2;248;248;242;49mROW_014 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     14 \u001b[38;2;248;248;242;49mROW_013 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     13 \u001b[38;2;248;248;242;49mROW_012 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     12 \u001b[38;2;248;248;242;49mROW_011 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     11 \u001b[38;2;248;248;242;49mROW_010 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM     10 \u001b[38;2;248;248;242;49mROW_009 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM      9 \u001b[38;2;248;248;242;49mROW_008 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM      8 \u001b[38;2;248;248;242;49mROW_007 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM      7 \u001b[38;2;248;248;242;49mROW_006 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM      6 \u001b[38;2;248;248;242;49mROW_005 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM      5 \u001b[38;2;248;248;242;49mROW_004 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM      4 \u001b[38;2;248;248;242;49mROW_003 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM      3 \u001b[38;2;248;248;242;49mROW_002 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM      2 \u001b[38;2;248;248;242;49mROW_001 value\u001b[0m\u001b[m\r\n\u001b[H\u001bM      1 \u001b[38;2;248;248;242;49mROW_000 value\u001b[0m\u001b[m\r\n\u001b[18;1H\r\u001b[K:\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l\u001b[23;0;0t",
+      "transcript_bytes": 19645
+    }
+  ],
+  "env": {
+    "PATH": "/tmp/pytest-of-nobody/pytest-0/test_audit_interaction_wrapper2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_audit_interaction_wrapper2",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_audit_interaction_wrapper2/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_audit_interaction_wrapper2",
+  "root": "/tmp/project",
+  "status": "pass"
+}

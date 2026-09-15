@@ -1,0 +1,53 @@
+{
+  "id": "test_audit_formats[heading.md-file]",
+  "checks": [
+    {
+      "expectation": "Content marker survives rendering",
+      "pass": true
+    },
+    {
+      "expectation": "Markdown is rendered automatically",
+      "pass": true
+    },
+    {
+      "expectation": "Successful invocation returns zero",
+      "pass": true
+    }
+  ],
+  "observations": [
+    {
+      "command": [
+        "/usr/bin/bash",
+        "-c",
+        "export LESSOPEN='|-richless --filter -- %s'; less -R heading.md"
+      ],
+      "returncode": 0,
+      "seconds": 0.25430295799992564,
+      "stdout": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503                                   \u001b[1mSENTINEL\u001b[0m                                   \u2503\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\n",
+      "stderr": "",
+      "stdout_bytes": 575
+    }
+  ],
+  "commands": [
+    [
+      "/usr/bin/bash",
+      "-c",
+      "export LESSOPEN='|-richless --filter -- %s'; less -R heading.md"
+    ]
+  ],
+  "sessions": [],
+  "env": {
+    "PATH": "/tmp/pytest-of-nobody/pytest-0/test_audit_formats_heading_md_0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_audit_formats_heading_md_0",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_audit_formats_heading_md_0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_audit_formats_heading_md_0",
+  "root": "/tmp/project",
+  "status": "pass"
+}

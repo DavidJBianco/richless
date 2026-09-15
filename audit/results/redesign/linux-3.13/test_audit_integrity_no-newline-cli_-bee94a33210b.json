@@ -1,0 +1,49 @@
+{
+  "id": "test_audit_integrity[no-newline-cli]",
+  "checks": [
+    {
+      "expectation": "Non-Markdown text content is exact after removing color codes",
+      "pass": true
+    }
+  ],
+  "observations": [
+    {
+      "command": [
+        "/usr/bin/bash",
+        "-c",
+        "richless bytes.txt"
+      ],
+      "returncode": 0,
+      "seconds": 0.1917320000000018,
+      "stdout": "ENDMARK",
+      "stderr": "",
+      "stdout_bytes": 7
+    },
+    {
+      "input_hex": "454e444d41524b",
+      "output_hex": "454e444d41524b"
+    }
+  ],
+  "commands": [
+    [
+      "/usr/bin/bash",
+      "-c",
+      "richless bytes.txt"
+    ]
+  ],
+  "sessions": [],
+  "env": {
+    "PATH": "/tmp/pytest-of-nobody/pytest-0/test_audit_integrity_no_newlin0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_audit_integrity_no_newlin0",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_audit_integrity_no_newlin0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_audit_integrity_no_newlin0",
+  "root": "/tmp/project",
+  "status": "pass"
+}

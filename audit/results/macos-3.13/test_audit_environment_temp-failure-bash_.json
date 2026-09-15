@@ -1,0 +1,55 @@
+{
+  "id": "test_audit_environment[temp-failure-bash]",
+  "checks": [
+    {
+      "expectation": "Settings/failure do not make valid content inaccessible",
+      "pass": false
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/bin/bash",
+      "-c",
+      ". /Users/bianco/projects/richless/richless-init.sh; cat file.py | less -R"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "ENV_MARKER",
+          "found": false,
+          "seconds": 3.0000522499904037
+        },
+        {
+          "keys": "b'q'"
+        },
+        {
+          "write_after_exit": "b'q'"
+        }
+      ],
+      "started": 769120.441683375,
+      "reaped": true,
+      "exitcode": 1,
+      "maxrss_native": 2129920,
+      "terminal_restored": true,
+      "transcript": "mktemp: mkstemp failed on /private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-283/test_audit_environment_temp_fa0/does-not-exist/richless.Vb4Rio: No such file or directory\r\n",
+      "transcript_bytes": 202
+    }
+  ],
+  "env": {
+    "PATH": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-283/test_audit_environment_temp_fa0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-283/test_audit_environment_temp_fa0",
+    "TMPDIR": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-283/test_audit_environment_temp_fa0/does-not-exist",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-283/test_audit_environment_temp_fa0",
+  "root": "/Users/bianco/projects/richless",
+  "status": "fail"
+}

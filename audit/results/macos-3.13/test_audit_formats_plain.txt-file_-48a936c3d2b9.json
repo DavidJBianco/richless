@@ -1,0 +1,49 @@
+{
+  "id": "test_audit_formats[plain.txt-file]",
+  "checks": [
+    {
+      "expectation": "Content marker survives rendering",
+      "pass": true
+    },
+    {
+      "expectation": "Successful invocation returns zero",
+      "pass": true
+    }
+  ],
+  "observations": [
+    {
+      "command": [
+        "/bin/bash",
+        "-c",
+        "export LESSOPEN='|richless %s'; less -R plain.txt"
+      ],
+      "returncode": 0,
+      "seconds": 0.19774933392181993,
+      "stdout": "\u001b[38;2;248;248;242;49mSENTINEL ordinary prose.\u001b[0m\n\n",
+      "stderr": "",
+      "stdout_bytes": 52
+    }
+  ],
+  "commands": [
+    [
+      "/bin/bash",
+      "-c",
+      "export LESSOPEN='|richless %s'; less -R plain.txt"
+    ]
+  ],
+  "sessions": [],
+  "env": {
+    "PATH": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-285/test_audit_formats_plain_txt_f0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-285/test_audit_formats_plain_txt_f0",
+    "TMPDIR": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-285/test_audit_formats_plain_txt_f0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-285/test_audit_formats_plain_txt_f0",
+  "root": "/Users/bianco/projects/richless",
+  "status": "pass"
+}

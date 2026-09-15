@@ -1,0 +1,33 @@
+{
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "python": "3.13.15 (main, Aug  5 2026, 12:25:43) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "packages": {
+    "rich": "14.2.0",
+    "pygments": "2.19.2",
+    "pytest": "9.0.2"
+  },
+  "shells": {
+    "bash": {
+      "path": "/bin/bash",
+      "resolved": "/bin/bash",
+      "version": "3.2.57(1)-release"
+    },
+    "zsh": {
+      "path": "/bin/zsh",
+      "resolved": "/bin/zsh",
+      "version": "5.9"
+    },
+    "sh": {
+      "path": "/bin/sh",
+      "resolved": "/bin/sh",
+      "version": "3.2.57(1)-release"
+    }
+  },
+  "shell_package_versions": null,
+  "less": "less 668 (POSIX regular expressions)\nCopyright (C) 1984-2024  Mark Nudelman\n\nless comes with NO WARRANTY, to the extent permitted by law.\nFor information about the terms of redistribution,\nsee the file named README in the less distribution.\nHome page: https://greenwoodsoftware.com/less\n",
+  "source_sha256": {
+    "richless.py": "88d9cb3e8ff1431f239c0ba9c504a1328b1a6b06ffcbfbe6206e5e9b2d0d72c9",
+    "richless-init.sh": "956303657775cbf86602b2502da8c49ab6e29e7a038edf3316f6ff38162a7e52",
+    "tests/test_richless.py": "916193342dc9c0554039b9fc4a1dffdc13043e1a22afe0e654c25253ecac93f7"
+  }
+}

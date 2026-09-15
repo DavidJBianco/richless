@@ -1,17 +1,21 @@
 [project]
 name = "richless"
-version = "0.3.2"
+version = "0.4.0"
 description = "LESSOPEN filter for Markdown rendering and syntax highlighting with less"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "rich>=13.8.0",
-    "pygments>=2.0.0",
+    "rich>=14.2.0,<15",
+    "pygments>=2.19.2,<3",
+    "markdown-it-py>=4.0.0,<5",
 ]
 
 [project.optional-dependencies]
 dev = [
     "pytest>=7.0.0",
+    "ruff>=0.11",
+    "mypy>=1.15",
+    "types-Pygments>=2.19",
 ]
 
 [project.scripts]
@@ -23,6 +27,22 @@ build-backend = "hatchling.build"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]
 
 [tool.hatch.build.targets.sdist]
 include = ["richless.py", "richless-init.sh", "LICENSE", "README.md"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"richless-init.sh" = "richless-init.sh"
+
+[tool.ruff]
+include = ["richless.py", "tests/*.py"]
+line-length = 100
+extend-exclude = ["tests/fixtures"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.mypy]
+files = ["richless.py"]
+check_untyped_defs = true

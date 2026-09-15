@@ -1,0 +1,56 @@
+{
+  "id": "test_audit_initial_position[phrase-pipe-plain-bash]",
+  "checks": [
+    {
+      "expectation": "Initial viewport reaches requested line or search match",
+      "pass": true
+    },
+    {
+      "expectation": "Initial-position invocation quits normally",
+      "pass": true
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/usr/bin/bash",
+      "-c",
+      "cat positions.txt | less -R -p 'two words'"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "POSITION_TARGET",
+          "found": true,
+          "seconds": 0.0519085000000814
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 1627.755143571,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 36964,
+      "terminal_restored": true,
+      "transcript": "\u001b[?1049h\u001b[22;0;0t\u001b[?1h\u001b=\r\r\u001b[K/\u001b[Kt\bt\u001b[Kw\bw\u001b[Ko\bo\u001b[K \b \u001b[Kw\bw\u001b[Ko\bo\u001b[Kr\br\u001b[Kd\bd\u001b[Ks\bs\r\u001b[K\u001b[24;1H\u001b[7mtwo words\u001b[27m POSITION_TARGET\u001b[m\r\nPOSITION_081\u001b[m\r\nPOSITION_082\u001b[m\r\nPOSITION_083\u001b[m\r\nPOSITION_084\u001b[m\r\nPOSITION_085\u001b[m\r\nPOSITION_086\u001b[m\r\nPOSITION_087\u001b[m\r\nPOSITION_088\u001b[m\r\nPOSITION_089\u001b[m\r\nPOSITION_090\u001b[m\r\nPOSITION_091\u001b[m\r\nPOSITION_092\u001b[m\r\nPOSITION_093\u001b[m\r\nPOSITION_094\u001b[m\r\nPOSITION_095\u001b[m\r\nPOSITION_096\u001b[m\r\nPOSITION_097\u001b[m\r\nPOSITION_098\u001b[m\r\nPOSITION_099\u001b[m\r\nPOSITION_100\u001b[m\r\nPOSITION_101\u001b[m\r\nPOSITION_102\u001b[m\r\n:\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l\u001b[23;0;0t",
+      "transcript_bytes": 540
+    }
+  ],
+  "env": {
+    "PATH": "/tmp/pytest-of-nobody/pytest-0/test_audit_initial_position_ph0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_audit_initial_position_ph0",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_audit_initial_position_ph0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_audit_initial_position_ph0",
+  "root": "/tmp/project",
+  "status": "pass"
+}

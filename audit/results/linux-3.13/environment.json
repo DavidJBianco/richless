@@ -1,0 +1,33 @@
+{
+  "platform": "Linux-7.0.12-linuxkit-aarch64-with-glibc2.36",
+  "python": "3.13.11 (main, Feb  3 2026, 03:14:20) [GCC 12.2.0]",
+  "packages": {
+    "rich": "14.2.0",
+    "pygments": "2.19.2",
+    "pytest": "9.0.2"
+  },
+  "shells": {
+    "bash": {
+      "path": "/usr/bin/bash",
+      "resolved": "/usr/bin/bash",
+      "version": "5.2.15(1)-release"
+    },
+    "zsh": {
+      "path": "/usr/bin/zsh",
+      "resolved": "/usr/bin/zsh",
+      "version": "5.9"
+    },
+    "sh": {
+      "path": "/usr/bin/sh",
+      "resolved": "/usr/bin/dash",
+      "version": ""
+    }
+  },
+  "shell_package_versions": "bash\t5.2.15-2+b13\ndash\t0.5.12-2\nless\t590-2.1~deb12u2\nzsh\t5.9-4+b15\n",
+  "less": "less 590 (GNU regular expressions)\nCopyright (C) 1984-2021  Mark Nudelman\n\nless comes with NO WARRANTY, to the extent permitted by law.\nFor information about the terms of redistribution,\nsee the file named README in the less distribution.\nHome page: https://greenwoodsoftware.com/less\n",
+  "source_sha256": {
+    "richless.py": "02b76ae861ecff7f847e0e6d6d3598502947b9c83357a9ae7b8d2367c641eb5f",
+    "richless-init.sh": "e093d2c972c55494ef1d738cee41333059ad20bb76eb8faf5c78720213311bfc",
+    "tests/test_richless.py": "759628e4c301a46aced8cfbbd2d6bd7f259db85b6160ef249e30842f2b2c6292"
+  }
+}

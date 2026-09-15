@@ -1,0 +1,49 @@
+{
+  "id": "test_audit_integrity[crlf-wrapper]",
+  "checks": [
+    {
+      "expectation": "Non-Markdown text content is exact after removing color codes",
+      "pass": true
+    }
+  ],
+  "observations": [
+    {
+      "command": [
+        "/usr/bin/bash",
+        "-c",
+        ". /tmp/project/richless-init.sh; cat bytes.txt | less -R"
+      ],
+      "returncode": 0,
+      "seconds": 0.3642937500001153,
+      "stdout": "FIRST\r\nLAST\r\n",
+      "stderr": "",
+      "stdout_bytes": 13
+    },
+    {
+      "input_hex": "46495253540d0a4c4153540d0a",
+      "output_hex": "46495253540d0a4c4153540d0a"
+    }
+  ],
+  "commands": [
+    [
+      "/usr/bin/bash",
+      "-c",
+      ". /tmp/project/richless-init.sh; cat bytes.txt | less -R"
+    ]
+  ],
+  "sessions": [],
+  "env": {
+    "PATH": "/tmp/pytest-of-nobody/pytest-0/test_audit_integrity_crlf_wrap0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_audit_integrity_crlf_wrap0",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_audit_integrity_crlf_wrap0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_audit_integrity_crlf_wrap0",
+  "root": "/tmp/project",
+  "status": "pass"
+}

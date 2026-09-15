@@ -1,0 +1,75 @@
+{
+  "id": "test_audit_stream[plain-zsh]",
+  "checks": [
+    {
+      "expectation": "First screen visible while producer remains open",
+      "pass": true
+    },
+    {
+      "expectation": "Follow displays later pipe input",
+      "pass": true
+    },
+    {
+      "expectation": "Can quit without waiting for producer EOF",
+      "pass": true
+    }
+  ],
+  "observations": [
+    {
+      "temp_files_before_harness_cleanup": []
+    }
+  ],
+  "commands": [
+    [
+      "/usr/bin/zsh",
+      "-c",
+      "less -R"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "STREAM_FIRST",
+          "found": true,
+          "seconds": 0.051032458000008774
+        },
+        {
+          "keys": "b'F'"
+        },
+        {
+          "expect": "STREAM_SECOND",
+          "found": true,
+          "seconds": 0.12268295799998441
+        },
+        {
+          "keys": "b'\\x03'"
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 412.074278562,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 39140,
+      "terminal_restored": true,
+      "transcript": "\u001b[?1049h\u001b[22;0;0t\u001b[?1h\u001b=\rSTREAM_FIRST\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\n:\u001b[K\r\u001b[Kpadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\nSTREAM_SECOND\u001b[m\r\n\u0007\u001b[H\u001b[2J\u001b[Hpadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\npadding\u001b[m\r\nSTREAM_SECOND\u001b[m\r\n:\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l\u001b[23;0;0t",
+      "transcript_bytes": 753
+    }
+  ],
+  "env": {
+    "PATH": "/tmp/pytest-of-nobody/pytest-0/test_audit_stream_plain_zsh_0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_audit_stream_plain_zsh_0",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_audit_stream_plain_zsh_0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_audit_stream_plain_zsh_0",
+  "root": "/tmp/project",
+  "status": "pass"
+}

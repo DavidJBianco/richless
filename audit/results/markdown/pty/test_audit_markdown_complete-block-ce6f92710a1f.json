@@ -1,0 +1,66 @@
+{
+  "id": "test_audit_markdown_complete-block",
+  "checks": [
+    {
+      "expectation": "Only a committed block with direct segment output appears before EOF",
+      "pass": true
+    },
+    {
+      "expectation": "Buffered content appears at EOF",
+      "pass": true
+    },
+    {
+      "expectation": "Pager quits normally",
+      "pass": true
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/bin/bash",
+      "-c",
+      "less -R"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "EARLY",
+          "found": true,
+          "seconds": 0.11036295897793025
+        },
+        {
+          "expect": "EARLY",
+          "found": true,
+          "seconds": 0.11043133400380611
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 773372.193553041,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 30064640,
+      "terminal_restored": true,
+      "transcript": "\u001b[?1049h\u001b[24;1H\u001b[?1h\u001b=\rEARLY \u001b[1mMARKER\u001b[0m.                                                                   \u001b[m\r\n\u001b[m\r\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\u001b[m\r\n\u2503                                     \u001b[1mNext\u001b[0m                                     \u2503\u001b[m\r\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b\u001b[m\r\n\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l",
+      "transcript_bytes": 744
+    }
+  ],
+  "env": {
+    "PATH": "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-md-probe-ou1_00ue/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-md-probe-ou1_00ue",
+    "TMPDIR": "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-md-probe-ou1_00ue/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1",
+    "LESSOPEN": "|-/Users/bianco/projects/richless/.venv/bin/python3 /Users/bianco/projects/richless/audit/incremental_markdown.py stream %s"
+  },
+  "cwd": "/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/richless-md-probe-ou1_00ue",
+  "root": "/Users/bianco/projects/richless",
+  "status": "pass"
+}

@@ -1,0 +1,53 @@
+{
+  "id": "test_audit_formats[unknown-pipe]",
+  "checks": [
+    {
+      "expectation": "Content marker survives rendering",
+      "pass": true
+    },
+    {
+      "expectation": "Recognized code/data has syntax colors",
+      "pass": true
+    },
+    {
+      "expectation": "Successful invocation returns zero",
+      "pass": true
+    }
+  ],
+  "observations": [
+    {
+      "command": [
+        "/usr/bin/bash",
+        "-c",
+        ". /tmp/project/richless-init.sh; cat unknown | less -R"
+      ],
+      "returncode": 0,
+      "seconds": 0.2288171659999989,
+      "stdout": "\u001b[38;2;149;144;119;49m#!/bin/sh\u001b[0m\n\u001b[38;2;248;248;242;49mecho\u001b[0m\u001b[38;2;248;248;242;49m \u001b[0m\u001b[38;2;248;248;242;49mSENTINEL\u001b[0m\n\n",
+      "stderr": "",
+      "stdout_bytes": 129
+    }
+  ],
+  "commands": [
+    [
+      "/usr/bin/bash",
+      "-c",
+      ". /tmp/project/richless-init.sh; cat unknown | less -R"
+    ]
+  ],
+  "sessions": [],
+  "env": {
+    "PATH": "/tmp/pytest-of-nobody/pytest-0/test_audit_formats_unknown_pip0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_audit_formats_unknown_pip0",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_audit_formats_unknown_pip0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_audit_formats_unknown_pip0",
+  "root": "/tmp/project",
+  "status": "pass"
+}

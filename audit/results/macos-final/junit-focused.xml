@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="25" skipped="0" tests="153" time="93.793" timestamp="2026-09-15T11:13:26.383856-04:00" hostname="biancomac-c"><testcase classname="tests.test_richless" name="test_audit_formats[code.c-file]" time="0.313" /><testcase classname="tests.test_richless" name="test_audit_formats[code.c-pipe]" time="0.253"><failure message="AssertionError: ['Recognized code/data has syntax colors']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106c96f60&gt;)">tests/test_richless.py:870: in test_audit_formats
+    audit_finish(a)
+tests/test_richless.py:668: in audit_finish
+    assert all(c['pass'] for c in item['checks']), [c['expectation'] for c in item['checks'] if not c['pass']]
+E   AssertionError: ['Recognized code/data has syntax colors']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106c96f60&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_formats[code.c-cli]" time="0.224" /><testcase classname="tests.test_richless" name="test_audit_formats[code.py-file]" time="0.321" /><testcase classname="tests.test_richless" name="test_audit_formats[code.py-pipe]" time="0.252"><failure message="AssertionError: ['Recognized code/data has syntax colors']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106e081e0&gt;)">tests/test_richless.py:870: in test_audit_formats
+    audit_finish(a)
+tests/test_richless.py:668: in audit_finish
+    assert all(c['pass'] for c in item['checks']), [c['expectation'] for c in item['checks'] if not c['pass']]
+E   AssertionError: ['Recognized code/data has syntax colors']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106e081e0&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_formats[code.py-cli]" time="0.304" /><testcase classname="tests.test_richless" name="test_audit_formats[code.PY-file]" time="0.258" /><testcase classname="tests.test_richless" name="test_audit_formats[code.PY-pipe]" time="0.254"><failure message="AssertionError: ['Recognized code/data has syntax colors']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106e0a260&gt;)">tests/test_richless.py:870: in test_audit_formats
+    audit_finish(a)
+tests/test_richless.py:668: in audit_finish
+    assert all(c['pass'] for c in item['checks']), [c['expectation'] for c in item['checks'] if not c['pass']]
+E   AssertionError: ['Recognized code/data has syntax colors']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106e0a260&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_formats[code.PY-cli]" time="0.246" /><testcase classname="tests.test_richless" name="test_audit_formats[doc.md-file]" time="0.223" /><testcase classname="tests.test_richless" name="test_audit_formats[doc.md-pipe]" time="0.234" /><testcase classname="tests.test_richless" name="test_audit_formats[doc.md-cli]" time="0.221" /><testcase classname="tests.test_richless" name="test_audit_formats[heading.md-file]" time="0.231" /><testcase classname="tests.test_richless" name="test_audit_formats[heading.md-pipe]" time="0.233"><failure message="AssertionError: ['Markdown is rendered automatically']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106e09a40&gt;)">tests/test_richless.py:870: in test_audit_formats
+    audit_finish(a)
+tests/test_richless.py:668: in audit_finish
+    assert all(c['pass'] for c in item['checks']), [c['expectation'] for c in item['checks'] if not c['pass']]
+E   AssertionError: ['Markdown is rendered automatically']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106e09a40&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_formats[heading.md-cli]" time="0.212" /><testcase classname="tests.test_richless" name="test_audit_formats[list.md-file]" time="0.219" /><testcase classname="tests.test_richless" name="test_audit_formats[list.md-pipe]" time="0.237"><failure message="AssertionError: ['Markdown is rendered automatically']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106e25490&gt;)">tests/test_richless.py:870: in test_audit_formats
+    audit_finish(a)
+tests/test_richless.py:668: in audit_finish
+    assert all(c['pass'] for c in item['checks']), [c['expectation'] for c in item['checks'] if not c['pass']]
+E   AssertionError: ['Markdown is rendered automatically']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106e25490&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_formats[list.md-cli]" time="0.218" /><testcase classname="tests.test_richless" name="test_audit_formats[conn.log-file]" time="0.222" /><testcase classname="tests.test_richless" name="test_audit_formats[conn.log-pipe]" time="0.227" /><testcase classname="tests.test_richless" name="test_audit_formats[conn.log-cli]" time="0.222" /><testcase classname="tests.test_richless" name="test_audit_formats[data.jsonl-file]" time="0.232" /><testcase classname="tests.test_richless" name="test_audit_formats[data.jsonl-pipe]" time="0.233" /><testcase classname="tests.test_richless" name="test_audit_formats[data.jsonl-cli]" time="0.219" /><testcase classname="tests.test_richless" name="test_audit_formats[config.yml-file]" time="0.226" /><testcase classname="tests.test_richless" name="test_audit_formats[config.yml-pipe]" time="0.252" /><testcase classname="tests.test_richless" name="test_audit_formats[config.yml-cli]" time="0.221" /><testcase classname="tests.test_richless" name="test_audit_formats[config.toml-file]" time="0.232" /><testcase classname="tests.test_richless" name="test_audit_formats[config.toml-pipe]" time="0.235" /><testcase classname="tests.test_richless" name="test_audit_formats[config.toml-cli]" time="0.226" /><testcase classname="tests.test_richless" name="test_audit_formats[README-file]" time="0.228"><failure message="AssertionError: ['Markdown is rendered automatically']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106d201e0&gt;)">tests/test_richless.py:870: in test_audit_formats
+    audit_finish(a)
+tests/test_richless.py:668: in audit_finish
+    assert all(c['pass'] for c in item['checks']), [c['expectation'] for c in item['checks'] if not c['pass']]
+E   AssertionError: ['Markdown is rendered automatically']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106d201e0&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_formats[README-pipe]" time="0.244" /><testcase classname="tests.test_richless" name="test_audit_formats[README-cli]" time="0.224"><failure message="AssertionError: ['Markdown is rendered automatically']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106d213c0&gt;)">tests/test_richless.py:870: in test_audit_formats
+    audit_finish(a)
+tests/test_richless.py:668: in audit_finish
+    assert all(c['pass'] for c in item['checks']), [c['expectation'] for c in item['checks'] if not c['pass']]
+E   AssertionError: ['Markdown is rendered automatically']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106d213c0&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_formats[unknown-file]" time="0.232" /><testcase classname="tests.test_richless" name="test_audit_formats[unknown-pipe]" time="0.232" /><testcase classname="tests.test_richless" name="test_audit_formats[unknown-cli]" time="0.219" /><testcase classname="tests.test_richless" name="test_audit_formats[data.xml-file]" time="0.229" /><testcase classname="tests.test_richless" name="test_audit_formats[data.xml-pipe]" time="0.238" /><testcase classname="tests.test_richless" name="test_audit_formats[data.xml-cli]" time="0.234" /><testcase classname="tests.test_richless" name="test_audit_formats[misleading.md-file]" time="0.223" /><testcase classname="tests.test_richless" name="test_audit_formats[misleading.md-pipe]" time="0.231" /><testcase classname="tests.test_richless" name="test_audit_formats[misleading.md-cli]" time="0.216" /><testcase classname="tests.test_richless" name="test_audit_formats[plain.txt-file]" time="0.225" /><testcase classname="tests.test_richless" name="test_audit_formats[plain.txt-pipe]" time="0.234" /><testcase classname="tests.test_richless" name="test_audit_formats[plain.txt-cli]" time="0.217" /><testcase classname="tests.test_richless" name="test_audit_mixed[glob-plain-bash]" time="0.411" /><testcase classname="tests.test_richless" name="test_audit_mixed[glob-plain-zsh]" time="0.405" /><testcase classname="tests.test_richless" name="test_audit_mixed[glob-plain-sh]" time="0.412" /><testcase classname="tests.test_richless" name="test_audit_mixed[glob-filter-bash]" time="0.934" /><testcase classname="tests.test_richless" name="test_audit_mixed[glob-filter-zsh]" time="0.882" /><testcase classname="tests.test_richless" name="test_audit_mixed[glob-filter-sh]" time="0.939" /><testcase classname="tests.test_richless" name="test_audit_mixed[glob-wrapper-bash]" time="0.931" /><testcase classname="tests.test_richless" name="test_audit_mixed[glob-wrapper-zsh]" time="0.923" /><testcase classname="tests.test_richless" name="test_audit_mixed[glob-wrapper-sh]" time="0.939" /><testcase classname="tests.test_richless" name="test_audit_mixed[reverse-plain-bash]" time="0.416" /><testcase classname="tests.test_richless" name="test_audit_mixed[reverse-plain-zsh]" time="0.416" /><testcase classname="tests.test_richless" name="test_audit_mixed[reverse-plain-sh]" time="0.406" /><testcase classname="tests.test_richless" name="test_audit_mixed[reverse-filter-bash]" time="0.929" /><testcase classname="tests.test_richless" name="test_audit_mixed[reverse-filter-zsh]" time="0.932" /><testcase classname="tests.test_richless" name="test_audit_mixed[reverse-filter-sh]" time="0.940" /><testcase classname="tests.test_richless" name="test_audit_mixed[reverse-wrapper-bash]" time="0.873" /><testcase classname="tests.test_richless" name="test_audit_mixed[reverse-wrapper-zsh]" time="0.877" /><testcase classname="tests.test_richless" name="test_audit_mixed[reverse-wrapper-sh]" time="0.910" /><testcase classname="tests.test_richless" name="test_audit_mixed[spaces-plain-bash]" time="0.413" /><testcase classname="tests.test_richless" name="test_audit_mixed[spaces-plain-zsh]" time="0.403" /><testcase classname="tests.test_richless" name="test_audit_mixed[spaces-plain-sh]" time="0.407" /><testcase classname="tests.test_richless" name="test_audit_mixed[spaces-filter-bash]" time="0.928" /><testcase classname="tests.test_richless" name="test_audit_mixed[spaces-filter-zsh]" time="0.884" /><testcase classname="tests.test_richless" name="test_audit_mixed[spaces-filter-sh]" time="0.878" /><testcase classname="tests.test_richless" name="test_audit_mixed[spaces-wrapper-bash]" time="0.937" /><testcase classname="tests.test_richless" name="test_audit_mixed[spaces-wrapper-zsh]" time="0.932" /><testcase classname="tests.test_richless" name="test_audit_mixed[spaces-wrapper-sh]" time="0.929" /><testcase classname="tests.test_richless" name="test_audit_mixed[forced-plain-bash]" time="0.404" /><testcase classname="tests.test_richless" name="test_audit_mixed[forced-plain-zsh]" time="0.415" /><testcase classname="tests.test_richless" name="test_audit_mixed[forced-plain-sh]" time="0.410" /><testcase classname="tests.test_richless" name="test_audit_mixed[forced-filter-bash]" time="0.831" /><testcase classname="tests.test_richless" name="test_audit_mixed[forced-filter-zsh]" time="0.826" /><testcase classname="tests.test_richless" name="test_audit_mixed[forced-filter-sh]" time="0.822" /><testcase classname="tests.test_richless" name="test_audit_mixed[forced-wrapper-bash]" time="11.077"><failure message="AssertionError: ['Display identity a.c', 'Visit b.py in requested navigation order', 'Display identity b.py', 'Visit c.md in requested navigation order', 'Display identity c.md', 'Visit b.py in requested navigation order', ...]&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x1068f4ba0&gt;)">tests/test_richless.py:922: in test_audit_mixed
+    audit_finish(a)
+tests/test_richless.py:668: in audit_finish
+    assert all(c['pass'] for c in item['checks']), [c['expectation'] for c in item['checks'] if not c['pass']]
+E   AssertionError: ['Display identity a.c', 'Visit b.py in requested navigation order', 'Display identity b.py', 'Visit c.md in requested navigation order', 'Display identity c.md', 'Visit b.py in requested navigation order', ...]
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x1068f4ba0&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_mixed[forced-wrapper-zsh]" time="9.523"><failure message="AssertionError: ['Visit a.c in requested navigation order', 'Visit b.py in requested navigation order', 'Display identity b.py', 'Visit c.md in requested navigation order', 'Display identity c.md', 'Visit b.py in requested navigation order', ...]&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x1068f6260&gt;)">tests/test_richless.py:922: in test_audit_mixed
+    audit_finish(a)
+tests/test_richless.py:668: in audit_finish
+    assert all(c['pass'] for c in item['checks']), [c['expectation'] for c in item['checks'] if not c['pass']]
+E   AssertionError: ['Visit a.c in requested navigation order', 'Visit b.py in requested navigation order', 'Display identity b.py', 'Visit c.md in requested navigation order', 'Display identity c.md', 'Visit b.py in requested navigation order', ...]
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x1068f6260&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_mixed[forced-wrapper-sh]" time="11.055"><failure message="AssertionError: ['Display identity a.c', 'Visit b.py in requested navigation order', 'Display identity b.py', 'Visit c.md in requested navigation order', 'Display identity c.md', 'Visit b.py in requested navigation order', ...]&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x1068f64d0&gt;)">tests/test_richless.py:922: in test_audit_mixed
+    audit_finish(a)
+tests/test_richless.py:668: in audit_finish
+    assert all(c['pass'] for c in item['checks']), [c['expectation'] for c in item['checks'] if not c['pass']]
+E   AssertionError: ['Display identity a.c', 'Visit b.py in requested navigation order', 'Display identity b.py', 'Visit c.md in requested navigation order', 'Display identity c.md', 'Visit b.py in requested navigation order', ...]
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x1068f64d0&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_mixed[data-plain-plain-bash]" time="0.403" /><testcase classname="tests.test_richless" name="test_audit_mixed[data-plain-plain-zsh]" time="0.409" /><testcase classname="tests.test_richless" name="test_audit_mixed[data-plain-plain-sh]" time="0.413" /><testcase classname="tests.test_richless" name="test_audit_mixed[data-plain-filter-bash]" time="0.833" /><testcase classname="tests.test_richless" name="test_audit_mixed[data-plain-filter-zsh]" time="0.823" /><testcase classname="tests.test_richless" name="test_audit_mixed[data-plain-filter-sh]" time="0.825" /><testcase classname="tests.test_richless" name="test_audit_mixed[data-plain-wrapper-bash]" time="0.831" /><testcase classname="tests.test_richless" name="test_audit_mixed[data-plain-wrapper-zsh]" time="0.849" /><testcase classname="tests.test_richless" name="test_audit_mixed[data-plain-wrapper-sh]" time="0.844" /><testcase classname="tests.test_richless" name="test_audit_arguments[spaces-plain-bash]" time="0.099" /><testcase classname="tests.test_richless" name="test_audit_arguments[spaces-plain-zsh]" time="0.100" /><testcase classname="tests.test_richless" name="test_audit_arguments[spaces-plain-sh]" time="0.097" /><testcase classname="tests.test_richless" name="test_audit_arguments[spaces-filter-bash]" time="0.309" /><testcase classname="tests.test_richless" name="test_audit_arguments[spaces-filter-zsh]" time="0.319" /><testcase classname="tests.test_richless" name="test_audit_arguments[spaces-filter-sh]" time="0.313" /><testcase classname="tests.test_richless" name="test_audit_arguments[spaces-wrapper-bash]" time="0.316" /><testcase classname="tests.test_richless" name="test_audit_arguments[spaces-wrapper-zsh]" time="0.311" /><testcase classname="tests.test_richless" name="test_audit_arguments[spaces-wrapper-sh]" time="0.368" /><testcase classname="tests.test_richless" name="test_audit_arguments[quotes-plain-bash]" time="0.098" /><testcase classname="tests.test_richless" name="test_audit_arguments[quotes-plain-zsh]" time="0.096" /><testcase classname="tests.test_richless" name="test_audit_arguments[quotes-plain-sh]" time="0.096" /><testcase classname="tests.test_richless" name="test_audit_arguments[quotes-filter-bash]" time="0.371" /><testcase classname="tests.test_richless" name="test_audit_arguments[quotes-filter-zsh]" time="0.265" /><testcase classname="tests.test_richless" name="test_audit_arguments[quotes-filter-sh]" time="0.312" /><testcase classname="tests.test_richless" name="test_audit_arguments[quotes-wrapper-bash]" time="0.312" /><testcase classname="tests.test_richless" name="test_audit_arguments[quotes-wrapper-zsh]" time="0.316" /><testcase classname="tests.test_richless" name="test_audit_arguments[quotes-wrapper-sh]" time="0.261" /><testcase classname="tests.test_richless" name="test_audit_arguments[metacharacters-plain-bash]" time="0.101" /><testcase classname="tests.test_richless" name="test_audit_arguments[metacharacters-plain-zsh]" time="0.101" /><testcase classname="tests.test_richless" name="test_audit_arguments[metacharacters-plain-sh]" time="0.103" /><testcase classname="tests.test_richless" name="test_audit_arguments[metacharacters-filter-bash]" time="0.365" /><testcase classname="tests.test_richless" name="test_audit_arguments[metacharacters-filter-zsh]" time="0.263" /><testcase classname="tests.test_richless" name="test_audit_arguments[metacharacters-filter-sh]" time="0.315" /><testcase classname="tests.test_richless" name="test_audit_arguments[metacharacters-wrapper-bash]" time="0.260" /><testcase classname="tests.test_richless" name="test_audit_arguments[metacharacters-wrapper-zsh]" time="0.258" /><testcase classname="tests.test_richless" name="test_audit_arguments[metacharacters-wrapper-sh]" time="0.260" /><testcase classname="tests.test_richless" name="test_audit_arguments[whitespace-plain-bash]" time="0.097" /><testcase classname="tests.test_richless" name="test_audit_arguments[whitespace-plain-zsh]" time="0.098" /><testcase classname="tests.test_richless" name="test_audit_arguments[whitespace-plain-sh]" time="0.100" /><testcase classname="tests.test_richless" name="test_audit_arguments[whitespace-filter-bash]" time="0.366"><failure message="AssertionError: ['Valid code filename retains syntax highlighting']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106894e10&gt;)">tests/test_richless.py:971: in test_audit_arguments
+    audit_check(a, audit_exited(s), 'Quit exits normally')
+    ^^^^^^^^^^^^^^^
+tests/test_richless.py:668: in audit_finish
+    def audit_finish(item: dict) -&gt; None:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: ['Valid code filename retains syntax highlighting']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106894e10&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_arguments[whitespace-filter-zsh]" time="0.260"><failure message="AssertionError: ['Valid code filename retains syntax highlighting']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106896400&gt;)">tests/test_richless.py:971: in test_audit_arguments
+    audit_check(a, audit_exited(s), 'Quit exits normally')
+    ^^^^^^^^^^^^^^^
+tests/test_richless.py:668: in audit_finish
+    def audit_finish(item: dict) -&gt; None:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: ['Valid code filename retains syntax highlighting']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106896400&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_arguments[whitespace-filter-sh]" time="0.259"><failure message="AssertionError: ['Valid code filename retains syntax highlighting']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106896b50&gt;)">tests/test_richless.py:971: in test_audit_arguments
+    audit_check(a, audit_exited(s), 'Quit exits normally')
+    ^^^^^^^^^^^^^^^
+tests/test_richless.py:668: in audit_finish
+    def audit_finish(item: dict) -&gt; None:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: ['Valid code filename retains syntax highlighting']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106896b50&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_arguments[whitespace-wrapper-bash]" time="0.256"><failure message="AssertionError: ['Valid code filename retains syntax highlighting']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106894520&gt;)">tests/test_richless.py:971: in test_audit_arguments
+    audit_check(a, audit_exited(s), 'Quit exits normally')
+    ^^^^^^^^^^^^^^^
+tests/test_richless.py:668: in audit_finish
+    def audit_finish(item: dict) -&gt; None:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: ['Valid code filename retains syntax highlighting']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106894520&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_arguments[whitespace-wrapper-zsh]" time="0.263"><failure message="AssertionError: ['Valid code filename retains syntax highlighting']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x1068a8fb0&gt;)">tests/test_richless.py:971: in test_audit_arguments
+    audit_check(a, audit_exited(s), 'Quit exits normally')
+    ^^^^^^^^^^^^^^^
+tests/test_richless.py:668: in audit_finish
+    def audit_finish(item: dict) -&gt; None:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: ['Valid code filename retains syntax highlighting']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x1068a8fb0&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_arguments[whitespace-wrapper-sh]" time="0.314"><failure message="AssertionError: ['Valid code filename retains syntax highlighting']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x1068aa400&gt;)">tests/test_richless.py:971: in test_audit_arguments
+    audit_check(a, audit_exited(s), 'Quit exits normally')
+    ^^^^^^^^^^^^^^^
+tests/test_richless.py:668: in audit_finish
+    def audit_finish(item: dict) -&gt; None:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: ['Valid code filename retains syntax highlighting']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x1068aa400&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_arguments[leading-dash-plain-bash]" time="0.097" /><testcase classname="tests.test_richless" name="test_audit_arguments[leading-dash-plain-zsh]" time="0.100" /><testcase classname="tests.test_richless" name="test_audit_arguments[leading-dash-plain-sh]" time="0.101" /><testcase classname="tests.test_richless" name="test_audit_arguments[leading-dash-filter-bash]" time="0.307"><failure message="AssertionError: ['Valid code filename retains syntax highlighting']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x1068aa190&gt;)">tests/test_richless.py:971: in test_audit_arguments
+    audit_check(a, audit_exited(s), 'Quit exits normally')
+    ^^^^^^^^^^^^^^^
+tests/test_richless.py:668: in audit_finish
+    def audit_finish(item: dict) -&gt; None:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: ['Valid code filename retains syntax highlighting']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x1068aa190&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_arguments[leading-dash-filter-zsh]" time="0.261"><failure message="AssertionError: ['Valid code filename retains syntax highlighting']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106824c70&gt;)">tests/test_richless.py:971: in test_audit_arguments
+    audit_check(a, audit_exited(s), 'Quit exits normally')
+    ^^^^^^^^^^^^^^^
+tests/test_richless.py:668: in audit_finish
+    def audit_finish(item: dict) -&gt; None:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: ['Valid code filename retains syntax highlighting']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106824c70&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_arguments[leading-dash-filter-sh]" time="0.256"><failure message="AssertionError: ['Valid code filename retains syntax highlighting']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x1068aacf0&gt;)">tests/test_richless.py:971: in test_audit_arguments
+    audit_check(a, audit_exited(s), 'Quit exits normally')
+    ^^^^^^^^^^^^^^^
+tests/test_richless.py:668: in audit_finish
+    def audit_finish(item: dict) -&gt; None:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: ['Valid code filename retains syntax highlighting']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x1068aacf0&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_arguments[leading-dash-wrapper-bash]" time="0.258"><failure message="AssertionError: ['Valid code filename retains syntax highlighting']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106896e90&gt;)">tests/test_richless.py:971: in test_audit_arguments
+    audit_check(a, audit_exited(s), 'Quit exits normally')
+    ^^^^^^^^^^^^^^^
+tests/test_richless.py:668: in audit_finish
+    def audit_finish(item: dict) -&gt; None:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: ['Valid code filename retains syntax highlighting']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106896e90&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_arguments[leading-dash-wrapper-zsh]" time="0.256"><failure message="AssertionError: ['Valid code filename retains syntax highlighting']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x1068960c0&gt;)">tests/test_richless.py:971: in test_audit_arguments
+    audit_check(a, audit_exited(s), 'Quit exits normally')
+    ^^^^^^^^^^^^^^^
+tests/test_richless.py:668: in audit_finish
+    def audit_finish(item: dict) -&gt; None:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: ['Valid code filename retains syntax highlighting']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x1068960c0&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_arguments[leading-dash-wrapper-sh]" time="0.259"><failure message="AssertionError: ['Valid code filename retains syntax highlighting']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x1068279f0&gt;)">tests/test_richless.py:971: in test_audit_arguments
+    audit_check(a, audit_exited(s), 'Quit exits normally')
+    ^^^^^^^^^^^^^^^
+tests/test_richless.py:668: in audit_finish
+    def audit_finish(item: dict) -&gt; None:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: ['Valid code filename retains syntax highlighting']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x1068279f0&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_arguments[dash-m-plain-bash]" time="0.099" /><testcase classname="tests.test_richless" name="test_audit_arguments[dash-m-plain-zsh]" time="0.099" /><testcase classname="tests.test_richless" name="test_audit_arguments[dash-m-plain-sh]" time="0.093" /><testcase classname="tests.test_richless" name="test_audit_arguments[dash-m-filter-bash]" time="0.365" /><testcase classname="tests.test_richless" name="test_audit_arguments[dash-m-filter-zsh]" time="0.253" /><testcase classname="tests.test_richless" name="test_audit_arguments[dash-m-filter-sh]" time="0.259" /><testcase classname="tests.test_richless" name="test_audit_arguments[dash-m-wrapper-bash]" time="0.255"><failure message="AssertionError: ['Valid code filename retains syntax highlighting']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x1068e7850&gt;)">tests/test_richless.py:971: in test_audit_arguments
+    audit_check(a, audit_exited(s), 'Quit exits normally')
+    ^^^^^^^^^^^^^^^
+tests/test_richless.py:668: in audit_finish
+    def audit_finish(item: dict) -&gt; None:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: ['Valid code filename retains syntax highlighting']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x1068e7850&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_arguments[dash-m-wrapper-zsh]" time="3.021"><failure message="AssertionError: ['Filename resolves to the requested content', 'Valid code filename retains syntax highlighting']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106827b90&gt;)">tests/test_richless.py:971: in test_audit_arguments
+    audit_check(a, audit_exited(s), 'Quit exits normally')
+    ^^^^^^^^^^^^^^^
+tests/test_richless.py:668: in audit_finish
+    def audit_finish(item: dict) -&gt; None:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: ['Filename resolves to the requested content', 'Valid code filename retains syntax highlighting']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106827b90&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_arguments[dash-m-wrapper-sh]" time="0.317"><failure message="AssertionError: ['Valid code filename retains syntax highlighting']&#10;assert False&#10; +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106824040&gt;)">tests/test_richless.py:971: in test_audit_arguments
+    audit_check(a, audit_exited(s), 'Quit exits normally')
+    ^^^^^^^^^^^^^^^
+tests/test_richless.py:668: in audit_finish
+    def audit_finish(item: dict) -&gt; None:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: ['Valid code filename retains syntax highlighting']
+E   assert False
+E    +  where False = all(&lt;generator object audit_finish.&lt;locals&gt;.&lt;genexpr&gt; at 0x106824040&gt;)</failure></testcase><testcase classname="tests.test_richless" name="test_audit_mixed_obstacle[empty-plain]" time="0.364" /><testcase classname="tests.test_richless" name="test_audit_mixed_obstacle[empty-filter]" time="0.888" /><testcase classname="tests.test_richless" name="test_audit_mixed_obstacle[empty-wrapper]" time="0.882" /><testcase classname="tests.test_richless" name="test_audit_mixed_obstacle[binary-plain]" time="0.389" /><testcase classname="tests.test_richless" name="test_audit_mixed_obstacle[binary-filter]" time="0.774" /><testcase classname="tests.test_richless" name="test_audit_mixed_obstacle[binary-wrapper]" time="0.772" /><testcase classname="tests.test_richless" name="test_audit_mixed_obstacle[unreadable-plain]" time="0.280" /><testcase classname="tests.test_richless" name="test_audit_mixed_obstacle[unreadable-filter]" time="0.707" /><testcase classname="tests.test_richless" name="test_audit_mixed_obstacle[unreadable-wrapper]" time="0.646" /></testsuite></testsuites>

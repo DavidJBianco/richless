@@ -1,0 +1,64 @@
+{
+  "id": "test_audit_arguments[spaces-wrapper-zsh]",
+  "checks": [
+    {
+      "expectation": "Filename resolves to the requested content",
+      "pass": true
+    },
+    {
+      "expectation": "Valid code filename retains syntax highlighting",
+      "pass": true
+    },
+    {
+      "expectation": "Quit exits normally",
+      "pass": true
+    },
+    {
+      "expectation": "Filename metacharacters are never executed",
+      "pass": true
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/bin/zsh",
+      "-c",
+      ". /Users/bianco/projects/richless/richless-init.sh; less -R -- 'two words.py'"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "ARG_MARKER",
+          "found": true,
+          "seconds": 0.26546608400531113
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 769099.115375791,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 31227904,
+      "terminal_restored": true,
+      "transcript": "\u001b[?1049h\u001b[24;1H\u001b[?1h\u001b=\r\u001b[38;2;102;217;239;49mdef\u001b[0m\u001b[38;2;248;248;242;49m \u001b[0m\u001b[38;2;166;226;46;49msample\u001b[0m\u001b[38;2;248;248;242;49m(\u001b[0m\u001b[38;2;248;248;242;49m)\u001b[0m\u001b[38;2;248;248;242;49m:\u001b[0m\u001b[m\r\n\u001b[38;2;248;248;242;49m    \u001b[0m\u001b[38;2;102;217;239;49mreturn\u001b[0m\u001b[38;2;248;248;242;49m \u001b[0m\u001b[38;2;230;219;116;49m\"\u001b[0m\u001b[38;2;230;219;116;49mARG_MARKER\u001b[0m\u001b[38;2;230;219;116;49m\"\u001b[0m\u001b[m\r\n\u001b[m\r\n\u001b[7mtwo words.py (END)\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l",
+      "transcript_bytes": 434
+    }
+  ],
+  "env": {
+    "PATH": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-283/test_audit_arguments_spaces_wr1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-283/test_audit_arguments_spaces_wr1",
+    "TMPDIR": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-283/test_audit_arguments_spaces_wr1/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-283/test_audit_arguments_spaces_wr1",
+  "root": "/Users/bianco/projects/richless",
+  "status": "pass"
+}

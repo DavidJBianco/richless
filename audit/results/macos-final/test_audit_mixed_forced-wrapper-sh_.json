@@ -1,0 +1,149 @@
+{
+  "id": "test_audit_mixed[forced-wrapper-sh]",
+  "checks": [
+    {
+      "expectation": "Visit a.c in requested navigation order",
+      "pass": true
+    },
+    {
+      "expectation": "Display identity a.c",
+      "pass": false
+    },
+    {
+      "expectation": "Visit b.py in requested navigation order",
+      "pass": false
+    },
+    {
+      "expectation": "Display identity b.py",
+      "pass": false
+    },
+    {
+      "expectation": "Visit c.md in requested navigation order",
+      "pass": false
+    },
+    {
+      "expectation": "Display identity c.md",
+      "pass": false
+    },
+    {
+      "expectation": "Visit b.py in requested navigation order",
+      "pass": false
+    },
+    {
+      "expectation": "Display identity b.py",
+      "pass": false
+    },
+    {
+      "expectation": "Visit a.c in requested navigation order",
+      "pass": false
+    },
+    {
+      "expectation": "Display identity a.c",
+      "pass": false
+    },
+    {
+      "expectation": "One quit exits the multi-file session",
+      "pass": false
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/bin/sh",
+      "-c",
+      ". /Users/bianco/projects/richless/richless-init.sh; less -R --md a.c b.py c.md"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "C_MARKER",
+          "found": true,
+          "seconds": 0.2690377499675378
+        },
+        {
+          "expect": "a.c",
+          "found": false,
+          "seconds": 0.7732114170212299
+        },
+        {
+          "keys": "b':n\\n'"
+        },
+        {
+          "expect": "PY_MARKER",
+          "found": false,
+          "seconds": 2.299514167010784
+        },
+        {
+          "expect": "b.py",
+          "found": false,
+          "seconds": 2.8032535000238568
+        },
+        {
+          "keys": "b':n\\n'"
+        },
+        {
+          "expect": "MD_MARKER",
+          "found": false,
+          "seconds": 4.331608250038698
+        },
+        {
+          "expect": "c.md",
+          "found": false,
+          "seconds": 4.8353945419657975
+        },
+        {
+          "keys": "b':p\\n'"
+        },
+        {
+          "expect": "PY_MARKER",
+          "found": false,
+          "seconds": 6.360547167016193
+        },
+        {
+          "expect": "b.py",
+          "found": false,
+          "seconds": 6.8609118750318885
+        },
+        {
+          "keys": "b':p\\n'"
+        },
+        {
+          "expect": "C_MARKER",
+          "found": false,
+          "seconds": 8.382627708953805
+        },
+        {
+          "expect": "a.c",
+          "found": false,
+          "seconds": 8.884928209008649
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 769236.734779416,
+      "reaped": false,
+      "terminal_restored": false,
+      "exitcode": -9,
+      "maxrss_native": 29671424,
+      "transcript": "\u001b[?1049h\u001b[24;1H\u001b[?1h\u001b=\rint main(void) { return 7; } // C_MARKER                                                            \u001b[m\r\n\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kn\bn...skipping...\r\nint main(void) { return 7; } // C_MARKER                                                            \u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\r\u001b[K\u001b[7mNo next file  (press RETURN)\u001b[27m\u001b[24;1H\u001b[K\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kn\bn\r\u001b[K\u001b[7mNo next file  (press RETURN)\u001b[27m\u001b[24;1H\u001b[K\r\u001b[K\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kp\bp\r\u001b[K\u001b[7mNo previous file  (press RETURN)\u001b[27m\u001b[24;1H\u001b[K\r\u001b[K\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kp\bp\r\u001b[K\u001b[7mNo previous file  (press RETURN)\u001b[27m\u001b[24;1H\u001b[K\r\u001b[K\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l\u001b[?1049h\u001b[24;1H\u001b[?1h\u001b=\rdef sample(): return \"PY_MARKER\"                                                                    \u001b[m\r\n\u001b[7m(END)\u001b[27m\u001b[K",
+      "transcript_bytes": 1032
+    }
+  ],
+  "env": {
+    "PATH": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-284/test_audit_mixed_forced_wrappe2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-284/test_audit_mixed_forced_wrappe2",
+    "TMPDIR": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-284/test_audit_mixed_forced_wrappe2/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-284/test_audit_mixed_forced_wrappe2",
+  "root": "/Users/bianco/projects/richless",
+  "status": "fail"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "test_audit_formats[plain.txt-pipe]",
+  "checks": [
+    {
+      "expectation": "Content marker survives rendering",
+      "pass": true
+    },
+    {
+      "expectation": "Successful invocation returns zero",
+      "pass": true
+    }
+  ],
+  "observations": [
+    {
+      "command": [
+        "/usr/bin/bash",
+        "-c",
+        ". /tmp/project/richless-init.sh; cat plain.txt | less -R"
+      ],
+      "returncode": 0,
+      "seconds": 0.25388687599991044,
+      "stdout": "\u001b[38;2;248;248;242;49mSENTINEL ordinary prose.\u001b[0m\n\n",
+      "stderr": "",
+      "stdout_bytes": 52
+    }
+  ],
+  "commands": [
+    [
+      "/usr/bin/bash",
+      "-c",
+      ". /tmp/project/richless-init.sh; cat plain.txt | less -R"
+    ]
+  ],
+  "sessions": [],
+  "env": {
+    "PATH": "/tmp/pytest-of-nobody/pytest-0/test_audit_formats_plain_txt_p0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_audit_formats_plain_txt_p0",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_audit_formats_plain_txt_p0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_audit_formats_plain_txt_p0",
+  "root": "/tmp/project",
+  "status": "pass"
+}

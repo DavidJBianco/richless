@@ -1,0 +1,52 @@
+{
+  "id": "test_audit_environment[pipe-search-zsh]",
+  "checks": [
+    {
+      "expectation": "Settings/failure do not make valid content inaccessible",
+      "pass": true
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/bin/zsh",
+      "-c",
+      ". /Users/bianco/projects/richless/richless-init.sh; cat file.py | less -R -p 'ENV_MARKER'"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "ENV_MARKER",
+          "found": true,
+          "seconds": 0.052463750005699694
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 768984.915755208,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 29474816,
+      "terminal_restored": true,
+      "transcript": " -R -p ENV_MARKER: No such file or directory\r\nq",
+      "transcript_bytes": 47
+    }
+  ],
+  "env": {
+    "PATH": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-279/test_audit_environment_pipe_se1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-279/test_audit_environment_pipe_se1",
+    "TMPDIR": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-279/test_audit_environment_pipe_se1/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/private/var/folders/ym/jxk5hyt93yg88skz3wjy00p80000gn/T/pytest-of-bianco/pytest-279/test_audit_environment_pipe_se1",
+  "root": "/Users/bianco/projects/richless",
+  "status": "pass"
+}

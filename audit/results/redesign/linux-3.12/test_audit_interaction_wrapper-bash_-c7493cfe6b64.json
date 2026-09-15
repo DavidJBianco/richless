@@ -1,0 +1,156 @@
+{
+  "id": "test_audit_interaction[wrapper-bash]",
+  "checks": [
+    {
+      "expectation": "Initial viewport",
+      "pass": true
+    },
+    {
+      "expectation": "Forward search",
+      "pass": true
+    },
+    {
+      "expectation": "Repeat search",
+      "pass": true
+    },
+    {
+      "expectation": "Reverse repeat search",
+      "pass": true
+    },
+    {
+      "expectation": "Backward search",
+      "pass": true
+    },
+    {
+      "expectation": "Go to start",
+      "pass": true
+    },
+    {
+      "expectation": "Page forward",
+      "pass": true
+    },
+    {
+      "expectation": "Horizontal navigation reaches long-line suffix",
+      "pass": true
+    },
+    {
+      "expectation": "Content survives terminal resize",
+      "pass": true
+    },
+    {
+      "expectation": "Quit after resizing",
+      "pass": true
+    },
+    {
+      "expectation": "Restore terminal after interactive commands",
+      "pass": true
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/usr/bin/bash",
+      "-c",
+      ". /tmp/project/richless-init.sh; less -R -N -S navigation.txt"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "ROW_000",
+          "found": true,
+          "seconds": 0.412088833000098
+        },
+        {
+          "keys": "b'/NEEDLE\\n'"
+        },
+        {
+          "expect": "ROW_060",
+          "found": true,
+          "seconds": 0.49257299999999304
+        },
+        {
+          "keys": "b'n'"
+        },
+        {
+          "expect": "ROW_120",
+          "found": true,
+          "seconds": 0.5656225000000177
+        },
+        {
+          "keys": "b'N'"
+        },
+        {
+          "expect": "ROW_060",
+          "found": true,
+          "seconds": 0.6507360000000517
+        },
+        {
+          "keys": "b'G?NEEDLE\\n'"
+        },
+        {
+          "expect": "ROW_120",
+          "found": true,
+          "seconds": 0.7269497920001413
+        },
+        {
+          "keys": "b'g'"
+        },
+        {
+          "expect": "ROW_000",
+          "found": true,
+          "seconds": 0.8027393750001011
+        },
+        {
+          "keys": "b' '"
+        },
+        {
+          "expect": "ROW_030",
+          "found": true,
+          "seconds": 0.876935167000056
+        },
+        {
+          "keys": "b'151g100\\x1b)'"
+        },
+        {
+          "expect": "RIGHT_EDGE",
+          "found": true,
+          "seconds": 0.9519612500000676
+        },
+        {
+          "keys": "b'\\x1b{g'"
+        },
+        {
+          "expect": "ROW_000",
+          "found": true,
+          "seconds": 1.0290725419999944
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 1607.614483229,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 37500,
+      "terminal_restored": true,
+      "transcript": "\u001b[?1049h\u001b[22;0;0t\u001b[?1h\u001b=\r      1 ROW_000 value\u001b[m\r\n      2 ROW_001 value\u001b[m\r\n      3 ROW_002 value\u001b[m\r\n      4 ROW_003 value\u001b[m\r\n      5 ROW_004 value\u001b[m\r\n      6 ROW_005 value\u001b[m\r\n      7 ROW_006 value\u001b[m\r\n      8 ROW_007 value\u001b[m\r\n      9 ROW_008 value\u001b[m\r\n     10 ROW_009 value\u001b[m\r\n     11 ROW_010 value\u001b[m\r\n     12 ROW_011 value\u001b[m\r\n     13 ROW_012 value\u001b[m\r\n     14 ROW_013 value\u001b[m\r\n     15 ROW_014 value\u001b[m\r\n     16 ROW_015 value\u001b[m\r\n     17 ROW_016 value\u001b[m\r\n     18 ROW_017 value\u001b[m\r\n     19 ROW_018 value\u001b[m\r\n     20 ROW_019 value\u001b[m\r\n     21 ROW_020 value\u001b[m\r\n     22 ROW_021 value\u001b[m\r\n     23 ROW_022 value\u001b[m\r\n\u001b[7mnavigation.txt\u001b[27m\u001b[K\r\u001b[K/\u001b[KN\bN\u001b[KE\bE\u001b[KE\bE\u001b[KD\bD\u001b[KL\bL\u001b[KE\bE\r\u001b[K\u001b[1;1H      1 ROW_000 value\u001b[m\r\n\u001b[2;1H      2 ROW_001 value\u001b[m\r\n\u001b[3;1H      3 ROW_002 value\u001b[m\r\n\u001b[4;1H      4 ROW_003 value\u001b[m\r\n\u001b[5;1H      5 ROW_004 value\u001b[m\r\n\u001b[6;1H      6 ROW_005 value\u001b[m\r\n\u001b[7;1H      7 ROW_006 value\u001b[m\r\n\u001b[8;1H      8 ROW_007 value\u001b[m\r\n\u001b[9;1H      9 ROW_008 value\u001b[m\r\n\u001b[10;1H     10 ROW_009 value\u001b[m\r\n\u001b[11;1H     11 ROW_010 value\u001b[m\r\n\u001b[12;1H     12 ROW_011 value\u001b[m\r\n\u001b[13;1H     13 ROW_012 value\u001b[m\r\n\u001b[14;1H     14 ROW_013 value\u001b[m\r\n\u001b[15;1H     15 ROW_014 value\u001b[m\r\n\u001b[16;1H     16 ROW_015 value\u001b[m\r\n\u001b[17;1H     17 ROW_016 value\u001b[m\r\n\u001b[18;1H     18 ROW_017 value\u001b[m\r\n\u001b[19;1H     19 ROW_018 value\u001b[m\r\n\u001b[20;1H     20 ROW_019 value\u001b[m\r\n\u001b[21;1H     21 ROW_020 value\u001b[m\r\n\u001b[22;1H     22 ROW_021 value\u001b[m\r\n\u001b[23;1H     23 ROW_022 value\u001b[m\r\n\u001b[24;1H\u001b[1;1H      1 ROW_000 value\u001b[m\r\n\u001b[2;1H      2 ROW_001 value\u001b[m\r\n\u001b[3;1H      3 ROW_002 value\u001b[m\r\n\u001b[4;1H      4 ROW_003 value\u001b[m\r\n\u001b[5;1H      5 ROW_004 value\u001b[m\r\n\u001b[6;1H      6 ROW_005 value\u001b[m\r\n\u001b[7;1H      7 ROW_006 value\u001b[m\r\n\u001b[8;1H      8 ROW_007 value\u001b[m\r\n\u001b[9;1H      9 ROW_008 value\u001b[m\r\n\u001b[10;1H     10 ROW_009 value\u001b[m\r\n\u001b[11;1H     11 ROW_010 value\u001b[m\r\n\u001b[12;1H     12 ROW_011 value\u001b[m\r\n\u001b[13;1H     13 ROW_012 value\u001b[m\r\n\u001b[14;1H     14 ROW_013 value\u001b[m\r\n\u001b[15;1H     15 ROW_014 value\u001b[m\r\n\u001b[16;1H     16 ROW_015 value\u001b[m\r\n\u001b[17;1H     17 ROW_016 value\u001b[m\r\n\u001b[18;1H     18 ROW_017 value\u001b[m\r\n\u001b[19;1H     19 ROW_018 value\u001b[m\r\n\u001b[20;1H     20 ROW_019 value\u001b[m\r\n\u001b[21;1H     21 ROW_020 value\u001b[m\r\n\u001b[22;1H     22 ROW_021 value\u001b[m\r\n\u001b[23;1H     23 ROW_022 value\u001b[m\r\n\u001b[24;1H...skipping...\r\n     61 ROW_060 \u001b[7mNEEDLE\u001b[27m\u001b[m\r\n     62 ROW_061 value\u001b[m\r\n     63 ROW_062 value\u001b[m\r\n     64 ROW_063 value\u001b[m\r\n     65 ROW_064 value\u001b[m\r\n     66 ROW_065 value\u001b[m\r\n     67 ROW_066 value\u001b[m\r\n     68 ROW_067 value\u001b[m\r\n     69 ROW_068 value\u001b[m\r\n     70 ROW_069 value\u001b[m\r\n     71 ROW_070 value\u001b[m\r\n     72 ROW_071 value\u001b[m\r\n     73 ROW_072 value\u001b[m\r\n     74 ROW_073 value\u001b[m\r\n     75 ROW_074 value\u001b[m\r\n     76 ROW_075 value\u001b[m\r\n     77 ROW_076 value\u001b[m\r\n     78 ROW_077 value\u001b[m\r\n     79 ROW_078 value\u001b[m\r\n     80 ROW_079 value\u001b[m\r\n     81 ROW_080 value\u001b[m\r\n     82 ROW_081 value\u001b[m\r\n     83 ROW_082 value\u001b[m\r\n:\u001b[K\r\u001b[K/\r\u001b[K...skipping...\r\n    121 ROW_120 \u001b[7mNEEDLE\u001b[27m\u001b[m\r\n    122 ROW_121 value\u001b[m\r\n    123 ROW_122 value\u001b[m\r\n    124 ROW_123 value\u001b[m\r\n    125 ROW_124 value\u001b[m\r\n    126 ROW_125 value\u001b[m\r\n    127 ROW_126 value\u001b[m\r\n    128 ROW_127 value\u001b[m\r\n    129 ROW_128 value\u001b[m\r\n    130 ROW_129 value\u001b[m\r\n    131 ROW_130 value\u001b[m\r\n    132 ROW_131 value\u001b[m\r\n    133 ROW_132 value\u001b[m\r\n    134 ROW_133 value\u001b[m\r\n    135 ROW_134 value\u001b[m\r\n    136 ROW_135 value\u001b[m\r\n    137 ROW_136 value\u001b[m\r\n    138 ROW_137 value\u001b[m\r\n    139 ROW_138 value\u001b[m\r\n    140 ROW_139 value\u001b[m\r\n    141 ROW_140 value\u001b[m\r\n    142 ROW_141 value\u001b[m\r\n    143 ROW_142 value\u001b[m\r\n:\u001b[K\r\u001b[K?\r\u001b[K\u001b[H\u001b[2J\u001b[H\u001bM     83 ROW_082 value\u001b[m\r\n\u001b[H\u001bM     82 ROW_081 value\u001b[m\r\n\u001b[H\u001bM     81 ROW_080 value\u001b[m\r\n\u001b[H\u001bM     80 ROW_079 value\u001b[m\r\n\u001b[H\u001bM     79 ROW_078 value\u001b[m\r\n\u001b[H\u001bM     78 ROW_077 value\u001b[m\r\n\u001b[H\u001bM     77 ROW_076 value\u001b[m\r\n\u001b[H\u001bM     76 ROW_075 value\u001b[m\r\n\u001b[H\u001bM     75 ROW_074 value\u001b[m\r\n\u001b[H\u001bM     74 ROW_073 value\u001b[m\r\n\u001b[H\u001bM     73 ROW_072 value\u001b[m\r\n\u001b[H\u001bM     72 ROW_071 value\u001b[m\r\n\u001b[H\u001bM     71 ROW_070 value\u001b[m\r\n\u001b[H\u001bM     70 ROW_069 value\u001b[m\r\n\u001b[H\u001bM     69 ROW_068 value\u001b[m\r\n\u001b[H\u001bM     68 ROW_067 value\u001b[m\r\n\u001b[H\u001bM     67 ROW_066 value\u001b[m\r\n\u001b[H\u001bM     66 ROW_065 value\u001b[m\r\n\u001b[H\u001bM     65 ROW_064 value\u001b[m\r\n\u001b[H\u001bM     64 ROW_063 value\u001b[m\r\n\u001b[H\u001bM     63 ROW_062 value\u001b[m\r\n\u001b[H\u001bM     62 ROW_061 value\u001b[m\r\n\u001b[H\u001bM     61 ROW_060 \u001b[7mNEEDLE\u001b[27m\u001b[m\r\n\u001b[24;1H\r\u001b[K:\u001b[K\r\u001b[K...skipping...\r\n    158 ROW_157 value\u001b[m\r\n    159 ROW_158 value\u001b[m\r\n    160 ROW_159 value\u001b[m\r\n    161 ROW_160 value\u001b[m\r\n    162 ROW_161 value\u001b[m\r\n    163 ROW_162 value\u001b[m\r\n    164 ROW_163 value\u001b[m\r\n    165 ROW_164 value\u001b[m\r\n    166 ROW_165 value\u001b[m\r\n    167 ROW_166 value\u001b[m\r\n    168 ROW_167 value\u001b[m\r\n    169 ROW_168 value\u001b[m\r\n    170 ROW_169 value\u001b[m\r\n    171 ROW_170 value\u001b[m\r\n    172 ROW_171 value\u001b[m\r\n    173 ROW_172 value\u001b[m\r\n    174 ROW_173 value\u001b[m\r\n    175 ROW_174 value\u001b[m\r\n    176 ROW_175 value\u001b[m\r\n    177 ROW_176 value\u001b[m\r\n    178 ROW_177 value\u001b[m\r\n    179 ROW_178 value\u001b[m\r\n    180 ROW_179 value\u001b[m\r\n\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K?\u001b[KN\bN\u001b[KE\bE\u001b[KE\bE\u001b[KD\bD\u001b[KL\bL\u001b[KE\bE\r\u001b[K\u001b[1;1H    158 ROW_157 value\u001b[m\r\n\u001b[2;1H    159 ROW_158 value\u001b[m\r\n\u001b[3;1H    160 ROW_159 value\u001b[m\r\n\u001b[4;1H    161 ROW_160 value\u001b[m\r\n\u001b[5;1H    162 ROW_161 value\u001b[m\r\n\u001b[6;1H    163 ROW_162 value\u001b[m\r\n\u001b[7;1H    164 ROW_163 value\u001b[m\r\n\u001b[8;1H    165 ROW_164 value\u001b[m\r\n\u001b[9;1H    166 ROW_165 value\u001b[m\r\n\u001b[10;1H    167 ROW_166 value\u001b[m\r\n\u001b[11;1H    168 ROW_167 value\u001b[m\r\n\u001b[12;1H    169 ROW_168 value\u001b[m\r\n\u001b[13;1H    170 ROW_169 value\u001b[m\r\n\u001b[14;1H    171 ROW_170 value\u001b[m\r\n\u001b[15;1H    172 ROW_171 value\u001b[m\r\n\u001b[16;1H    173 ROW_172 value\u001b[m\r\n\u001b[17;1H    174 ROW_173 value\u001b[m\r\n\u001b[18;1H    175 ROW_174 value\u001b[m\r\n\u001b[19;1H    176 ROW_175 value\u001b[m\r\n\u001b[20;1H    177 ROW_176 value\u001b[m\r\n\u001b[21;1H    178 ROW_177 value\u001b[m\r\n\u001b[22;1H    179 ROW_178 value\u001b[m\r\n\u001b[23;1H    180 ROW_179 value\u001b[m\r\n\u001b[24;1H\u001b[1;1H    158 ROW_157 value\u001b[m\r\n\u001b[2;1H    159 ROW_158 value\u001b[m\r\n\u001b[3;1H    160 ROW_159 value\u001b[m\r\n\u001b[4;1H    161 ROW_160 value\u001b[m\r\n\u001b[5;1H    162 ROW_161 value\u001b[m\r\n\u001b[6;1H    163 ROW_162 value\u001b[m\r\n\u001b[7;1H    164 ROW_163 value\u001b[m\r\n\u001b[8;1H    165 ROW_164 value\u001b[m\r\n\u001b[9;1H    166 ROW_165 value\u001b[m\r\n\u001b[10;1H    167 ROW_166 value\u001b[m\r\n\u001b[11;1H    168 ROW_167 value\u001b[m\r\n\u001b[12;1H    169 ROW_168 value\u001b[m\r\n\u001b[13;1H    170 ROW_169 value\u001b[m\r\n\u001b[14;1H    171 ROW_170 value\u001b[m\r\n\u001b[15;1H    172 ROW_171 value\u001b[m\r\n\u001b[16;1H    173 ROW_172 value\u001b[m\r\n\u001b[17;1H    174 ROW_173 value\u001b[m\r\n\u001b[18;1H    175 ROW_174 value\u001b[m\r\n\u001b[19;1H    176 ROW_175 value\u001b[m\r\n\u001b[20;1H    177 ROW_176 value\u001b[m\r\n\u001b[21;1H    178 ROW_177 value\u001b[m\r\n\u001b[22;1H    179 ROW_178 value\u001b[m\r\n\u001b[23;1H    180 ROW_179 value\u001b[m\r\n\u001b[24;1H\u001b[H\u001b[2J\u001b[H\u001bM    143 ROW_142 value\u001b[m\r\n\u001b[H\u001bM    142 ROW_141 value\u001b[m\r\n\u001b[H\u001bM    141 ROW_140 value\u001b[m\r\n\u001b[H\u001bM    140 ROW_139 value\u001b[m\r\n\u001b[H\u001bM    139 ROW_138 value\u001b[m\r\n\u001b[H\u001bM    138 ROW_137 value\u001b[m\r\n\u001b[H\u001bM    137 ROW_136 value\u001b[m\r\n\u001b[H\u001bM    136 ROW_135 value\u001b[m\r\n\u001b[H\u001bM    135 ROW_134 value\u001b[m\r\n\u001b[H\u001bM    134 ROW_133 value\u001b[m\r\n\u001b[H\u001bM    133 ROW_132 value\u001b[m\r\n\u001b[H\u001bM    132 ROW_131 value\u001b[m\r\n\u001b[H\u001bM    131 ROW_130 value\u001b[m\r\n\u001b[H\u001bM    130 ROW_129 value\u001b[m\r\n\u001b[H\u001bM    129 ROW_128 value\u001b[m\r\n\u001b[H\u001bM    128 ROW_127 value\u001b[m\r\n\u001b[H\u001bM    127 ROW_126 value\u001b[m\r\n\u001b[H\u001bM    126 ROW_125 value\u001b[m\r\n\u001b[H\u001bM    125 ROW_124 value\u001b[m\r\n\u001b[H\u001bM    124 ROW_123 value\u001b[m\r\n\u001b[H\u001bM    123 ROW_122 value\u001b[m\r\n\u001b[H\u001bM    122 ROW_121 value\u001b[m\r\n\u001b[H\u001bM    121 ROW_120 \u001b[7mNEEDLE\u001b[27m\u001b[m\r\n\u001b[24;1H\r\u001b[K:\u001b[K\r\u001b[K\u001b[H\u001b[2J\u001b[H\u001bM     23 ROW_022 value\u001b[m\r\n\u001b[H\u001bM     22 ROW_021 value\u001b[m\r\n\u001b[H\u001bM     21 ROW_020 value\u001b[m\r\n\u001b[H\u001bM     20 ROW_019 value\u001b[m\r\n\u001b[H\u001bM     19 ROW_018 value\u001b[m\r\n\u001b[H\u001bM     18 ROW_017 value\u001b[m\r\n\u001b[H\u001bM     17 ROW_016 value\u001b[m\r\n\u001b[H\u001bM     16 ROW_015 value\u001b[m\r\n\u001b[H\u001bM     15 ROW_014 value\u001b[m\r\n\u001b[H\u001bM     14 ROW_013 value\u001b[m\r\n\u001b[H\u001bM     13 ROW_012 value\u001b[m\r\n\u001b[H\u001bM     12 ROW_011 value\u001b[m\r\n\u001b[H\u001bM     11 ROW_010 value\u001b[m\r\n\u001b[H\u001bM     10 ROW_009 value\u001b[m\r\n\u001b[H\u001bM      9 ROW_008 value\u001b[m\r\n\u001b[H\u001bM      8 ROW_007 value\u001b[m\r\n\u001b[H\u001bM      7 ROW_006 value\u001b[m\r\n\u001b[H\u001bM      6 ROW_005 value\u001b[m\r\n\u001b[H\u001bM      5 ROW_004 value\u001b[m\r\n\u001b[H\u001bM      4 ROW_003 value\u001b[m\r\n\u001b[H\u001bM      3 ROW_002 value\u001b[m\r\n\u001b[H\u001bM      2 ROW_001 value\u001b[m\r\n\u001b[H\u001bM      1 ROW_000 value\u001b[m\r\n\u001b[24;1H\r\u001b[K:\u001b[K\r\u001b[K     24 ROW_023 value\u001b[m\r\n     25 ROW_024 value\u001b[m\r\n     26 ROW_025 value\u001b[m\r\n     27 ROW_026 value\u001b[m\r\n     28 ROW_027 value\u001b[m\r\n     29 ROW_028 value\u001b[m\r\n     30 ROW_029 value\u001b[m\r\n     31 ROW_030 value\u001b[m\r\n     32 ROW_031 value\u001b[m\r\n     33 ROW_032 value\u001b[m\r\n     34 ROW_033 value\u001b[m\r\n     35 ROW_034 value\u001b[m\r\n     36 ROW_035 value\u001b[m\r\n     37 ROW_036 value\u001b[m\r\n     38 ROW_037 value\u001b[m\r\n     39 ROW_038 value\u001b[m\r\n     40 ROW_039 value\u001b[m\r\n     41 ROW_040 value\u001b[m\r\n     42 ROW_041 value\u001b[m\r\n     43 ROW_042 value\u001b[m\r\n     44 ROW_043 value\u001b[m\r\n     45 ROW_044 value\u001b[m\r\n     46 ROW_045 value\u001b[m\r\n:\u001b[K\r\u001b[K:\u001b[K1\b1\u001b[K5\b5\u001b[K1\b1\r\u001b[K...skipping...\r\n    151 ROW_150 valuexxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u001b[m\u001b[7m>\u001b[27m\r\n    152 ROW_151 value\u001b[m\r\n    153 ROW_152 value\u001b[m\r\n    154 ROW_153 value\u001b[m\r\n    155 ROW_154 value\u001b[m\r\n    156 ROW_155 value\u001b[m\r\n    157 ROW_156 value\u001b[m\r\n    158 ROW_157 value\u001b[m\r\n    159 ROW_158 value\u001b[m\r\n    160 ROW_159 value\u001b[m\r\n    161 ROW_160 value\u001b[m\r\n    162 ROW_161 value\u001b[m\r\n    163 ROW_162 value\u001b[m\r\n    164 ROW_163 value\u001b[m\r\n    165 ROW_164 value\u001b[m\r\n    166 ROW_165 value\u001b[m\r\n    167 ROW_166 value\u001b[m\r\n    168 ROW_167 value\u001b[m\r\n    169 ROW_168 value\u001b[m\r\n    170 ROW_169 value\u001b[m\r\n    171 ROW_170 value\u001b[m\r\n    172 ROW_171 value\u001b[m\r\n    173 ROW_172 value\u001b[m\r\n:\u001b[K\r\u001b[K:\u001b[K1\b1\u001b[K0\b0\u001b[K0\b0\r\u001b[K \u001b[KESC\b\b\bESC\u001b[K)\b)\u001b[H\u001b[2J\u001b[H    151 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxRIGHT_EDGE\u001b[m\r\n    152 \u001b[m\r\n    153 \u001b[m\r\n    154 \u001b[m\r\n    155 \u001b[m\r\n    156 \u001b[m\r\n    157 \u001b[m\r\n    158 \u001b[m\r\n    159 \u001b[m\r\n    160 \u001b[m\r\n    161 \u001b[m\r\n    162 \u001b[m\r\n    163 \u001b[m\r\n    164 \u001b[m\r\n    165 \u001b[m\r\n    166 \u001b[m\r\n    167 \u001b[m\r\n    168 \u001b[m\r\n    169 \u001b[m\r\n    170 \u001b[m\r\n    171 \u001b[m\r\n    172 \u001b[m\r\n    173 \u001b[m\r\n:\u001b[K\u001b[H\u001b[2J\u001b[H    151 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u001b[m\u001b[7m>\u001b[27m\r\n    152 \u001b[m\r\n    153 \u001b[m\r\n    154 \u001b[m\r\n    155 \u001b[m\r\n    156 \u001b[m\r\n    157 \u001b[m\r\n    158 \u001b[m\r\n    159 \u001b[m\r\n    160 \u001b[m\r\n    161 \u001b[m\r\n    162 \u001b[m\r\n    163 \u001b[m\r\n    164 \u001b[m\r\n    165 \u001b[m\r\n    166 \u001b[m\r\n    167 \u001b[m\r\n:\u001b[K\r\u001b[K \u001b[KESC\b\b\bESC\u001b[K{\b{\u001b[H\u001b[2J\u001b[H    151 ROW_150 valuexxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u001b[m\u001b[7m>\u001b[27m\r\n    152 ROW_151 value\u001b[m\r\n    153 ROW_152 value\u001b[m\r\n    154 ROW_153 value\u001b[m\r\n    155 ROW_154 value\u001b[m\r\n    156 ROW_155 value\u001b[m\r\n    157 ROW_156 value\u001b[m\r\n    158 ROW_157 value\u001b[m\r\n    159 ROW_158 value\u001b[m\r\n    160 ROW_159 value\u001b[m\r\n    161 ROW_160 value\u001b[m\r\n    162 ROW_161 value\u001b[m\r\n    163 ROW_162 value\u001b[m\r\n    164 ROW_163 value\u001b[m\r\n    165 ROW_164 value\u001b[m\r\n    166 ROW_165 value\u001b[m\r\n    167 ROW_166 value\u001b[m\r\n:\u001b[K\r\u001b[K\u001b[H\u001b[2J\u001b[H\u001bM     17 ROW_016 value\u001b[m\r\n\u001b[H\u001bM     16 ROW_015 value\u001b[m\r\n\u001b[H\u001bM     15 ROW_014 value\u001b[m\r\n\u001b[H\u001bM     14 ROW_013 value\u001b[m\r\n\u001b[H\u001bM     13 ROW_012 value\u001b[m\r\n\u001b[H\u001bM     12 ROW_011 value\u001b[m\r\n\u001b[H\u001bM     11 ROW_010 value\u001b[m\r\n\u001b[H\u001bM     10 ROW_009 value\u001b[m\r\n\u001b[H\u001bM      9 ROW_008 value\u001b[m\r\n\u001b[H\u001bM      8 ROW_007 value\u001b[m\r\n\u001b[H\u001bM      7 ROW_006 value\u001b[m\r\n\u001b[H\u001bM      6 ROW_005 value\u001b[m\r\n\u001b[H\u001bM      5 ROW_004 value\u001b[m\r\n\u001b[H\u001bM      4 ROW_003 value\u001b[m\r\n\u001b[H\u001bM      3 ROW_002 value\u001b[m\r\n\u001b[H\u001bM      2 ROW_001 value\u001b[m\r\n\u001b[H\u001bM      1 ROW_000 value\u001b[m\r\n\u001b[18;1H\r\u001b[K:\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l\u001b[23;0;0t",
+      "transcript_bytes": 11080
+    }
+  ],
+  "env": {
+    "PATH": "/tmp/pytest-of-nobody/pytest-0/test_audit_interaction_wrapper0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/tmp/pytest-of-nobody/pytest-0/test_audit_interaction_wrapper0",
+    "TMPDIR": "/tmp/pytest-of-nobody/pytest-0/test_audit_interaction_wrapper0/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/tmp/pytest-of-nobody/pytest-0/test_audit_interaction_wrapper0",
+  "root": "/tmp/project",
+  "status": "pass"
+}

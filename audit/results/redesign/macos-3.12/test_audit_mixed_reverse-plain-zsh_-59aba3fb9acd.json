@@ -1,0 +1,149 @@
+{
+  "id": "test_audit_mixed[reverse-plain-zsh]",
+  "checks": [
+    {
+      "expectation": "Visit c.md in requested navigation order",
+      "pass": true
+    },
+    {
+      "expectation": "Display identity c.md",
+      "pass": true
+    },
+    {
+      "expectation": "Visit b.py in requested navigation order",
+      "pass": true
+    },
+    {
+      "expectation": "Display identity b.py",
+      "pass": true
+    },
+    {
+      "expectation": "Visit a.c in requested navigation order",
+      "pass": true
+    },
+    {
+      "expectation": "Display identity a.c",
+      "pass": true
+    },
+    {
+      "expectation": "Visit b.py in requested navigation order",
+      "pass": true
+    },
+    {
+      "expectation": "Display identity b.py",
+      "pass": true
+    },
+    {
+      "expectation": "Visit c.md in requested navigation order",
+      "pass": true
+    },
+    {
+      "expectation": "Display identity c.md",
+      "pass": true
+    },
+    {
+      "expectation": "One quit exits the multi-file session",
+      "pass": true
+    }
+  ],
+  "observations": [],
+  "commands": [
+    [
+      "/bin/zsh",
+      "-c",
+      "less -R c.md b.py a.c"
+    ]
+  ],
+  "sessions": [
+    {
+      "events": [
+        {
+          "expect": "MD_MARKER",
+          "found": true,
+          "seconds": 0.06014904205221683
+        },
+        {
+          "expect": "c.md",
+          "found": true,
+          "seconds": 0.06022387510165572
+        },
+        {
+          "keys": "b':n\\n'"
+        },
+        {
+          "expect": "PY_MARKER",
+          "found": true,
+          "seconds": 0.15034087502863258
+        },
+        {
+          "expect": "b.py",
+          "found": true,
+          "seconds": 0.15035575011279434
+        },
+        {
+          "keys": "b':n\\n'"
+        },
+        {
+          "expect": "C_MARKER",
+          "found": true,
+          "seconds": 0.23986841703299433
+        },
+        {
+          "expect": "a.c",
+          "found": true,
+          "seconds": 0.23988262505736202
+        },
+        {
+          "keys": "b':p\\n'"
+        },
+        {
+          "expect": "PY_MARKER",
+          "found": true,
+          "seconds": 0.3266889170045033
+        },
+        {
+          "expect": "b.py",
+          "found": true,
+          "seconds": 0.3267078750068322
+        },
+        {
+          "keys": "b':p\\n'"
+        },
+        {
+          "expect": "MD_MARKER",
+          "found": true,
+          "seconds": 0.41327037510927767
+        },
+        {
+          "expect": "c.md",
+          "found": true,
+          "seconds": 0.41328579210676253
+        },
+        {
+          "keys": "b'q'"
+        }
+      ],
+      "started": 783363.717094541,
+      "reaped": true,
+      "exitcode": 0,
+      "maxrss_native": 1753088,
+      "terminal_restored": true,
+      "transcript": "\u001b[?1049h\u001b[24;1H\u001b[?1h\u001b=\r# MD_MARKER\u001b[m\r\n\u001b[m\r\n- item\u001b[m\r\n\u001b[7mc.md (file 1 of 3) (END) - Next: b.py\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kn\bn...skipping...\r\ndef sample():\u001b[m\r\n    return \"PY_MARKER\"\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mb.py (file 2 of 3) (END) - Next: a.c\u001b[27m\u001b[K\r\u001b[K\u0007\r\u001b[K\u001b[7m(END) - Next: a.c\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kn\bn...skipping...\r\nint main(void) { return 7; } // C_MARKER\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7ma.c (file 3 of 3) (END)\u001b[27m\u001b[K\r\u001b[K\u0007\r\u001b[K\u001b[7m(END)\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kp\bp...skipping...\r\ndef sample():\u001b[m\r\n    return \"PY_MARKER\"\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mb.py (file 2 of 3) (END) - Next: a.c\u001b[27m\u001b[K\r\u001b[K\r\u001b[K\u001b[7m(END) - Next: a.c\u001b[27m\u001b[K\r\u001b[K \u001b[K:\b:\u001b[Kp\bp...skipping...\r\n# MD_MARKER\u001b[m\r\n\u001b[m\r\n- item\u001b[m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[1m~\u001b[0m\r\n\u001b[7mc.md (file 1 of 3) (END) - Next: b.py\u001b[27m\u001b[K\r\u001b[K\r\u001b[K\u001b[7m(END) - Next: b.py\u001b[27m\u001b[K\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l",
+      "transcript_bytes": 1665
+    }
+  ],
+  "env": {
+    "PATH": "/private/tmp/richless-release-mac312/test_audit_mixed_reverse_plain1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin",
+    "HOME": "/private/tmp/richless-release-mac312/test_audit_mixed_reverse_plain1",
+    "TMPDIR": "/private/tmp/richless-release-mac312/test_audit_mixed_reverse_plain1/scratch",
+    "TERM": "xterm-256color",
+    "LC_ALL": "C",
+    "LESSCHARSET": "utf-8",
+    "LESSHISTFILE": "-",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "cwd": "/private/tmp/richless-release-mac312/test_audit_mixed_reverse_plain1",
+  "root": "/Users/bianco/projects/richless",
+  "status": "pass"
+}
